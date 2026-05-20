@@ -6,7 +6,7 @@
 <title>每日選股總覽 2026-05-20</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-body{background:#0d1117;color:#e6edf3;font-family:'Segoe UI','PingFang TC','Microsoft JhengHei',sans-serif;font-size:15px;line-height:1.6}
+body{background:#0d1117;color:#e6edf3;font-family:'Segoe UI','PingFang TC','Microsoft JhengHei',sans-serif;font-size:17px;line-height:1.6}
 a{color:#58a6ff;text-decoration:none}
 a:hover{text-decoration:underline}
 header{background:#161b22;border-bottom:1px solid #30363d;padding:16px 24px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
@@ -14,29 +14,30 @@ header{background:#161b22;border-bottom:1px solid #30363d;padding:16px 24px;disp
 main{max-width:1100px;margin:0 auto;padding:20px 16px}
 .macro-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:10px;margin-bottom:24px}
 .mc{background:#161b22;border:1px solid #30363d;border-radius:8px;padding:12px 14px}
-.mc-label{font-size:11px;color:#8b949e;text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px}
-.mc-val{font-size:14px;font-weight:600}
+.mc-label{font-size:12px;color:#8b949e;text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px}
+.mc-val{font-size:16px;font-weight:600}
 .strategy{background:#161b22;border:1px solid #30363d;border-radius:10px;margin-bottom:14px;overflow:hidden}
 .sec-header{display:flex;align-items:center;gap:10px;padding:14px 18px;cursor:pointer;user-select:none}
 .sec-header:hover{background:#21262d}
-.sec-idx{background:rgba(88,166,255,0.15);color:#58a6ff;border-radius:6px;padding:2px 8px;font-size:12px;font-weight:700}
-.sec-title{flex:1;font-size:15px;font-weight:600;color:#e6edf3}
-.sec-toggle{color:#8b949e;font-size:12px;transition:.2s}
+.sec-idx{background:rgba(88,166,255,0.15);color:#58a6ff;border-radius:6px;padding:2px 8px;font-size:13px;font-weight:700}
+.sec-title-group{flex:1;display:flex;flex-direction:column;gap:3px}
+.sec-title{font-size:17px;font-weight:600;color:#e6edf3}
+.sec-sub{font-size:13px;color:#8b949e;line-height:1.4}
+.sec-toggle{color:#8b949e;font-size:13px;transition:.2s}
 .sec-body{padding:0 18px 18px}
-.sec-desc{font-size:12px;color:#8b949e;padding:6px 0 10px;border-bottom:1px solid #30363d;margin-bottom:10px;line-height:1.5}
-.data-date{font-size:11px;color:#8b949e;margin-bottom:8px;padding-top:4px}
+.data-date{font-size:13px;color:#8b949e;margin-bottom:8px;padding-top:4px}
 .empty{color:#8b949e;font-style:italic;padding:8px 0}
-table{width:100%;border-collapse:collapse;font-size:14px;margin-top:4px}
+table{width:100%;border-collapse:collapse;font-size:15px;margin-top:4px}
 thead tr{background:#21262d}
-th{padding:8px 10px;text-align:left;color:#8b949e;font-weight:600;font-size:12px;white-space:nowrap;border-bottom:1px solid #30363d}
+th{padding:8px 10px;text-align:left;color:#8b949e;font-weight:600;font-size:13px;white-space:nowrap;border-bottom:1px solid #30363d}
 td{padding:7px 10px;border-top:1px solid #30363d;vertical-align:top}
 tr:hover td{background:#21262d}
 tr.checked td{background:rgba(34,197,94,0.08)}
 tr.checked td:first-child label{text-decoration:line-through;opacity:.6}
-.sig-cell{font-size:12px;color:#8b949e;max-width:260px;word-break:break-word}
+.sig-cell{font-size:13px;color:#8b949e;max-width:260px;word-break:break-word}
 input[type=checkbox]{width:16px;height:16px;accent-color:#58a6ff;margin-right:6px;cursor:pointer;vertical-align:middle}
 label{cursor:pointer;vertical-align:middle}
-.tag{display:inline-block;background:#21262d;border:1px solid #30363d;border-radius:4px;padding:1px 6px;font-size:11px;margin:1px 3px 1px 0;color:#8b949e}
+.tag{display:inline-block;background:#21262d;border:1px solid #30363d;border-radius:4px;padding:1px 6px;font-size:12px;margin:1px 3px 1px 0;color:#8b949e}
 .tag-green{background:rgba(34,197,94,0.15);border-color:rgba(34,197,94,0.4);color:#22c55e}
 .tag-blue{background:rgba(88,166,255,0.15);border-color:rgba(88,166,255,0.4);color:#58a6ff}
 .badge-new{display:inline-block;background:rgba(34,197,94,0.15);color:#22c55e;border:1px solid rgba(34,197,94,0.4);border-radius:4px;padding:2px 8px;font-size:12px;margin-bottom:8px}
@@ -262,11 +263,13 @@ footer{text-align:center;color:#8b949e;font-size:12px;margin:24px 0;padding-bott
 <section class="strategy" id="sec-inst">
   <div class="sec-header" onclick="toggleSec('inst')">
     <span class="sec-idx">A</span>
-    <span class="sec-title">法人動向</span>
+    <div class="sec-title-group">
+      <span class="sec-title">法人動向</span>
+      <span class="sec-sub">外資/投信 Top-8 買超，觀察主力資金方向。</span>
+    </div>
     <span class="sec-toggle" id="tog-inst">▼</span>
   </div>
   <div class="sec-body" id="body-inst">
-    <div class="sec-desc">外資/投信 Top-8 買超，觀察主力資金方向。</div>
     <div class="inst-grid"><div><div class="inst-header">外資買超 Top 8</div><table><thead><tr><th>代號</th><th>名稱</th><th>買超（張）</th></tr></thead><tbody><tr><td><b>2887</b></td><td>台新新光金</td><td style="color:#22c55e;font-weight:700">+32,409</td></tr><tr><td><b>2890</b></td><td>永豐金</td><td style="color:#22c55e;font-weight:700">+30,861</td></tr><tr><td><b>2891</b></td><td>中信金</td><td style="color:#22c55e;font-weight:700">+30,684</td></tr><tr><td><b>2882</b></td><td>國泰金</td><td style="color:#22c55e;font-weight:700">+25,404</td></tr><tr><td><b>2886</b></td><td>兆豐金</td><td style="color:#22c55e;font-weight:700">+21,977</td></tr><tr><td><b>2412</b></td><td>中華電</td><td style="color:#22c55e;font-weight:700">+16,215</td></tr><tr><td><b>2881</b></td><td>富邦金</td><td style="color:#22c55e;font-weight:700">+14,429</td></tr><tr><td><b>2880</b></td><td>華南金</td><td style="color:#22c55e;font-weight:700">+13,565</td></tr></tbody></table></div><div><div class="inst-header">投信買超 Top 8</div><table><thead><tr><th>代號</th><th>名稱</th><th>買超（張）</th></tr></thead><tbody><tr><td><b>2303</b></td><td>聯電</td><td style="color:#22c55e;font-weight:700">+32,256</td></tr><tr><td><b>2412</b></td><td>中華電</td><td style="color:#22c55e;font-weight:700">+7,872</td></tr><tr><td><b>2344</b></td><td>華邦電</td><td style="color:#22c55e;font-weight:700">+6,220</td></tr><tr><td><b>2327</b></td><td>國巨*</td><td style="color:#22c55e;font-weight:700">+5,345</td></tr><tr><td><b>2481</b></td><td>強茂</td><td style="color:#22c55e;font-weight:700">+5,341</td></tr><tr><td><b>2356</b></td><td>英業達</td><td style="color:#22c55e;font-weight:700">+4,923</td></tr><tr><td><b>2892</b></td><td>第一金</td><td style="color:#22c55e;font-weight:700">+4,766</td></tr><tr><td><b>2801</b></td><td>彰銀</td><td style="color:#22c55e;font-weight:700">+4,496</td></tr></tbody></table></div></div>
     
   </div>
@@ -274,11 +277,13 @@ footer{text-align:center;color:#8b949e;font-size:12px;margin:24px 0;padding-bott
 <section class="strategy" id="sec-sectors">
   <div class="sec-header" onclick="toggleSec('sectors')">
     <span class="sec-idx">B</span>
-    <span class="sec-title">板塊熱力圖</span>
+    <div class="sec-title-group">
+      <span class="sec-title">板塊熱力圖</span>
+      <span class="sec-sub">TWSE 主要類股當日漲跌，辨識資金輪動方向。</span>
+    </div>
     <span class="sec-toggle" id="tog-sectors">▼</span>
   </div>
   <div class="sec-body" id="body-sectors">
-    <div class="sec-desc">TWSE 主要類股當日漲跌，辨識資金輪動方向。</div>
     <div class="sc-label">上市類股</div><div class="sc-grid"><div class="sc-cell" style="background:#166534"><div class="sc-name">電子通路</div><div class="sc-pct" style="color:#86efac">+4.45%</div></div><div class="sc-cell" style="background:#14532d"><div class="sc-name">航運</div><div class="sc-pct" style="color:#86efac">+2.27%</div></div><div class="sc-cell" style="background:#1a3d20"><div class="sc-name">綠能環保</div><div class="sc-pct" style="color:#86efac">+1.24%</div></div><div class="sc-cell" style="background:#1a3d20"><div class="sc-name">紡織纖維</div><div class="sc-pct" style="color:#86efac">+1.17%</div></div><div class="sc-cell" style="background:#1c2a1c"><div class="sc-name">電子零組件</div><div class="sc-pct" style="color:#86efac">+0.33%</div></div><div class="sc-cell" style="background:#1c2a1c"><div class="sc-name">建材營造</div><div class="sc-pct" style="color:#86efac">+0.28%</div></div><div class="sc-cell" style="background:#1c2a1c"><div class="sc-name">油電燃氣</div><div class="sc-pct" style="color:#86efac">+0.22%</div></div><div class="sc-cell" style="background:#1c2a1c"><div class="sc-name">資訊服務</div><div class="sc-pct" style="color:#86efac">+0.02%</div></div><div class="sc-cell" style="background:#2a1c1c"><div class="sc-name">金融保險</div><div class="sc-pct" style="color:#fca5a5">-0.02%</div></div><div class="sc-cell" style="background:#2a1c1c"><div class="sc-name">鋼鐵</div><div class="sc-pct" style="color:#fca5a5">-0.13%</div></div><div class="sc-cell" style="background:#2a1c1c"><div class="sc-name">觀光餐旅</div><div class="sc-pct" style="color:#fca5a5">-0.23%</div></div><div class="sc-cell" style="background:#2a1c1c"><div class="sc-name">橡膠</div><div class="sc-pct" style="color:#fca5a5">-0.26%</div></div><div class="sc-cell" style="background:#2a1c1c"><div class="sc-name">汽車</div><div class="sc-pct" style="color:#fca5a5">-0.28%</div></div><div class="sc-cell" style="background:#2a1c1c"><div class="sc-name">生技醫療</div><div class="sc-pct" style="color:#fca5a5">-0.39%</div></div><div class="sc-cell" style="background:#2a1c1c"><div class="sc-name">電腦及週邊設備</div><div class="sc-pct" style="color:#fca5a5">-0.45%</div></div><div class="sc-cell" style="background:#2a1c1c"><div class="sc-name">半導體</div><div class="sc-pct" style="color:#fca5a5">-0.47%</div></div><div class="sc-cell" style="background:#2a1c1c"><div class="sc-name">水泥</div><div class="sc-pct" style="color:#fca5a5">-0.48%</div></div><div class="sc-cell" style="background:#4a1a1a"><div class="sc-name">電器電纜</div><div class="sc-pct" style="color:#fca5a5">-0.51%</div></div><div class="sc-cell" style="background:#4a1a1a"><div class="sc-name">化學</div><div class="sc-pct" style="color:#fca5a5">-0.57%</div></div><div class="sc-cell" style="background:#4a1a1a"><div class="sc-name">運動休閒</div><div class="sc-pct" style="color:#fca5a5">-0.72%</div></div><div class="sc-cell" style="background:#4a1a1a"><div class="sc-name">數位雲端</div><div class="sc-pct" style="color:#fca5a5">-0.81%</div></div><div class="sc-cell" style="background:#4a1a1a"><div class="sc-name">塑膠</div><div class="sc-pct" style="color:#fca5a5">-0.95%</div></div><div class="sc-cell" style="background:#4a1a1a"><div class="sc-name">造紙</div><div class="sc-pct" style="color:#fca5a5">-1.02%</div></div><div class="sc-cell" style="background:#4a1a1a"><div class="sc-name">電機機械</div><div class="sc-pct" style="color:#fca5a5">-1.18%</div></div><div class="sc-cell" style="background:#4a1a1a"><div class="sc-name">食品</div><div class="sc-pct" style="color:#fca5a5">-1.25%</div></div><div class="sc-cell" style="background:#4a1a1a"><div class="sc-name">通信網路</div><div class="sc-pct" style="color:#fca5a5">-1.39%</div></div><div class="sc-cell" style="background:#6b1e1e"><div class="sc-name">其他電子</div><div class="sc-pct" style="color:#fca5a5">-1.57%</div></div><div class="sc-cell" style="background:#6b1e1e"><div class="sc-name">居家生活</div><div class="sc-pct" style="color:#fca5a5">-1.67%</div></div><div class="sc-cell" style="background:#6b1e1e"><div class="sc-name">貿易百貨</div><div class="sc-pct" style="color:#fca5a5">-1.81%</div></div><div class="sc-cell" style="background:#6b1e1e"><div class="sc-name">玻璃陶瓷</div><div class="sc-pct" style="color:#fca5a5">-2.00%</div></div><div class="sc-cell" style="background:#6b1e1e"><div class="sc-name">光電</div><div class="sc-pct" style="color:#fca5a5">-2.02%</div></div></div><div class="sc-label">上櫃類股（等權均值）</div><div class="sc-grid"><div class="sc-cell" style="background:#14532d"><div class="sc-name">油電燃氣業</div><div class="sc-pct" style="color:#86efac">+2.24%</div></div><div class="sc-cell" style="background:#14532d"><div class="sc-name">電機機械</div><div class="sc-pct" style="color:#86efac">+2.23%</div></div><div class="sc-cell" style="background:#14532d"><div class="sc-name">食品工業</div><div class="sc-pct" style="color:#86efac">+2.14%</div></div><div class="sc-cell" style="background:#14532d"><div class="sc-name">數位雲端</div><div class="sc-pct" style="color:#86efac">+1.98%</div></div><div class="sc-cell" style="background:#14532d"><div class="sc-name">電子零組件業</div><div class="sc-pct" style="color:#86efac">+1.87%</div></div><div class="sc-cell" style="background:#14532d"><div class="sc-name">電器電纜</div><div class="sc-pct" style="color:#86efac">+1.68%</div></div><div class="sc-cell" style="background:#14532d"><div class="sc-name">建材營造業</div><div class="sc-pct" style="color:#86efac">+1.64%</div></div><div class="sc-cell" style="background:#14532d"><div class="sc-name">通信網路業</div><div class="sc-pct" style="color:#86efac">+1.51%</div></div><div class="sc-cell" style="background:#1a3d20"><div class="sc-name">光電業</div><div class="sc-pct" style="color:#86efac">+1.41%</div></div><div class="sc-cell" style="background:#1a3d20"><div class="sc-name">文化創意業</div><div class="sc-pct" style="color:#86efac">+1.25%</div></div><div class="sc-cell" style="background:#1a3d20"><div class="sc-name">電腦及週邊設備業</div><div class="sc-pct" style="color:#86efac">+1.10%</div></div><div class="sc-cell" style="background:#1a3d20"><div class="sc-name">生技醫療業</div><div class="sc-pct" style="color:#86efac">+0.92%</div></div><div class="sc-cell" style="background:#1a3d20"><div class="sc-name">金融保險業</div><div class="sc-pct" style="color:#86efac">+0.80%</div></div><div class="sc-cell" style="background:#1a3d20"><div class="sc-name">電子通路業</div><div class="sc-pct" style="color:#86efac">+0.70%</div></div><div class="sc-cell" style="background:#1a3d20"><div class="sc-name">半導體業</div><div class="sc-pct" style="color:#86efac">+0.66%</div></div><div class="sc-cell" style="background:#1a3d20"><div class="sc-name">資訊服務業</div><div class="sc-pct" style="color:#86efac">+0.60%</div></div><div class="sc-cell" style="background:#1a3d20"><div class="sc-name">綠能環保</div><div class="sc-pct" style="color:#86efac">+0.54%</div></div><div class="sc-cell" style="background:#1c2a1c"><div class="sc-name">其他電子業</div><div class="sc-pct" style="color:#86efac">+0.43%</div></div><div class="sc-cell" style="background:#1c2a1c"><div class="sc-name">航運業</div><div class="sc-pct" style="color:#86efac">+0.37%</div></div><div class="sc-cell" style="background:#1c2a1c"><div class="sc-name">鋼鐵工業</div><div class="sc-pct" style="color:#86efac">+0.37%</div></div><div class="sc-cell" style="background:#1c2a1c"><div class="sc-name">觀光餐旅</div><div class="sc-pct" style="color:#86efac">+0.35%</div></div><div class="sc-cell" style="background:#1c2a1c"><div class="sc-name">農業科技業</div><div class="sc-pct" style="color:#86efac">+0.31%</div></div><div class="sc-cell" style="background:#1c2a1c"><div class="sc-name">其他業</div><div class="sc-pct" style="color:#86efac">+0.18%</div></div><div class="sc-cell" style="background:#2a1c1c"><div class="sc-name">居家生活</div><div class="sc-pct" style="color:#fca5a5">-0.19%</div></div><div class="sc-cell" style="background:#4a1a1a"><div class="sc-name">運動休閒</div><div class="sc-pct" style="color:#fca5a5">-0.52%</div></div><div class="sc-cell" style="background:#4a1a1a"><div class="sc-name">化學工業</div><div class="sc-pct" style="color:#fca5a5">-0.57%</div></div><div class="sc-cell" style="background:#4a1a1a"><div class="sc-name">紡織纖維</div><div class="sc-pct" style="color:#fca5a5">-0.96%</div></div><div class="sc-cell" style="background:#6b1e1e"><div class="sc-name">塑膠工業</div><div class="sc-pct" style="color:#fca5a5">-2.69%</div></div></div>
     
   </div>
@@ -287,11 +292,13 @@ footer{text-align:center;color:#8b949e;font-size:12px;margin:24px 0;padding-bott
 <section class="strategy" id="sec-bb">
   <div class="sec-header" onclick="toggleSec('bb')">
     <span class="sec-idx">1</span>
-    <span class="sec-title">BB_BREAKOUT — 布林突破</span>
+    <div class="sec-title-group">
+      <span class="sec-title">BB_BREAKOUT — 布林突破</span>
+      <span class="sec-sub">布林上軌突破 + MA60 多頭 + 放量 + 月營收加速，複合排序選強中最強；CAGR +15.1%，PF 2.47。</span>
+    </div>
     <span class="sec-toggle" id="tog-bb">▼</span>
   </div>
   <div class="sec-body" id="body-bb">
-    <div class="sec-desc">布林上軌突破 + MA60 多頭 + 放量 + 月營收加速，複合排序選強中最強；CAGR +15.1%，PF 2.47。</div>
     <p class="data-date">資料日期：2026-05-19</p>
 <table><thead><tr><th>股票</th><th>評分</th><th>收盤</th><th>BBU</th><th>突破天</th><th>月營收</th></tr></thead>
 <tbody><tr>
@@ -365,11 +372,13 @@ footer{text-align:center;color:#8b949e;font-size:12px;margin:24px 0;padding-bott
 <section class="strategy" id="sec-vcp">
   <div class="sec-header" onclick="toggleSec('vcp')">
     <span class="sec-idx">2</span>
-    <span class="sec-title">PULLBACK_VCP — 回調突破</span>
+    <div class="sec-title-group">
+      <span class="sec-title">PULLBACK_VCP — 回調突破</span>
+      <span class="sec-sub">Stage 2（Close&gt;MA20&gt;MA60）量縮整理後爆量突破，ATR 壓縮確認籌碼鎖定；OOS 2023-2024 +17.4% ✅。</span>
+    </div>
     <span class="sec-toggle" id="tog-vcp">▼</span>
   </div>
   <div class="sec-body" id="body-vcp">
-    <div class="sec-desc">Stage 2（Close&gt;MA20&gt;MA60）量縮整理後爆量突破，ATR 壓縮確認籌碼鎖定；OOS 2023-2024 +17.4% ✅。</div>
     <p class="data-date" style="color:#d97706">⚠️ 今日無 VCP 突破訊號，以下為 Stage 2（Close&gt;MA20&gt;MA60）60D強勢觀察清單，供參考</p>
 <table><thead><tr><th>股票</th><th>量比</th><th>收盤</th><th>60D報酬</th><th>MA20</th><th>MA60</th><th>RS vs TW</th></tr></thead>
 <tbody><tr>
@@ -451,11 +460,13 @@ footer{text-align:center;color:#8b949e;font-size:12px;margin:24px 0;padding-bott
 <section class="strategy" id="sec-mlpa">
   <div class="sec-header" onclick="toggleSec('mlpa')">
     <span class="sec-idx">3</span>
-    <span class="sec-title">ML-PriceAction — LightGBM 技術面</span>
+    <div class="sec-title-group">
+      <span class="sec-title">ML-PriceAction — LightGBM 技術面</span>
+      <span class="sec-sub">LightGBM 23特徵截面 Top-5，每10交易日換倉，頂級特徵：52W高點距離/RS截面動能/外資20日；OOS 2024+2025 ✅。</span>
+    </div>
     <span class="sec-toggle" id="tog-mlpa">▼</span>
   </div>
   <div class="sec-body" id="body-mlpa">
-    <div class="sec-desc">LightGBM 23特徵截面 Top-5，每10交易日換倉，頂級特徵：52W高點距離/RS截面動能/外資20日；OOS 2024+2025 ✅。</div>
     <p class="empty">今日無 ML-PriceAction 信號（請先跑 main_mlpa.py）</p>
     <div class="my-view"><span class="my-view-label">今日看法：</span>top prob + RS 截面強度雙確認</div>
   </div>
@@ -463,11 +474,13 @@ footer{text-align:center;color:#8b949e;font-size:12px;margin:24px 0;padding-bott
 <section class="strategy" id="sec-limitup">
   <div class="sec-header" onclick="toggleSec('limitup')">
     <span class="sec-idx">4</span>
-    <span class="sec-title">LIMIT_UP_V2 — 漲停追買</span>
+    <div class="sec-title-group">
+      <span class="sec-title">LIMIT_UP_V2 — 漲停追買</span>
+      <span class="sec-sub">科技股漲停 + MA60 多頭 + 量比≥3x，T+1 開盤進場，排除處置股；CAGR +10.4%。</span>
+    </div>
     <span class="sec-toggle" id="tog-limitup">▼</span>
   </div>
   <div class="sec-body" id="body-limitup">
-    <div class="sec-desc">科技股漲停 + MA60 多頭 + 量比≥3x，T+1 開盤進場，排除處置股；CAGR +10.4%。</div>
     <p class="empty">今日無漲停追買候選</p>
     <div class="my-view"><span class="my-view-label">今日看法：</span>T+1 開盤 9:01 掛市價單，量比&gt;5x 才進</div>
   </div>
@@ -475,12 +488,15 @@ footer{text-align:center;color:#8b949e;font-size:12px;margin:24px 0;padding-bott
 <section class="strategy" id="sec-reversal">
   <div class="sec-header" onclick="toggleSec('reversal')">
     <span class="sec-idx">5</span>
-    <span class="sec-title">留意反彈（觀察清單）</span>
+    <div class="sec-title-group">
+      <span class="sec-title">留意反彈（觀察清單）</span>
+      <span class="sec-sub">跌深≥25% 後出現 Hammer/Piercing/Engulfing 反轉K棒，純觀察，沒有明確催化劑不進場。</span>
+    </div>
     <span class="sec-toggle" id="tog-reversal">▼</span>
   </div>
   <div class="sec-body" id="body-reversal">
-    <div class="sec-desc">跌深≥25% 後出現 Hammer/Piercing/Engulfing 反轉K棒，純觀察，沒有明確催化劑不進場。</div>
-    <table><thead><tr><th>股票</th><th>跌深</th><th>3M高</th><th>收盤</th><th>反轉訊號</th></tr></thead>
+    <p class="data-date">資料日期：2026-05-19</p>
+<table><thead><tr><th>股票</th><th>跌深</th><th>3M高</th><th>收盤</th><th>反轉訊號</th></tr></thead>
 <tbody><tr>
           <td><input type="checkbox" class="watch-check" data-id="rev_2543">
               <label>2543 皇昌</label></td>
@@ -558,43 +574,45 @@ footer{text-align:center;color:#8b949e;font-size:12px;margin:24px 0;padding-bott
 <section class="strategy" id="sec-transform">
   <div class="sec-header" onclick="toggleSec('transform')">
     <span class="sec-idx">6</span>
-    <span class="sec-title">轉型觀察（觀察清單）</span>
+    <div class="sec-title-group">
+      <span class="sec-title">轉型觀察（觀察清單）</span>
+      <span class="sec-sub">月營收 YoY 由負轉正或季 EPS 負轉正，搭配訂單/合作事件，確認催化劑持續性再追蹤。</span>
+    </div>
     <span class="sec-toggle" id="tog-transform">▼</span>
   </div>
   <div class="sec-body" id="body-transform">
-    <div class="sec-desc">月營收 YoY 由負轉正或季 EPS 負轉正，搭配訂單/合作事件，確認催化劑持續性再追蹤。</div>
     <table><thead><tr><th>股票</th><th>催化劑 / 基本面拐點</th></tr></thead>
 <tbody><tr>
           <td><input type="checkbox" class="watch-check" data-id="tr_1303">
               <label>1303 南亞</label></td>
           <td><span class="tag tag-green">月營收YoY轉正</span><span class="tag tag-green">EPS負轉正</span><span class="tag"><a href="https://news.google.com/rss/articles/CBMib0FVX3lxTE5iQl9kRTR6ZzRkbzlSd28ySDRuRlhEcENMSG5aaHltUXRPTEFEbHVudDNHUWlRU0lHY0ZrVWhLSVNXTms4T25Dc2ZFbXJCR1JXOWYxR1E0VEJYbmR1X0dIOEs3Vmd3cFFqRkxLcVItcw?oc=5" target="_blank">南亞(1303) AI 轉型戰果顯現！3月營收創43 個月新高玻纖布題材助攻股價量價齊揚 - 理財周...</a></span></td>
         </tr><tr>
-          <td><input type="checkbox" class="watch-check" data-id="tr_1903">
-              <label>1903 士紙</label></td>
+          <td><input type="checkbox" class="watch-check" data-id="tr_8033">
+              <label>8033 雷虎</label></td>
+          <td><span class="tag tag-green">月營收YoY轉正</span><span class="tag"><a href="https://news.google.com/rss/articles/CBMid0FVX3lxTE1SYkUwdVlOejZRLTd5TUlTaDdUQV9oM2ktR0Zmc3RHRTNmVHJRWVVBM0pZdlMxVUszeGcydFl2SG9Bazh2ZV9ubFYzODRzN2JkX0dHMWx4QVpTb0h2bTRqRm94NnFkNUMzN3NSLThMM2lqVnUtOWZR?oc=5" target="_blank">雷虎、漢翔股價重挫！國防預算一刀砍出市場賣壓，無人機供應鏈失速了 | 產業熱點 | 產業 - 經濟日...</a></span></td>
+        </tr><tr>
+          <td><input type="checkbox" class="watch-check" data-id="tr_1598">
+              <label>1598 岱宇</label></td>
           <td><span class="tag tag-green">月營收YoY轉正</span><span class="tag tag-green">EPS負轉正</span></td>
         </tr><tr>
-          <td><input type="checkbox" class="watch-check" data-id="tr_3066">
-              <label>3066 李洲</label></td>
+          <td><input type="checkbox" class="watch-check" data-id="tr_2634">
+              <label>2634 漢翔</label></td>
+          <td><span class="tag tag-green">EPS負轉正</span><span class="tag"><a href="https://news.google.com/rss/articles/CBMiWEFVX3lxTE1XZjJyM0lBVUQ5bVlYTWNYWG1EUjN1d0ViZkFsVFJ0ZlZwRTZLOFRGdkw5cFdSZDloaHNEMTl1U0szNFpaSWNUX3J0NmRDcmlpN3VlZllSYW4?oc=5" target="_blank">2634 漢翔- 19年老牌軍工廠轉型碳基谷底翻身再靠無人機起飛[影]-股市爆料同學會 - CMon...</a></span></td>
+        </tr><tr>
+          <td><input type="checkbox" class="watch-check" data-id="tr_1904">
+              <label>1904 正隆</label></td>
           <td><span class="tag tag-green">月營收YoY轉正</span><span class="tag tag-green">EPS負轉正</span></td>
         </tr><tr>
           <td><input type="checkbox" class="watch-check" data-id="tr_3312">
               <label>3312 弘憶股</label></td>
           <td><span class="tag tag-green">月營收YoY轉正</span><span class="tag tag-green">EPS負轉正</span></td>
         </tr><tr>
-          <td><input type="checkbox" class="watch-check" data-id="tr_1906">
-              <label>1906 寶隆</label></td>
+          <td><input type="checkbox" class="watch-check" data-id="tr_1802">
+              <label>1802 台玻</label></td>
           <td><span class="tag tag-green">月營收YoY轉正</span><span class="tag tag-green">EPS負轉正</span></td>
         </tr><tr>
-          <td><input type="checkbox" class="watch-check" data-id="tr_6643">
-              <label>6643 M31</label></td>
-          <td><span class="tag tag-green">月營收YoY轉正</span><span class="tag"><a href="https://news.google.com/rss/articles/CBMiuwJBVV95cUxNUzNwODdjc29WZ1BUNnA0WUlLM3BhUmFnbkJQNHRmVmZXNG9xazh3aDllQUNlbXNwYjRZNEZ6WFYwY2JSc2E3NXd2a0l6ajVpczhFSTJhY09kQWZQM1A5bmhoWEVNbnNJaHJEN3pzSm1adlYtSU5zMFhnWE1KRmxaSXVzdGdTQU1sREZ1a2cyZDlIcnVWRHlkMHBRamo2N1Ryb3dxQ1lKbGlPRE1nbFNPSmw4cV94Mkt6aVd2MHpuZ3dseFJUZnNkRVU3cUtJdGtSVkVEWUswdGtnTUloRmZuTEZkZDE2bWtJenlRaTNEQXJ2MXRPTktZV3hjUnA0cTJVTG1kbnRDblh3NU01RkU0QWxNTkFRWndYRDc1dHhJUDlkQVJ0OUVOckhidmI5cHBoSEtBLTRic0dGbDg?oc=5" target="_blank">M31強化北美晶圓代工合作，Q2有望迎首宗合作案 - Yahoo股市</a></span></td>
-        </tr><tr>
-          <td><input type="checkbox" class="watch-check" data-id="tr_1598">
-              <label>1598 岱宇</label></td>
-          <td><span class="tag tag-green">月營收YoY轉正</span><span class="tag tag-green">EPS負轉正</span></td>
-        </tr><tr>
-          <td><input type="checkbox" class="watch-check" data-id="tr_3033">
-              <label>3033 威健</label></td>
+          <td><input type="checkbox" class="watch-check" data-id="tr_2106">
+              <label>2106 建大</label></td>
           <td><span class="tag tag-green">月營收YoY轉正</span><span class="tag tag-green">EPS負轉正</span></td>
         </tr></tbody></table>
     <div class="my-view"><span class="my-view-label">今日看法：</span>確認催化劑是否持續，決定是否列入追蹤清單</div>
@@ -603,11 +621,13 @@ footer{text-align:center;color:#8b949e;font-size:12px;margin:24px 0;padding-bott
 <section class="strategy" id="sec-theme_overview">
   <div class="sec-header" onclick="toggleSec('theme_overview')">
     <span class="sec-idx">7</span>
-    <span class="sec-title">題材監控總覽</span>
+    <div class="sec-title-group">
+      <span class="sec-title">題材監控總覽</span>
+      <span class="sec-sub">目前追蹤 46 個題材，依強度排列，展開看觸發訊號與出場留意。</span>
+    </div>
     <span class="sec-toggle" id="tog-theme_overview">▼</span>
   </div>
   <div class="sec-body" id="body-theme_overview">
-    <div class="sec-desc">目前追蹤 46 個題材，依強度排列，展開看觸發訊號與出場留意。</div>
     <div class="th-overview">
 <div class="th-card" id="thc-電子紙低碳鏈">
   <div class="th-card-header" onclick="toggleTheme('電子紙低碳鏈')">
@@ -687,32 +707,6 @@ footer{text-align:center;color:#8b949e;font-size:12px;margin:24px 0;padding-bott
     </div>
   </div>
 </div>
-<div class="th-card" id="thc-電網基建">
-  <div class="th-card-header" onclick="toggleTheme('電網基建')">
-    <span class="th-strength" style="background:#22c55e">9/10</span>
-    <span class="th-name">電網基建</span>
-    <div class="th-metrics">
-      <span class="th-metric" style="color:#94a3b8">廣度 29%</span>
-      <span class="th-metric" style="color:#ef4444">20D -4.3%</span>
-      <span class="th-metric" style="color:#ef4444">外資 -4512</span>
-      <span class="th-metric">🟢0🟡2/7</span>
-    </div>
-    <span class="th-toggle" id="thtog-電網基建">▶</span>
-  </div>
-  <div class="th-card-body" id="thbody-電網基建" style="display:none">
-    <div class="th-hyp">台電強韌電網計畫進入交割高峰，疊加美國電網更新帶動變壓器外銷毛利擴張。</div>
-    <div class="th-signals-row">
-      <div class="th-signals-col">
-        <div class="sig-col-label">關鍵訊號（觸發 = 假說兌現）</div>
-        <ul class="sig-list"><li>台電標案公告金額</li><li>美國變壓器進口交期(Lead Time)</li><li>各廠商月營收是否維持雙位數年增</li></ul>
-      </div>
-      <div class="th-signals-col">
-        <div class="exit-sigs"><span class="exit-label">出場留意：</span><ul class="sig-list sig-exit"><li>重電股本益比過高導致評價修正</li><li>台電預算大幅刪減</li></ul></div>
-        
-      </div>
-    </div>
-  </div>
-</div>
 <div class="th-card" id="thc-AI廠務基建">
   <div class="th-card-header" onclick="toggleTheme('AI廠務基建')">
     <span class="th-strength" style="background:#22c55e">9/10</span>
@@ -734,6 +728,32 @@ footer{text-align:center;color:#8b949e;font-size:12px;margin:24px 0;padding-bott
       </div>
       <div class="th-signals-col">
         <div class="exit-sigs"><span class="exit-label">出場留意：</span><ul class="sig-list sig-exit"><li>半導體設備出貨量連三季萎縮</li><li>工程股在手訂單餘額跌破歷史均值</li></ul></div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+<div class="th-card" id="thc-電網基建">
+  <div class="th-card-header" onclick="toggleTheme('電網基建')">
+    <span class="th-strength" style="background:#22c55e">9/10</span>
+    <span class="th-name">電網基建</span>
+    <div class="th-metrics">
+      <span class="th-metric" style="color:#94a3b8">廣度 29%</span>
+      <span class="th-metric" style="color:#ef4444">20D -4.3%</span>
+      <span class="th-metric" style="color:#ef4444">外資 -4512</span>
+      <span class="th-metric">🟢0🟡2/7</span>
+    </div>
+    <span class="th-toggle" id="thtog-電網基建">▶</span>
+  </div>
+  <div class="th-card-body" id="thbody-電網基建" style="display:none">
+    <div class="th-hyp">台電強韌電網計畫進入交割高峰，疊加美國電網更新帶動變壓器外銷毛利擴張。</div>
+    <div class="th-signals-row">
+      <div class="th-signals-col">
+        <div class="sig-col-label">關鍵訊號（觸發 = 假說兌現）</div>
+        <ul class="sig-list"><li>台電標案公告金額</li><li>美國變壓器進口交期(Lead Time)</li><li>各廠商月營收是否維持雙位數年增</li></ul>
+      </div>
+      <div class="th-signals-col">
+        <div class="exit-sigs"><span class="exit-label">出場留意：</span><ul class="sig-list sig-exit"><li>重電股本益比過高導致評價修正</li><li>台電預算大幅刪減</li></ul></div>
         
       </div>
     </div>
@@ -999,32 +1019,6 @@ footer{text-align:center;color:#8b949e;font-size:12px;margin:24px 0;padding-bott
     </div>
   </div>
 </div>
-<div class="th-card" id="thc-人形機器人供應鏈">
-  <div class="th-card-header" onclick="toggleTheme('人形機器人供應鏈')">
-    <span class="th-strength" style="background:#22c55e">8/10</span>
-    <span class="th-name">人形機器人供應鏈</span>
-    <div class="th-metrics">
-      <span class="th-metric" style="color:#eab308">廣度 44%</span>
-      <span class="th-metric" style="color:#22c55e">20D +12.5%</span>
-      <span class="th-metric" style="color:#ef4444">外資 -4071</span>
-      <span class="th-metric">🟢0🟡4/9</span>
-    </div>
-    <span class="th-toggle" id="thtog-人形機器人供應鏈">▶</span>
-  </div>
-  <div class="th-card-body" id="thbody-人形機器人供應鏈" style="display:none">
-    <div class="th-hyp">因為人形機器人技術拐點出現（Tesla Optimus 量產、Figure 商業部署）加上全球製造業缺工問題惡化，精密減速機、伺服馬達、力矩感測器需求爆發性成長…</div>
-    <div class="th-signals-row">
-      <div class="th-signals-col">
-        <div class="sig-col-label">關鍵訊號（觸發 = 假說兌現）</div>
-        <ul class="sig-list"><li>A｜Tesla Optimus 公布量產出貨數字或新客戶</li><li>A｜台灣精密機械廠接獲機器人相關訂單（法說會）</li><li>E｜全球減速機交期拉長（Nabtesco、Harmonic Drive 滿載）</li><li>B｜美國/日本政府機器人產業補貼政策落地</li></ul>
-      </div>
-      <div class="th-signals-col">
-        <div class="exit-sigs"><span class="exit-label">出場留意：</span><ul class="sig-list sig-exit"><li>台股機器人概念股廣度 &gt; 65% 且持續 3 日</li><li>Tesla Optimus 量產利多充分反映（個股普遍漲 30%+）</li></ul></div>
-        <div class="news-row">📰 挑戰 NVIDIA Jetson！高通發表新機器人開發者平台，能複製車用市場成功劇本嗎？ | TechOran…  <span class="news-date">2026-04-26</span></div>
-      </div>
-    </div>
-  </div>
-</div>
 <div class="th-card" id="thc-高階被動元件">
   <div class="th-card-header" onclick="toggleTheme('高階被動元件')">
     <span class="th-strength" style="background:#22c55e">8/10</span>
@@ -1047,6 +1041,32 @@ footer{text-align:center;color:#8b949e;font-size:12px;margin:24px 0;padding-bott
       <div class="th-signals-col">
         <div class="exit-sigs"><span class="exit-label">出場留意：</span><ul class="sig-list sig-exit"><li>終端消費電子需求大幅崩壞拖累產能利用率</li><li>AI資本支出明顯放緩</li></ul></div>
         
+      </div>
+    </div>
+  </div>
+</div>
+<div class="th-card" id="thc-人形機器人供應鏈">
+  <div class="th-card-header" onclick="toggleTheme('人形機器人供應鏈')">
+    <span class="th-strength" style="background:#22c55e">8/10</span>
+    <span class="th-name">人形機器人供應鏈</span>
+    <div class="th-metrics">
+      <span class="th-metric" style="color:#eab308">廣度 44%</span>
+      <span class="th-metric" style="color:#22c55e">20D +12.5%</span>
+      <span class="th-metric" style="color:#ef4444">外資 -4071</span>
+      <span class="th-metric">🟢0🟡4/9</span>
+    </div>
+    <span class="th-toggle" id="thtog-人形機器人供應鏈">▶</span>
+  </div>
+  <div class="th-card-body" id="thbody-人形機器人供應鏈" style="display:none">
+    <div class="th-hyp">因為人形機器人技術拐點出現（Tesla Optimus 量產、Figure 商業部署）加上全球製造業缺工問題惡化，精密減速機、伺服馬達、力矩感測器需求爆發性成長…</div>
+    <div class="th-signals-row">
+      <div class="th-signals-col">
+        <div class="sig-col-label">關鍵訊號（觸發 = 假說兌現）</div>
+        <ul class="sig-list"><li>A｜Tesla Optimus 公布量產出貨數字或新客戶</li><li>A｜台灣精密機械廠接獲機器人相關訂單（法說會）</li><li>E｜全球減速機交期拉長（Nabtesco、Harmonic Drive 滿載）</li><li>B｜美國/日本政府機器人產業補貼政策落地</li></ul>
+      </div>
+      <div class="th-signals-col">
+        <div class="exit-sigs"><span class="exit-label">出場留意：</span><ul class="sig-list sig-exit"><li>台股機器人概念股廣度 &gt; 65% 且持續 3 日</li><li>Tesla Optimus 量產利多充分反映（個股普遍漲 30%+）</li></ul></div>
+        <div class="news-row">📰 挑戰 NVIDIA Jetson！高通發表新機器人開發者平台，能複製車用市場成功劇本嗎？ | TechOran…  <span class="news-date">2026-04-26</span></div>
       </div>
     </div>
   </div>
@@ -1259,6 +1279,32 @@ footer{text-align:center;color:#8b949e;font-size:12px;margin:24px 0;padding-bott
     </div>
   </div>
 </div>
+<div class="th-card" id="thc-網通檢測轉單">
+  <div class="th-card-header" onclick="toggleTheme('網通檢測轉單')">
+    <span class="th-strength" style="background:#22c55e">8/10</span>
+    <span class="th-name">網通檢測轉單</span>
+    <div class="th-metrics">
+      <span class="th-metric" style="color:#94a3b8">廣度 0%</span>
+      <span class="th-metric" style="color:#ef4444">20D -11.6%</span>
+      <span class="th-metric" style="color:#22c55e">外資 +764</span>
+      <span class="th-metric">🟢0🟡0/3</span>
+    </div>
+    <span class="th-toggle" id="thtog-網通檢測轉單">▶</span>
+  </div>
+  <div class="th-card-body" id="thbody-網通檢測轉單" style="display:none">
+    <div class="th-hyp">WiFi 7 技術升級與地緣政治安全限制，迫使全球網通大廠將檢測訂單由中國實驗室轉向台灣，帶動具備先進頻譜檢測能力之廠商進入獲利爆發期。</div>
+    <div class="th-signals-row">
+      <div class="th-signals-col">
+        <div class="sig-col-label">關鍵訊號（觸發 = 假說兌現）</div>
+        <ul class="sig-list"><li>WiFi 7 終端滲透率突破 15%</li><li>美國 FCC 對特定國別實驗室認證權限之限縮政策</li><li>耕興單月營收 YOY 連續三個月翻正向上</li></ul>
+      </div>
+      <div class="th-signals-col">
+        <div class="exit-sigs"><span class="exit-label">出場留意：</span><ul class="sig-list sig-exit"><li>6G 標準制定延遲導致換機空窗期</li><li>同業（如財團法人）惡性削價競爭導致毛利率跌破 40%</li></ul></div>
+        
+      </div>
+    </div>
+  </div>
+</div>
 <div class="th-card" id="thc-OpenAI硬體終端">
   <div class="th-card-header" onclick="toggleTheme('OpenAI硬體終端')">
     <span class="th-strength" style="background:#22c55e">8/10</span>
@@ -1280,32 +1326,6 @@ footer{text-align:center;color:#8b949e;font-size:12px;margin:24px 0;padding-bott
       </div>
       <div class="th-signals-col">
         <div class="exit-sigs"><span class="exit-label">出場留意：</span><ul class="sig-list sig-exit"><li>OpenAI 放棄實體硬體開發計畫</li><li>合作開發對象完全轉向非台系晶片廠</li></ul></div>
-        
-      </div>
-    </div>
-  </div>
-</div>
-<div class="th-card" id="thc-無人機供應鏈">
-  <div class="th-card-header" onclick="toggleTheme('無人機供應鏈')">
-    <span class="th-strength" style="background:#22c55e">8/10</span>
-    <span class="th-name">無人機供應鏈</span>
-    <div class="th-metrics">
-      <span class="th-metric" style="color:#94a3b8">廣度 0%</span>
-      <span class="th-metric" style="color:#ef4444">20D -10.7%</span>
-      <span class="th-metric" style="color:#ef4444">外資 -2044</span>
-      <span class="th-metric">🟢0🟡0/5</span>
-    </div>
-    <span class="th-toggle" id="thtog-無人機供應鏈">▶</span>
-  </div>
-  <div class="th-card-body" id="thbody-無人機供應鏈" style="display:none">
-    <div class="th-hyp">地緣政治緊張與去紅色供應鏈浪潮，驅動台灣國防預算擴編及「商規軍用」無人機本土化採購需求大爆發。</div>
-    <div class="th-signals-row">
-      <div class="th-signals-col">
-        <div class="sig-col-label">關鍵訊號（觸發 = 假說兌現）</div>
-        <ul class="sig-list"><li>國防部無人機標案決標公告</li><li>經濟部「軍用商規」無人機量產訂單釋出</li><li>無人機國家隊相關廠商單月營收出現突破性增長</li></ul>
-      </div>
-      <div class="th-signals-col">
-        <div class="exit-sigs"><span class="exit-label">出場留意：</span><ul class="sig-list sig-exit"><li>政府國防預算大幅縮減或專案遞延</li><li>個股於軍方標案競爭落敗或量產進度嚴重落後</li></ul></div>
         
       </div>
     </div>
@@ -1363,27 +1383,27 @@ footer{text-align:center;color:#8b949e;font-size:12px;margin:24px 0;padding-bott
     </div>
   </div>
 </div>
-<div class="th-card" id="thc-網通檢測轉單">
-  <div class="th-card-header" onclick="toggleTheme('網通檢測轉單')">
+<div class="th-card" id="thc-無人機供應鏈">
+  <div class="th-card-header" onclick="toggleTheme('無人機供應鏈')">
     <span class="th-strength" style="background:#22c55e">8/10</span>
-    <span class="th-name">網通檢測轉單</span>
+    <span class="th-name">無人機供應鏈</span>
     <div class="th-metrics">
       <span class="th-metric" style="color:#94a3b8">廣度 0%</span>
-      <span class="th-metric" style="color:#ef4444">20D -11.6%</span>
-      <span class="th-metric" style="color:#22c55e">外資 +764</span>
-      <span class="th-metric">🟢0🟡0/3</span>
+      <span class="th-metric" style="color:#ef4444">20D -10.7%</span>
+      <span class="th-metric" style="color:#ef4444">外資 -2044</span>
+      <span class="th-metric">🟢0🟡0/5</span>
     </div>
-    <span class="th-toggle" id="thtog-網通檢測轉單">▶</span>
+    <span class="th-toggle" id="thtog-無人機供應鏈">▶</span>
   </div>
-  <div class="th-card-body" id="thbody-網通檢測轉單" style="display:none">
-    <div class="th-hyp">WiFi 7 技術升級與地緣政治安全限制，迫使全球網通大廠將檢測訂單由中國實驗室轉向台灣，帶動具備先進頻譜檢測能力之廠商進入獲利爆發期。</div>
+  <div class="th-card-body" id="thbody-無人機供應鏈" style="display:none">
+    <div class="th-hyp">地緣政治緊張與去紅色供應鏈浪潮，驅動台灣國防預算擴編及「商規軍用」無人機本土化採購需求大爆發。</div>
     <div class="th-signals-row">
       <div class="th-signals-col">
         <div class="sig-col-label">關鍵訊號（觸發 = 假說兌現）</div>
-        <ul class="sig-list"><li>WiFi 7 終端滲透率突破 15%</li><li>美國 FCC 對特定國別實驗室認證權限之限縮政策</li><li>耕興單月營收 YOY 連續三個月翻正向上</li></ul>
+        <ul class="sig-list"><li>國防部無人機標案決標公告</li><li>經濟部「軍用商規」無人機量產訂單釋出</li><li>無人機國家隊相關廠商單月營收出現突破性增長</li></ul>
       </div>
       <div class="th-signals-col">
-        <div class="exit-sigs"><span class="exit-label">出場留意：</span><ul class="sig-list sig-exit"><li>6G 標準制定延遲導致換機空窗期</li><li>同業（如財團法人）惡性削價競爭導致毛利率跌破 40%</li></ul></div>
+        <div class="exit-sigs"><span class="exit-label">出場留意：</span><ul class="sig-list sig-exit"><li>政府國防預算大幅縮減或專案遞延</li><li>個股於軍方標案競爭落敗或量產進度嚴重落後</li></ul></div>
         
       </div>
     </div>
@@ -1727,32 +1747,6 @@ footer{text-align:center;color:#8b949e;font-size:12px;margin:24px 0;padding-bott
     </div>
   </div>
 </div>
-<div class="th-card" id="thc-高速銅線傳輸">
-  <div class="th-card-header" onclick="toggleTheme('高速銅線傳輸')">
-    <span class="th-strength" style="background:#ef4444">0/10</span>
-    <span class="th-name">高速銅線傳輸</span>
-    <div class="th-metrics">
-      <span class="th-metric" style="color:#94a3b8">廣度 20%</span>
-      <span class="th-metric" style="color:#ef4444">20D -1.1%</span>
-      <span class="th-metric" style="color:#22c55e">外資 +7505</span>
-      <span class="th-metric">🟢0🟡1/5</span>
-    </div>
-    <span class="th-toggle" id="thtog-高速銅線傳輸">▶</span>
-  </div>
-  <div class="th-card-body" id="thbody-高速銅線傳輸" style="display:none">
-    <div class="th-hyp">次世代 AI 伺服器為解決機櫃內高速互連的功耗與成本瓶頸，大量採用高階主動/被動銅纜（ACC/DAC）取代短距光模組，帶動線纜與連接器規格跳躍式升級。</div>
-    <div class="th-signals-row">
-      <div class="th-signals-col">
-        <div class="sig-col-label">關鍵訊號（觸發 = 假說兌現）</div>
-        <ul class="sig-list"><li>北美雲端巨頭(CSP)的AI資本支出展望</li><li>Nvidia次世代機櫃系統出貨與拉貨進度</li><li>指標股(貿聯、佳必琪)伺服器產品營收佔比與毛利率提升幅度</li></ul>
-      </div>
-      <div class="th-signals-col">
-        <div class="exit-sigs"><span class="exit-label">出場留意：</span><ul class="sig-list sig-exit"><li>矽光子(CPO)技術突破瓶頸，成本大幅下降並成功取代機櫃內短距銅線</li><li>AI伺服器機櫃內部互連架構發生重大改變</li></ul></div>
-        
-      </div>
-    </div>
-  </div>
-</div>
 <div class="th-card" id="thc-CoPoS">
   <div class="th-card-header" onclick="toggleTheme('CoPoS')">
     <span class="th-strength" style="background:#ef4444">0/10</span>
@@ -1774,6 +1768,32 @@ footer{text-align:center;color:#8b949e;font-size:12px;margin:24px 0;padding-bott
       </div>
       <div class="th-signals-col">
         <div class="exit-sigs"><span class="exit-label">出場留意：</span><ul class="sig-list sig-exit"><li>AI 伺服器資本支出顯著下修</li><li>面板級封裝良率因翹曲（Warpage）無法突破</li></ul></div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+<div class="th-card" id="thc-高速銅線傳輸">
+  <div class="th-card-header" onclick="toggleTheme('高速銅線傳輸')">
+    <span class="th-strength" style="background:#ef4444">0/10</span>
+    <span class="th-name">高速銅線傳輸</span>
+    <div class="th-metrics">
+      <span class="th-metric" style="color:#94a3b8">廣度 20%</span>
+      <span class="th-metric" style="color:#ef4444">20D -1.1%</span>
+      <span class="th-metric" style="color:#22c55e">外資 +7505</span>
+      <span class="th-metric">🟢0🟡1/5</span>
+    </div>
+    <span class="th-toggle" id="thtog-高速銅線傳輸">▶</span>
+  </div>
+  <div class="th-card-body" id="thbody-高速銅線傳輸" style="display:none">
+    <div class="th-hyp">次世代 AI 伺服器為解決機櫃內高速互連的功耗與成本瓶頸，大量採用高階主動/被動銅纜（ACC/DAC）取代短距光模組，帶動線纜與連接器規格跳躍式升級。</div>
+    <div class="th-signals-row">
+      <div class="th-signals-col">
+        <div class="sig-col-label">關鍵訊號（觸發 = 假說兌現）</div>
+        <ul class="sig-list"><li>北美雲端巨頭(CSP)的AI資本支出展望</li><li>Nvidia次世代機櫃系統出貨與拉貨進度</li><li>指標股(貿聯、佳必琪)伺服器產品營收佔比與毛利率提升幅度</li></ul>
+      </div>
+      <div class="th-signals-col">
+        <div class="exit-sigs"><span class="exit-label">出場留意：</span><ul class="sig-list sig-exit"><li>矽光子(CPO)技術突破瓶頸，成本大幅下降並成功取代機櫃內短距銅線</li><li>AI伺服器機櫃內部互連架構發生重大改變</li></ul></div>
         
       </div>
     </div>
@@ -1812,11 +1832,13 @@ footer{text-align:center;color:#8b949e;font-size:12px;margin:24px 0;padding-bott
 <section class="strategy" id="sec-chip">
   <div class="sec-header" onclick="toggleSec('chip')">
     <span class="sec-idx">G</span>
-    <span class="sec-title">籌碼精選</span>
+    <div class="sec-title-group">
+      <span class="sec-title">籌碼精選</span>
+      <span class="sec-sub">籌碼集中度最高前 10 支（chip_pipeline 每日計算，7個維度：外資成本帶/法人連買/融資/量縮/營收）。</span>
+    </div>
     <span class="sec-toggle" id="tog-chip">▼</span>
   </div>
   <div class="sec-body" id="body-chip">
-    <div class="sec-desc">籌碼集中度最高前 10 支（chip_pipeline 每日計算，7個維度：外資成本帶/法人連買/融資/量縮/營收）。</div>
     <p class="data-date">資料日期：2026-05-19</p><table><thead><tr><th>股票</th><th>籌碼分</th><th>狀態</th><th>融資比</th><th>外資連買</th><th>法人</th></tr></thead><tbody><tr><td>2481 強茂</td><td style="font-weight:700;color:#059669">10</td><td>🟢 ⭐法人+大戶同步</td><td>18.3%</td><td>0日</td><td><span class="tag tag-blue">法人同步</span></td></tr><tr><td>5425 台半</td><td style="font-weight:700;color:#059669">10</td><td>🟢 ⭐法人+大戶同步</td><td>16.5%</td><td>0日</td><td><span class="tag tag-blue">法人同步</span></td></tr><tr><td>2344 華邦電</td><td style="font-weight:700;color:#059669">10</td><td>🟢 ⭐法人+大戶同步</td><td>13.3%</td><td>0日</td><td><span class="tag tag-blue">法人同步</span></td></tr><tr><td>6509 聚和</td><td style="font-weight:700;color:#059669">10</td><td>🟢 ⭐法人+大戶同步</td><td>9.3%</td><td>0日</td><td><span class="tag tag-blue">法人同步</span></td></tr><tr><td>2481 強茂</td><td style="font-weight:700;color:#059669">10</td><td>🟢 ⭐法人+大戶同步</td><td>18.3%</td><td>0日</td><td><span class="tag tag-blue">法人同步</span></td></tr><tr><td>5425 台半</td><td style="font-weight:700;color:#059669">10</td><td>🟢 ⭐法人+大戶同步</td><td>16.5%</td><td>0日</td><td><span class="tag tag-blue">法人同步</span></td></tr><tr><td>2492 華新科</td><td style="font-weight:700;color:#059669">10</td><td>🟢 ⭐法人+大戶同步</td><td>12.2%</td><td>0日</td><td><span class="tag tag-blue">法人同步</span></td></tr><tr><td>8069 元太</td><td style="font-weight:700;color:#059669">9</td><td>🟢 ⭐法人+大戶同步</td><td>2.2%</td><td>0日</td><td><span class="tag tag-blue">法人同步</span></td></tr></tbody></table>
     
   </div>
@@ -1824,11 +1846,13 @@ footer{text-align:center;color:#8b949e;font-size:12px;margin:24px 0;padding-bott
 <section class="strategy" id="sec-smartmoney">
   <div class="sec-header" onclick="toggleSec('smartmoney')">
     <span class="sec-idx">H</span>
-    <span class="sec-title">SmartMoney 鯨魚雷達</span>
+    <div class="sec-title-group">
+      <span class="sec-title">SmartMoney 鯨魚雷達</span>
+      <span class="sec-sub">全市場大戶布局分數（predict/smart_money.py，分數 ≥ 40 的標的值得重點追蹤）。</span>
+    </div>
     <span class="sec-toggle" id="tog-smartmoney">▼</span>
   </div>
   <div class="sec-body" id="body-smartmoney">
-    <div class="sec-desc">全市場大戶布局分數（predict/smart_money.py，分數 ≥ 40 的標的值得重點追蹤）。</div>
     <table><thead><tr><th>股票</th><th>SmartMoney分</th><th>收盤</th><th>成本/法人/量/營收</th><th>外資連買</th><th>特徵</th></tr></thead><tbody><tr><td><input type="checkbox" class="watch-check" data-id="sm_6123"><label>6123 上奇</label></td><td style="font-weight:700;color:#059669">79</td><td>44.2</td><td style="color:#64748b;font-size:12px">25/8/15/5</td><td>3日</td><td><span class="tag tag-blue">成本撐</span><span class="tag tag-blue">營收↑</span><span class="tag tag-blue">MA↑</span></td></tr><tr><td><input type="checkbox" class="watch-check" data-id="sm_6526"><label>6526 達發</label></td><td style="font-weight:700;color:#059669">77</td><td>647.0</td><td style="color:#64748b;font-size:12px">25/0/12/10</td><td>0日</td><td><span class="tag tag-blue">成本撐</span><span class="tag tag-blue">營收↑</span><span class="tag tag-blue">MA↑</span></td></tr><tr><td><input type="checkbox" class="watch-check" data-id="sm_2401"><label>2401 凌陽</label></td><td style="font-weight:700;color:#059669">77</td><td>25.0</td><td style="color:#64748b;font-size:12px">25/0/12/10</td><td>0日</td><td><span class="tag tag-blue">成本撐</span><span class="tag tag-blue">營收↑</span><span class="tag tag-blue">MA↑</span></td></tr><tr><td><input type="checkbox" class="watch-check" data-id="sm_2451"><label>2451 創見</label></td><td style="font-weight:700;color:#059669">77</td><td>306.5</td><td style="color:#64748b;font-size:12px">25/0/12/10</td><td>0日</td><td><span class="tag tag-blue">成本撐</span><span class="tag tag-blue">營收↑</span><span class="tag tag-blue">MA↑</span></td></tr><tr><td><input type="checkbox" class="watch-check" data-id="sm_6020"><label>6020 大展證</label></td><td style="font-weight:700;color:#059669">75</td><td>21.3</td><td style="color:#64748b;font-size:12px">25/3/15/10</td><td>2日</td><td><span class="tag tag-blue">成本撐</span><span class="tag tag-blue">營收↑</span><span class="tag tag-blue">MA↑</span></td></tr><tr><td><input type="checkbox" class="watch-check" data-id="sm_4563"><label>4563 百德</label></td><td style="font-weight:700;color:#059669">73</td><td>47.8</td><td style="color:#64748b;font-size:12px">25/0/12/10</td><td>-1日</td><td><span class="tag tag-blue">成本撐</span><span class="tag tag-blue">營收↑</span><span class="tag tag-blue">MA↑</span></td></tr><tr><td><input type="checkbox" class="watch-check" data-id="sm_6113"><label>6113 亞矽</label></td><td style="font-weight:700;color:#059669">73</td><td>24.2</td><td style="color:#64748b;font-size:12px">25/8/7/3</td><td>3日</td><td><span class="tag tag-blue">成本撐</span><span class="tag tag-blue">MA↑</span></td></tr><tr><td><input type="checkbox" class="watch-check" data-id="sm_8162"><label>8162 微矽電子-創</label></td><td style="font-weight:700;color:#059669">73</td><td>53.5</td><td style="color:#64748b;font-size:12px">25/0/12/10</td><td>0日</td><td><span class="tag tag-blue">成本撐</span><span class="tag tag-blue">營收↑</span><span class="tag tag-blue">MA↑</span></td></tr><tr><td><input type="checkbox" class="watch-check" data-id="sm_6609"><label>6609 瀧澤科</label></td><td style="font-weight:700;color:#059669">73</td><td>42.2</td><td style="color:#64748b;font-size:12px">25/0/12/10</td><td>-1日</td><td><span class="tag tag-blue">成本撐</span><span class="tag tag-blue">營收↑</span><span class="tag tag-blue">MA↑</span></td></tr><tr><td><input type="checkbox" class="watch-check" data-id="sm_3597"><label>3597 映興</label></td><td style="font-weight:700;color:#059669">72</td><td>26.2</td><td style="color:#64748b;font-size:12px">25/8/7/10</td><td>3日</td><td><span class="tag tag-blue">成本撐</span><span class="tag tag-blue">營收↑</span><span class="tag tag-blue">MA↑</span></td></tr></tbody></table>
     
   </div>
@@ -1836,11 +1860,13 @@ footer{text-align:center;color:#8b949e;font-size:12px;margin:24px 0;padding-bott
 <section class="strategy" id="sec-trade_journal">
   <div class="sec-header" onclick="toggleSec('trade_journal')">
     <span class="sec-idx">I</span>
-    <span class="sec-title">近期交易記錄</span>
+    <div class="sec-title-group">
+      <span class="sec-title">近期交易記錄</span>
+      <span class="sec-sub">最近 10 筆已完成交易，含進出場訊號與假說驗證。</span>
+    </div>
     <span class="sec-toggle" id="tog-trade_journal">▼</span>
   </div>
   <div class="sec-body" id="body-trade_journal">
-    <div class="sec-desc">最近 10 筆已完成交易，含進出場訊號與假說驗證。</div>
     <p class="empty">trade_journal.csv 無已完成交易記錄</p>
     
   </div>
@@ -1848,11 +1874,13 @@ footer{text-align:center;color:#8b949e;font-size:12px;margin:24px 0;padding-bott
 <section class="strategy" id="sec-events">
   <div class="sec-header" onclick="toggleSec('events')">
     <span class="sec-idx">J</span>
-    <span class="sec-title">事件驅動</span>
+    <div class="sec-title-group">
+      <span class="sec-title">事件驅動</span>
+      <span class="sec-sub">PEAD 財報動能 / 月營收加速 / 展會佈局訊號。</span>
+    </div>
     <span class="sec-toggle" id="tog-events">▼</span>
   </div>
   <div class="sec-body" id="body-events">
-    <div class="sec-desc">PEAD 財報動能 / 月營收加速 / 展會佈局訊號。</div>
     <div class="ev-block"><div class="ev-hdr ev-purple">🏛️ 展會 — 即將活躍</div><div class="ev-show">⚡ D+ 0 <b>SEMICON Taiwan 2026預熱</b> （5 支）</div><div class="ev-show">⚡ D+ 5 <b>COMPUTEX Taipei 2026前哨</b> （7 支）</div><div class="ev-show">⚡ D+13 <b>COMPUTEX Taipei 2026</b> （14 支）</div></div>
     
   </div>
@@ -1860,11 +1888,13 @@ footer{text-align:center;color:#8b949e;font-size:12px;margin:24px 0;padding-bott
 <section class="strategy" id="sec-news">
   <div class="sec-header" onclick="toggleSec('news')">
     <span class="sec-idx">K</span>
-    <span class="sec-title">財經快訊</span>
+    <div class="sec-title-group">
+      <span class="sec-title">財經快訊</span>
+      <span class="sec-sub">今日台股/總經相關新聞（news_pool.csv 最新一日）。</span>
+    </div>
     <span class="sec-toggle" id="tog-news">▼</span>
   </div>
   <div class="sec-body" id="body-news">
-    <div class="sec-desc">今日台股/總經相關新聞（news_pool.csv 最新一日）。</div>
     <div class="ni"><a class="ni-title" href="https://news.cnyes.com/news/id/6463861" target="_blank" rel="noopener">〈ETF成分股調整〉00940換血！台新新光、凱基金等10檔入列 剔除第一大持股長榮</a><span class="ni-time">2026-05-19</span></div><div class="ni"><a class="ni-title" href="https://news.cnyes.com/news/id/6463860" target="_blank" rel="noopener">鉅亨速報 - Factset 最新調查：中鋼(2002-TW)EPS預估上修至0.09元，預估目標價為22元</a><span class="ni-time">2026-05-19</span></div><div class="ni"><a class="ni-title" href="https://news.cnyes.com/news/id/6463852" target="_blank" rel="noopener">你的持股換隊伍了？13家上櫃公司6/1齊「變身」3家轉電機機械類股</a><span class="ni-time">2026-05-19</span></div><div class="ni"><a class="ni-title" href="https://news.cnyes.com/news/id/6463836" target="_blank" rel="noopener">〈華夏法說〉Q2 PVC產銷恐下滑 但毛利率提升有利接單 外銷拓展中南美洲市場</a><span class="ni-time">2026-05-19</span></div><div class="ni"><a class="ni-title" href="https://news.cnyes.com/news/id/6463837" target="_blank" rel="noopener">羅昇自結4月純益年增75% EPS0.18元</a><span class="ni-time">2026-05-19</span></div><div class="ni"><a class="ni-title" href="https://news.cnyes.com/news/id/6463839" target="_blank" rel="noopener">台股太熱引發期貨商資本告急？金管會：14家全合規 10家超前部署現增發債</a><span class="ni-time">2026-05-19</span></div><div class="ni"><a class="ni-title" href="https://news.cnyes.com/news/id/6463807" target="_blank" rel="noopener">台股3天跌掉1576點 金管會信心喊話：基本面仍穩健、信用擔保無異常</a><span class="ni-time">2026-05-19</span></div><div class="ni"><a class="ni-title" href="https://news.cnyes.com/news/id/6463818" target="_blank" rel="noopener">證券業首見 國泰證取得ISO 27017雲端服務資安認證</a><span class="ni-time">2026-05-19</span></div>
     
   </div>
@@ -1872,11 +1902,13 @@ footer{text-align:center;color:#8b949e;font-size:12px;margin:24px 0;padding-bott
 <section class="strategy" id="sec-econ">
   <div class="sec-header" onclick="toggleSec('econ')">
     <span class="sec-idx">L</span>
-    <span class="sec-title">經濟日曆</span>
+    <div class="sec-title-group">
+      <span class="sec-title">經濟日曆</span>
+      <span class="sec-sub">本週高/中影響國際經濟事件及台股潛在衝擊。</span>
+    </div>
     <span class="sec-toggle" id="tog-econ">▼</span>
   </div>
   <div class="sec-body" id="body-econ">
-    <div class="sec-desc">本週高/中影響國際經濟事件及台股潛在衝擊。</div>
     <p class="empty">本週無高/中影響事件（或資料取得失敗）</p>
     
   </div>
@@ -1884,12 +1916,14 @@ footer{text-align:center;color:#8b949e;font-size:12px;margin:24px 0;padding-bott
 <section class="strategy" id="sec-sentiment">
   <div class="sec-header" onclick="toggleSec('sentiment')">
     <span class="sec-idx">M</span>
-    <span class="sec-title">市場情緒</span>
+    <div class="sec-title-group">
+      <span class="sec-title">市場情緒</span>
+      <span class="sec-sub">財經媒體多空氣氛量化指標（Yahoo股市 + Stockfeel）。</span>
+    </div>
     <span class="sec-toggle" id="tog-sentiment">▼</span>
   </div>
   <div class="sec-body" id="body-sentiment">
-    <div class="sec-desc">財經媒體多空氣氛量化指標（Yahoo股市 + Stockfeel）。</div>
-    <div class="sent-block"><div class="sent-title">財經媒體情緒 <span class="sent-label">偏多 🟢</span></div><div class="sent-bar-bg"><div class="sent-bar-fill" style="width:73%;background:#22c55e"></div></div><div class="sent-score">73% 偏多訊號</div></div>
+    <div class="sent-block"><div class="sent-title">財經媒體情緒 <span class="sent-label">偏多 🟢</span></div><div class="sent-bar-bg"><div class="sent-bar-fill" style="width:74%;background:#22c55e"></div></div><div class="sent-score">74% 偏多訊號</div></div>
     
   </div>
 </section>
@@ -1914,7 +1948,7 @@ footer{text-align:center;color:#8b949e;font-size:12px;margin:24px 0;padding-bott
 </div>
 
 <footer>
-  生成時間：2026-05-20 15:16:46 &nbsp;|&nbsp; build_overview.py
+  生成時間：2026-05-20 15:27:02 &nbsp;|&nbsp; build_overview.py
 </footer>
 
 <script>
