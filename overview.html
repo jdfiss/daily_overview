@@ -4,142 +4,229 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>每日選股總覽 2026-05-20</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
 <style>
+:root{
+  --bg:#07090d;--surf:#0e1318;--surf2:#141c24;--surf3:#1b2533;
+  --bd:#1e2937;--bd2:#2a3a50;
+  --tx:#dde4ee;--muted:#566a82;--muted2:#7a94af;
+  --sky:#38bdf8;--green:#34d399;--red:#f87171;--amber:#fbbf24;--purple:#a78bfa;
+}
 *{box-sizing:border-box;margin:0;padding:0}
-body{background:#0d1117;color:#e6edf3;font-family:'Segoe UI','PingFang TC','Microsoft JhengHei',sans-serif;font-size:17px;line-height:1.6}
-a{color:#58a6ff;text-decoration:none}
+body{background:var(--bg);color:var(--tx);font-family:'DM Sans','PingFang TC','Microsoft JhengHei',sans-serif;font-size:15px;line-height:1.65}
+.mono{font-family:'IBM Plex Mono','Courier New',monospace}
+a{color:var(--sky);text-decoration:none}
 a:hover{text-decoration:underline}
-header{background:#161b22;border-bottom:1px solid #30363d;padding:16px 24px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
-.hdr-date{font-size:20px;font-weight:700;color:#e6edf3}
-main{max-width:1100px;margin:0 auto;padding:20px 16px}
-.macro-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:10px;margin-bottom:24px}
-.mc{background:#161b22;border:1px solid #30363d;border-radius:8px;padding:12px 14px}
-.mc-label{font-size:12px;color:#8b949e;text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px}
-.mc-val{font-size:16px;font-weight:600}
-.strategy{background:#161b22;border:1px solid #30363d;border-radius:10px;margin-bottom:14px;overflow:hidden}
-.sec-header{display:flex;align-items:center;gap:10px;padding:14px 18px;cursor:pointer;user-select:none}
-.sec-header:hover{background:#21262d}
-.sec-idx{background:rgba(88,166,255,0.15);color:#58a6ff;border-radius:6px;padding:2px 8px;font-size:13px;font-weight:700}
+
+header{
+  background:var(--surf);
+  border-bottom:1px solid var(--bd);
+  padding:16px 28px;
+  display:flex;align-items:center;gap:16px;flex-wrap:wrap;
+  position:sticky;top:0;z-index:100;
+  backdrop-filter:blur(12px);
+}
+.hdr-date{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:20px;font-weight:600;color:var(--tx);
+  letter-spacing:-0.5px;
+}
+.hdr-pill{
+  background:rgba(56,189,248,.1);border:1px solid rgba(56,189,248,.25);
+  color:var(--sky);padding:3px 12px;border-radius:20px;
+  font-size:11px;font-weight:600;letter-spacing:.6px;text-transform:uppercase;
+}
+
+main{max-width:1120px;margin:0 auto;padding:24px 16px}
+
+.macro-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(158px,1fr));gap:10px;margin-bottom:28px}
+.mc{
+  background:var(--surf);border:1px solid var(--bd);border-radius:11px;padding:14px 16px;
+  position:relative;overflow:hidden;transition:border-color .2s;
+}
+.mc::after{
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,var(--sky) 0%,transparent 100%);opacity:.6;
+}
+.mc:hover{border-color:var(--bd2)}
+.mc-label{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.9px;margin-bottom:6px;font-weight:600}
+.mc-val{font-size:19px;font-weight:700;font-family:'IBM Plex Mono',monospace;letter-spacing:-.5px}
+
+.strategy{
+  background:var(--surf);border:1px solid var(--bd);border-radius:12px;
+  margin-bottom:10px;overflow:hidden;
+  transition:border-color .2s,box-shadow .2s;
+}
+.strategy:hover{border-color:var(--bd2);box-shadow:0 6px 28px rgba(0,0,0,.35)}
+
+.sec-header{
+  display:flex;align-items:center;gap:14px;padding:15px 20px;
+  cursor:pointer;user-select:none;
+  border-left:3px solid transparent;transition:background .15s,border-color .15s;
+}
+.sec-header:hover{background:var(--surf2);border-left-color:var(--sky)}
+
+.sec-idx{
+  background:rgba(56,189,248,.1);color:var(--sky);
+  border:1px solid rgba(56,189,248,.22);border-radius:7px;
+  padding:3px 10px;font-size:12px;font-weight:700;
+  font-family:'IBM Plex Mono',monospace;min-width:34px;text-align:center;
+}
 .sec-title-group{flex:1;display:flex;flex-direction:column;gap:3px}
-.sec-title{font-size:17px;font-weight:600;color:#e6edf3}
-.sec-sub{font-size:13px;color:#8b949e;line-height:1.4}
-.sec-toggle{color:#8b949e;font-size:13px;transition:.2s}
-.sec-body{padding:0 18px 18px}
-.data-date{font-size:13px;color:#8b949e;margin-bottom:8px;padding-top:4px}
-.empty{color:#8b949e;font-style:italic;padding:8px 0}
-table{width:100%;border-collapse:collapse;font-size:15px;margin-top:4px}
-thead tr{background:#21262d}
-th{padding:8px 10px;text-align:left;color:#8b949e;font-weight:600;font-size:13px;white-space:nowrap;border-bottom:1px solid #30363d}
-td{padding:7px 10px;border-top:1px solid #30363d;vertical-align:top}
-tr:hover td{background:#21262d}
-tr.checked td{background:rgba(34,197,94,0.08)}
-tr.checked td:first-child label{text-decoration:line-through;opacity:.6}
-.sig-cell{font-size:13px;color:#8b949e;max-width:260px;word-break:break-word}
-input[type=checkbox]{width:16px;height:16px;accent-color:#58a6ff;margin-right:6px;cursor:pointer;vertical-align:middle}
-label{cursor:pointer;vertical-align:middle}
-.tag{display:inline-block;background:#21262d;border:1px solid #30363d;border-radius:4px;padding:1px 6px;font-size:12px;margin:1px 3px 1px 0;color:#8b949e}
-.tag-green{background:rgba(34,197,94,0.15);border-color:rgba(34,197,94,0.4);color:#22c55e}
-.tag-blue{background:rgba(88,166,255,0.15);border-color:rgba(88,166,255,0.4);color:#58a6ff}
-.badge-new{display:inline-block;background:rgba(34,197,94,0.15);color:#22c55e;border:1px solid rgba(34,197,94,0.4);border-radius:4px;padding:2px 8px;font-size:12px;margin-bottom:8px}
-.badge-label{color:#8b949e;font-size:12px;margin-right:6px}
-.active-row{margin-top:10px;padding:8px 0;border-top:1px solid #30363d}
+.sec-title{font-size:15px;font-weight:600;color:var(--tx)}
+.sec-sub{font-size:12px;color:var(--muted2);line-height:1.45}
+.sec-toggle{color:var(--muted);font-size:13px;transition:transform .2s;flex-shrink:0}
+
+.sec-body{padding:0 20px 20px;border-top:1px solid var(--bd)}
+
+.data-date{font-size:12px;color:var(--muted);margin-bottom:10px;padding-top:12px;font-family:'IBM Plex Mono',monospace}
+.empty{color:var(--muted);font-style:italic;padding:18px 0;font-size:14px}
+
+table{width:100%;border-collapse:collapse;font-size:14px;margin-top:10px}
+thead tr{background:var(--surf2)}
+th{
+  padding:9px 12px;text-align:left;color:var(--muted);font-weight:600;
+  font-size:10px;white-space:nowrap;border-bottom:1px solid var(--bd2);
+  text-transform:uppercase;letter-spacing:.7px;
+}
+td{padding:9px 12px;border-top:1px solid var(--bd);vertical-align:middle}
+tbody tr:hover td{background:var(--surf2)}
+tr.checked td{background:rgba(52,211,153,.07)}
+tr.checked td:first-child label{text-decoration:line-through;opacity:.5}
+
+.sig-cell{font-size:12px;color:var(--muted2);max-width:260px;word-break:break-word}
+
+input[type=checkbox]{width:14px;height:14px;accent-color:var(--sky);margin-right:8px;cursor:pointer;vertical-align:middle}
+label{cursor:pointer;vertical-align:middle;font-weight:500}
+
+.tag{display:inline-block;background:var(--surf2);border:1px solid var(--bd2);border-radius:5px;padding:1px 7px;font-size:11px;margin:1px 3px 1px 0;color:var(--muted2)}
+.tag-green{background:rgba(52,211,153,.1);border-color:rgba(52,211,153,.3);color:var(--green)}
+.tag-blue{background:rgba(56,189,248,.1);border-color:rgba(56,189,248,.3);color:var(--sky)}
+
+.badge-new{display:inline-block;background:rgba(52,211,153,.1);color:var(--green);border:1px solid rgba(52,211,153,.3);border-radius:20px;padding:2px 12px;font-size:11px;font-weight:600;margin-bottom:10px}
+.badge-label{color:var(--muted);font-size:11px;margin-right:6px}
+
+.active-row{margin-top:10px;padding:8px 0;border-top:1px solid var(--bd)}
 .theme-group{margin-bottom:12px}
-.theme-name{font-size:13px;font-weight:600;color:#58a6ff;margin-bottom:4px;padding:4px 0}
-.my-view{margin-top:12px;padding:10px 14px;background:#21262d;border-left:3px solid #58a6ff;border-radius:0 6px 6px 0;font-size:13px}
-.my-view-label{color:#58a6ff;font-weight:600;margin-right:6px}
-.th-overview{display:flex;flex-direction:column;gap:6px}
-.th-card{background:#161b22;border:1px solid #30363d;border-radius:8px;overflow:hidden}
-.th-card-header{display:flex;align-items:center;gap:10px;padding:10px 14px;cursor:pointer;user-select:none;flex-wrap:wrap}
-.th-card-header:hover{background:#21262d}
-.th-strength{font-size:11px;font-weight:700;color:#ffffff;padding:2px 7px;border-radius:4px;white-space:nowrap}
-.th-name{font-size:13px;font-weight:600;color:#e6edf3;flex:1;min-width:120px}
+.theme-name{font-size:13px;font-weight:600;color:var(--sky);margin-bottom:4px;padding:4px 0}
+
+.my-view{margin-top:14px;padding:12px 16px;background:var(--surf2);border-left:3px solid var(--sky);border-radius:0 8px 8px 0;font-size:14px;line-height:1.65}
+.my-view-label{color:var(--sky);font-weight:600;margin-right:8px}
+
+.th-overview{display:flex;flex-direction:column;gap:8px;padding-top:12px}
+.th-card{background:var(--surf2);border:1px solid var(--bd);border-radius:10px;overflow:hidden;transition:border-color .2s}
+.th-card:hover{border-color:var(--bd2)}
+.th-card-header{display:flex;align-items:center;gap:12px;padding:11px 15px;cursor:pointer;user-select:none;flex-wrap:wrap}
+.th-card-header:hover{background:rgba(255,255,255,.03)}
+.th-strength{font-size:11px;font-weight:700;color:#fff;padding:3px 8px;border-radius:6px;white-space:nowrap}
+.th-name{font-size:14px;font-weight:600;color:var(--tx);flex:1;min-width:120px}
 .th-metrics{display:flex;gap:14px;flex-wrap:wrap}
-.th-metric{font-size:12px;white-space:nowrap}
-.th-toggle{color:#8b949e;font-size:11px;margin-left:4px}
-.th-card-body{padding:10px 14px 14px;border-top:1px solid #30363d}
-.th-hyp{font-size:12px;color:#8b949e;margin-bottom:10px;line-height:1.5}
-.th-signals-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.th-metric{font-size:12px;white-space:nowrap;font-family:'IBM Plex Mono',monospace}
+.th-toggle{color:var(--muted);font-size:11px}
+.th-card-body{padding:11px 15px 15px;border-top:1px solid var(--bd)}
+.th-hyp{font-size:13px;color:var(--muted2);margin-bottom:12px;line-height:1.6}
+.th-signals-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 @media(max-width:600px){.th-signals-row{grid-template-columns:1fr}}
 .th-signals-col{}
-.sig-col-label{font-size:11px;color:#58a6ff;font-weight:600;margin-bottom:4px;text-transform:uppercase;letter-spacing:.4px}
-.sig-list{margin:0;padding-left:16px;font-size:12px;color:#8b949e;line-height:1.7}
-.sig-exit{color:#d97706}
-.exit-label{font-size:11px;color:#d97706;font-weight:600;display:block;margin-bottom:4px}
+.sig-col-label{font-size:10px;color:var(--sky);font-weight:700;margin-bottom:5px;text-transform:uppercase;letter-spacing:.7px}
+.sig-list{margin:0;padding-left:16px;font-size:13px;color:var(--muted2);line-height:1.8}
+.sig-exit{color:var(--amber)}
+.exit-label{font-size:10px;color:var(--amber);font-weight:700;display:block;margin-bottom:4px;text-transform:uppercase;letter-spacing:.5px}
 .exit-sigs{margin-bottom:8px}
-.news-row{font-size:11px;color:#8b949e;margin-top:6px;line-height:1.4}
-.news-date{color:#8b949e}
-.macro-view{margin-top:12px;padding:10px 14px;background:#21262d;border-left:3px solid #58a6ff;border-radius:0 6px 6px 0;font-size:13px}
-.summary-section{max-width:1100px;margin:0 auto 32px;padding:0 16px}
-.summary-card{background:#161b22;border:1px solid #30363d;border-radius:12px;padding:20px 24px}
-.summary-title{font-size:16px;font-weight:700;color:#e6edf3;margin-bottom:4px}
-.summary-subtitle{font-size:12px;color:#8b949e;margin-bottom:16px}
-.auto-summary{background:#21262d;border:1px solid #30363d;border-radius:8px;padding:12px 16px;margin-bottom:16px;font-size:13px;line-height:1.8}
-.auto-summary-item{display:flex;gap:8px;align-items:baseline}
-.auto-summary-label{color:#8b949e;min-width:80px;font-size:12px}
-.auto-summary-val{color:#e6edf3}
-.preset-groups{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:12px}
+.news-row{font-size:12px;color:var(--muted);margin-top:8px;line-height:1.5}
+.news-date{color:var(--muted)}
+
+.macro-view{margin-top:14px;padding:12px 16px;background:var(--surf2);border-left:3px solid var(--sky);border-radius:0 8px 8px 0;font-size:14px}
+
+.summary-section{max-width:1120px;margin:0 auto 36px;padding:0 16px}
+.summary-card{background:var(--surf);border:1px solid var(--bd);border-radius:14px;padding:22px 26px}
+.summary-title{font-size:17px;font-weight:700;color:var(--tx);margin-bottom:4px}
+.summary-subtitle{font-size:12px;color:var(--muted);margin-bottom:18px}
+
+.auto-summary{background:var(--surf2);border:1px solid var(--bd);border-radius:10px;padding:14px 18px;margin-bottom:18px;line-height:2}
+.auto-summary-item{display:flex;gap:12px;align-items:baseline}
+.auto-summary-label{color:var(--muted);min-width:90px;font-size:10px;text-transform:uppercase;letter-spacing:.7px;font-weight:600}
+.auto-summary-val{color:var(--tx);font-family:'IBM Plex Mono',monospace;font-size:14px}
+
+.preset-groups{display:flex;gap:20px;flex-wrap:wrap;margin-bottom:14px}
 .preset-group{}
-.preset-group-label{font-size:11px;color:#8b949e;text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px}
+.preset-group-label{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.8px;margin-bottom:8px;font-weight:600}
 .preset-btns{display:flex;gap:6px;flex-wrap:wrap}
-.preset-btn{background:#21262d;border:1px solid #30363d;border-radius:6px;color:#8b949e;font-size:12px;padding:5px 10px;cursor:pointer;transition:.15s}
-.preset-btn:hover{background:rgba(88,166,255,0.15);color:#e6edf3;border-color:#58a6ff}
-.preset-btn-rec{background:rgba(34,197,94,0.15);border-color:rgba(34,197,94,0.4);color:#22c55e;font-weight:600}
-.preset-btn-rec:hover{background:rgba(34,197,94,0.25);border-color:#22c55e;color:#4ade80}
-.summary-textarea{width:100%;background:#21262d;border:1px solid #30363d;border-radius:8px;color:#e6edf3;font-size:13px;font-family:inherit;line-height:1.7;padding:10px 14px;resize:vertical;min-height:100px;outline:none;transition:.15s}
-.summary-textarea:focus{border-color:#58a6ff}
-.summary-footer{display:flex;justify-content:space-between;align-items:center;margin-top:8px}
-.save-status{font-size:11px;color:#8b949e}
-.clear-btn{background:none;border:none;color:#8b949e;font-size:12px;cursor:pointer}
-.clear-btn:hover{color:#ef4444}
-.inst-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.preset-btn{background:var(--surf2);border:1px solid var(--bd2);border-radius:8px;color:var(--muted2);font-size:12px;padding:5px 12px;cursor:pointer;transition:all .15s;font-family:inherit}
+.preset-btn:hover{background:rgba(56,189,248,.1);color:var(--tx);border-color:var(--sky)}
+.preset-btn-rec{background:rgba(52,211,153,.1);border-color:rgba(52,211,153,.3);color:var(--green);font-weight:600}
+.preset-btn-rec:hover{background:rgba(52,211,153,.2);border-color:var(--green);color:#6ee7b7}
+
+.summary-textarea{width:100%;background:var(--surf2);border:1px solid var(--bd2);border-radius:10px;color:var(--tx);font-size:14px;font-family:inherit;line-height:1.8;padding:12px 16px;resize:vertical;min-height:110px;outline:none;transition:border-color .15s,box-shadow .15s}
+.summary-textarea:focus{border-color:var(--sky);box-shadow:0 0 0 3px rgba(56,189,248,.1)}
+.summary-footer{display:flex;justify-content:space-between;align-items:center;margin-top:10px}
+.save-status{font-size:11px;color:var(--muted)}
+.clear-btn{background:none;border:none;color:var(--muted);font-size:12px;cursor:pointer;font-family:inherit}
+.clear-btn:hover{color:var(--red)}
+
+.inst-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
 @media(max-width:640px){.inst-grid{grid-template-columns:1fr}}
-.inst-header{font-size:12px;font-weight:700;color:#58a6ff;margin-bottom:8px;text-transform:uppercase;letter-spacing:.4px}
-.sc-label{font-size:11px;font-weight:700;color:#58a6ff;text-transform:uppercase;letter-spacing:.4px;margin:10px 0 6px}
-.sc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:6px;margin-bottom:8px}
-.sc-cell{border-radius:6px;padding:8px 10px;border:1px solid #30363d}
-.sc-name{font-size:11px;color:#8b949e;margin-bottom:2px}
-.sc-pct{font-size:14px;font-weight:700}
-.ni{padding:8px 0;border-bottom:1px solid #30363d;display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+.inst-header{font-size:10px;font-weight:700;color:var(--sky);margin-bottom:10px;text-transform:uppercase;letter-spacing:.8px}
+
+.sc-label{font-size:10px;font-weight:700;color:var(--sky);text-transform:uppercase;letter-spacing:.8px;margin:12px 0 8px}
+.sc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(115px,1fr));gap:8px;margin-bottom:10px}
+.sc-cell{border-radius:9px;padding:10px 13px;border:1px solid var(--bd);transition:border-color .15s}
+.sc-cell:hover{border-color:var(--bd2)}
+.sc-name{font-size:11px;color:var(--muted);margin-bottom:4px}
+.sc-pct{font-size:16px;font-weight:700;font-family:'IBM Plex Mono',monospace}
+
+.ni{padding:10px 0;border-bottom:1px solid var(--bd);display:flex;justify-content:space-between;align-items:baseline;gap:10px}
 .ni:last-child{border-bottom:none}
-.ni-title{color:#58a6ff;font-size:13px;text-decoration:none;flex:1}
+.ni-title{color:var(--sky);font-size:14px;text-decoration:none;flex:1;line-height:1.4}
 .ni-title:hover{text-decoration:underline}
-.ni-time{font-size:11px;color:#8b949e;white-space:nowrap}
-.ev-block{margin-bottom:12px;padding:10px 12px;background:#21262d;border-radius:8px;border:1px solid #30363d}
-.ev-hdr{font-size:13px;font-weight:700;margin-bottom:6px}
-.ev-red{color:#ef4444}.ev-blue{color:#58a6ff}.ev-purple{color:#a78bfa}
-.ev-sub{font-size:11px;color:#8b949e;margin-bottom:6px}
-.ev-tag{display:inline-block;margin:3px 6px 3px 0;padding:3px 8px;background:#161b22;border:1px solid #30363d;border-radius:4px;font-size:12px}
-.ev-show{font-size:12px;color:#8b949e;padding:3px 0}
-.ec-orig{font-size:11px;color:#8b949e}
-.ec-note{font-size:11px;color:#8b949e;max-width:200px;word-break:break-word}
+.ni-time{font-size:11px;color:var(--muted);white-space:nowrap;font-family:'IBM Plex Mono',monospace}
+
+.ev-block{margin-bottom:12px;padding:12px 15px;background:var(--surf2);border-radius:10px;border:1px solid var(--bd)}
+.ev-hdr{font-size:14px;font-weight:700;margin-bottom:6px}
+.ev-red{color:var(--red)}.ev-blue{color:var(--sky)}.ev-purple{color:var(--purple)}
+.ev-sub{font-size:12px;color:var(--muted);margin-bottom:8px}
+.ev-tag{display:inline-block;margin:3px 6px 3px 0;padding:3px 10px;background:var(--surf);border:1px solid var(--bd);border-radius:6px;font-size:12px}
+.ev-show{font-size:13px;color:var(--muted);padding:3px 0}
+.ec-orig{font-size:12px;color:var(--muted)}
+.ec-note{font-size:12px;color:var(--muted);max-width:220px;word-break:break-word}
+
 .sent-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 @media(max-width:640px){.sent-grid{grid-template-columns:1fr}}
-.sent-block{background:#161b22;border:1px solid #30363d;border-radius:8px;padding:12px 14px}
-.sent-title{font-size:13px;font-weight:600;color:#e6edf3;margin-bottom:8px}
-.sent-label{font-size:12px;font-weight:400;color:#8b949e;margin-left:6px}
-.sent-bar-bg{height:8px;background:#21262d;border-radius:4px;overflow:hidden;margin-bottom:4px}
-.sent-bar-fill{height:100%;border-radius:4px;transition:.3s}
-.sent-score{font-size:12px;color:#8b949e;margin-bottom:8px}
-.sent-posts{border-top:1px solid #30363d;padding-top:8px}
-.sent-post{font-size:11px;color:#8b949e;padding:2px 0;border-bottom:1px solid #21262d;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
-footer{text-align:center;color:#8b949e;font-size:12px;margin:24px 0;padding-bottom:40px}
-.arch-section{background:#161b22;border:1px solid #30363d;border-radius:12px;padding:20px 24px;margin-bottom:16px}
-.arch-title{font-size:15px;font-weight:700;color:#e6edf3;margin-bottom:16px}
-.arch-layer{border-radius:8px;padding:10px 16px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
-.arch-layer-label{font-size:13px;font-weight:700;color:#e6edf3;min-width:100px;white-space:nowrap}
+.sent-block{background:var(--surf2);border:1px solid var(--bd);border-radius:10px;padding:14px 16px}
+.sent-title{font-size:14px;font-weight:600;color:var(--tx);margin-bottom:10px}
+.sent-label{font-size:12px;color:var(--muted);margin-left:6px}
+.sent-bar-bg{height:5px;background:var(--surf3);border-radius:3px;overflow:hidden;margin-bottom:6px}
+.sent-bar-fill{height:100%;border-radius:3px;transition:width .4s ease}
+.sent-score{font-size:12px;color:var(--muted);margin-bottom:10px;font-family:'IBM Plex Mono',monospace}
+.sent-posts{border-top:1px solid var(--bd);padding-top:10px}
+.sent-post{font-size:12px;color:var(--muted);padding:3px 0;border-bottom:1px solid var(--surf3);overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+
+footer{text-align:center;color:var(--muted);font-size:12px;margin:32px 0;padding-bottom:48px;font-family:'IBM Plex Mono',monospace}
+
+.arch-section{background:var(--surf);border:1px solid var(--bd);border-radius:14px;padding:20px 24px;margin-bottom:16px}
+.arch-title{font-size:15px;font-weight:700;color:var(--tx);margin-bottom:16px}
+.arch-layer{border-radius:9px;padding:11px 16px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.arch-layer-label{font-size:13px;font-weight:700;color:var(--tx);min-width:110px;white-space:nowrap}
 .arch-badges{display:flex;flex-wrap:wrap;gap:6px}
-.arch-badge{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:4px;padding:3px 10px;font-size:12px;color:#e6edf3}
-.arch-badge-strat{font-weight:600;color:#e6edf3}
-.arch-badge-strat small{font-weight:400;color:#8b949e;margin-left:4px}
-.arch-arrow{text-align:center;color:#8b949e;font-size:16px;margin:4px 0}
-.perf-section{margin-bottom:16px}
-.perf-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.arch-badge{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.11);border-radius:6px;padding:4px 12px;font-size:12px;color:var(--tx)}
+.arch-badge-strat{font-weight:600;color:var(--tx)}
+.arch-badge-strat small{font-weight:400;color:var(--muted);margin-left:4px}
+.arch-arrow{text-align:center;color:var(--muted);font-size:18px;margin:5px 0}
+
+.perf-section{margin-bottom:18px}
+.perf-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
 @media(max-width:700px){.perf-grid{grid-template-columns:repeat(2,1fr)}}
-.perf-card{background:#161b22;border:1px solid #30363d;border-radius:10px;padding:14px 16px}
-.perf-name{font-size:13px;font-weight:700;color:#e6edf3;margin-bottom:4px}
-.perf-cagr{font-size:20px;font-weight:800;color:#e6edf3;margin-bottom:2px}
-.perf-detail{font-size:11px;color:#8b949e;margin-bottom:4px}
+.perf-card{
+  background:var(--surf);border:1px solid var(--bd);border-radius:12px;padding:16px 18px;
+  transition:border-color .2s,transform .2s;
+}
+.perf-card:hover{border-color:var(--bd2);transform:translateY(-2px)}
+.perf-name{font-size:11px;font-weight:700;color:var(--muted);margin-bottom:6px;text-transform:uppercase;letter-spacing:.6px}
+.perf-cagr{font-size:22px;font-weight:800;font-family:'IBM Plex Mono',monospace;margin-bottom:4px;letter-spacing:-1px}
+.perf-detail{font-size:11px;color:var(--muted);margin-bottom:6px}
 .perf-oos{font-size:12px;font-weight:600}
+
 @media print{
   body{background:#fff;color:#000}
   .sec-body{display:block!important}
@@ -150,7 +237,9 @@ footer{text-align:center;color:#8b949e;font-size:12px;margin:24px 0;padding-bott
 </head>
 <body>
 <header>
-  <div class="hdr-date">📊 每日選股總覽 2026-05-20</div>
+  <div class="hdr-date">2026-05-20</div>
+  <span class="hdr-pill">每日選股總覽</span>
+  <span class="hdr-pill" style="margin-left:auto;background:rgba(52,211,153,.1);border-color:rgba(52,211,153,.3);color:#34d399">2026-05-20 15:54:17</span>
 </header>
 
 <main>
@@ -587,32 +676,32 @@ footer{text-align:center;color:#8b949e;font-size:12px;margin:24px 0;padding-bott
               <label>1303 南亞</label></td>
           <td><span class="tag tag-green">月營收YoY轉正</span><span class="tag tag-green">EPS負轉正</span><span class="tag"><a href="https://news.google.com/rss/articles/CBMib0FVX3lxTE5iQl9kRTR6ZzRkbzlSd28ySDRuRlhEcENMSG5aaHltUXRPTEFEbHVudDNHUWlRU0lHY0ZrVWhLSVNXTms4T25Dc2ZFbXJCR1JXOWYxR1E0VEJYbmR1X0dIOEs3Vmd3cFFqRkxLcVItcw?oc=5" target="_blank">南亞(1303) AI 轉型戰果顯現！3月營收創43 個月新高玻纖布題材助攻股價量價齊揚 - 理財周...</a></span></td>
         </tr><tr>
-          <td><input type="checkbox" class="watch-check" data-id="tr_1735">
-              <label>1735 日勝化</label></td>
+          <td><input type="checkbox" class="watch-check" data-id="tr_1732">
+              <label>1732 毛寶</label></td>
           <td><span class="tag tag-green">月營收YoY轉正</span><span class="tag tag-green">EPS負轉正</span></td>
         </tr><tr>
-          <td><input type="checkbox" class="watch-check" data-id="tr_8261">
-              <label>8261 富鼎</label></td>
-          <td><span class="tag tag-green">月營收YoY轉正</span><span class="tag"><a href="https://news.google.com/rss/articles/CBMi6wNBVV95cUxPdkRlUWVVTnlOdzB3enBNa2t1UXBGWWhGc2lENGdRbU5TMW5rTklWRWVsZmRrTDVWQndvRl83UEdNUnZZUU9WTlNUWW5Jb0xXbEFBQ0FzV1pZOFJheUZoMkxvZHR5eEQ0MGd5b1BDNmZ0VVJlY25RdlkzbG15cm5IVVRobzlHTDJoUC1KWncxdVJFNWt3ZFZvQ2lzUFZ5aDZmdzRiQ0pnWWs3VWwzdGNnY2JqcG4tU2RESXh5WWMtQ1MxOG52WWtEQ2tGSmVMU3k3M2xaemdXaTV2cE43dUwyNlFPNEViUHN0NEZKU2tVNm96T1pMa1huNDZLM2F4UmtCVFRxT3kxU05JSkpwTkhmaTB5Wm9UcnFLYnB5VU56R01DcXR4aDdCVU5aUjVIUVlHTGhIWnJNN2tsc3ZnaVM2R2Zad1k1a1R3NHZub0RLWXJNZWVfSHNlVUFiWnV0THdFdGc3SUlCRWpxcXZyWEJBSmdiZDB2LTlqazF2NENuZUNwQ1F5N196QzQtMWt3V0FfMFhsbTJYX2V3Q282YlZ2YXlPZEVtSlNiZWZSMnhKZXBJMDViVEI2NEZsQWRSSDlaXzBkMVdVaE42eXFpS0dVazY2SzVxdmVMeEwyNWpwTWNqbGItV0JwODBIUQ?oc=5" target="_blank">大咖卡位富鼎1／國巨鴻海加速垂直整合車用半導體供應鏈 「不想脖子被人掐著走」 - Yahoo - 汽...</a></span></td>
-        </tr><tr>
-          <td><input type="checkbox" class="watch-check" data-id="tr_2344">
-              <label>2344 華邦電</label></td>
-          <td><span class="tag tag-green">EPS負轉正</span><span class="tag"><a href="https://news.google.com/rss/articles/CBMi_wNBVV95cUxQOE1XMXY5bEQtNE02UnpMaU04Z0c4Zjk0RTIwNkhLemE4YmlGQ1cwallMZkI5dzZSQU9DNVkyM2Z5QnhsaGRXTzV0anFtT0ozdllfTUVYZnFMZGY2M0daUnhqeXJfZENTc051R24tQzRlWGFkdjAweVR0dzNtUkU5TU5rSEhkVDREVV9VM2lMLW10RmlZSU1rRVVoUEJHcHEtSmpSMjYyY3ZNc3c5V0tQWUlyMnBCWGhGeXpfcnIxdG95SnlUdkdQNW5EempDaXFsaUZ4bldzWXlLV1VPMlJzTmhlNldCd3JBbmw0SmtEMmhacDZ2NkN4SWVUQU83NUhWX0VTQks0VDcwWnNPTkF0TzNNS2RzbDZOTHJXakN2WGJnOEpJT2hadnNZclZrakNjZGxSS09pVFZubnQzVHpZVGFyRk9PcmFvbWpudkhzZEhJeFdrZFhvbGhRSnlyZU9WN2I5TFpLQ1UwMEhiTjR1Q3lSWTdORHFjZDRNSGlrdi1BRzB5d2Nxak01SVl0ZEU1R05kT0FtdmVyWFpSUERacXpZODF1RG94Z25QX3JpUmNuZjVxQjJSU1VGZmRlSl9IOWZYNjZNWlR5SzRoZnpVbHhGaWUtNFg1R1FTOXVGYmZNUXJMdENHM25ZdkUwUGQzN25PelQ0bGlVNnpQWDA0?oc=5" target="_blank">切入光進銅退商機引爆！外資本周狂搶面板雙虎「這檔」18萬張 反手砸110億元補進華邦電 - Yaho...</a></span></td>
-        </tr><tr>
-          <td><input type="checkbox" class="watch-check" data-id="tr_3312">
-              <label>3312 弘憶股</label></td>
+          <td><input type="checkbox" class="watch-check" data-id="tr_2388">
+              <label>2388 威盛</label></td>
           <td><span class="tag tag-green">月營收YoY轉正</span><span class="tag tag-green">EPS負轉正</span></td>
         </tr><tr>
-          <td><input type="checkbox" class="watch-check" data-id="tr_2492">
-              <label>2492 華新科</label></td>
+          <td><input type="checkbox" class="watch-check" data-id="tr_2332">
+              <label>2332 友訊</label></td>
           <td><span class="tag tag-green">月營收YoY轉正</span><span class="tag tag-green">EPS負轉正</span></td>
         </tr><tr>
-          <td><input type="checkbox" class="watch-check" data-id="tr_2106">
-              <label>2106 建大</label></td>
+          <td><input type="checkbox" class="watch-check" data-id="tr_2419">
+              <label>2419 仲琦</label></td>
           <td><span class="tag tag-green">月營收YoY轉正</span><span class="tag tag-green">EPS負轉正</span></td>
         </tr><tr>
-          <td><input type="checkbox" class="watch-check" data-id="tr_1563">
-              <label>1563 巧新</label></td>
+          <td><input type="checkbox" class="watch-check" data-id="tr_3003">
+              <label>3003 健和興</label></td>
+          <td><span class="tag tag-green">月營收YoY轉正</span><span class="tag tag-green">EPS負轉正</span></td>
+        </tr><tr>
+          <td><input type="checkbox" class="watch-check" data-id="tr_2486">
+              <label>2486 一詮</label></td>
+          <td><span class="tag tag-green">EPS負轉正</span><span class="tag"><a href="https://news.google.com/rss/articles/CBMijgNBVV95cUxNa1kzUlhYdVVWcTJob004VGhBSTc4aENEdUV4SmlEQkY3Vl9GelRfbHlocmZNSjY4N21NM1UyR2FGY2FoLVVYaC1LdnlLR3ZJWWpfOGpVT1YyUDgtekJXXzRrVFczNHVWaUo3cTljelBsRXl5X2V2Yk9IYllGTnJGQXU1UG5hemZ3a1hxOXdXUGdseGlpYmhid05VUVNOMDZnZFdVTTNnM1BSSFNXV05nbjlkXzlYTzRXaHh4VmxiNm02ZFZLUWQ5ZTAxOWJ0d2FrU0ZicmNzbTVVS2VscGpVV2duWGpiRTNKTzQ3TzEwdUZNcUlRV256dUl0elVxQXA0MFBSY1dkc2FlMkwwMFpobVJTWVBNQ0UteG00QTRWN2NINkNiLW1GZDZ3NEoyd2ZlLVJVblhZbG5KVkxMbXpDX2NvMS1lQzM4OWlNTHFocFdzeFhqREdtazBEdDlnSDFkc3JxcmRIVkxkd0lRdUVBZ0xIdVlUSlZXcy0xU3RFcm5sUlh4cUs5QklqVG41QQ?oc=5" target="_blank">本益比1229.55被列注意股！「這轉型散熱廠」股價猛噴11天65%登強勢股王 網嗨：長期抗戰 - ...</a></span></td>
+        </tr><tr>
+          <td><input type="checkbox" class="watch-check" data-id="tr_3066">
+              <label>3066 李洲</label></td>
           <td><span class="tag tag-green">月營收YoY轉正</span><span class="tag tag-green">EPS負轉正</span></td>
         </tr></tbody></table>
     <div class="my-view"><span class="my-view-label">今日看法：</span>確認催化劑是否持續，決定是否列入追蹤清單</div>
@@ -707,32 +796,6 @@ footer{text-align:center;color:#8b949e;font-size:12px;margin:24px 0;padding-bott
     </div>
   </div>
 </div>
-<div class="th-card" id="thc-AI廠務基建">
-  <div class="th-card-header" onclick="toggleTheme('AI廠務基建')">
-    <span class="th-strength" style="background:#22c55e">9/10</span>
-    <span class="th-name">AI廠務基建</span>
-    <div class="th-metrics">
-      <span class="th-metric" style="color:#94a3b8">廣度 29%</span>
-      <span class="th-metric" style="color:#ef4444">20D -7.0%</span>
-      <span class="th-metric" style="color:#22c55e">外資 +602</span>
-      <span class="th-metric">🟢0🟡2/7</span>
-    </div>
-    <span class="th-toggle" id="thtog-AI廠務基建">▶</span>
-  </div>
-  <div class="th-card-body" id="thbody-AI廠務基建" style="display:none">
-    <div class="th-hyp">AI 算力需求迫使半導體與資料中心規格大幅翻倍，帶動具備「埃米級」工程技術的廠務龍頭進入 2-3 年的訂單收割期。</div>
-    <div class="th-signals-row">
-      <div class="th-signals-col">
-        <div class="sig-col-label">關鍵訊號（觸發 = 假說兌現）</div>
-        <ul class="sig-list"><li>台積電法說會 CapEx 調整</li><li>工程股單月營收 YOY &gt;20%</li><li>主要設備商（如 ASML）對台出口數據</li></ul>
-      </div>
-      <div class="th-signals-col">
-        <div class="exit-sigs"><span class="exit-label">出場留意：</span><ul class="sig-list sig-exit"><li>半導體設備出貨量連三季萎縮</li><li>工程股在手訂單餘額跌破歷史均值</li></ul></div>
-        
-      </div>
-    </div>
-  </div>
-</div>
 <div class="th-card" id="thc-電網基建">
   <div class="th-card-header" onclick="toggleTheme('電網基建')">
     <span class="th-strength" style="background:#22c55e">9/10</span>
@@ -754,6 +817,32 @@ footer{text-align:center;color:#8b949e;font-size:12px;margin:24px 0;padding-bott
       </div>
       <div class="th-signals-col">
         <div class="exit-sigs"><span class="exit-label">出場留意：</span><ul class="sig-list sig-exit"><li>重電股本益比過高導致評價修正</li><li>台電預算大幅刪減</li></ul></div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+<div class="th-card" id="thc-AI廠務基建">
+  <div class="th-card-header" onclick="toggleTheme('AI廠務基建')">
+    <span class="th-strength" style="background:#22c55e">9/10</span>
+    <span class="th-name">AI廠務基建</span>
+    <div class="th-metrics">
+      <span class="th-metric" style="color:#94a3b8">廣度 29%</span>
+      <span class="th-metric" style="color:#ef4444">20D -7.0%</span>
+      <span class="th-metric" style="color:#22c55e">外資 +602</span>
+      <span class="th-metric">🟢0🟡2/7</span>
+    </div>
+    <span class="th-toggle" id="thtog-AI廠務基建">▶</span>
+  </div>
+  <div class="th-card-body" id="thbody-AI廠務基建" style="display:none">
+    <div class="th-hyp">AI 算力需求迫使半導體與資料中心規格大幅翻倍，帶動具備「埃米級」工程技術的廠務龍頭進入 2-3 年的訂單收割期。</div>
+    <div class="th-signals-row">
+      <div class="th-signals-col">
+        <div class="sig-col-label">關鍵訊號（觸發 = 假說兌現）</div>
+        <ul class="sig-list"><li>台積電法說會 CapEx 調整</li><li>工程股單月營收 YOY &gt;20%</li><li>主要設備商（如 ASML）對台出口數據</li></ul>
+      </div>
+      <div class="th-signals-col">
+        <div class="exit-sigs"><span class="exit-label">出場留意：</span><ul class="sig-list sig-exit"><li>半導體設備出貨量連三季萎縮</li><li>工程股在手訂單餘額跌破歷史均值</li></ul></div>
         
       </div>
     </div>
@@ -837,32 +926,6 @@ footer{text-align:center;color:#8b949e;font-size:12px;margin:24px 0;padding-bott
     </div>
   </div>
 </div>
-<div class="th-card" id="thc-矽智財">
-  <div class="th-card-header" onclick="toggleTheme('矽智財')">
-    <span class="th-strength" style="background:#22c55e">9/10</span>
-    <span class="th-name">矽智財</span>
-    <div class="th-metrics">
-      <span class="th-metric" style="color:#94a3b8">廣度 0%</span>
-      <span class="th-metric" style="color:#22c55e">20D +9.4%</span>
-      <span class="th-metric" style="color:#ef4444">外資 -21181</span>
-      <span class="th-metric">🟢0🟡0/5</span>
-    </div>
-    <span class="th-toggle" id="thtog-矽智財">▶</span>
-  </div>
-  <div class="th-card-body" id="thbody-矽智財" style="display:none">
-    <div class="th-hyp">雲端巨頭（CSP）為降低對 NVIDIA 的依賴並優化成本，引爆自研 AI 晶片（ASIC）需求，帶動前端委託設計與底層 IP 授權的長線高成長。</div>
-    <div class="th-signals-row">
-      <div class="th-signals-col">
-        <div class="sig-col-label">關鍵訊號（觸發 = 假說兌現）</div>
-        <ul class="sig-list"><li>北美四大 CSP（微軟、Google、AWS、Meta）資本支出展望</li><li>台積電先進製程與 CoWoS 產能擴充速度</li><li>世芯/創意每月營收與 NRE（委託設計）認列進度</li></ul>
-      </div>
-      <div class="th-signals-col">
-        <div class="exit-sigs"><span class="exit-label">出場留意：</span><ul class="sig-list sig-exit"><li>CSP 大廠因總體經濟考量大幅縮減 AI 伺服器資本支出</li><li>主要大客戶專案開發失敗或量產遞延</li></ul></div>
-        
-      </div>
-    </div>
-  </div>
-</div>
 <div class="th-card" id="thc-自研晶片ASIC">
   <div class="th-card-header" onclick="toggleTheme('自研晶片ASIC')">
     <span class="th-strength" style="background:#22c55e">9/10</span>
@@ -884,6 +947,32 @@ footer{text-align:center;color:#8b949e;font-size:12px;margin:24px 0;padding-bott
       </div>
       <div class="th-signals-col">
         <div class="exit-sigs"><span class="exit-label">出場留意：</span><ul class="sig-list sig-exit"><li>NVIDIA 推出極具價格競爭力的中階 AI GPU</li><li>CSP 業者因 AI 變現率不如預期而砍單</li></ul></div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+<div class="th-card" id="thc-矽智財">
+  <div class="th-card-header" onclick="toggleTheme('矽智財')">
+    <span class="th-strength" style="background:#22c55e">9/10</span>
+    <span class="th-name">矽智財</span>
+    <div class="th-metrics">
+      <span class="th-metric" style="color:#94a3b8">廣度 0%</span>
+      <span class="th-metric" style="color:#22c55e">20D +9.4%</span>
+      <span class="th-metric" style="color:#ef4444">外資 -21181</span>
+      <span class="th-metric">🟢0🟡0/5</span>
+    </div>
+    <span class="th-toggle" id="thtog-矽智財">▶</span>
+  </div>
+  <div class="th-card-body" id="thbody-矽智財" style="display:none">
+    <div class="th-hyp">雲端巨頭（CSP）為降低對 NVIDIA 的依賴並優化成本，引爆自研 AI 晶片（ASIC）需求，帶動前端委託設計與底層 IP 授權的長線高成長。</div>
+    <div class="th-signals-row">
+      <div class="th-signals-col">
+        <div class="sig-col-label">關鍵訊號（觸發 = 假說兌現）</div>
+        <ul class="sig-list"><li>北美四大 CSP（微軟、Google、AWS、Meta）資本支出展望</li><li>台積電先進製程與 CoWoS 產能擴充速度</li><li>世芯/創意每月營收與 NRE（委託設計）認列進度</li></ul>
+      </div>
+      <div class="th-signals-col">
+        <div class="exit-sigs"><span class="exit-label">出場留意：</span><ul class="sig-list sig-exit"><li>CSP 大廠因總體經濟考量大幅縮減 AI 伺服器資本支出</li><li>主要大客戶專案開發失敗或量產遞延</li></ul></div>
         
       </div>
     </div>
@@ -1071,32 +1160,6 @@ footer{text-align:center;color:#8b949e;font-size:12px;margin:24px 0;padding-bott
     </div>
   </div>
 </div>
-<div class="th-card" id="thc-AI高功率檢測">
-  <div class="th-card-header" onclick="toggleTheme('AI高功率檢測')">
-    <span class="th-strength" style="background:#22c55e">8/10</span>
-    <span class="th-name">AI高功率檢測</span>
-    <div class="th-metrics">
-      <span class="th-metric" style="color:#94a3b8">廣度 33%</span>
-      <span class="th-metric" style="color:#ef4444">20D -5.4%</span>
-      <span class="th-metric" style="color:#22c55e">外資 +744</span>
-      <span class="th-metric">🟢0🟡1/3</span>
-    </div>
-    <span class="th-toggle" id="thtog-AI高功率檢測">▶</span>
-  </div>
-  <div class="th-card-body" id="thbody-AI高功率檢測" style="display:none">
-    <div class="th-hyp">AI伺服器功耗倍增且導入水冷架構，衍生出嚴苛的電磁相容(EMC)與安規認證門檻，帶動具備大電流/高功率測試場地與設備的實驗室訂單及測試單價(ASP)雙雙飆升。</div>
-    <div class="th-signals-row">
-      <div class="th-signals-col">
-        <div class="sig-col-label">關鍵訊號（觸發 = 假說兌現）</div>
-        <ul class="sig-list"><li>NVIDIA次世代系統出貨時程與規格升級進度</li><li>指標股(耕興)每月營收與毛利率是否因高階測試佔比增加而創高</li><li>國內大電源廠(台達電/光寶科)的高瓦數產品出貨放量狀況</li></ul>
-      </div>
-      <div class="th-signals-col">
-        <div class="exit-sigs"><span class="exit-label">出場留意：</span><ul class="sig-list sig-exit"><li>晶片功耗演進停滯導致再無更高規格的檢測需求</li><li>檢測同業大舉擴充高功率場地引發測試報價(ASP)的削價競爭</li></ul></div>
-        
-      </div>
-    </div>
-  </div>
-</div>
 <div class="th-card" id="thc-記憶體排擠漲價">
   <div class="th-card-header" onclick="toggleTheme('記憶體排擠漲價')">
     <span class="th-strength" style="background:#22c55e">8/10</span>
@@ -1118,6 +1181,32 @@ footer{text-align:center;color:#8b949e;font-size:12px;margin:24px 0;padding-bott
       </div>
       <div class="th-signals-col">
         <div class="exit-sigs"><span class="exit-label">出場留意：</span><ul class="sig-list sig-exit"><li>記憶體原廠大幅擴產導致供過於求</li><li>AI 伺服器對傳統記憶體產能排擠效應減弱</li></ul></div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+<div class="th-card" id="thc-AI高功率檢測">
+  <div class="th-card-header" onclick="toggleTheme('AI高功率檢測')">
+    <span class="th-strength" style="background:#22c55e">8/10</span>
+    <span class="th-name">AI高功率檢測</span>
+    <div class="th-metrics">
+      <span class="th-metric" style="color:#94a3b8">廣度 33%</span>
+      <span class="th-metric" style="color:#ef4444">20D -5.4%</span>
+      <span class="th-metric" style="color:#22c55e">外資 +744</span>
+      <span class="th-metric">🟢0🟡1/3</span>
+    </div>
+    <span class="th-toggle" id="thtog-AI高功率檢測">▶</span>
+  </div>
+  <div class="th-card-body" id="thbody-AI高功率檢測" style="display:none">
+    <div class="th-hyp">AI伺服器功耗倍增且導入水冷架構，衍生出嚴苛的電磁相容(EMC)與安規認證門檻，帶動具備大電流/高功率測試場地與設備的實驗室訂單及測試單價(ASP)雙雙飆升。</div>
+    <div class="th-signals-row">
+      <div class="th-signals-col">
+        <div class="sig-col-label">關鍵訊號（觸發 = 假說兌現）</div>
+        <ul class="sig-list"><li>NVIDIA次世代系統出貨時程與規格升級進度</li><li>指標股(耕興)每月營收與毛利率是否因高階測試佔比增加而創高</li><li>國內大電源廠(台達電/光寶科)的高瓦數產品出貨放量狀況</li></ul>
+      </div>
+      <div class="th-signals-col">
+        <div class="exit-sigs"><span class="exit-label">出場留意：</span><ul class="sig-list sig-exit"><li>晶片功耗演進停滯導致再無更高規格的檢測需求</li><li>檢測同業大舉擴充高功率場地引發測試報價(ASP)的削價競爭</li></ul></div>
         
       </div>
     </div>
@@ -1279,6 +1368,32 @@ footer{text-align:center;color:#8b949e;font-size:12px;margin:24px 0;padding-bott
     </div>
   </div>
 </div>
+<div class="th-card" id="thc-無人機供應鏈">
+  <div class="th-card-header" onclick="toggleTheme('無人機供應鏈')">
+    <span class="th-strength" style="background:#22c55e">8/10</span>
+    <span class="th-name">無人機供應鏈</span>
+    <div class="th-metrics">
+      <span class="th-metric" style="color:#94a3b8">廣度 0%</span>
+      <span class="th-metric" style="color:#ef4444">20D -10.7%</span>
+      <span class="th-metric" style="color:#ef4444">外資 -2044</span>
+      <span class="th-metric">🟢0🟡0/5</span>
+    </div>
+    <span class="th-toggle" id="thtog-無人機供應鏈">▶</span>
+  </div>
+  <div class="th-card-body" id="thbody-無人機供應鏈" style="display:none">
+    <div class="th-hyp">地緣政治緊張與去紅色供應鏈浪潮，驅動台灣國防預算擴編及「商規軍用」無人機本土化採購需求大爆發。</div>
+    <div class="th-signals-row">
+      <div class="th-signals-col">
+        <div class="sig-col-label">關鍵訊號（觸發 = 假說兌現）</div>
+        <ul class="sig-list"><li>國防部無人機標案決標公告</li><li>經濟部「軍用商規」無人機量產訂單釋出</li><li>無人機國家隊相關廠商單月營收出現突破性增長</li></ul>
+      </div>
+      <div class="th-signals-col">
+        <div class="exit-sigs"><span class="exit-label">出場留意：</span><ul class="sig-list sig-exit"><li>政府國防預算大幅縮減或專案遞延</li><li>個股於軍方標案競爭落敗或量產進度嚴重落後</li></ul></div>
+        
+      </div>
+    </div>
+  </div>
+</div>
 <div class="th-card" id="thc-OpenAI硬體終端">
   <div class="th-card-header" onclick="toggleTheme('OpenAI硬體終端')">
     <span class="th-strength" style="background:#22c55e">8/10</span>
@@ -1300,58 +1415,6 @@ footer{text-align:center;color:#8b949e;font-size:12px;margin:24px 0;padding-bott
       </div>
       <div class="th-signals-col">
         <div class="exit-sigs"><span class="exit-label">出場留意：</span><ul class="sig-list sig-exit"><li>OpenAI 放棄實體硬體開發計畫</li><li>合作開發對象完全轉向非台系晶片廠</li></ul></div>
-        
-      </div>
-    </div>
-  </div>
-</div>
-<div class="th-card" id="thc-AI伺服器LPDDR">
-  <div class="th-card-header" onclick="toggleTheme('AI伺服器LPDDR')">
-    <span class="th-strength" style="background:#22c55e">8/10</span>
-    <span class="th-name">AI伺服器LPDDR</span>
-    <div class="th-metrics">
-      <span class="th-metric" style="color:#94a3b8">廣度 0%</span>
-      <span class="th-metric" style="color:#22c55e">20D +32.6%</span>
-      <span class="th-metric" style="color:#ef4444">外資 -27009</span>
-      <span class="th-metric">🟢0🟡0/1</span>
-    </div>
-    <span class="th-toggle" id="thtog-AI伺服器LPDDR">▶</span>
-  </div>
-  <div class="th-card-body" id="thbody-AI伺服器LPDDR" style="display:none">
-    <div class="th-hyp">因為輝達為降低 AI 伺服器耗電與空間，將在新一代 Vera Rubin 平台大量導入低功耗 LPDDR 記憶體，打破傳統外商主導格局，導致率先打入輝達供應鏈的…</div>
-    <div class="th-signals-row">
-      <div class="th-signals-col">
-        <div class="sig-col-label">關鍵訊號（觸發 = 假說兌現）</div>
-        <ul class="sig-list"><li>E｜輝達新一代 AI 平台將導入低功耗 DRAM LPDDR，牽動記憶體供應鏈洗牌</li><li>A｜傳南亞科獲台積電協助打入輝達供應鏈，高單價規格將助益毛利率叩關七成</li></ul>
-      </div>
-      <div class="th-signals-col">
-        <div class="exit-sigs"><span class="exit-label">出場留意：</span><ul class="sig-list sig-exit"><li>輝達更改平台記憶體架構</li><li>國際記憶體大廠發動價格戰搶單</li></ul></div>
-        
-      </div>
-    </div>
-  </div>
-</div>
-<div class="th-card" id="thc-生物相似藥解封">
-  <div class="th-card-header" onclick="toggleTheme('生物相似藥解封')">
-    <span class="th-strength" style="background:#22c55e">8/10</span>
-    <span class="th-name">生物相似藥解封</span>
-    <div class="th-metrics">
-      <span class="th-metric" style="color:#94a3b8">廣度 0%</span>
-      <span class="th-metric" style="color:#ef4444">20D -9.3%</span>
-      <span class="th-metric" style="color:#ef4444">外資 -827</span>
-      <span class="th-metric">🟢0🟡0/3</span>
-    </div>
-    <span class="th-toggle" id="thtog-生物相似藥解封">▶</span>
-  </div>
-  <div class="th-card-body" id="thbody-生物相似藥解封" style="display:none">
-    <div class="th-hyp">全球重磅級生物藥專利相繼到期，各國政府為降低健保支出，政策性引導醫療機構轉向採購成本更低的生物相似藥，驅動市場規模在未來三至五年呈現爆發式增長。</div>
-    <div class="th-signals-row">
-      <div class="th-signals-col">
-        <div class="sig-col-label">關鍵訊號（觸發 = 假說兌現）</div>
-        <ul class="sig-list"><li>FDA 核發藥證新聞稿</li><li>保險公司（PBM）將特定相似藥列入給付名單</li><li>台廠 CDMO 產能利用率</li></ul>
-      </div>
-      <div class="th-signals-col">
-        <div class="exit-sigs"><span class="exit-label">出場留意：</span><ul class="sig-list sig-exit"><li>美國藥價談判法案超預期壓低原廠藥價（縮小相似藥價差利潤）</li><li>主要藥物 FDA 審查遭拒或延遲一年以上</li></ul></div>
         
       </div>
     </div>
@@ -1383,27 +1446,53 @@ footer{text-align:center;color:#8b949e;font-size:12px;margin:24px 0;padding-bott
     </div>
   </div>
 </div>
-<div class="th-card" id="thc-無人機供應鏈">
-  <div class="th-card-header" onclick="toggleTheme('無人機供應鏈')">
+<div class="th-card" id="thc-生物相似藥解封">
+  <div class="th-card-header" onclick="toggleTheme('生物相似藥解封')">
     <span class="th-strength" style="background:#22c55e">8/10</span>
-    <span class="th-name">無人機供應鏈</span>
+    <span class="th-name">生物相似藥解封</span>
     <div class="th-metrics">
       <span class="th-metric" style="color:#94a3b8">廣度 0%</span>
-      <span class="th-metric" style="color:#ef4444">20D -10.7%</span>
-      <span class="th-metric" style="color:#ef4444">外資 -2044</span>
-      <span class="th-metric">🟢0🟡0/5</span>
+      <span class="th-metric" style="color:#ef4444">20D -9.3%</span>
+      <span class="th-metric" style="color:#ef4444">外資 -827</span>
+      <span class="th-metric">🟢0🟡0/3</span>
     </div>
-    <span class="th-toggle" id="thtog-無人機供應鏈">▶</span>
+    <span class="th-toggle" id="thtog-生物相似藥解封">▶</span>
   </div>
-  <div class="th-card-body" id="thbody-無人機供應鏈" style="display:none">
-    <div class="th-hyp">地緣政治緊張與去紅色供應鏈浪潮，驅動台灣國防預算擴編及「商規軍用」無人機本土化採購需求大爆發。</div>
+  <div class="th-card-body" id="thbody-生物相似藥解封" style="display:none">
+    <div class="th-hyp">全球重磅級生物藥專利相繼到期，各國政府為降低健保支出，政策性引導醫療機構轉向採購成本更低的生物相似藥，驅動市場規模在未來三至五年呈現爆發式增長。</div>
     <div class="th-signals-row">
       <div class="th-signals-col">
         <div class="sig-col-label">關鍵訊號（觸發 = 假說兌現）</div>
-        <ul class="sig-list"><li>國防部無人機標案決標公告</li><li>經濟部「軍用商規」無人機量產訂單釋出</li><li>無人機國家隊相關廠商單月營收出現突破性增長</li></ul>
+        <ul class="sig-list"><li>FDA 核發藥證新聞稿</li><li>保險公司（PBM）將特定相似藥列入給付名單</li><li>台廠 CDMO 產能利用率</li></ul>
       </div>
       <div class="th-signals-col">
-        <div class="exit-sigs"><span class="exit-label">出場留意：</span><ul class="sig-list sig-exit"><li>政府國防預算大幅縮減或專案遞延</li><li>個股於軍方標案競爭落敗或量產進度嚴重落後</li></ul></div>
+        <div class="exit-sigs"><span class="exit-label">出場留意：</span><ul class="sig-list sig-exit"><li>美國藥價談判法案超預期壓低原廠藥價（縮小相似藥價差利潤）</li><li>主要藥物 FDA 審查遭拒或延遲一年以上</li></ul></div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+<div class="th-card" id="thc-AI伺服器LPDDR">
+  <div class="th-card-header" onclick="toggleTheme('AI伺服器LPDDR')">
+    <span class="th-strength" style="background:#22c55e">8/10</span>
+    <span class="th-name">AI伺服器LPDDR</span>
+    <div class="th-metrics">
+      <span class="th-metric" style="color:#94a3b8">廣度 0%</span>
+      <span class="th-metric" style="color:#22c55e">20D +32.6%</span>
+      <span class="th-metric" style="color:#ef4444">外資 -27009</span>
+      <span class="th-metric">🟢0🟡0/1</span>
+    </div>
+    <span class="th-toggle" id="thtog-AI伺服器LPDDR">▶</span>
+  </div>
+  <div class="th-card-body" id="thbody-AI伺服器LPDDR" style="display:none">
+    <div class="th-hyp">因為輝達為降低 AI 伺服器耗電與空間，將在新一代 Vera Rubin 平台大量導入低功耗 LPDDR 記憶體，打破傳統外商主導格局，導致率先打入輝達供應鏈的…</div>
+    <div class="th-signals-row">
+      <div class="th-signals-col">
+        <div class="sig-col-label">關鍵訊號（觸發 = 假說兌現）</div>
+        <ul class="sig-list"><li>E｜輝達新一代 AI 平台將導入低功耗 DRAM LPDDR，牽動記憶體供應鏈洗牌</li><li>A｜傳南亞科獲台積電協助打入輝達供應鏈，高單價規格將助益毛利率叩關七成</li></ul>
+      </div>
+      <div class="th-signals-col">
+        <div class="exit-sigs"><span class="exit-label">出場留意：</span><ul class="sig-list sig-exit"><li>輝達更改平台記憶體架構</li><li>國際記憶體大廠發動價格戰搶單</li></ul></div>
         
       </div>
     </div>
@@ -1747,32 +1836,6 @@ footer{text-align:center;color:#8b949e;font-size:12px;margin:24px 0;padding-bott
     </div>
   </div>
 </div>
-<div class="th-card" id="thc-CoPoS">
-  <div class="th-card-header" onclick="toggleTheme('CoPoS')">
-    <span class="th-strength" style="background:#ef4444">0/10</span>
-    <span class="th-name">CoPoS</span>
-    <div class="th-metrics">
-      <span class="th-metric" style="color:#94a3b8">廣度 20%</span>
-      <span class="th-metric" style="color:#22c55e">20D +31.0%</span>
-      <span class="th-metric" style="color:#ef4444">外資 -13026</span>
-      <span class="th-metric">🟢0🟡1/5</span>
-    </div>
-    <span class="th-toggle" id="thtog-CoPoS">▶</span>
-  </div>
-  <div class="th-card-body" id="thbody-CoPoS" style="display:none">
-    <div class="th-hyp">傳統圓形晶圓已達面積極限，改用方形面板可提升 30% 以上面積利用率並倍增單片產出，為 AI 晶片巨型化之終極方案。</div>
-    <div class="th-signals-row">
-      <div class="th-signals-col">
-        <div class="sig-col-label">關鍵訊號（觸發 = 假說兌現）</div>
-        <ul class="sig-list"><li>台積電嘉義 AP7 廠建置進度</li><li>NVIDIA Rubin 系列晶片規格確認</li><li>采鈺與鈦昇之 TGV 設備驗證數據</li></ul>
-      </div>
-      <div class="th-signals-col">
-        <div class="exit-sigs"><span class="exit-label">出場留意：</span><ul class="sig-list sig-exit"><li>AI 伺服器資本支出顯著下修</li><li>面板級封裝良率因翹曲（Warpage）無法突破</li></ul></div>
-        
-      </div>
-    </div>
-  </div>
-</div>
 <div class="th-card" id="thc-高速銅線傳輸">
   <div class="th-card-header" onclick="toggleTheme('高速銅線傳輸')">
     <span class="th-strength" style="background:#ef4444">0/10</span>
@@ -1794,6 +1857,32 @@ footer{text-align:center;color:#8b949e;font-size:12px;margin:24px 0;padding-bott
       </div>
       <div class="th-signals-col">
         <div class="exit-sigs"><span class="exit-label">出場留意：</span><ul class="sig-list sig-exit"><li>矽光子(CPO)技術突破瓶頸，成本大幅下降並成功取代機櫃內短距銅線</li><li>AI伺服器機櫃內部互連架構發生重大改變</li></ul></div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+<div class="th-card" id="thc-CoPoS">
+  <div class="th-card-header" onclick="toggleTheme('CoPoS')">
+    <span class="th-strength" style="background:#ef4444">0/10</span>
+    <span class="th-name">CoPoS</span>
+    <div class="th-metrics">
+      <span class="th-metric" style="color:#94a3b8">廣度 20%</span>
+      <span class="th-metric" style="color:#22c55e">20D +31.0%</span>
+      <span class="th-metric" style="color:#ef4444">外資 -13026</span>
+      <span class="th-metric">🟢0🟡1/5</span>
+    </div>
+    <span class="th-toggle" id="thtog-CoPoS">▶</span>
+  </div>
+  <div class="th-card-body" id="thbody-CoPoS" style="display:none">
+    <div class="th-hyp">傳統圓形晶圓已達面積極限，改用方形面板可提升 30% 以上面積利用率並倍增單片產出，為 AI 晶片巨型化之終極方案。</div>
+    <div class="th-signals-row">
+      <div class="th-signals-col">
+        <div class="sig-col-label">關鍵訊號（觸發 = 假說兌現）</div>
+        <ul class="sig-list"><li>台積電嘉義 AP7 廠建置進度</li><li>NVIDIA Rubin 系列晶片規格確認</li><li>采鈺與鈦昇之 TGV 設備驗證數據</li></ul>
+      </div>
+      <div class="th-signals-col">
+        <div class="exit-sigs"><span class="exit-label">出場留意：</span><ul class="sig-list sig-exit"><li>AI 伺服器資本支出顯著下修</li><li>面板級封裝良率因翹曲（Warpage）無法突破</li></ul></div>
         
       </div>
     </div>
@@ -1923,7 +2012,7 @@ footer{text-align:center;color:#8b949e;font-size:12px;margin:24px 0;padding-bott
     <span class="sec-toggle" id="tog-sentiment">▼</span>
   </div>
   <div class="sec-body" id="body-sentiment">
-    <div class="sent-block"><div class="sent-title">財經媒體情緒 <span class="sent-label">偏多 🟢</span></div><div class="sent-bar-bg"><div class="sent-bar-fill" style="width:72%;background:#22c55e"></div></div><div class="sent-score">72% 偏多訊號</div></div>
+    <div class="sent-block"><div class="sent-title">財經媒體情緒 <span class="sent-label">偏多 🟢</span></div><div class="sent-bar-bg"><div class="sent-bar-fill" style="width:70%;background:#22c55e"></div></div><div class="sent-score">70% 偏多訊號</div></div>
     
   </div>
 </section>
@@ -1948,7 +2037,7 @@ footer{text-align:center;color:#8b949e;font-size:12px;margin:24px 0;padding-bott
 </div>
 
 <footer>
-  生成時間：2026-05-20 15:38:15 &nbsp;|&nbsp; build_overview.py
+  生成時間：2026-05-20 15:54:17 &nbsp;|&nbsp; build_overview.py
 </footer>
 
 <script>
