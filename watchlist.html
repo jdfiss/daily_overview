@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><title>Watchlist 行事曆  2026-08-07</title>
+<style>
+  body{background:#0f172a;color:#e2e8f0;font-family:'Segoe UI','Microsoft JhengHei',sans-serif;
+       margin:0;padding:24px;line-height:1.5}
+  h1{margin:0 0 8px;font-size:22px}
+  h2{margin:24px 0 12px;font-size:16px;color:#cbd5e1;
+      border-bottom:1px solid #334155;padding-bottom:6px}
+  .meta{color:#94a3b8;font-size:13px;margin-bottom:18px}
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+         gap:12px;margin-bottom:18px}
+  .card{background:#1e293b;border-radius:8px;padding:12px 14px}
+  .card-label{font-size:12px;color:#94a3b8}
+  .card-val{font-size:22px;font-weight:600;margin-top:4px}
+
+  .legend{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
+  .legend-item{background:#1e293b;padding:4px 10px;border-radius:4px;font-size:13px}
+
+  table.cal-grid{width:100%;border-collapse:collapse;background:#1e293b;border-radius:8px;
+                 overflow:hidden;table-layout:fixed}
+  table.cal-grid th{background:#334155;color:#cbd5e1;padding:6px;font-weight:500;font-size:12px}
+  td.cal-day{padding:6px;border:1px solid #334155;vertical-align:top;height:100px;
+              width:14.28%;overflow:hidden}
+  td.cal-other{opacity:0.35}
+  td.cal-past{background:#0f1729}
+  td.cal-today{background:#1e40af44;border:2px solid #3b82f6}
+  .cal-date{font-size:13px;color:#cbd5e1;margin-bottom:4px;font-weight:500}
+  .cal-chips{display:flex;flex-direction:column;gap:2px}
+  .chip{font-size:11px;padding:2px 6px;border-radius:3px;color:#e2e8f0;
+        white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .chip.more{background:#33415544;color:#94a3b8;border-left:3px solid #475569}
+
+  .tl-details{background:#1e293b;border-radius:6px;margin-bottom:6px;
+              border-left:4px solid #475569;overflow:hidden}
+  .tl-today{background:#1e40af33;border-left:4px solid #3b82f6}
+  .tl-past{background:#7c2d1233;border-left:4px solid #f97316}
+  .tl-summary{display:flex;align-items:center;gap:14px;padding:10px 14px;cursor:pointer;
+              user-select:none;list-style:none}
+  .tl-summary::-webkit-details-marker{display:none}
+  .tl-summary::before{content:'▶';font-size:10px;color:#94a3b8;
+                       transition:transform 0.15s ease}
+  details[open] .tl-summary::before{content:'▼';color:#cbd5e1}
+  .tl-summary:hover{background:rgba(255,255,255,0.03)}
+  .tl-date{font-size:14px;font-weight:600;color:#cbd5e1;width:130px;flex-shrink:0}
+  .tl-label{font-size:12px;color:#94a3b8;font-weight:400}
+  .tl-count{font-size:12px;color:#94a3b8;font-weight:500;min-width:50px}
+  .tl-chips-inline{display:flex;flex-wrap:wrap;gap:4px;flex:1}
+  .tl-chip{font-size:11px;padding:1px 6px;border-radius:3px;font-weight:500}
+  .tl-events{display:flex;flex-direction:column;gap:4px;padding:0 14px 12px 32px}
+  .tl-evt{display:flex;align-items:center;gap:8px;padding:4px 10px;background:#0f172a;
+          border-radius:4px;font-size:13px}
+  .tl-icon{font-size:14px}
+  .tl-type{font-size:11px;font-weight:600;min-width:60px}
+  .tl-tkr{font-weight:600;color:#facc15;min-width:90px}
+  .tl-name{color:#cbd5e1;flex:1}
+  .exited{color:#f97316;font-size:11px}
+
+  .empty{text-align:center;color:#64748b;padding:40px;font-style:italic}
+
+  th{background:#334155;color:#cbd5e1;padding:8px;text-align:left;font-weight:500;font-size:13px}
+  td{padding:6px 10px;border-top:1px solid #334155;font-size:13px}
+  table.src{width:100%;border-collapse:collapse;background:#1e293b;border-radius:8px;overflow:hidden}
+  table.theme{width:100%;border-collapse:collapse;background:#1e293b;border-radius:8px;overflow:hidden}
+  table.theme td{font-size:12px}
+  table.theme th{font-size:12px}
+
+  table.macro{width:100%;border-collapse:collapse;background:#1e293b;border-radius:8px;overflow:hidden}
+  table.macro td{font-size:12px;border-top:1px solid #334155;padding:6px 8px;vertical-align:top}
+  table.macro th{font-size:12px}
+  td.macro-date{font-weight:600;color:#cbd5e1;white-space:nowrap;width:70px;
+                 border-top:2px solid #475569}
+  td.macro-cont{border-top:0 !important}
+  td.macro-today{color:#3b82f6;font-weight:bold}
+  td.macro-time{color:#94a3b8;white-space:nowrap;width:70px}
+  td.macro-country{width:30px;text-align:center}
+  td.macro-event{color:#e2e8f0}
+  td.macro-dir{white-space:nowrap;width:90px}
+  td.macro-watch{color:#94a3b8;font-size:11px}
+</style></head><body>
+
+<h1>📅 Watchlist 行事曆</h1>
+<div class="meta">as_of 2026-08-07 <span style="color:#22c55e">✅ fresh</span>  ·  retention 15 天  ·  lookahead 30 天</div>
+
+<div class="cards">
+  <div class="card"><div class="card-label">Active tickers</div><div class="card-val">278</div></div>
+  <div class="card"><div class="card-label">Tracked total</div><div class="card-val">305</div></div>
+  <div class="card"><div class="card-label">已出場保留</div><div class="card-val" style="color:#f97316">27</div></div>
+  <div class="card"><div class="card-label">未來 30 天事件</div><div class="card-val" style="color:#60a5fa">192</div></div>
+  <div class="card"><div class="card-label">近 7 日列管</div><div class="card-val" style="color:#f97316">143</div></div>
+</div>
+
+<h2>📊 事件類型分佈</h2>
+<div class="legend"><span class="legend-item" style="border-left:3px solid #f472b6">💸 除息 (8)</span><span class="legend-item" style="border-left:3px solid #fbbf24">💰 財報 (23)</span><span class="legend-item" style="border-left:3px solid #60a5fa">📊 月營收 (1)</span><span class="legend-item" style="border-left:3px solid #f97316">⚠️ 注意/處置 (143)</span><span class="legend-item" style="border-left:3px solid #a78bfa">🏛 展會 (19)</span><span class="legend-item" style="border-left:3px solid #94a3b8">📰 新聞 (110)</span></div>
+
+<h2>🗓 月曆視圖</h2>
+<table class="cal-grid">
+<tr><th>一</th><th>二</th><th>三</th><th>四</th><th>五</th><th>六</th><th>日</th></tr>
+<tr>
+<td class="cal-day cal-other cal-past"><div class="cal-date">27</div><div class="cal-chips"></div></td>
+<td class="cal-day cal-other cal-past"><div class="cal-date">28</div><div class="cal-chips"></div></td>
+<td class="cal-day cal-other cal-past"><div class="cal-date">29</div><div class="cal-chips"></div></td>
+<td class="cal-day cal-other cal-past"><div class="cal-date">30</div><div class="cal-chips"></div></td>
+<td class="cal-day cal-other cal-past"><div class="cal-date">31</div><div class="cal-chips"></div></td>
+<td class="cal-day cal-past"><div class="cal-date">1</div><div class="cal-chips"></div></td>
+<td class="cal-day cal-past"><div class="cal-date">2</div><div class="cal-chips"></div></td>
+</tr>
+<tr>
+<td class="cal-day cal-past"><div class="cal-date">3</div><div class="cal-chips"></div></td>
+<td class="cal-day cal-past"><div class="cal-date">4</div><div class="cal-chips"></div></td>
+<td class="cal-day cal-past"><div class="cal-date">5</div><div class="cal-chips"></div></td>
+<td class="cal-day cal-past"><div class="cal-date">6</div><div class="cal-chips"><span class="chip" style="background:#94a3b822;border-left:3px solid #94a3b8" title="反指標女神「一賣南亞科」股價就往上漲！網朝聖：大V天龍 - facebook.com">📰 1303 南亞</span><span class="chip" style="background:#94a3b822;border-left:3px solid #94a3b8" title="反指標女神「一賣南亞科」股價就往上漲！網朝聖：大V天龍 - ETtoday財經雲">📰 1303 南亞</span><span class="chip" style="background:#94a3b822;border-left:3px solid #94a3b8" title="反指標女神喊「放手南亞科」股價馬上漲 網友朝聖齊喊：感恩的心 | 太報 - LINE TODAY">📰 1303 南亞</span><span class="chip" style="background:#94a3b822;border-left:3px solid #94a3b8" title="巴逆逆喊「感覺怪怪的」急賣南亞科！下一秒股價竟起飛　網狂喊：大V天龍 | 財經 | CTWANT - CTWANT">📰 1303 南亞</span><span class="chip more">+221</span></div></td>
+<td class="cal-day cal-today"><div class="cal-date">7</div><div class="cal-chips"><span class="chip" style="background:#fbbf2422;border-left:3px solid #fbbf24" title="南亞 財報公告">💰 1303 南亞</span><span class="chip" style="background:#94a3b822;border-left:3px solid #94a3b8" title="【11:01 即時新聞】南亞(1303)股價走強漲逾5%，AI電子材料獲利爆發＋法人資金回補點火 - CMoney投資網誌">📰 1303 南亞</span><span class="chip" style="background:#94a3b822;border-left:3px solid #94a3b8" title="〈台塑四寶業績〉南亞、台化樂觀看Q3業績 台塑化估油價維持區間盤整 - news.cnyes.com">📰 1326 台化</span><span class="chip" style="background:#fbbf2422;border-left:3px solid #fbbf24" title="華新 財報公告">💰 1605 華新</span><span class="chip more">+141</span></div></td>
+<td class="cal-day"><div class="cal-date">8</div><div class="cal-chips"></div></td>
+<td class="cal-day"><div class="cal-date">9</div><div class="cal-chips"></div></td>
+</tr>
+<tr>
+<td class="cal-day"><div class="cal-date">10</div><div class="cal-chips"><span class="chip" style="background:#60a5fa22;border-left:3px solid #60a5fa" title="月營收公告 2026/07">📊 *ALL*</span><span class="chip" style="background:#fbbf2422;border-left:3px solid #fbbf24" title="大同 財報公告">💰 2371 大同</span><span class="chip" style="background:#fbbf2422;border-left:3px solid #fbbf24" title="可成 財報公告">💰 2474 可成</span><span class="chip" style="background:#fbbf2422;border-left:3px solid #fbbf24" title="嘉澤 財報公告">💰 3533 嘉澤</span><span class="chip more">+2</span></div></td>
+<td class="cal-day"><div class="cal-date">11</div><div class="cal-chips"><span class="chip" style="background:#fbbf2422;border-left:3px solid #fbbf24" title="台化 財報公告">💰 1326 台化</span><span class="chip" style="background:#fbbf2422;border-left:3px solid #fbbf24" title="華碩 財報公告">💰 2357 華碩</span><span class="chip" style="background:#fbbf2422;border-left:3px solid #fbbf24" title="奇鋐 財報公告">💰 3017 奇鋐</span><span class="chip" style="background:#fbbf2422;border-left:3px solid #fbbf24" title="臻鼎-KY 財報公告">💰 4958 臻鼎-KY</span></div></td>
+<td class="cal-day"><div class="cal-date">12</div><div class="cal-chips"><span class="chip" style="background:#fbbf2422;border-left:3px solid #fbbf24" title="東元 財報公告">💰 1504 東元</span><span class="chip" style="background:#fbbf2422;border-left:3px solid #fbbf24" title="仁寶 財報公告">💰 2324 仁寶</span><span class="chip" style="background:#fbbf2422;border-left:3px solid #fbbf24" title="廣達 財報公告">💰 2382 廣達</span><span class="chip" style="background:#fbbf2422;border-left:3px solid #fbbf24" title="2618.TW 財報公告">💰 2618</span><span class="chip more">+2</span></div></td>
+<td class="cal-day"><div class="cal-date">13</div><div class="cal-chips"><span class="chip" style="background:#fbbf2422;border-left:3px solid #fbbf24" title="鴻海 財報公告">💰 2317 鴻海</span><span class="chip" style="background:#f472b622;border-left:3px solid #f472b6" title="迎廣 除息日">💸 6117 迎廣</span></div></td>
+<td class="cal-day"><div class="cal-date">14</div><div class="cal-chips"><span class="chip" style="background:#fbbf2422;border-left:3px solid #fbbf24" title="Q2 財報截止日 2026">💰 *ALL*</span><span class="chip" style="background:#fbbf2422;border-left:3px solid #fbbf24" title="亞德客-KY 財報公告">💰 1590 亞德客-KY</span></div></td>
+<td class="cal-day"><div class="cal-date">15</div><div class="cal-chips"></div></td>
+<td class="cal-day"><div class="cal-date">16</div><div class="cal-chips"></div></td>
+</tr>
+<tr>
+<td class="cal-day"><div class="cal-date">17</div><div class="cal-chips"><span class="chip" style="background:#f472b622;border-left:3px solid #f472b6" title="合機 除息日">💸 1618 合機</span><span class="chip" style="background:#f472b622;border-left:3px solid #f472b6" title="康舒 除息日">💸 6282 康舒</span></div></td>
+<td class="cal-day"><div class="cal-date">18</div><div class="cal-chips"></div></td>
+<td class="cal-day"><div class="cal-date">19</div><div class="cal-chips"></div></td>
+<td class="cal-day"><div class="cal-date">20</div><div class="cal-chips"><span class="chip" style="background:#f472b622;border-left:3px solid #f472b6" title="立隆電 除息日">💸 2472 立隆電</span></div></td>
+<td class="cal-day"><div class="cal-date">21</div><div class="cal-chips"><span class="chip" style="background:#fbbf2422;border-left:3px solid #fbbf24" title="貿聯-KY 財報公告">💰 3665 貿聯-KY</span></div></td>
+<td class="cal-day"><div class="cal-date">22</div><div class="cal-chips"></div></td>
+<td class="cal-day"><div class="cal-date">23</div><div class="cal-chips"></div></td>
+</tr>
+<tr>
+<td class="cal-day"><div class="cal-date">24</div><div class="cal-chips"><span class="chip" style="background:#a78bfa22;border-left:3px solid #a78bfa" title="Hot Chips 2026">🏛 2330 台積電</span><span class="chip" style="background:#a78bfa22;border-left:3px solid #a78bfa" title="Hot Chips 2026">🏛 2337</span><span class="chip" style="background:#a78bfa22;border-left:3px solid #a78bfa" title="Hot Chips 2026">🏛 2344 華邦電</span><span class="chip" style="background:#a78bfa22;border-left:3px solid #a78bfa" title="Hot Chips 2026">🏛 2379 瑞昱</span><span class="chip more">+6</span></div></td>
+<td class="cal-day"><div class="cal-date">25</div><div class="cal-chips"></div></td>
+<td class="cal-day"><div class="cal-date">26</div><div class="cal-chips"></div></td>
+<td class="cal-day"><div class="cal-date">27</div><div class="cal-chips"><span class="chip" style="background:#f472b622;border-left:3px solid #f472b6" title="川湖 除息日">💸 2059 川湖</span><span class="chip" style="background:#fbbf2422;border-left:3px solid #fbbf24" title="矽力-KY 財報公告">💰 6415 矽力-KY</span></div></td>
+<td class="cal-day"><div class="cal-date">28</div><div class="cal-chips"><span class="chip" style="background:#f472b622;border-left:3px solid #f472b6" title="台光電 除息日">💸 2383 台光電</span></div></td>
+<td class="cal-day"><div class="cal-date">29</div><div class="cal-chips"></div></td>
+<td class="cal-day"><div class="cal-date">30</div><div class="cal-chips"></div></td>
+</tr>
+<tr>
+<td class="cal-day"><div class="cal-date">31</div><div class="cal-chips"></div></td>
+<td class="cal-day"><div class="cal-date">1</div><div class="cal-chips"></div></td>
+<td class="cal-day"><div class="cal-date">2</div><div class="cal-chips"><span class="chip" style="background:#f472b622;border-left:3px solid #f472b6" title="亞翔 除息日">💸 6139 亞翔</span></div></td>
+<td class="cal-day"><div class="cal-date">3</div><div class="cal-chips"><span class="chip" style="background:#a78bfa22;border-left:3px solid #a78bfa" title="SEMICON Taiwan 2026">🏛 2049 上銀</span><span class="chip" style="background:#a78bfa22;border-left:3px solid #a78bfa" title="SEMICON Taiwan 2026">🏛 2313 華通</span><span class="chip" style="background:#a78bfa22;border-left:3px solid #a78bfa" title="SEMICON Taiwan 2026">🏛 2330 台積電</span><span class="chip" style="background:#a78bfa22;border-left:3px solid #a78bfa" title="SEMICON Taiwan 2026">🏛 2379 瑞昱</span><span class="chip more">+5</span></div></td>
+<td class="cal-day"><div class="cal-date">4</div><div class="cal-chips"></div></td>
+<td class="cal-day"><div class="cal-date">5</div><div class="cal-chips"></div></td>
+<td class="cal-day"><div class="cal-date">6</div><div class="cal-chips"></div></td>
+</tr>
+<tr>
+<td class="cal-day"><div class="cal-date">7</div><div class="cal-chips"></div></td>
+<td class="cal-day"><div class="cal-date">8</div><div class="cal-chips"></div></td>
+<td class="cal-day"><div class="cal-date">9</div><div class="cal-chips"></div></td>
+<td class="cal-day"><div class="cal-date">10</div><div class="cal-chips"></div></td>
+<td class="cal-day"><div class="cal-date">11</div><div class="cal-chips"></div></td>
+<td class="cal-day"><div class="cal-date">12</div><div class="cal-chips"></div></td>
+<td class="cal-day"><div class="cal-date">13</div><div class="cal-chips"></div></td>
+</tr>
+<tr>
+<td class="cal-day"><div class="cal-date">14</div><div class="cal-chips"></div></td>
+<td class="cal-day"><div class="cal-date">15</div><div class="cal-chips"></div></td>
+<td class="cal-day"><div class="cal-date">16</div><div class="cal-chips"></div></td>
+<td class="cal-day"><div class="cal-date">17</div><div class="cal-chips"></div></td>
+<td class="cal-day"><div class="cal-date">18</div><div class="cal-chips"></div></td>
+<td class="cal-day"><div class="cal-date">19</div><div class="cal-chips"></div></td>
+<td class="cal-day"><div class="cal-date">20</div><div class="cal-chips"></div></td>
+</tr>
+<tr>
+<td class="cal-day"><div class="cal-date">21</div><div class="cal-chips"></div></td>
+<td class="cal-day"><div class="cal-date">22</div><div class="cal-chips"></div></td>
+<td class="cal-day"><div class="cal-date">23</div><div class="cal-chips"></div></td>
+<td class="cal-day"><div class="cal-date">24</div><div class="cal-chips"></div></td>
+<td class="cal-day"><div class="cal-date">25</div><div class="cal-chips"></div></td>
+<td class="cal-day"><div class="cal-date">26</div><div class="cal-chips"></div></td>
+<td class="cal-day"><div class="cal-date">27</div><div class="cal-chips"></div></td>
+</tr>
+<tr>
+<td class="cal-day"><div class="cal-date">28</div><div class="cal-chips"></div></td>
+<td class="cal-day"><div class="cal-date">29</div><div class="cal-chips"></div></td>
+<td class="cal-day"><div class="cal-date">30</div><div class="cal-chips"></div></td>
+<td class="cal-day"><div class="cal-date">1</div><div class="cal-chips"></div></td>
+<td class="cal-day"><div class="cal-date">2</div><div class="cal-chips"></div></td>
+<td class="cal-day"><div class="cal-date">3</div><div class="cal-chips"></div></td>
+<td class="cal-day"><div class="cal-date">4</div><div class="cal-chips"></div></td>
+</tr>
+<tr>
+<td class="cal-day"><div class="cal-date">5</div><div class="cal-chips"></div></td>
+<td class="cal-day"><div class="cal-date">6</div><div class="cal-chips"></div></td>
+</tr>
+</table>
+
+<h2>📜 事件時間線</h2>
+<details class="tl-details tl-past">
+<summary class="tl-summary"><span class="tl-date">07-31 <span class="tl-label">(D-7)</span></span><span class="tl-count">25 筆</span><span class="tl-chips-inline"><span class="tl-chip" style="background:#f9731633;color:#f97316">⚠️ 25</span></span></summary>
+<div class="tl-events">
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">1515.TW</span><span class="tl-name">⚠️ 列處置股（第二次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">3026 禾伸堂</span><span class="tl-name">⚠️ 列注意股（累計1次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">3055 蔚華科</span><span class="tl-name">⚠️ 列注意股（累計1次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">3055 蔚華科</span><span class="tl-name">⚠️ 列處置股（加重處置）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">3167 大量</span><span class="tl-name">⚠️ 列注意股（累計1次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">3167 大量</span><span class="tl-name">⚠️ 列處置股（加重處置）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">3189 景碩</span><span class="tl-name">⚠️ 列注意股（累計1次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">3211 順達</span><span class="tl-name">⚠️ 列注意股（累計21次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">3260 威剛</span><span class="tl-name">⚠️ 列注意股（累計21次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">3481 群創</span><span class="tl-name">⚠️ 列注意股（累計1次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">3491 昇達科</span><span class="tl-name">⚠️ 列注意股（累計21次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">4542 科嶠</span><span class="tl-name">⚠️ 列注意股（累計21次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">4583 台灣精銳</span><span class="tl-name">⚠️ 列注意股（累計1次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">6166 凌華</span><span class="tl-name">⚠️ 列注意股（累計1次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">6182.TW <span class="exited">[已出場]</span></span><span class="tl-name">⚠️ 列注意股（累計21次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">6217 中探針</span><span class="tl-name">⚠️ 列注意股（累計21次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">6217 中探針</span><span class="tl-name">⚠️ 列處置股（第5次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">6451 訊芯-KY</span><span class="tl-name">⚠️ 列注意股（累計1次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">6531 愛普*</span><span class="tl-name">⚠️ 列注意股（累計1次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">7610 聯友金屬</span><span class="tl-name">⚠️ 列注意股（累計1次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">7828 創新服務</span><span class="tl-name">⚠️ 列注意股（累計21次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">8039.TW <span class="exited">[已出場]</span></span><span class="tl-name">⚠️ 列注意股（累計1次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">8046 南電</span><span class="tl-name">⚠️ 列注意股（累計1次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">8150.TW <span class="exited">[已出場]</span></span><span class="tl-name">⚠️ 列注意股（累計1次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">8261 富鼎</span><span class="tl-name">⚠️ 列注意股（累計1次）— 監控可能公佈自結損益</span></div>
+</div></details>
+<details class="tl-details tl-past">
+<summary class="tl-summary"><span class="tl-date">08-03 <span class="tl-label">(D-4)</span></span><span class="tl-count">10 筆</span><span class="tl-chips-inline"><span class="tl-chip" style="background:#f9731633;color:#f97316">⚠️ 10</span></span></summary>
+<div class="tl-events">
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">2634 漢翔</span><span class="tl-name">⚠️ 列注意股（累計1次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">3026 禾伸堂</span><span class="tl-name">⚠️ 列注意股（累計1次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">3026 禾伸堂</span><span class="tl-name">⚠️ 列處置股（第二次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">3055 蔚華科</span><span class="tl-name">⚠️ 列注意股（累計1次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">3450 聯鈞</span><span class="tl-name">⚠️ 列注意股（累計1次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">6182.TW <span class="exited">[已出場]</span></span><span class="tl-name">⚠️ 列處置股（第5次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">6531 愛普*</span><span class="tl-name">⚠️ 列處置股（第一次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">7828 創新服務</span><span class="tl-name">⚠️ 列處置股（第5次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">8039.TW <span class="exited">[已出場]</span></span><span class="tl-name">⚠️ 列注意股（累計1次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">8046 南電</span><span class="tl-name">⚠️ 列處置股（第一次）— 監控可能公佈自結損益</span></div>
+</div></details>
+<details class="tl-details tl-past">
+<summary class="tl-summary"><span class="tl-date">08-04 <span class="tl-label">(D-3)</span></span><span class="tl-count">5 筆</span><span class="tl-chips-inline"><span class="tl-chip" style="background:#f9731633;color:#f97316">⚠️ 5</span></span></summary>
+<div class="tl-events">
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">2059 川湖</span><span class="tl-name">⚠️ 列注意股（累計1次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">2484 希華</span><span class="tl-name">⚠️ 列注意股（累計1次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">3017 奇鋐</span><span class="tl-name">⚠️ 列注意股（累計1次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">6669 緯穎</span><span class="tl-name">⚠️ 列注意股（累計1次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">7828 創新服務</span><span class="tl-name">⚠️ 列注意股（累計8次）— 監控可能公佈自結損益</span></div>
+</div></details>
+<details class="tl-details tl-past">
+<summary class="tl-summary"><span class="tl-date">08-05 <span class="tl-label">(D-2)</span></span><span class="tl-count">25 筆</span><span class="tl-chips-inline"><span class="tl-chip" style="background:#f9731633;color:#f97316">⚠️ 25</span></span></summary>
+<div class="tl-events">
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">1590 亞德客-KY</span><span class="tl-name">⚠️ 列注意股（累計1次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">2059 川湖</span><span class="tl-name">⚠️ 列注意股（累計1次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">2383 台光電</span><span class="tl-name">⚠️ 列注意股（累計1次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">2454 聯發科</span><span class="tl-name">⚠️ 列注意股（累計1次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">2455 全新</span><span class="tl-name">⚠️ 列注意股（累計1次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">2484 希華</span><span class="tl-name">⚠️ 列注意股（累計1次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">3037 欣興</span><span class="tl-name">⚠️ 列注意股（累計1次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">3189 景碩</span><span class="tl-name">⚠️ 列注意股（累計1次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">3221 台嘉碩</span><span class="tl-name">⚠️ 列注意股（累計21次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">3363 上詮</span><span class="tl-name">⚠️ 列注意股（累計21次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">3443 創意</span><span class="tl-name">⚠️ 列注意股（累計1次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">3529 力旺</span><span class="tl-name">⚠️ 列注意股（累計21次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">3661 世芯-KY</span><span class="tl-name">⚠️ 列注意股（累計1次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">4979 華星光</span><span class="tl-name">⚠️ 列注意股（累計21次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">5475 德宏</span><span class="tl-name">⚠️ 列注意股（累計21次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">6207 雷科</span><span class="tl-name">⚠️ 列注意股（累計21次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">6223 旺矽</span><span class="tl-name">⚠️ 列注意股（累計21次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">6515 穎崴</span><span class="tl-name">⚠️ 列注意股（累計1次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">6531 愛普*</span><span class="tl-name">⚠️ 列注意股（累計1次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">6683 雍智科技</span><span class="tl-name">⚠️ 列注意股（累計21次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">7610 聯友金屬</span><span class="tl-name">⚠️ 列注意股（累計1次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">7750 新代</span><span class="tl-name">⚠️ 列注意股（累計1次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">8046 南電</span><span class="tl-name">⚠️ 列注意股（累計1次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">8299 群聯</span><span class="tl-name">⚠️ 列注意股（累計21次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">8996 高力</span><span class="tl-name">⚠️ 列注意股（累計1次）— 監控可能公佈自結損益</span></div>
+</div></details>
+<details class="tl-details tl-past">
+<summary class="tl-summary"><span class="tl-date">08-06 <span class="tl-label">(D-1)</span></span><span class="tl-count">47 筆</span><span class="tl-chips-inline"><span class="tl-chip" style="background:#f9731633;color:#f97316">⚠️ 47</span></span></summary>
+<div class="tl-events">
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">1815 富喬</span><span class="tl-name">⚠️ 列注意股（累計35次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">2059 川湖</span><span class="tl-name">⚠️ 列注意股（累計1次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">2301 光寶科</span><span class="tl-name">⚠️ 列注意股（累計1次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">2345 鴻準</span><span class="tl-name">⚠️ 列注意股（累計1次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">2383 台光電</span><span class="tl-name">⚠️ 列注意股（累計1次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">2404 漢唐</span><span class="tl-name">⚠️ 列注意股（累計1次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">2408 南亞科</span><span class="tl-name">⚠️ 列注意股（累計1次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">2455 全新</span><span class="tl-name">⚠️ 列注意股（累計1次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">2464 盟立</span><span class="tl-name">⚠️ 列注意股（累計1次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">2484 希華</span><span class="tl-name">⚠️ 列注意股（累計1次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">3006 晶豪科</span><span class="tl-name">⚠️ 列注意股（累計1次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">3017 奇鋐</span><span class="tl-name">⚠️ 列注意股（累計1次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">3026 禾伸堂</span><span class="tl-name">⚠️ 列注意股（累計1次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">3037 欣興</span><span class="tl-name">⚠️ 列注意股（累計1次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">3081 聯亞</span><span class="tl-name">⚠️ 列注意股（累計35次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">3163 波若威</span><span class="tl-name">⚠️ 列注意股（累計35次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">3167 大量</span><span class="tl-name">⚠️ 列注意股（累計1次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">3189 景碩</span><span class="tl-name">⚠️ 列注意股（累計1次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">3443 創意</span><span class="tl-name">⚠️ 列注意股（累計1次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">3450 聯鈞</span><span class="tl-name">⚠️ 列注意股（累計1次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">3491 昇達科</span><span class="tl-name">⚠️ 列注意股（累計35次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">3529 力旺</span><span class="tl-name">⚠️ 列注意股（累計35次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">3583 辛耘</span><span class="tl-name">⚠️ 列注意股（累計1次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">4542 科嶠</span><span class="tl-name">⚠️ 列注意股（累計35次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">4722 國精化</span><span class="tl-name">⚠️ 列注意股（累計1次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">4749 新應材</span><span class="tl-name">⚠️ 列注意股（累計35次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">4908 前鼎</span><span class="tl-name">⚠️ 列注意股（累計35次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">4931 新盛力</span><span class="tl-name">⚠️ 列注意股（累計35次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">4971 IET-KY</span><span class="tl-name">⚠️ 列注意股（累計35次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">5289 宜鼎</span><span class="tl-name">⚠️ 列注意股（累計35次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">5351 鈺創</span><span class="tl-name">⚠️ 列注意股（累計35次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">5536 聖暉*</span><span class="tl-name">⚠️ 列注意股（累計35次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">6139 亞翔</span><span class="tl-name">⚠️ 列注意股（累計1次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">6217 中探針</span><span class="tl-name">⚠️ 列注意股（累計35次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">6442 光聖</span><span class="tl-name">⚠️ 列注意股（累計1次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">6451 訊芯-KY</span><span class="tl-name">⚠️ 列注意股（累計1次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">6510 精測</span><span class="tl-name">⚠️ 列注意股（累計35次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">6526 達發</span><span class="tl-name">⚠️ 列注意股（累計1次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">6531 愛普*</span><span class="tl-name">⚠️ 列注意股（累計1次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">6640 均華</span><span class="tl-name">⚠️ 列注意股（累計35次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">6643 M31</span><span class="tl-name">⚠️ 列注意股（累計35次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">6781 AES-KY</span><span class="tl-name">⚠️ 列注意股（累計1次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">6805 富世達</span><span class="tl-name">⚠️ 列注意股（累計1次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">7610 聯友金屬</span><span class="tl-name">⚠️ 列注意股（累計1次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">8210 勤誠</span><span class="tl-name">⚠️ 列注意股（累計1次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">8358 金居</span><span class="tl-name">⚠️ 列注意股（累計35次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">8996 高力</span><span class="tl-name">⚠️ 列注意股（累計1次）— 監控可能公佈自結損益</span></div>
+</div></details>
+<details class="tl-details tl-today" open>
+<summary class="tl-summary"><span class="tl-date">08-07 <span class="tl-label">(今天)</span></span><span class="tl-count">145 筆</span><span class="tl-chips-inline"><span class="tl-chip" style="background:#94a3b833;color:#94a3b8">📰 110</span><span class="tl-chip" style="background:#f9731633;color:#f97316">⚠️ 31</span><span class="tl-chip" style="background:#fbbf2433;color:#fbbf24">💰 4</span></span></summary>
+<div class="tl-events">
+<div class="tl-evt" style="border-left:3px solid #fbbf24"><span class="tl-icon">💰</span><span class="tl-type" style="color:#fbbf24">財報</span><span class="tl-tkr">1303 南亞</span><span class="tl-name">南亞 財報公告</span></div>
+<div class="tl-evt" style="border-left:3px solid #94a3b8"><span class="tl-icon">📰</span><span class="tl-type" style="color:#94a3b8">新聞</span><span class="tl-tkr">1303 南亞</span><span class="tl-name">【11:01 即時新聞】南亞(1303)股價走強漲逾5%，AI電子材料獲利爆發＋法人資金回補點火 - CMoney投資網</span></div>
+<div class="tl-evt" style="border-left:3px solid #94a3b8"><span class="tl-icon">📰</span><span class="tl-type" style="color:#94a3b8">新聞</span><span class="tl-tkr">1326 台化</span><span class="tl-name">〈台塑四寶業績〉南亞、台化樂觀看Q3業績 台塑化估油價維持區間盤整 - news.cnyes.com</span></div>
+<div class="tl-evt" style="border-left:3px solid #fbbf24"><span class="tl-icon">💰</span><span class="tl-type" style="color:#fbbf24">財報</span><span class="tl-tkr">1605 華新</span><span class="tl-name">華新 財報公告</span></div>
+<div class="tl-evt" style="border-left:3px solid #94a3b8"><span class="tl-icon">📰</span><span class="tl-type" style="color:#94a3b8">新聞</span><span class="tl-tkr">1609 大亞</span><span class="tl-name">【11:41 即時新聞】大亞(1609)股價上漲至37.3元、漲幅3.76%，財報與營收表現支撐電線電纜題材，惟中長期技</span></div>
+<div class="tl-evt" style="border-left:3px solid #94a3b8"><span class="tl-icon">📰</span><span class="tl-type" style="color:#94a3b8">新聞</span><span class="tl-tkr">1609 大亞</span><span class="tl-name">〈焦點股〉大亞上半年獲利17.58億年增近9成EPS 2.24元 價量齊揚 - 鉅亨網</span></div>
+<div class="tl-evt" style="border-left:3px solid #94a3b8"><span class="tl-icon">📰</span><span class="tl-type" style="color:#94a3b8">新聞</span><span class="tl-tkr">1609 大亞</span><span class="tl-name">大亞23.3MW光儲系統震後穩供電 史瓦帝尼表達合作意願 - 自由財經</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">1815 富喬</span><span class="tl-name">⚠️ 列注意股（累計21次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">2049 上銀</span><span class="tl-name">⚠️ 列注意股（累計1次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #94a3b8"><span class="tl-icon">📰</span><span class="tl-type" style="color:#94a3b8">新聞</span><span class="tl-tkr">2049 上銀</span><span class="tl-name">【即時新聞】上銀(2049)營收創高鎖漲停，這「5檔概念股」買盤狂湧接棒飆漲？ - CMoney</span></div>
+<div class="tl-evt" style="border-left:3px solid #94a3b8"><span class="tl-icon">📰</span><span class="tl-type" style="color:#94a3b8">新聞</span><span class="tl-tkr">2049 上銀</span><span class="tl-name">【09:46 即時新聞】上銀(2049)股價漲逾9%，七月營收連五月雙增帶動買盤追價＋均線多頭排列、外資連買推升短線趨勢</span></div>
+<div class="tl-evt" style="border-left:3px solid #94a3b8"><span class="tl-icon">📰</span><span class="tl-type" style="color:#94a3b8">新聞</span><span class="tl-tkr">2049 上銀</span><span class="tl-name">川湖、景碩等9檔8/10打入處置 上銀等57檔列注意股 - 自由財經</span></div>
+<div class="tl-evt" style="border-left:3px solid #94a3b8"><span class="tl-icon">📰</span><span class="tl-type" style="color:#94a3b8">新聞</span><span class="tl-tkr">2049 上銀</span><span class="tl-name">2026台灣機器人與智慧自動化展即將登場！宇樹掛牌點火機器人熱潮，展覽重點、機器人概念股一文掌握｜股市話題 - sino</span></div>
+<div class="tl-evt" style="border-left:3px solid #94a3b8"><span class="tl-icon">📰</span><span class="tl-type" style="color:#94a3b8">新聞</span><span class="tl-tkr">2049 上銀</span><span class="tl-name">中國機器人獨角獸下周上市！上銀等「5檔電機股」暴衝 最猛直奔漲停 - Yahoo股市</span></div>
+<div class="tl-evt" style="border-left:3px solid #94a3b8"><span class="tl-icon">📰</span><span class="tl-type" style="color:#94a3b8">新聞</span><span class="tl-tkr">2049 上銀</span><span class="tl-name">0807台股盤後｜非農前夕與川普變數干擾 台股高檔震盪洗盤 營收創高模範生上銀、鼎元、聯茂走強 - news.cnyes</span></div>
+<div class="tl-evt" style="border-left:3px solid #94a3b8"><span class="tl-icon">📰</span><span class="tl-type" style="color:#94a3b8">新聞</span><span class="tl-tkr">2049 上銀</span><span class="tl-name">群聯、金像電、聯亞、上銀...15檔半年報黑馬搶先卡位！分析師揭選股4指標...真能複製鈺創、晶豪科噴一波？ - 今周刊</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">2059 川湖</span><span class="tl-name">⚠️ 列注意股（累計1次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #94a3b8"><span class="tl-icon">📰</span><span class="tl-type" style="color:#94a3b8">新聞</span><span class="tl-tkr">2059 川湖</span><span class="tl-name">台股量縮跌170點丟季線！川湖續演萬元漲停秀 機器人軍團逆風狂奔｜Yahoo財經掃描 - Yahoo股市</span></div>
+<div class="tl-evt" style="border-left:3px solid #94a3b8"><span class="tl-icon">📰</span><span class="tl-type" style="color:#94a3b8">新聞</span><span class="tl-tkr">2059 川湖</span><span class="tl-name">川湖、景碩等9檔8/10打入處置 上銀等57檔列注意股 - 自由財經</span></div>
+<div class="tl-evt" style="border-left:3px solid #94a3b8"><span class="tl-icon">📰</span><span class="tl-type" style="color:#94a3b8">新聞</span><span class="tl-tkr">2059 川湖</span><span class="tl-name">川湖（2059）強攻漲停破萬元！單日大漲1010元創紀錄直逼昔日金融股天價| 台股雜談| 股市 - UDN</span></div>
+<div class="tl-evt" style="border-left:3px solid #94a3b8"><span class="tl-icon">📰</span><span class="tl-type" style="color:#94a3b8">新聞</span><span class="tl-tkr">2059 川湖</span><span class="tl-name">川湖噴漲停、機器人齊飛！台積電逆勢漲5元撐盤 台股高開低走跌170點失守季線 - Yahoo股市</span></div>
+<div class="tl-evt" style="border-left:3px solid #94a3b8"><span class="tl-icon">📰</span><span class="tl-type" style="color:#94a3b8">新聞</span><span class="tl-tkr">2059 川湖</span><span class="tl-name">川湖科技躍升萬金股！ 「兩根鐵滑軌」扛起AI產業鏈關鍵秘密曝 - TVBS新聞網</span></div>
+<div class="tl-evt" style="border-left:3px solid #94a3b8"><span class="tl-icon">📰</span><span class="tl-type" style="color:#94a3b8">新聞</span><span class="tl-tkr">2059 川湖</span><span class="tl-name">證交所新制8/10實施！川湖等6檔新處置股改2分鍾撮合1次 - Yahoo新聞</span></div>
+<div class="tl-evt" style="border-left:3px solid #94a3b8"><span class="tl-icon">📰</span><span class="tl-type" style="color:#94a3b8">新聞</span><span class="tl-tkr">2303 聯電</span><span class="tl-name">晶圓代工淪三大法人提款機！「這2檔」被狠賣4.9萬張 聯電中刀失血38.2億元跌4.53% - Yahoo股市</span></div>
+<div class="tl-evt" style="border-left:3px solid #94a3b8"><span class="tl-icon">📰</span><span class="tl-type" style="color:#94a3b8">新聞</span><span class="tl-tkr">2303 聯電</span><span class="tl-name">個股跌停隔天卻漲停？專家揭「主力籌碼」分點指標：看懂進出貨避免接刀| 股市要聞| 股市 | 聯合新聞網 - UDN</span></div>
+<div class="tl-evt" style="border-left:3px solid #94a3b8"><span class="tl-icon">📰</span><span class="tl-type" style="color:#94a3b8">新聞</span><span class="tl-tkr">2303 聯電</span><span class="tl-name">【Follow法人】外資大砍407億！賣超群創逾5萬張居冠 華邦電、聯電也遭倒貨 - Yahoo股市</span></div>
+<div class="tl-evt" style="border-left:3px solid #94a3b8"><span class="tl-icon">📰</span><span class="tl-type" style="color:#94a3b8">新聞</span><span class="tl-tkr">2303 聯電</span><span class="tl-name">2303 聯電 - 6770力積電| 天量後急速量縮，於高檔橫盤沉澱- 股市爆料同學會 - CMoney</span></div>
+<div class="tl-evt" style="border-left:3px solid #94a3b8"><span class="tl-icon">📰</span><span class="tl-type" style="color:#94a3b8">新聞</span><span class="tl-tkr">2303 聯電</span><span class="tl-name">晶圓代工齊遭殺！「這檔」連5漲後回檔炸21.6萬張 聯電苦吞連2跌噴16.4萬張 - Yahoo股市</span></div>
+<div class="tl-evt" style="border-left:3px solid #94a3b8"><span class="tl-icon">📰</span><span class="tl-type" style="color:#94a3b8">新聞</span><span class="tl-tkr">2312 金寶</span><span class="tl-name">金寶集團許介立：企業永續不是成本 而是疊加競爭力的關鍵價值 - Yahoo 財經</span></div>
+<div class="tl-evt" style="border-left:3px solid #94a3b8"><span class="tl-icon">📰</span><span class="tl-type" style="color:#94a3b8">新聞</span><span class="tl-tkr">2327 國巨</span><span class="tl-name">國巨又下殺逾5％ 何時重返千元？陳泰銘成利空？分析師吐真話- 財經 - 中時新聞網</span></div>
+<div class="tl-evt" style="border-left:3px solid #94a3b8"><span class="tl-icon">📰</span><span class="tl-type" style="color:#94a3b8">新聞</span><span class="tl-tkr">2327 國巨</span><span class="tl-name">【20大權值力撐4萬點1】重挫時「最吸金」！6萬股東搶進神山 南亞科、國巨增幅最高成「低接王」 - Yahoo股市</span></div>
+<div class="tl-evt" style="border-left:3px solid #94a3b8"><span class="tl-icon">📰</span><span class="tl-type" style="color:#94a3b8">新聞</span><span class="tl-tkr">2330 台積電</span><span class="tl-name">股災進場！買台積電沒賺「這檔1張賺300萬」 阮慕驊：別聽信重押鬼話 - Yahoo新聞</span></div>
+<div class="tl-evt" style="border-left:3px solid #94a3b8"><span class="tl-icon">📰</span><span class="tl-type" style="color:#94a3b8">新聞</span><span class="tl-tkr">2330 台積電</span><span class="tl-name">台積電7月營收下周出爐！投顧董總樂看「破4500億元」再破紀錄 - Yahoo股市</span></div>
+<div class="tl-evt" style="border-left:3px solid #94a3b8"><span class="tl-icon">📰</span><span class="tl-type" style="color:#94a3b8">新聞</span><span class="tl-tkr">2330 台積電</span><span class="tl-name">台積電卡住上不去？他買在2480元嘆「漲一天跌兩天」 過來人點關鍵：抱到明年再說 - Yahoo股市</span></div>
+<div class="tl-evt" style="border-left:3px solid #94a3b8"><span class="tl-icon">📰</span><span class="tl-type" style="color:#94a3b8">新聞</span><span class="tl-tkr">2344 華邦電</span><span class="tl-name">焦點股》華邦電：報價追價力道有限 跌逾半根停板 - 自由財經</span></div>
+<div class="tl-evt" style="border-left:3px solid #94a3b8"><span class="tl-icon">📰</span><span class="tl-type" style="color:#94a3b8">新聞</span><span class="tl-tkr">2344 華邦電</span><span class="tl-name">華邦電財報超旺！大摩看好記憶體續漲價它是新動能- 上市櫃 - 旺得富理財網</span></div>
+<div class="tl-evt" style="border-left:3px solid #94a3b8"><span class="tl-icon">📰</span><span class="tl-type" style="color:#94a3b8">新聞</span><span class="tl-tkr">2344 華邦電</span><span class="tl-name">華邦電可以買嗎？財報亮眼股價卻吞半根跌停…不只外資終結連3買改賣超1.8萬張利空，要抱要殺全看2重點 - 今周刊</span></div>
+<div class="tl-evt" style="border-left:3px solid #94a3b8"><span class="tl-icon">📰</span><span class="tl-type" style="color:#94a3b8">新聞</span><span class="tl-tkr">2344 華邦電</span><span class="tl-name">華邦電法說後挫逾4%...力積電虎頭蛇尾收跌 分析師揭多空分水嶺 - Yahoo股市</span></div>
+<div class="tl-evt" style="border-left:3px solid #94a3b8"><span class="tl-icon">📰</span><span class="tl-type" style="color:#94a3b8">新聞</span><span class="tl-tkr">2344 華邦電</span><span class="tl-name">記憶體綠油油！「模組大廠」上半年EPS賺逾2股本重摔跌停板 華邦電、南亞科恐止步連5紅 - Yahoo股市</span></div>
+<div class="tl-evt" style="border-left:3px solid #94a3b8"><span class="tl-icon">📰</span><span class="tl-type" style="color:#94a3b8">新聞</span><span class="tl-tkr">2344 華邦電</span><span class="tl-name">再創新高！華邦電7月營收267億元 月增近3成 - Yahoo股市</span></div>
+<div class="tl-evt" style="border-left:3px solid #94a3b8"><span class="tl-icon">📰</span><span class="tl-type" style="color:#94a3b8">新聞</span><span class="tl-tkr">2345 鴻準</span><span class="tl-name">【即時新聞】鴻準(2354)營收創高亮燈漲停！這「2檔概念股」盤中走勢大分歧！ - CMoney</span></div>
+<div class="tl-evt" style="border-left:3px solid #94a3b8"><span class="tl-icon">📰</span><span class="tl-type" style="color:#94a3b8">新聞</span><span class="tl-tkr">2360 致茂</span><span class="tl-name">台股開高後翻黑！機器人紅通通「這檔小兵」率先攻漲停 致茂、全球傳動噴半根 - Yahoo股市</span></div>
+<div class="tl-evt" style="border-left:3px solid #94a3b8"><span class="tl-icon">📰</span><span class="tl-type" style="color:#94a3b8">新聞</span><span class="tl-tkr">2382 廣達</span><span class="tl-name">廣達7月營收3662億元寫歷史次高 下周四法說釋展望 - Yahoo股市</span></div>
+<div class="tl-evt" style="border-left:3px solid #94a3b8"><span class="tl-icon">📰</span><span class="tl-type" style="color:#94a3b8">新聞</span><span class="tl-tkr">2382 廣達</span><span class="tl-name">廣達七月營收年增101% 703億元海外募資到位、市場聚焦下週財報 - Yahoo</span></div>
+<div class="tl-evt" style="border-left:3px solid #94a3b8"><span class="tl-icon">📰</span><span class="tl-type" style="color:#94a3b8">新聞</span><span class="tl-tkr">2382 廣達</span><span class="tl-name">筆電出貨崩近4成也沒在怕！廣達7月營收創單月次高 下週四法說聚焦AI後市 - Yahoo新聞</span></div>
+<div class="tl-evt" style="border-left:3px solid #94a3b8"><span class="tl-icon">📰</span><span class="tl-type" style="color:#94a3b8">新聞</span><span class="tl-tkr">2395 研華</span><span class="tl-name">台積電擴產、CSP大開資本支出都少不了研華！全球前10大半導體設備商有7、8家都是研華客戶 - Yahoo股市</span></div>
+<div class="tl-evt" style="border-left:3px solid #94a3b8"><span class="tl-icon">📰</span><span class="tl-type" style="color:#94a3b8">新聞</span><span class="tl-tkr">2397 友通</span><span class="tl-name">【10:27 即時新聞】友通(2397)股價上漲至66.3元、漲幅7.28%，IPC族群資金續進＋外資連買推升短線多頭結</span></div>
+<div class="tl-evt" style="border-left:3px solid #94a3b8"><span class="tl-icon">📰</span><span class="tl-type" style="color:#94a3b8">新聞</span><span class="tl-tkr">2408 南亞科</span><span class="tl-name">【20大權值力撐4萬點1】重挫時「最吸金」！6萬股東搶進神山 南亞科、國巨增幅最高成「低接王」 - Yahoo股市</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">2426 鼎元</span><span class="tl-name">⚠️ 列注意股（累計1次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #94a3b8"><span class="tl-icon">📰</span><span class="tl-type" style="color:#94a3b8">新聞</span><span class="tl-tkr">2426 鼎元</span><span class="tl-name">【12:52 即時新聞】鼎元(2426)股價溫和走高至66.2元，延續光電題材買盤迴流＋短線技術反彈測試空方壓力區 - </span></div>
+<div class="tl-evt" style="border-left:3px solid #94a3b8"><span class="tl-icon">📰</span><span class="tl-type" style="color:#94a3b8">新聞</span><span class="tl-tkr">2454 聯發科</span><span class="tl-name">股價跌近4成反成機會？聯發科押注AI ASIC　法人看2027年EPS挑戰150元 - 經濟日報</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">2455 全新</span><span class="tl-name">⚠️ 列注意股（累計1次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">2464 盟立</span><span class="tl-name">⚠️ 列注意股（累計1次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #94a3b8"><span class="tl-icon">📰</span><span class="tl-type" style="color:#94a3b8">新聞</span><span class="tl-tkr">2481 強茂</span><span class="tl-name">強茂總裁方敏宗：功率元件像「工業之米」 成AI時代能源心臟 - news.cnyes.com</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">3006 晶豪科</span><span class="tl-name">⚠️ 列注意股（累計1次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #94a3b8"><span class="tl-icon">📰</span><span class="tl-type" style="color:#94a3b8">新聞</span><span class="tl-tkr">3026 禾伸堂</span><span class="tl-name">8月10日起處置股新制上路 禾伸堂、愛普等11檔提早出關 - UDN</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">3037 欣興</span><span class="tl-name">⚠️ 列注意股（累計1次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #94a3b8"><span class="tl-icon">📰</span><span class="tl-type" style="color:#94a3b8">新聞</span><span class="tl-tkr">3037 欣興</span><span class="tl-name">欣興營收／7月162億元續創新高 年增43.69% - 經濟日報</span></div>
+<div class="tl-evt" style="border-left:3px solid #94a3b8"><span class="tl-icon">📰</span><span class="tl-type" style="color:#94a3b8">新聞</span><span class="tl-tkr">3037 欣興</span><span class="tl-name">欣興：7月營收再飆新高 年增43.69％ - 自由時報</span></div>
+<div class="tl-evt" style="border-left:3px solid #94a3b8"><span class="tl-icon">📰</span><span class="tl-type" style="color:#94a3b8">新聞</span><span class="tl-tkr">3037 欣興</span><span class="tl-name">欣興、景碩、台燿8/10全被關！首波2分鐘處置新制飆股 - 自由財經</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">3081 聯亞</span><span class="tl-name">⚠️ 列注意股（累計21次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #94a3b8"><span class="tl-icon">📰</span><span class="tl-type" style="color:#94a3b8">新聞</span><span class="tl-tkr">3081 聯亞</span><span class="tl-name">單月營收衝破5億！聯亞(3081)7月交出史上最強成績單！ - top1markets.com</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">3105 穩懋</span><span class="tl-name">⚠️ 列注意股（累計21次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">3163 波若威</span><span class="tl-name">⚠️ 列注意股（累計21次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">3167 大量</span><span class="tl-name">⚠️ 列注意股（累計1次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">3189 景碩</span><span class="tl-name">⚠️ 列注意股（累計1次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #94a3b8"><span class="tl-icon">📰</span><span class="tl-type" style="color:#94a3b8">新聞</span><span class="tl-tkr">3189 景碩</span><span class="tl-name">欣興、南電、景碩、臻鼎-KY、金居、尖點...PCB買誰最賺？杜金龍點名「這檔」爆炸性強漲，11月末升段首選 - 今周刊</span></div>
+<div class="tl-evt" style="border-left:3px solid #94a3b8"><span class="tl-icon">📰</span><span class="tl-type" style="color:#94a3b8">新聞</span><span class="tl-tkr">3189 景碩</span><span class="tl-name">川湖、景碩等9檔8/10打入處置 上銀等57檔列注意股 - 自由財經</span></div>
+<div class="tl-evt" style="border-left:3px solid #94a3b8"><span class="tl-icon">📰</span><span class="tl-type" style="color:#94a3b8">新聞</span><span class="tl-tkr">3231 緯創</span><span class="tl-name">緯創7月營收3082億元 刷新歷年單月第三高 - Yahoo股市</span></div>
+<div class="tl-evt" style="border-left:3px solid #94a3b8"><span class="tl-icon">📰</span><span class="tl-type" style="color:#94a3b8">新聞</span><span class="tl-tkr">3231 緯創</span><span class="tl-name">緯創股利罕見2度順延！金管會證實要查了 網見違約金傻眼：重罰3萬元？ - Yahoo股市</span></div>
+<div class="tl-evt" style="border-left:3px solid #94a3b8"><span class="tl-icon">📰</span><span class="tl-type" style="color:#94a3b8">新聞</span><span class="tl-tkr">3406 玉晶光</span><span class="tl-name">手機鏡頭需求增 玉晶光7月營收月增近4成 - 自由時報</span></div>
+<div class="tl-evt" style="border-left:3px solid #94a3b8"><span class="tl-icon">📰</span><span class="tl-type" style="color:#94a3b8">新聞</span><span class="tl-tkr">3413 京鼎</span><span class="tl-name">京鼎宣布斥2.34億美元 啟動泰國二期投資 - Yahoo 財經</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">3443 創意</span><span class="tl-name">⚠️ 列注意股（累計1次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #94a3b8"><span class="tl-icon">📰</span><span class="tl-type" style="color:#94a3b8">新聞</span><span class="tl-tkr">3443 創意</span><span class="tl-name">【11:54 即時新聞】創意(3443)股價走強，歷史新高營收激勵買盤＋均線結構偏多、投信與主力近5日偏多佈局 - CM</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">3450 聯鈞</span><span class="tl-name">⚠️ 列注意股（累計1次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #94a3b8"><span class="tl-icon">📰</span><span class="tl-type" style="color:#94a3b8">新聞</span><span class="tl-tkr">3481 群創</span><span class="tl-name">群創大暴走！「這群人」伸魔爪突襲 近百萬股東血流不止 - 自由財經</span></div>
+<div class="tl-evt" style="border-left:3px solid #94a3b8"><span class="tl-icon">📰</span><span class="tl-type" style="color:#94a3b8">新聞</span><span class="tl-tkr">3481 群創</span><span class="tl-name">外資翻臉轉賣超407億元 下重手砍殺群創5.1萬張、華邦電4.3萬張 - news.cnyes.com</span></div>
+<div class="tl-evt" style="border-left:3px solid #94a3b8"><span class="tl-icon">📰</span><span class="tl-type" style="color:#94a3b8">新聞</span><span class="tl-tkr">3481 群創</span><span class="tl-name">【Follow法人】外資大砍407億！賣超群創逾5萬張居冠 華邦電、聯電也遭倒貨 - Yahoo股市</span></div>
+<div class="tl-evt" style="border-left:3px solid #fbbf24"><span class="tl-icon">💰</span><span class="tl-type" style="color:#fbbf24">財報</span><span class="tl-tkr">3714 富采</span><span class="tl-name">富采 財報公告</span></div>
+<div class="tl-evt" style="border-left:3px solid #94a3b8"><span class="tl-icon">📰</span><span class="tl-type" style="color:#94a3b8">新聞</span><span class="tl-tkr">3714 富采</span><span class="tl-name">〈富采法說〉Q2資產活化進補賺12.5億元 EPS 1.69元 世足賽拉貨營運回溫 - Yahoo 財經</span></div>
+<div class="tl-evt" style="border-left:3px solid #94a3b8"><span class="tl-icon">📰</span><span class="tl-type" style="color:#94a3b8">新聞</span><span class="tl-tkr">3714 富采</span><span class="tl-name">【13:09 即時新聞】富採(3714)股價走強至59.5元，上漲3.12%，延續光電族群輪動＋外資與主力中期偏多結構待</span></div>
+<div class="tl-evt" style="border-left:3px solid #94a3b8"><span class="tl-icon">📰</span><span class="tl-type" style="color:#94a3b8">新聞</span><span class="tl-tkr">3714 富采</span><span class="tl-name">〈富采法說〉通膨及原物料上漲Q3營運恐下滑 Micro LED今年營收看增倍數 - Yahoo 財經</span></div>
+<div class="tl-evt" style="border-left:3px solid #94a3b8"><span class="tl-icon">📰</span><span class="tl-type" style="color:#94a3b8">新聞</span><span class="tl-tkr">4541 晟田</span><span class="tl-name">【12:32 即時新聞】晟田(4541)股價小幅走強至66元，AI帶動半導體擴產題材延燒＋中短期均線多頭結構續維持 - </span></div>
+<div class="tl-evt" style="border-left:3px solid #94a3b8"><span class="tl-icon">📰</span><span class="tl-type" style="color:#94a3b8">新聞</span><span class="tl-tkr">4576 大銀微系統</span><span class="tl-name">《電機股》2家機器人股營收報喜！上銀、大銀微系統股價強勢齊飆 - 富聯網</span></div>
+<div class="tl-evt" style="border-left:3px solid #94a3b8"><span class="tl-icon">📰</span><span class="tl-type" style="color:#94a3b8">新聞</span><span class="tl-tkr">4585 達明</span><span class="tl-name">【09:50 即時新聞】達明(4585)股價強勢上攻8.49%至326元，財報與月營收創高題材激勵買盤回補＋短線技術面由</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">4722 國精化</span><span class="tl-name">⚠️ 列注意股（累計1次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">4931 新盛力</span><span class="tl-name">⚠️ 列注意股（累計21次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #94a3b8"><span class="tl-icon">📰</span><span class="tl-type" style="color:#94a3b8">新聞</span><span class="tl-tkr">4931 新盛力</span><span class="tl-name">【12:22 即時新聞】新盛力(4931)股價小幅走強至226元，BBU與儲能題材吸引買盤＋前一日主力大舉回補帶動短線偏</span></div>
+<div class="tl-evt" style="border-left:3px solid #94a3b8"><span class="tl-icon">📰</span><span class="tl-type" style="color:#94a3b8">新聞</span><span class="tl-tkr">4961 天鈺</span><span class="tl-name">天鈺下半年盼逐季成長，惟需觀察供需情況 - Yahoo股市</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">4971 IET-KY</span><span class="tl-name">⚠️ 列注意股（累計21次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">4979 華星光</span><span class="tl-name">⚠️ 列注意股（累計21次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">4991 環宇-KY</span><span class="tl-name">⚠️ 列注意股（累計21次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #94a3b8"><span class="tl-icon">📰</span><span class="tl-type" style="color:#94a3b8">新聞</span><span class="tl-tkr">5347 世界先進</span><span class="tl-name">世界法說／Q2每股純益1.56元創新高法說會喊話Q3毛利率上看34.5%｜股市話題｜豐雲學堂2026 年 08 月 - </span></div>
+<div class="tl-evt" style="border-left:3px solid #94a3b8"><span class="tl-icon">📰</span><span class="tl-type" style="color:#94a3b8">新聞</span><span class="tl-tkr">5347 世界先進</span><span class="tl-name">AI不是景氣循環！世界先進董事長方略：2027年供不應求仍明顯 - Yahoo</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">5351 鈺創</span><span class="tl-name">⚠️ 列注意股（累計21次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">5475 德宏</span><span class="tl-name">⚠️ 列注意股（累計21次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #94a3b8"><span class="tl-icon">📰</span><span class="tl-type" style="color:#94a3b8">新聞</span><span class="tl-tkr">5475 德宏</span><span class="tl-name">【10:24 即時新聞】德宏(5475)股價走強漲近7%，玻纖布族群跌深反彈延續＋短線技術面嘗試脫離低檔壓力 - CMo</span></div>
+<div class="tl-evt" style="border-left:3px solid #94a3b8"><span class="tl-icon">📰</span><span class="tl-type" style="color:#94a3b8">新聞</span><span class="tl-tkr">5483 中美晶</span><span class="tl-name">中美晶(5483)股價279.5→150元半個月腰斬，徐秀蘭端出Q2好成績、罕見抱屈自家股票：真的被低估了 - 今周刊</span></div>
+<div class="tl-evt" style="border-left:3px solid #94a3b8"><span class="tl-icon">📰</span><span class="tl-type" style="color:#94a3b8">新聞</span><span class="tl-tkr">6143 振曜</span><span class="tl-name">【26Q2財報公告】振曜(6143) Q2 營收23.1006億元，刷下近2季新高，季增15.39%、年成長12.18%</span></div>
+<div class="tl-evt" style="border-left:3px solid #94a3b8"><span class="tl-icon">📰</span><span class="tl-type" style="color:#94a3b8">新聞</span><span class="tl-tkr">6206 飛捷</span><span class="tl-name">飛捷Q2獲利刷新高EPS3.42元 上半年賺逾半股本 - Yahoo股市</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">6217 中探針</span><span class="tl-name">⚠️ 列注意股（累計21次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">6269 台郡</span><span class="tl-name">⚠️ 列注意股（累計1次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #94a3b8"><span class="tl-icon">📰</span><span class="tl-type" style="color:#94a3b8">新聞</span><span class="tl-tkr">6269 台郡</span><span class="tl-name">【10:47 即時新聞】臺郡(6269)股價上漲逾5%，法說會釋出AI伺服器與智慧裝置轉型動能＋外資與主力連日回補推升短</span></div>
+<div class="tl-evt" style="border-left:3px solid #94a3b8"><span class="tl-icon">📰</span><span class="tl-type" style="color:#94a3b8">新聞</span><span class="tl-tkr">6271 同欣電</span><span class="tl-name">同欣電營運轉向AI光通訊 陶瓷基板及第三代半導體 長期看好 - moneyweekly.com.tw</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">6426 統新</span><span class="tl-name">⚠️ 列注意股（累計1次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #94a3b8"><span class="tl-icon">📰</span><span class="tl-type" style="color:#94a3b8">新聞</span><span class="tl-tkr">6426 統新</span><span class="tl-name">【09:43 即時新聞】統新(6426)股價勁揚逾9%，受惠AI光通訊瓶頸題材推升＋法人短線調節後主力買盤迴流 - CM</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">6451 訊芯-KY</span><span class="tl-name">⚠️ 列注意股（累計1次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #94a3b8"><span class="tl-icon">📰</span><span class="tl-type" style="color:#94a3b8">新聞</span><span class="tl-tkr">6525 捷敏-KY</span><span class="tl-name">捷敏-KY 7月營收創高 下半年估逐季揚 - Yahoo股市</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">6531 愛普*</span><span class="tl-name">⚠️ 列注意股（累計1次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #94a3b8"><span class="tl-icon">📰</span><span class="tl-type" style="color:#94a3b8">新聞</span><span class="tl-tkr">6531 愛普*</span><span class="tl-name">今日最夯股／愛普受處置仍跳空上揚 順利站上季線 | 市場焦點 | 證券 - 經濟日報</span></div>
+<div class="tl-evt" style="border-left:3px solid #94a3b8"><span class="tl-icon">📰</span><span class="tl-type" style="color:#94a3b8">新聞</span><span class="tl-tkr">6531 愛普*</span><span class="tl-name">【09:55 即時新聞】愛普*(6531)股價勁揚至970元、漲幅近8%，法說會財報利多延續買盤＋主力與法人同步偏多支撐</span></div>
+<div class="tl-evt" style="border-left:3px solid #94a3b8"><span class="tl-icon">📰</span><span class="tl-type" style="color:#94a3b8">新聞</span><span class="tl-tkr">6531 愛普*</span><span class="tl-name">國巨還在500元掙扎，這檔已連6漲「反彈7成」衝千金股，法人喊到1430元，還有5成空間 - 今周刊</span></div>
+<div class="tl-evt" style="border-left:3px solid #94a3b8"><span class="tl-icon">📰</span><span class="tl-type" style="color:#94a3b8">新聞</span><span class="tl-tkr">6531 愛普*</span><span class="tl-name">《半導體》外資喊愛普上看1666元！列首選股 S-SiCap明年拚超車IoTRAM - 旺得富理財網</span></div>
+<div class="tl-evt" style="border-left:3px solid #fbbf24"><span class="tl-icon">💰</span><span class="tl-type" style="color:#fbbf24">財報</span><span class="tl-tkr">6669 緯穎</span><span class="tl-name">緯穎 財報公告</span></div>
+<div class="tl-evt" style="border-left:3px solid #94a3b8"><span class="tl-icon">📰</span><span class="tl-type" style="color:#94a3b8">新聞</span><span class="tl-tkr">6669 緯穎</span><span class="tl-name">AI商機大爆發！緯穎上半年大賺15股本 改寫歷年同期新高 - Yahoo股市</span></div>
+<div class="tl-evt" style="border-left:3px solid #94a3b8"><span class="tl-icon">📰</span><span class="tl-type" style="color:#94a3b8">新聞</span><span class="tl-tkr">6669 緯穎</span><span class="tl-name">緯穎第二季每股賺80.43元 正式拍板9/2除權配股 - 自由財經</span></div>
+<div class="tl-evt" style="border-left:3px solid #94a3b8"><span class="tl-icon">📰</span><span class="tl-type" style="color:#94a3b8">新聞</span><span class="tl-tkr">6683 雍智科技</span><span class="tl-name">雍智科技7月營收寫次高 Q3拚新高 - Yahoo股市</span></div>
+<div class="tl-evt" style="border-left:3px solid #94a3b8"><span class="tl-icon">📰</span><span class="tl-type" style="color:#94a3b8">新聞</span><span class="tl-tkr">6770 力積電</span><span class="tl-name">華邦電法說後挫逾4%...力積電虎頭蛇尾收跌 分析師揭多空分水嶺 - Yahoo股市</span></div>
+<div class="tl-evt" style="border-left:3px solid #94a3b8"><span class="tl-icon">📰</span><span class="tl-type" style="color:#94a3b8">新聞</span><span class="tl-tkr">6770 力積電</span><span class="tl-name">記憶體漲跌互見！華邦電法說後跌逾4%力積電爆量上揚 分析師揭多空分水嶺 - Yahoo股市</span></div>
+<div class="tl-evt" style="border-left:3px solid #94a3b8"><span class="tl-icon">📰</span><span class="tl-type" style="color:#94a3b8">新聞</span><span class="tl-tkr">6781 AES-KY</span><span class="tl-name">【10:07 即時新聞】AES-KY(6781)股價走強至1165元，AI伺服器BBU財報利多帶動買盤迴流＋主力連日偏多</span></div>
+<div class="tl-evt" style="border-left:3px solid #94a3b8"><span class="tl-icon">📰</span><span class="tl-type" style="color:#94a3b8">新聞</span><span class="tl-tkr">6805 富世達</span><span class="tl-name">瑤姊00981A換股曝光！加碼台達電、富世達、獲利了結「這兩檔」 - Yahoo新聞</span></div>
+<div class="tl-evt" style="border-left:3px solid #94a3b8"><span class="tl-icon">📰</span><span class="tl-type" style="color:#94a3b8">新聞</span><span class="tl-tkr">6805 富世達</span><span class="tl-name">三大法人買賣超 – 外資買超(3231)緯創、(6213)聯茂，投信買超(3017)奇鋐、(3211)順達，法人合計賣超</span></div>
+<div class="tl-evt" style="border-left:3px solid #94a3b8"><span class="tl-icon">📰</span><span class="tl-type" style="color:#94a3b8">新聞</span><span class="tl-tkr">7402 邑錡</span><span class="tl-name">邑錡Q2轉盈上半年每股虧損0.3元 續投入AI視覺產品開發 - news.cnyes.com</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">7610 聯友金屬</span><span class="tl-name">⚠️ 列注意股（累計1次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #94a3b8"><span class="tl-icon">📰</span><span class="tl-type" style="color:#94a3b8">新聞</span><span class="tl-tkr">7610 聯友金屬</span><span class="tl-name">京沅鎢鈷黃聖玹遭他殺破案後 聯友金屬連續好幾天漲停 - Yahoo新聞</span></div>
+<div class="tl-evt" style="border-left:3px solid #94a3b8"><span class="tl-icon">📰</span><span class="tl-type" style="color:#94a3b8">新聞</span><span class="tl-tkr">7795 長廣</span><span class="tl-name">台股續走紅盤！「這檔」Q2創高急亮燈 長廣6月EPS0.3賺贏前一季同登漲停 - Yahoo股市</span></div>
+<div class="tl-evt" style="border-left:3px solid #94a3b8"><span class="tl-icon">📰</span><span class="tl-type" style="color:#94a3b8">新聞</span><span class="tl-tkr">7795 長廣</span><span class="tl-name">【08/07券商評等報告彙整】長廣(7795) 今日僅1家券商發布績效評等報告，評價為看多，目標價為540元。 - CM</span></div>
+<div class="tl-evt" style="border-left:3px solid #94a3b8"><span class="tl-icon">📰</span><span class="tl-type" style="color:#94a3b8">新聞</span><span class="tl-tkr">7795 長廣</span><span class="tl-name">【09:13 即時新聞】長廣(7795)亮燈漲停至463元，ABF載板真空壓膜機訂單能見度支撐＋短線跌深反彈吸引買盤迴流</span></div>
+<div class="tl-evt" style="border-left:3px solid #94a3b8"><span class="tl-icon">📰</span><span class="tl-type" style="color:#94a3b8">新聞</span><span class="tl-tkr">7795 長廣</span><span class="tl-name">精湛、健椿、廣錠再飆漲停！電零股川湖、長廣、台虹齊亮燈 威潤、承啟、永擎攻頂鎖不住 - Yahoo股市</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">7828 創新服務</span><span class="tl-name">⚠️ 列注意股（累計21次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">8039.TW <span class="exited">[已出場]</span></span><span class="tl-name">⚠️ 列注意股（累計1次）— 監控可能公佈自結損益</span></div>
+<div class="tl-evt" style="border-left:3px solid #94a3b8"><span class="tl-icon">📰</span><span class="tl-type" style="color:#94a3b8">新聞</span><span class="tl-tkr">8042 金山電</span><span class="tl-name">【13:16 即時新聞】金山電(8042)股價上漲至117元，受惠AI伺服器被動元件缺貨漲價＋短線跌深反彈、法人回補帶動</span></div>
+<div class="tl-evt" style="border-left:3px solid #94a3b8"><span class="tl-icon">📰</span><span class="tl-type" style="color:#94a3b8">新聞</span><span class="tl-tkr">8046 南電</span><span class="tl-name">欣興、南電、景碩、臻鼎-KY、金居、尖點...PCB買誰最賺？杜金龍點名「這檔」爆炸性強漲，11月末升段首選 - 今周刊</span></div>
+<div class="tl-evt" style="border-left:3px solid #94a3b8"><span class="tl-icon">📰</span><span class="tl-type" style="color:#94a3b8">新聞</span><span class="tl-tkr">8050 廣積</span><span class="tl-name">【10:14 即時新聞】廣積(8050)股價勁揚至68.6元，受工業電腦族群資金迴流與Q2財報題材加持，搭配均線多頭結構</span></div>
+<div class="tl-evt" style="border-left:3px solid #94a3b8"><span class="tl-icon">📰</span><span class="tl-type" style="color:#94a3b8">新聞</span><span class="tl-tkr">8081 致新</span><span class="tl-name">致新：PMIC缺貨重返疫情盛況 明年晶圓增加有限 - Yahoo 財經</span></div>
+<div class="tl-evt" style="border-left:3px solid #94a3b8"><span class="tl-icon">📰</span><span class="tl-type" style="color:#94a3b8">新聞</span><span class="tl-tkr">8210 勤誠</span><span class="tl-name">48千金唯一跌停！勤誠上半年大賺逾2個股本 為何股價亮綠燈？ - 經濟日報</span></div>
+<div class="tl-evt" style="border-left:3px solid #94a3b8"><span class="tl-icon">📰</span><span class="tl-type" style="color:#94a3b8">新聞</span><span class="tl-tkr">8210 勤誠</span><span class="tl-name">勤誠Q2獲利創新高，但7月營收月減24%，股價跌停是買點還是警訊？ - top1markets.com</span></div>
+<div class="tl-evt" style="border-left:3px solid #94a3b8"><span class="tl-icon">📰</span><span class="tl-type" style="color:#94a3b8">新聞</span><span class="tl-tkr">8255 朋程</span><span class="tl-name">【2026/07月營收公告】朋程(8255) 七月營收6.66億元，年增1.21％ - CMoney</span></div>
+<div class="tl-evt" style="border-left:3px solid #94a3b8"><span class="tl-icon">📰</span><span class="tl-type" style="color:#94a3b8">新聞</span><span class="tl-tkr">8299 群聯</span><span class="tl-name">群聯7月營收271億元月增近一成 再創新高 - 自由時報</span></div>
+<div class="tl-evt" style="border-left:3px solid #94a3b8"><span class="tl-icon">📰</span><span class="tl-type" style="color:#94a3b8">新聞</span><span class="tl-tkr">8299 群聯</span><span class="tl-name">群聯7月營收271.62億元續締新猷 累計前7月年增263% - news.cnyes.com</span></div>
+<div class="tl-evt" style="border-left:3px solid #94a3b8"><span class="tl-icon">📰</span><span class="tl-type" style="color:#94a3b8">新聞</span><span class="tl-tkr">8299 群聯</span><span class="tl-name">【00992A】08/07 操作日報｜經理人防守，完全出清群聯 - CMoney投資網誌</span></div>
+<div class="tl-evt" style="border-left:3px solid #94a3b8"><span class="tl-icon">📰</span><span class="tl-type" style="color:#94a3b8">新聞</span><span class="tl-tkr">8299 群聯</span><span class="tl-name">群聯、金像電、聯亞、上銀...15檔半年報黑馬搶先卡位！分析師揭選股4指標...真能複製鈺創、晶豪科噴一波？ - 今周刊</span></div>
+<div class="tl-evt" style="border-left:3px solid #94a3b8"><span class="tl-icon">📰</span><span class="tl-type" style="color:#94a3b8">新聞</span><span class="tl-tkr">8299 群聯</span><span class="tl-name">群聯營收／7月271億元創新高 AI 為 NAND 儲存帶來結構性長期成長 - 經濟日報</span></div>
+<div class="tl-evt" style="border-left:3px solid #94a3b8"><span class="tl-icon">📰</span><span class="tl-type" style="color:#94a3b8">新聞</span><span class="tl-tkr">8358 金居</span><span class="tl-name">欣興、南電、景碩、臻鼎-KY、金居、尖點...PCB買誰最賺？杜金龍點名「這檔」爆炸性強漲，11月末升段首選 - 今周刊</span></div>
+<div class="tl-evt" style="border-left:3px solid #f97316"><span class="tl-icon">⚠️</span><span class="tl-type" style="color:#f97316">注意/處置</span><span class="tl-tkr">8996 高力</span><span class="tl-name">⚠️ 列注意股（累計1次）— 監控可能公佈自結損益</span></div>
+</div></details>
+<details class="tl-details tl-future">
+<summary class="tl-summary"><span class="tl-date">08-10 <span class="tl-label">(D+3)</span></span><span class="tl-count">6 筆</span><span class="tl-chips-inline"><span class="tl-chip" style="background:#fbbf2433;color:#fbbf24">💰 5</span><span class="tl-chip" style="background:#60a5fa33;color:#60a5fa">📊 1</span></span></summary>
+<div class="tl-events">
+<div class="tl-evt" style="border-left:3px solid #60a5fa"><span class="tl-icon">📊</span><span class="tl-type" style="color:#60a5fa">月營收</span><span class="tl-tkr">*ALL*</span><span class="tl-name">月營收公告 2026/07</span></div>
+<div class="tl-evt" style="border-left:3px solid #fbbf24"><span class="tl-icon">💰</span><span class="tl-type" style="color:#fbbf24">財報</span><span class="tl-tkr">2371 大同</span><span class="tl-name">大同 財報公告</span></div>
+<div class="tl-evt" style="border-left:3px solid #fbbf24"><span class="tl-icon">💰</span><span class="tl-type" style="color:#fbbf24">財報</span><span class="tl-tkr">2474 可成</span><span class="tl-name">可成 財報公告</span></div>
+<div class="tl-evt" style="border-left:3px solid #fbbf24"><span class="tl-icon">💰</span><span class="tl-type" style="color:#fbbf24">財報</span><span class="tl-tkr">3533 嘉澤</span><span class="tl-name">嘉澤 財報公告</span></div>
+<div class="tl-evt" style="border-left:3px solid #fbbf24"><span class="tl-icon">💰</span><span class="tl-type" style="color:#fbbf24">財報</span><span class="tl-tkr">5269 祥碩</span><span class="tl-name">祥碩 財報公告</span></div>
+<div class="tl-evt" style="border-left:3px solid #fbbf24"><span class="tl-icon">💰</span><span class="tl-type" style="color:#fbbf24">財報</span><span class="tl-tkr">6456 GIS-KY</span><span class="tl-name">GIS-KY 財報公告</span></div>
+</div></details>
+<details class="tl-details tl-future">
+<summary class="tl-summary"><span class="tl-date">08-11 <span class="tl-label">(D+4)</span></span><span class="tl-count">4 筆</span><span class="tl-chips-inline"><span class="tl-chip" style="background:#fbbf2433;color:#fbbf24">💰 4</span></span></summary>
+<div class="tl-events">
+<div class="tl-evt" style="border-left:3px solid #fbbf24"><span class="tl-icon">💰</span><span class="tl-type" style="color:#fbbf24">財報</span><span class="tl-tkr">1326 台化</span><span class="tl-name">台化 財報公告</span></div>
+<div class="tl-evt" style="border-left:3px solid #fbbf24"><span class="tl-icon">💰</span><span class="tl-type" style="color:#fbbf24">財報</span><span class="tl-tkr">2357 華碩</span><span class="tl-name">華碩 財報公告</span></div>
+<div class="tl-evt" style="border-left:3px solid #fbbf24"><span class="tl-icon">💰</span><span class="tl-type" style="color:#fbbf24">財報</span><span class="tl-tkr">3017 奇鋐</span><span class="tl-name">奇鋐 財報公告</span></div>
+<div class="tl-evt" style="border-left:3px solid #fbbf24"><span class="tl-icon">💰</span><span class="tl-type" style="color:#fbbf24">財報</span><span class="tl-tkr">4958 臻鼎-KY</span><span class="tl-name">臻鼎-KY 財報公告</span></div>
+</div></details>
+<details class="tl-details tl-future">
+<summary class="tl-summary"><span class="tl-date">08-12 <span class="tl-label">(D+5)</span></span><span class="tl-count">6 筆</span><span class="tl-chips-inline"><span class="tl-chip" style="background:#fbbf2433;color:#fbbf24">💰 5</span><span class="tl-chip" style="background:#f472b633;color:#f472b6">💸 1</span></span></summary>
+<div class="tl-events">
+<div class="tl-evt" style="border-left:3px solid #fbbf24"><span class="tl-icon">💰</span><span class="tl-type" style="color:#fbbf24">財報</span><span class="tl-tkr">1504 東元</span><span class="tl-name">東元 財報公告</span></div>
+<div class="tl-evt" style="border-left:3px solid #fbbf24"><span class="tl-icon">💰</span><span class="tl-type" style="color:#fbbf24">財報</span><span class="tl-tkr">2324 仁寶</span><span class="tl-name">仁寶 財報公告</span></div>
+<div class="tl-evt" style="border-left:3px solid #fbbf24"><span class="tl-icon">💰</span><span class="tl-type" style="color:#fbbf24">財報</span><span class="tl-tkr">2382 廣達</span><span class="tl-name">廣達 財報公告</span></div>
+<div class="tl-evt" style="border-left:3px solid #fbbf24"><span class="tl-icon">💰</span><span class="tl-type" style="color:#fbbf24">財報</span><span class="tl-tkr">2618.TW</span><span class="tl-name">2618.TW 財報公告</span></div>
+<div class="tl-evt" style="border-left:3px solid #fbbf24"><span class="tl-icon">💰</span><span class="tl-type" style="color:#fbbf24">財報</span><span class="tl-tkr">3661 世芯-KY</span><span class="tl-name">世芯-KY 財報公告</span></div>
+<div class="tl-evt" style="border-left:3px solid #f472b6"><span class="tl-icon">💸</span><span class="tl-type" style="color:#f472b6">除息</span><span class="tl-tkr">4569 鈞興-KY</span><span class="tl-name">鈞興-KY 除息日</span></div>
+</div></details>
+<details class="tl-details tl-future">
+<summary class="tl-summary"><span class="tl-date">08-13 <span class="tl-label">(D+6)</span></span><span class="tl-count">2 筆</span><span class="tl-chips-inline"><span class="tl-chip" style="background:#fbbf2433;color:#fbbf24">💰 1</span><span class="tl-chip" style="background:#f472b633;color:#f472b6">💸 1</span></span></summary>
+<div class="tl-events">
+<div class="tl-evt" style="border-left:3px solid #fbbf24"><span class="tl-icon">💰</span><span class="tl-type" style="color:#fbbf24">財報</span><span class="tl-tkr">2317 鴻海</span><span class="tl-name">鴻海 財報公告</span></div>
+<div class="tl-evt" style="border-left:3px solid #f472b6"><span class="tl-icon">💸</span><span class="tl-type" style="color:#f472b6">除息</span><span class="tl-tkr">6117 迎廣</span><span class="tl-name">迎廣 除息日</span></div>
+</div></details>
+<details class="tl-details tl-future">
+<summary class="tl-summary"><span class="tl-date">08-14 <span class="tl-label">(D+7)</span></span><span class="tl-count">2 筆</span><span class="tl-chips-inline"><span class="tl-chip" style="background:#fbbf2433;color:#fbbf24">💰 2</span></span></summary>
+<div class="tl-events">
+<div class="tl-evt" style="border-left:3px solid #fbbf24"><span class="tl-icon">💰</span><span class="tl-type" style="color:#fbbf24">財報</span><span class="tl-tkr">*ALL*</span><span class="tl-name">Q2 財報截止日 2026</span></div>
+<div class="tl-evt" style="border-left:3px solid #fbbf24"><span class="tl-icon">💰</span><span class="tl-type" style="color:#fbbf24">財報</span><span class="tl-tkr">1590 亞德客-KY</span><span class="tl-name">亞德客-KY 財報公告</span></div>
+</div></details>
+<details class="tl-details tl-future">
+<summary class="tl-summary"><span class="tl-date">08-17 <span class="tl-label">(D+10)</span></span><span class="tl-count">2 筆</span><span class="tl-chips-inline"><span class="tl-chip" style="background:#f472b633;color:#f472b6">💸 2</span></span></summary>
+<div class="tl-events">
+<div class="tl-evt" style="border-left:3px solid #f472b6"><span class="tl-icon">💸</span><span class="tl-type" style="color:#f472b6">除息</span><span class="tl-tkr">1618 合機</span><span class="tl-name">合機 除息日</span></div>
+<div class="tl-evt" style="border-left:3px solid #f472b6"><span class="tl-icon">💸</span><span class="tl-type" style="color:#f472b6">除息</span><span class="tl-tkr">6282 康舒</span><span class="tl-name">康舒 除息日</span></div>
+</div></details>
+<details class="tl-details tl-future">
+<summary class="tl-summary"><span class="tl-date">08-20 <span class="tl-label">(D+13)</span></span><span class="tl-count">1 筆</span><span class="tl-chips-inline"><span class="tl-chip" style="background:#f472b633;color:#f472b6">💸 1</span></span></summary>
+<div class="tl-events">
+<div class="tl-evt" style="border-left:3px solid #f472b6"><span class="tl-icon">💸</span><span class="tl-type" style="color:#f472b6">除息</span><span class="tl-tkr">2472 立隆電</span><span class="tl-name">立隆電 除息日</span></div>
+</div></details>
+<details class="tl-details tl-future">
+<summary class="tl-summary"><span class="tl-date">08-21 <span class="tl-label">(D+14)</span></span><span class="tl-count">1 筆</span><span class="tl-chips-inline"><span class="tl-chip" style="background:#fbbf2433;color:#fbbf24">💰 1</span></span></summary>
+<div class="tl-events">
+<div class="tl-evt" style="border-left:3px solid #fbbf24"><span class="tl-icon">💰</span><span class="tl-type" style="color:#fbbf24">財報</span><span class="tl-tkr">3665 貿聯-KY</span><span class="tl-name">貿聯-KY 財報公告</span></div>
+</div></details>
+<details class="tl-details tl-future">
+<summary class="tl-summary"><span class="tl-date">08-24 <span class="tl-label">(D+17)</span></span><span class="tl-count">10 筆</span><span class="tl-chips-inline"><span class="tl-chip" style="background:#a78bfa33;color:#a78bfa">🏛 10</span></span></summary>
+<div class="tl-events">
+<div class="tl-evt" style="border-left:3px solid #a78bfa"><span class="tl-icon">🏛</span><span class="tl-type" style="color:#a78bfa">展會</span><span class="tl-tkr">2330 台積電</span><span class="tl-name">Hot Chips 2026</span></div>
+<div class="tl-evt" style="border-left:3px solid #a78bfa"><span class="tl-icon">🏛</span><span class="tl-type" style="color:#a78bfa">展會</span><span class="tl-tkr">2337.TW <span class="exited">[已出場]</span></span><span class="tl-name">Hot Chips 2026</span></div>
+<div class="tl-evt" style="border-left:3px solid #a78bfa"><span class="tl-icon">🏛</span><span class="tl-type" style="color:#a78bfa">展會</span><span class="tl-tkr">2344 華邦電</span><span class="tl-name">Hot Chips 2026</span></div>
+<div class="tl-evt" style="border-left:3px solid #a78bfa"><span class="tl-icon">🏛</span><span class="tl-type" style="color:#a78bfa">展會</span><span class="tl-tkr">2379 瑞昱</span><span class="tl-name">Hot Chips 2026</span></div>
+<div class="tl-evt" style="border-left:3px solid #a78bfa"><span class="tl-icon">🏛</span><span class="tl-type" style="color:#a78bfa">展會</span><span class="tl-tkr">2382 廣達</span><span class="tl-name">Hot Chips 2026</span></div>
+<div class="tl-evt" style="border-left:3px solid #a78bfa"><span class="tl-icon">🏛</span><span class="tl-type" style="color:#a78bfa">展會</span><span class="tl-tkr">2454 聯發科</span><span class="tl-name">Hot Chips 2026</span></div>
+<div class="tl-evt" style="border-left:3px solid #a78bfa"><span class="tl-icon">🏛</span><span class="tl-type" style="color:#a78bfa">展會</span><span class="tl-tkr">3260 威剛</span><span class="tl-name">Hot Chips 2026</span></div>
+<div class="tl-evt" style="border-left:3px solid #a78bfa"><span class="tl-icon">🏛</span><span class="tl-type" style="color:#a78bfa">展會</span><span class="tl-tkr">3450 聯鈞</span><span class="tl-name">Hot Chips 2026</span></div>
+<div class="tl-evt" style="border-left:3px solid #a78bfa"><span class="tl-icon">🏛</span><span class="tl-type" style="color:#a78bfa">展會</span><span class="tl-tkr">3711 日月光投控</span><span class="tl-name">Hot Chips 2026</span></div>
+<div class="tl-evt" style="border-left:3px solid #a78bfa"><span class="tl-icon">🏛</span><span class="tl-type" style="color:#a78bfa">展會</span><span class="tl-tkr">6669 緯穎</span><span class="tl-name">Hot Chips 2026</span></div>
+</div></details>
+<details class="tl-details tl-future">
+<summary class="tl-summary"><span class="tl-date">08-27 <span class="tl-label">(D+20)</span></span><span class="tl-count">2 筆</span><span class="tl-chips-inline"><span class="tl-chip" style="background:#f472b633;color:#f472b6">💸 1</span><span class="tl-chip" style="background:#fbbf2433;color:#fbbf24">💰 1</span></span></summary>
+<div class="tl-events">
+<div class="tl-evt" style="border-left:3px solid #f472b6"><span class="tl-icon">💸</span><span class="tl-type" style="color:#f472b6">除息</span><span class="tl-tkr">2059 川湖</span><span class="tl-name">川湖 除息日</span></div>
+<div class="tl-evt" style="border-left:3px solid #fbbf24"><span class="tl-icon">💰</span><span class="tl-type" style="color:#fbbf24">財報</span><span class="tl-tkr">6415 矽力-KY</span><span class="tl-name">矽力-KY 財報公告</span></div>
+</div></details>
+<details class="tl-details tl-future">
+<summary class="tl-summary"><span class="tl-date">08-28 <span class="tl-label">(D+21)</span></span><span class="tl-count">1 筆</span><span class="tl-chips-inline"><span class="tl-chip" style="background:#f472b633;color:#f472b6">💸 1</span></span></summary>
+<div class="tl-events">
+<div class="tl-evt" style="border-left:3px solid #f472b6"><span class="tl-icon">💸</span><span class="tl-type" style="color:#f472b6">除息</span><span class="tl-tkr">2383 台光電</span><span class="tl-name">台光電 除息日</span></div>
+</div></details>
+<details class="tl-details tl-future">
+<summary class="tl-summary"><span class="tl-date">09-02 <span class="tl-label">(D+26)</span></span><span class="tl-count">1 筆</span><span class="tl-chips-inline"><span class="tl-chip" style="background:#f472b633;color:#f472b6">💸 1</span></span></summary>
+<div class="tl-events">
+<div class="tl-evt" style="border-left:3px solid #f472b6"><span class="tl-icon">💸</span><span class="tl-type" style="color:#f472b6">除息</span><span class="tl-tkr">6139 亞翔</span><span class="tl-name">亞翔 除息日</span></div>
+</div></details>
+<details class="tl-details tl-future">
+<summary class="tl-summary"><span class="tl-date">09-03 <span class="tl-label">(D+27)</span></span><span class="tl-count">9 筆</span><span class="tl-chips-inline"><span class="tl-chip" style="background:#a78bfa33;color:#a78bfa">🏛 9</span></span></summary>
+<div class="tl-events">
+<div class="tl-evt" style="border-left:3px solid #a78bfa"><span class="tl-icon">🏛</span><span class="tl-type" style="color:#a78bfa">展會</span><span class="tl-tkr">2049 上銀</span><span class="tl-name">SEMICON Taiwan 2026</span></div>
+<div class="tl-evt" style="border-left:3px solid #a78bfa"><span class="tl-icon">🏛</span><span class="tl-type" style="color:#a78bfa">展會</span><span class="tl-tkr">2313 華通</span><span class="tl-name">SEMICON Taiwan 2026</span></div>
+<div class="tl-evt" style="border-left:3px solid #a78bfa"><span class="tl-icon">🏛</span><span class="tl-type" style="color:#a78bfa">展會</span><span class="tl-tkr">2330 台積電</span><span class="tl-name">SEMICON Taiwan 2026</span></div>
+<div class="tl-evt" style="border-left:3px solid #a78bfa"><span class="tl-icon">🏛</span><span class="tl-type" style="color:#a78bfa">展會</span><span class="tl-tkr">2379 瑞昱</span><span class="tl-name">SEMICON Taiwan 2026</span></div>
+<div class="tl-evt" style="border-left:3px solid #a78bfa"><span class="tl-icon">🏛</span><span class="tl-type" style="color:#a78bfa">展會</span><span class="tl-tkr">2454 聯發科</span><span class="tl-name">SEMICON Taiwan 2026</span></div>
+<div class="tl-evt" style="border-left:3px solid #a78bfa"><span class="tl-icon">🏛</span><span class="tl-type" style="color:#a78bfa">展會</span><span class="tl-tkr">3081 聯亞</span><span class="tl-name">SEMICON Taiwan 2026</span></div>
+<div class="tl-evt" style="border-left:3px solid #a78bfa"><span class="tl-icon">🏛</span><span class="tl-type" style="color:#a78bfa">展會</span><span class="tl-tkr">3443 創意</span><span class="tl-name">SEMICON Taiwan 2026</span></div>
+<div class="tl-evt" style="border-left:3px solid #a78bfa"><span class="tl-icon">🏛</span><span class="tl-type" style="color:#a78bfa">展會</span><span class="tl-tkr">3711 日月光投控</span><span class="tl-name">SEMICON Taiwan 2026</span></div>
+<div class="tl-evt" style="border-left:3px solid #a78bfa"><span class="tl-icon">🏛</span><span class="tl-type" style="color:#a78bfa">展會</span><span class="tl-tkr">8081 致新</span><span class="tl-name">SEMICON Taiwan 2026</span></div>
+</div></details>
+
+<h2>🌍 本期總經事件（未來 14 天）</h2>
+<p style="color:#94a3b8;font-size:12px;margin-bottom:8px">未來 14 天 10 筆 · <span style="color:#fbbf24">🟡雙向×7</span> · <span style="color:#ef4444">🔴高波動×2</span> · <span style="color:#94a3b8">⚪中性×1</span></p>
+<table class="macro">
+<tr><th>日期</th><th>時間</th><th>地區</th><th>事件</th><th>潛在方向</th><th>觀察</th></tr>
+<tr><td class="macro-date macro-today">08-07 五</td><td class="macro-time">16:00</td><td class="macro-country">🇹🇼</td><td class="macro-event">台灣7月出口/出口訂單</td><td class="macro-dir" style="color:#fbbf24;font-weight:600">🟡雙向</td><td class="macro-watch">YoY+ → 出口股利多；- → 電子權值股壓力</td></tr>
+<tr><td class="macro-date macro-cont"></td><td class="macro-time">20:30</td><td class="macro-country">🇺🇸</td><td class="macro-event">美國7月非農就業 NFP</td><td class="macro-dir" style="color:#ef4444;font-weight:600">🔴高波動</td><td class="macro-watch">&gt;25 萬強就業 → 不降息利空；&lt;10 萬弱就業 → 衰退利空；台股次日跳空</td></tr>
+<tr><td class="macro-date">08-10 一</td><td class="macro-time">09:30</td><td class="macro-country">🇨🇳</td><td class="macro-event">中國7月 CPI/PPI</td><td class="macro-dir" style="color:#fbbf24;font-weight:600">🟡雙向</td><td class="macro-watch">PPI 通縮 → 中國需求疲弱利空原物料/被動元件</td></tr>
+<tr><td class="macro-date macro-cont"></td><td class="macro-time">盤後</td><td class="macro-country">🇹🇼</td><td class="macro-event">台股7月營收公布截止</td><td class="macro-dir" style="color:#fbbf24;font-weight:600">🟡雙向</td><td class="macro-watch">個股 PEAD 連動（watchlist 個股注意 YoY/MoM）</td></tr>
+<tr><td class="macro-date">08-12 三</td><td class="macro-time">20:30</td><td class="macro-country">🇺🇸</td><td class="macro-event">美國7月 CPI</td><td class="macro-dir" style="color:#ef4444;font-weight:600">🔴高波動</td><td class="macro-watch">核心 CPI 高 → 升息預期↑ → 台股利空；低 → 降息預期↑ → 利多</td></tr>
+<tr><td class="macro-date macro-cont"></td><td class="macro-time">不定時</td><td class="macro-country">🇨🇳</td><td class="macro-event">中國7月社融/M2/新增貸款</td><td class="macro-dir" style="color:#fbbf24;font-weight:600">🟡雙向</td><td class="macro-watch">社融大增 → 寬鬆訊號利多原物料；不及預期利空</td></tr>
+<tr><td class="macro-date">08-13 四</td><td class="macro-time">20:30</td><td class="macro-country">🇺🇸</td><td class="macro-event">美國7月 PPI</td><td class="macro-dir" style="color:#fbbf24;font-weight:600">🟡雙向</td><td class="macro-watch">上游通膨，CPI 隔日參考</td></tr>
+<tr><td class="macro-date">08-15 六</td><td class="macro-time">20:30</td><td class="macro-country">🇺🇸</td><td class="macro-event">美國7月零售銷售</td><td class="macro-dir" style="color:#fbbf24;font-weight:600">🟡雙向</td><td class="macro-watch">消費韌性指標</td></tr>
+<tr><td class="macro-date">08-17 一</td><td class="macro-time">17:00</td><td class="macro-country">🇪🇺</td><td class="macro-event">歐元區7月 HICP CPI 終值</td><td class="macro-dir" style="color:#94a3b8;font-weight:600">⚪中性</td><td class="macro-watch">影響 ECB 利率路徑</td></tr>
+<tr><td class="macro-date">08-20 四</td><td class="macro-time">09:15</td><td class="macro-country">🇨🇳</td><td class="macro-event">人行 LPR 報價（8月）</td><td class="macro-dir" style="color:#fbbf24;font-weight:600">🟡雙向</td><td class="macro-watch">降 LPR → 寬鬆訊號利多原物料/被動元件</td></tr>
+</table>
+<p style="color:#94a3b8;font-size:11px;margin-top:6px">⚠️ 純資訊揭露｜禁止據此調整持倉或進場時機（M1 + N1 合規）｜方向標籤 ≠ 預測，需看實際數字 vs 預期｜CPI / ISM / 零售等日期為近似（rule-based），正確時點請對照 Investing.com</p>
+
+<h2>🔥 題材熱度監控（z-score baseline）</h2>
+<table class="theme">
+<tr><th>狀態</th><th>題材</th><th>今日</th><th>baseline</th><th>z</th><th>累積</th><th>龍頭</th><th>5D</th><th>20D</th></tr>
+<tr><td><span style="color:#ef4444;font-weight:bold">🔥 SPIKE</span></td><td>機器人/工具機</td><td>12</td><td>4.1</td><td>+3.08</td><td>81</td><td>2049.0</td><td><span style="color:#22c55e">+10.7%</span></td><td><span style="color:#ef4444">-8.8%</span></td></tr>
+<tr><td><span style="color:#ef4444;font-weight:bold">🔥 SPIKE</span></td><td>功率元件</td><td>2</td><td>0.5</td><td>+2.40</td><td>9</td><td>2481.0</td><td><span style="color:#22c55e">+4.4%</span></td><td><span style="color:#ef4444">-42.9%</span></td></tr>
+<tr><td><span style="color:#fbbf24">📈 升溫</span></td><td>ABF載板</td><td>2</td><td>0.7</td><td>+1.93</td><td>18</td><td>3037.0</td><td><span style="color:#22c55e">+20.9%</span></td><td><span style="color:#22c55e">+0.8%</span></td></tr>
+<tr><td><span style="color:#64748b">—</span></td><td>低介電玻纖布</td><td>0</td><td>0.1</td><td>-0.23</td><td>4</td><td>5340.0</td><td><span style="color:#22c55e">+13.0%</span></td><td><span style="color:#ef4444">-20.5%</span></td></tr>
+<tr><td><span style="color:#64748b">—</span></td><td>再生晶圓</td><td>0</td><td>0.1</td><td>-0.23</td><td>2</td><td>8028.0</td><td><span style="color:#ef4444">-4.3%</span></td><td><span style="color:#ef4444">-18.9%</span></td></tr>
+<tr><td><span style="color:#64748b">—</span></td><td>矽電容</td><td>0</td><td>0.1</td><td>-0.33</td><td>4</td><td>6531.0</td><td><span style="color:#22c55e">+15.8%</span></td><td><span style="color:#ef4444">-15.5%</span></td></tr>
+<tr><td><span style="color:#64748b">—</span></td><td>光通訊</td><td>2</td><td>3.3</td><td>-0.36</td><td>146</td><td>3363.0</td><td><span style="color:#22c55e">+4.5%</span></td><td><span style="color:#ef4444">-1.9%</span></td></tr>
+<tr><td><span style="color:#64748b">—</span></td><td>重電/超高壓電網基建與輸配電</td><td>0</td><td>0.1</td><td>-0.38</td><td>2</td><td>1519.0</td><td><span style="color:#22c55e">+6.7%</span></td><td><span style="color:#ef4444">-7.8%</span></td></tr>
+<tr><td><span style="color:#64748b">—</span></td><td>高階銅箔</td><td>0</td><td>0.2</td><td>-0.39</td><td>8</td><td>8358.0</td><td><span style="color:#22c55e">+2.1%</span></td><td><span style="color:#ef4444">-39.4%</span></td></tr>
+<tr><td><span style="color:#64748b">—</span></td><td>CSP自研ASIC/矽智財</td><td>0</td><td>0.2</td><td>-0.39</td><td>5</td><td>3661.0</td><td><span style="color:#22c55e">+8.8%</span></td><td><span style="color:#ef4444">-19.6%</span></td></tr>
+<tr><td><span style="color:#64748b">—</span></td><td>量子運算</td><td>0</td><td>0.2</td><td>-0.42</td><td>8</td><td>6829.0</td><td><span style="color:#22c55e">+0.8%</span></td><td><span style="color:#ef4444">-19.0%</span></td></tr>
+<tr><td><span style="color:#64748b">—</span></td><td>PMIC</td><td>0</td><td>0.2</td><td>-0.42</td><td>8</td><td>6415.0</td><td><span style="color:#22c55e">+4.8%</span></td><td><span style="color:#ef4444">-31.6%</span></td></tr>
+<tr><td><span style="color:#64748b">—</span></td><td>高階測試介面與 MEMS 探針卡</td><td>0</td><td>0.2</td><td>-0.50</td><td>8</td><td>6223.0</td><td><span style="color:#22c55e">+14.2%</span></td><td><span style="color:#ef4444">-13.9%</span></td></tr>
+<tr><td><span style="color:#64748b">—</span></td><td>無人機供應鏈</td><td>0</td><td>0.2</td><td>-0.50</td><td>5</td><td>8033.0</td><td><span style="color:#22c55e">+2.6%</span></td><td><span style="color:#ef4444">-19.6%</span></td></tr>
+<tr><td><span style="color:#64748b">—</span></td><td>DDR4 產能缺口</td><td>0</td><td>0.5</td><td>-0.61</td><td>21</td><td>2408.0</td><td><span style="color:#22c55e">+11.1%</span></td><td><span style="color:#22c55e">+3.7%</span></td></tr>
+<tr><td><span style="color:#64748b">—</span></td><td>800V HVDC電力機櫃</td><td>0</td><td>0.4</td><td>-0.62</td><td>8</td><td>2308.0</td><td><span style="color:#22c55e">+2.5%</span></td><td><span style="color:#ef4444">-18.8%</span></td></tr>
+<tr><td><span style="color:#64748b">—</span></td><td>成熟製程</td><td>0</td><td>1.2</td><td>-0.74</td><td>44</td><td>2303.0</td><td><span style="color:#22c55e">+4.4%</span></td><td><span style="color:#ef4444">-28.6%</span></td></tr>
+<tr><td><span style="color:#64748b">—</span></td><td>邊緣運算</td><td>0</td><td>0.8</td><td>-0.81</td><td>40</td><td>2395.0</td><td><span style="color:#22c55e">+3.6%</span></td><td><span style="color:#22c55e">+11.8%</span></td></tr>
+<tr><td><span style="color:#64748b">—</span></td><td>CoPoS / 玻璃基板 / TGV / FOPLP</td><td>0</td><td>0.6</td><td>-0.84</td><td>47</td><td>8027.0</td><td><span style="color:#22c55e">+0.6%</span></td><td><span style="color:#ef4444">-26.6%</span></td></tr>
+<tr><td><span style="color:#94a3b8">📊 活躍</span></td><td>BBU</td><td>2</td><td>—</td><td>—</td><td>8</td><td></td><td>—</td><td>—</td></tr>
+<tr><td><span style="color:#64748b">—</span></td><td>800V 機櫃級電力革命</td><td>0</td><td>—</td><td>—</td><td>6</td><td>2308.0</td><td><span style="color:#22c55e">+14.6%</span></td><td><span style="color:#ef4444">-14.4%</span></td></tr>
+<tr><td><span style="color:#64748b">—</span></td><td>石英元件</td><td>0</td><td>0.0</td><td>—</td><td>6</td><td>3042.0</td><td><span style="color:#22c55e">+13.4%</span></td><td><span style="color:#ef4444">-24.5%</span></td></tr>
+<tr><td><span style="color:#64748b">—</span></td><td>特化材料</td><td>0</td><td>0.0</td><td>—</td><td>2</td><td>1773.0</td><td><span style="color:#22c55e">+0.6%</span></td><td><span style="color:#ef4444">-16.2%</span></td></tr>
+<tr><td><span style="color:#64748b">—</span></td><td>FOUP清洗設備</td><td>0</td><td>0.0</td><td>—</td><td>1</td><td>4542.0</td><td><span style="color:#ef4444">-0.5%</span></td><td><span style="color:#ef4444">-35.8%</span></td></tr>
+<tr><td><span style="color:#64748b">—</span></td><td>人形機器人供應鏈</td><td>0</td><td>0.0</td><td>—</td><td>0</td><td>2049.0</td><td><span style="color:#ef4444">-5.8%</span></td><td><span style="color:#22c55e">+1.7%</span></td></tr>
+<tr><td><span style="color:#64748b">—</span></td><td>AI智慧座艙</td><td>0</td><td>—</td><td>—</td><td>0</td><td>2454.0</td><td><span style="color:#22c55e">+8.1%</span></td><td><span style="color:#ef4444">-5.3%</span></td></tr>
+<tr><td><span style="color:#64748b">—</span></td><td>氫能設備</td><td>0</td><td>0.0</td><td>—</td><td>0</td><td>4563.0</td><td><span style="color:#22c55e">+3.0%</span></td><td><span style="color:#ef4444">-8.3%</span></td></tr>
+<tr><td><span style="color:#64748b">—</span></td><td>功率元件轉單漲價</td><td>0</td><td>0.0</td><td>—</td><td>0</td><td>2481.0</td><td><span style="color:#ef4444">-0.2%</span></td><td><span style="color:#22c55e">+57.2%</span></td></tr>
+<tr><td><span style="color:#64748b">—</span></td><td>ABF材料自主化</td><td>0</td><td>—</td><td>—</td><td>0</td><td>3037.0</td><td><span style="color:#ef4444">-0.6%</span></td><td><span style="color:#ef4444">-0.2%</span></td></tr>
+<tr><td><span style="color:#64748b">—</span></td><td>AI廠務基建</td><td>0</td><td>0.0</td><td>—</td><td>0</td><td>2404.0</td><td><span style="color:#22c55e">+9.9%</span></td><td><span style="color:#ef4444">-15.9%</span></td></tr>
+<tr><td><span style="color:#64748b">—</span></td><td>WiFi7檢測認證</td><td>0</td><td>0.0</td><td>—</td><td>0</td><td>6146.0</td><td><span style="color:#22c55e">+1.1%</span></td><td><span style="color:#ef4444">-2.3%</span></td></tr>
+<tr><td><span style="color:#64748b">—</span></td><td>液冷機櫃與水泵</td><td>0</td><td>0.0</td><td>—</td><td>0</td><td>3017.0</td><td><span style="color:#22c55e">+16.1%</span></td><td><span style="color:#22c55e">+6.1%</span></td></tr>
+<tr><td><span style="color:#64748b">—</span></td><td>低軌衛星LEO生態系</td><td>0</td><td>0.0</td><td>—</td><td>0</td><td>3491.0</td><td><span style="color:#22c55e">+7.3%</span></td><td><span style="color:#ef4444">-12.7%</span></td></tr>
+<tr><td><span style="color:#64748b">—</span></td><td>工具機高階轉型與結構性復甦</td><td>0</td><td>0.0</td><td>—</td><td>0</td><td>2049.0</td><td><span style="color:#ef4444">-5.8%</span></td><td><span style="color:#22c55e">+1.7%</span></td></tr>
+<tr><td><span style="color:#64748b">—</span></td><td>碳化矽SiC</td><td>0</td><td>0.0</td><td>—</td><td>0</td><td>3707.0</td><td><span style="color:#22c55e">+8.9%</span></td><td><span style="color:#ef4444">-30.7%</span></td></tr>
+<tr><td><span style="color:#64748b">—</span></td><td>高速銅線傳輸</td><td>0</td><td>0.0</td><td>—</td><td>0</td><td>6197.0</td><td><span style="color:#22c55e">+6.2%</span></td><td><span style="color:#ef4444">-17.3%</span></td></tr>
+<tr><td><span style="color:#64748b">—</span></td><td>高階被動元件</td><td>0</td><td>0.0</td><td>—</td><td>0</td><td>3026.0</td><td><span style="color:#ef4444">-5.5%</span></td><td><span style="color:#ef4444">-48.3%</span></td></tr>
+<tr><td><span style="color:#64748b">—</span></td><td>超高壓電網基建與輸配電</td><td>0</td><td>0.0</td><td>—</td><td>0</td><td>1519.0</td><td><span style="color:#ef4444">-6.4%</span></td><td><span style="color:#ef4444">-8.8%</span></td></tr>
+<tr><td><span style="color:#64748b">—</span></td><td>電子紙低碳鏈</td><td>0</td><td>0.0</td><td>—</td><td>0</td><td>8069.0</td><td><span style="color:#22c55e">+14.2%</span></td><td><span style="color:#ef4444">-3.9%</span></td></tr>
+<tr><td><span style="color:#64748b">—</span></td><td>矽光檢測與高階網通認證</td><td>0</td><td>0.0</td><td>—</td><td>0</td><td>6223.0</td><td><span style="color:#ef4444">-2.4%</span></td><td><span style="color:#22c55e">+22.7%</span></td></tr>
+<tr><td><span style="color:#64748b">—</span></td><td>AI邊緣眼鏡</td><td>0</td><td>0.0</td><td>—</td><td>0</td><td>2498.0</td><td><span style="color:#22c55e">+0.5%</span></td><td><span style="color:#ef4444">-10.9%</span></td></tr>
+<tr><td><span style="color:#64748b">—</span></td><td>AMD台灣合作</td><td>0</td><td>0.0</td><td>—</td><td>0</td><td>2330.0</td><td><span style="color:#22c55e">+1.8%</span></td><td><span style="color:#ef4444">-4.9%</span></td></tr>
+<tr><td><span style="color:#64748b">—</span></td><td>MicroLED光互連</td><td>0</td><td>0.0</td><td>—</td><td>0</td><td>6854.0</td><td><span style="color:#22c55e">+4.0%</span></td><td><span style="color:#ef4444">-22.6%</span></td></tr>
+<tr><td><span style="color:#64748b">—</span></td><td>特高壓電纜</td><td>0</td><td>0.0</td><td>—</td><td>0</td><td>1623.0</td><td><span style="color:#ef4444">-2.3%</span></td><td><span style="color:#ef4444">-9.4%</span></td></tr>
+<tr><td><span style="color:#64748b">—</span></td><td>AI大電力線束與配電系統</td><td>0</td><td>0.0</td><td>—</td><td>0</td><td>6290.0</td><td><span style="color:#ef4444">-4.3%</span></td><td><span style="color:#22c55e">+1.9%</span></td></tr>
+<tr><td><span style="color:#64748b">—</span></td><td>稀金鎢斷供</td><td>0</td><td>0.0</td><td>—</td><td>0</td><td>7610.0</td><td><span style="color:#22c55e">+7.4%</span></td><td><span style="color:#ef4444">-43.0%</span></td></tr>
+<tr><td><span style="color:#64748b">—</span></td><td>太空太陽能</td><td>0</td><td>0.0</td><td>—</td><td>0</td><td>5483.0</td><td><span style="color:#ef4444">-2.2%</span></td><td><span style="color:#ef4444">-13.6%</span></td></tr>
+<tr><td><span style="color:#64748b">—</span></td><td>輝達AI_PC</td><td>0</td><td>0.0</td><td>—</td><td>0</td><td>2454.0</td><td><span style="color:#22c55e">+16.6%</span></td><td><span style="color:#ef4444">-4.1%</span></td></tr>
+<tr><td><span style="color:#64748b">—</span></td><td>MGX伺服器背板</td><td>0</td><td>0.0</td><td>—</td><td>0</td><td>4958.0</td><td><span style="color:#22c55e">+3.9%</span></td><td><span style="color:#ef4444">-23.3%</span></td></tr>
+<tr><td><span style="color:#64748b">—</span></td><td>先進封裝金屬回收</td><td>0</td><td>0.0</td><td>—</td><td>0</td><td>6894.0</td><td><span style="color:#22c55e">+7.5%</span></td><td><span style="color:#ef4444">-6.4%</span></td></tr>
+</table>
+<p style="color:#94a3b8;font-size:11px;margin-top:6px">⚠️ 純資訊揭露｜禁止據此手動進場（N1 + 6/23 終極審判 NO-GO）｜spike=z&gt;+2 / 升溫=z&gt;+1 / 活躍=z=None&amp;count&gt;0</p>
+
+<h2>🔗 個股來源（active tickers 分組）</h2>
+<table class="src">
+<tr><th>Source</th><th>n</th><th>Tickers (前 15)</th></tr>
+<tr><td>narrative_watchlist</td><td>266</td><td>1303南亞, 1312國喬, 1326台化, 1503士電, 1504東元, 1513中興電, 1514亞力, 1519華城, 1536和大, 1560中砂, 1583程泰, 1590亞德客-KY, 1597直得, 1605華新, 1609大亞...</td></tr><tr><td>simulated_positions</td><td>18</td><td>1101, 1102, 1303南亞, 1504東元, 1515, 1710, 1810, 2303聯電, 2371大同, 2429, 2493, 2610, 2618, 3231緯創, 3481群創...</td></tr>
+</table>
+
+</body></html>
