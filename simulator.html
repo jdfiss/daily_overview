@@ -76,8 +76,8 @@ tr.tot td{background:#16233a;font-weight:600;border-top:2px solid #334155}
 </style></head><body>
 <h1>📈 Daily Simulator Dashboard</h1>
 <div class="meta">scan_date <b>2026-08-18</b> · 本金 100,000 TWD ·
-  本期起算 2026-07-24（17 個交易日）· 產生於 2026-08-18 00:18</div>
-<div class="regime"><span class="chip"><em>市場 regime</em><b style="color:#cbd5e1">Transition（分數 5）</b></span><span class="chip"><em>部位上限</em><b style="color:#cbd5e1">30-50%</b></span><span class="chip"><em>SMB regime</em><b style="color:#cbd5e1">neutral (-2.44%)</b></span><span class="chip"><em>Hedge</em><b style="color:#cbd5e1">0%</b></span><span class="chip"><em>TWII</em><b style="color:#ef4444">45,811 (-0.46%)</b></span><span class="chip"><em>今日候選</em><b style="color:#cbd5e1">0 收 / 15 拒</b></span></div>
+  本期起算 2026-07-24（17 個交易日）· 產生於 2026-08-18 22:52</div>
+<div class="regime"><span class="chip"><em>市場 regime</em><b style="color:#cbd5e1">Transition（分數 4）</b></span><span class="chip"><em>部位上限</em><b style="color:#cbd5e1">30-50%</b></span><span class="chip"><em>SMB regime</em><b style="color:#cbd5e1">neutral (-3.27%)</b></span><span class="chip"><em>Hedge</em><b style="color:#cbd5e1">0%</b></span><span class="chip"><em>TWII</em><b style="color:#ef4444">45,309 (-1.10%)</b></span><span class="chip"><em>今日候選</em><b style="color:#cbd5e1">10 收 / 5 拒</b></span></div>
 <div class="kpis"><div class="kpi" title="本金 + 已實現累積 + 未實現，逐日 mark-to-market"><div class="kpi-label">權益 Equity（MTM）</div><div class="kpi-val" style="color:#10b981">105,752</div><div class="kpi-sub">本金 100,000</div></div><div class="kpi"><div class="kpi-label">總報酬</div><div class="kpi-val" style="color:#10b981">+5.75%</div><div class="kpi-sub">+5,752 TWD</div></div><div class="kpi" title="尚未平倉、隨市值浮動，可能回吐"><div class="kpi-label">未實現 PnL</div><div class="kpi-val" style="color:#94a3b8">+0</div><div class="kpi-sub">0 檔持倉｜成本 0</div></div><div class="kpi" title="已平倉落袋，不再變動"><div class="kpi-label">已實現 PnL</div><div class="kpi-val" style="color:#10b981">+5,752</div><div class="kpi-sub">21 筆已落袋</div></div><div class="kpi" title="由日權益報酬年化；短樣本無統計意義"><div class="kpi-label">Sharpe（年化）</div><div class="kpi-val" style="color:#64748b">+3.44</div><div class="kpi-sub">⚠️ n=17 日 = 純噪音，勿當績效</div></div><div class="kpi"><div class="kpi-label">最大回撤 MDD</div><div class="kpi-val" style="color:#ef4444">-4.66%</div><div class="kpi-sub">年化波動 25.0%</div></div><div class="kpi" title="曝險 = 持倉市值 / 權益"><div class="kpi-label">曝險 / 現金</div><div class="kpi-val" style="color:#cbd5e1">0.0%</div><div class="kpi-sub">現金 105,752</div></div><div class="kpi"><div class="kpi-label">勝率</div><div class="kpi-val" style="color:#10b981">76.2%</div><div class="kpi-sub">21 筆平倉</div></div></div>
 <section><h2>權益曲線</h2><svg viewBox="0 0 960 300" class="chart" role="img">
   <defs><linearGradient id="eqfill" x1="0" y1="0" x2="0" y2="1">
@@ -203,93 +203,43 @@ tr.tot td{background:#16233a;font-weight:600;border-top:2px solid #334155}
         <div class="note">MV1：模型 vintage 切換後舊 OOS 需分離，故不與本期合併計算。</div>
         </details></section>
 <section><h2>持倉</h2><div class="empty">目前無持倉</div></section>
+<section><h2>T+1 待進場 <span class="cnt">10</span></h2><table><thead><tr><th>Ticker</th><th>策略</th><th>決策日</th><th class="r">分配資金</th><th class="r">Score</th></tr></thead><tbody><tr><td class="tk"><span class="sid">2344</span><span class="nm">華邦電</span></td>
+      <td>CHIP_UNIFIED</td><td>2026-08-18</td>
+      <td class="r">3,000</td>
+      <td class="r">1.00</td></tr><tr><td class="tk"><span class="sid">3481</span><span class="nm">群創</span></td>
+      <td>CHIP_UNIFIED</td><td>2026-08-18</td>
+      <td class="r">3,000</td>
+      <td class="r">1.00</td></tr><tr><td class="tk"><span class="sid">2002</span><span class="nm">中鋼</span></td>
+      <td>CHIP_UNIFIED</td><td>2026-08-18</td>
+      <td class="r">3,000</td>
+      <td class="r">0.99</td></tr><tr><td class="tk"><span class="sid">0050</span><span class="nm">元大台灣50</span></td>
+      <td>CHIP_UNIFIED</td><td>2026-08-18</td>
+      <td class="r">3,000</td>
+      <td class="r">0.98</td></tr><tr><td class="tk"><span class="sid">3231</span><span class="nm">緯創</span></td>
+      <td>CHIP_UNIFIED</td><td>2026-08-18</td>
+      <td class="r">3,000</td>
+      <td class="r">0.98</td></tr><tr><td class="tk"><span class="sid">1101</span><span class="nm">台泥</span></td>
+      <td>CHIP_UNIFIED</td><td>2026-08-18</td>
+      <td class="r">3,000</td>
+      <td class="r">0.98</td></tr><tr><td class="tk"><span class="sid">1504</span><span class="nm">東元</span></td>
+      <td>CHIP_UNIFIED</td><td>2026-08-18</td>
+      <td class="r">3,000</td>
+      <td class="r">0.96</td></tr><tr><td class="tk"><span class="sid">8112</span><span class="nm">至上</span></td>
+      <td>CHIP_UNIFIED</td><td>2026-08-18</td>
+      <td class="r">3,000</td>
+      <td class="r">0.95</td></tr><tr><td class="tk"><span class="sid">9904</span><span class="nm">寶成</span></td>
+      <td>CHIP_UNIFIED</td><td>2026-08-18</td>
+      <td class="r">3,000</td>
+      <td class="r">0.94</td></tr><tr><td class="tk"><span class="sid">2409</span><span class="nm">友達</span></td>
+      <td>CHIP_UNIFIED</td><td>2026-08-18</td>
+      <td class="r">3,000</td>
+      <td class="r">0.93</td></tr></tbody></table></section>
 
-<section><h2>今日出場 <span class="cnt">16</span></h2><table><thead><tr><th>Ticker</th><th>策略</th><th>區間</th><th class="r">進/出</th><th class="r">PnL%</th><th class="r">PnL TWD</th><th>原因</th></tr></thead><tbody><tr><td class="tk"><span class="sid">2429</span><span class="nm">銘旺科</span></td><td>DUANTOU</td>
-      <td>2026-07-29 → 2026-08-18</td>
-      <td class="r">35.15 → 36.00</td>
-      <td class="r" style="color:#10b981">+2.42%</td>
-      <td class="r" style="color:#10b981">+156</td>
-      <td>hold_expire</td></tr><tr><td class="tk"><span class="sid">1303</span><span class="nm">南亞</span></td><td>DUANTOU</td>
-      <td>2026-07-29 → 2026-08-18</td>
-      <td class="r">153.00 → 200.50</td>
-      <td class="r" style="color:#10b981">+31.05%</td>
-      <td class="r" style="color:#10b981">+1,995</td>
-      <td>hold_expire</td></tr><tr><td class="tk"><span class="sid">1515</span><span class="nm">力山</span></td><td>DUANTOU</td>
-      <td>2026-07-29 → 2026-08-18</td>
-      <td class="r">29.10 → 34.25</td>
-      <td class="r" style="color:#10b981">+17.70%</td>
-      <td class="r" style="color:#10b981">+1,148</td>
-      <td>hold_expire</td></tr><tr><td class="tk"><span class="sid">2303</span><span class="nm">聯電</span></td><td>DUANTOU</td>
-      <td>2026-07-29 → 2026-08-18</td>
-      <td class="r">109.50 → 121.50</td>
-      <td class="r" style="color:#10b981">+10.96%</td>
-      <td class="r" style="color:#10b981">+708</td>
-      <td>hold_expire</td></tr><tr><td class="tk"><span class="sid">1710</span><span class="nm">東聯</span></td><td>DUANTOU</td>
-      <td>2026-07-29 → 2026-08-18</td>
-      <td class="r">13.95 → 15.20</td>
-      <td class="r" style="color:#10b981">+8.96%</td>
-      <td class="r" style="color:#10b981">+581</td>
-      <td>hold_expire</td></tr><tr><td class="tk"><span class="sid">1810</span><span class="nm">和成</span></td><td>DUANTOU</td>
-      <td>2026-07-29 → 2026-08-18</td>
-      <td class="r">25.70 → 26.20</td>
-      <td class="r" style="color:#10b981">+1.95%</td>
-      <td class="r" style="color:#10b981">+126</td>
-      <td>hold_expire</td></tr><tr><td class="tk"><span class="sid">2493</span><span class="nm">揚博</span></td><td>DUANTOU</td>
-      <td>2026-07-29 → 2026-08-18</td>
-      <td class="r">197.50 → 192.00</td>
-      <td class="r" style="color:#ef4444">-2.78%</td>
-      <td class="r" style="color:#ef4444">-176</td>
-      <td>hold_expire</td></tr><tr><td class="tk"><span class="sid">2610</span><span class="nm">華航</span></td><td>CHIP_UNIFIED</td>
-      <td>2026-08-05 → 2026-08-18</td>
-      <td class="r">22.70 → 20.25</td>
-      <td class="r" style="color:#ef4444">-10.79%</td>
-      <td class="r" style="color:#ef4444">-323</td>
-      <td>hold_expire</td></tr><tr><td class="tk"><span class="sid">1101</span><span class="nm">台泥</span></td><td>CHIP_UNIFIED</td>
-      <td>2026-08-06 → 2026-08-18</td>
-      <td class="r">23.95 → 24.20</td>
-      <td class="r" style="color:#10b981">+1.04%</td>
-      <td class="r" style="color:#10b981">+31</td>
-      <td>hold_expire</td></tr><tr><td class="tk"><span class="sid">3231</span><span class="nm">緯創</span></td><td>CHIP_UNIFIED</td>
-      <td>2026-08-06 → 2026-08-18</td>
-      <td class="r">193.50 → 187.00</td>
-      <td class="r" style="color:#ef4444">-3.36%</td>
-      <td class="r" style="color:#ef4444">-98</td>
-      <td>hold_expire</td></tr><tr><td class="tk"><span class="sid">1102</span><span class="nm">亞泥</span></td><td>CHIP_UNIFIED</td>
-      <td>2026-08-06 → 2026-08-18</td>
-      <td class="r">32.50 → 33.45</td>
-      <td class="r" style="color:#10b981">+2.92%</td>
-      <td class="r" style="color:#10b981">+87</td>
-      <td>hold_expire</td></tr><tr><td class="tk"><span class="sid">4938</span><span class="nm">和碩</span></td><td>CHIP_UNIFIED</td>
-      <td>2026-08-06 → 2026-08-18</td>
-      <td class="r">88.00 → 90.30</td>
-      <td class="r" style="color:#10b981">+2.61%</td>
-      <td class="r" style="color:#10b981">+78</td>
-      <td>hold_expire</td></tr><tr><td class="tk"><span class="sid">9904</span><span class="nm">寶成</span></td><td>CHIP_UNIFIED</td>
-      <td>2026-08-06 → 2026-08-18</td>
-      <td class="r">23.35 → 24.80</td>
-      <td class="r" style="color:#10b981">+6.21%</td>
-      <td class="r" style="color:#10b981">+186</td>
-      <td>hold_expire</td></tr><tr><td class="tk"><span class="sid">6116</span><span class="nm">彩晶</span></td><td>CHIP_UNIFIED</td>
-      <td>2026-08-06 → 2026-08-18</td>
-      <td class="r">14.20 → 14.15</td>
-      <td class="r" style="color:#ef4444">-0.35%</td>
-      <td class="r" style="color:#ef4444">-11</td>
-      <td>hold_expire</td></tr><tr><td class="tk"><span class="sid">1504</span><span class="nm">東元</span></td><td>CHIP_UNIFIED</td>
-      <td>2026-08-06 → 2026-08-18</td>
-      <td class="r">66.00 → 71.90</td>
-      <td class="r" style="color:#10b981">+8.94%</td>
-      <td class="r" style="color:#10b981">+266</td>
-      <td>hold_expire</td></tr><tr><td class="tk"><span class="sid">2371</span><span class="nm">大同</span></td><td>CHIP_UNIFIED</td>
-      <td>2026-08-06 → 2026-08-18</td>
-      <td class="r">25.50 → 27.45</td>
-      <td class="r" style="color:#10b981">+7.65%</td>
-      <td class="r" style="color:#10b981">+228</td>
-      <td>hold_expire</td></tr></tbody></table></section>
 <section><h2>風控</h2><div class="ok">✅ 無紀律警示、無 stop 觸發、無到期部位</div>
     <div class="shocks"><div class="shock"><span>持倉全跌 5%</span><b style="color:#ef4444">+0</b><span class="dim">權益 +0.00%</span></div><div class="shock"><span>持倉全跌 10%</span><b style="color:#ef4444">+0</b><span class="dim">權益 +0.00%</span></div><div class="shock"><span>持倉全跌 20%</span><b style="color:#ef4444">+0</b><span class="dim">權益 +0.00%</span></div></div>
     <div class="note">情境為線性衝擊估算（持倉市值 0），非 VaR；
     K1：本區純揭露，不接任何自動砍倉 / vol-targeting。</div></section>
-<section><details class="fold"><summary>🔍 監控診斷（M1 純揭露 — 不接 gate）</summary><div class="diags"><div class="diag"><h3>📐 SMB 曝險</h3><p>book SMB beta <b>~0.9</b>（equal-weight 結構基準（無持倉）），等於等權結構基準 ~0.9。</p><p class="warn-t">🩸 心理錨：史上最深純 SMB 崩月 2024-10（因子 -5.9%）→ 以 beta ~0.9 估，光 SMB 一項就拖 book <b>-5.2%</b>。N=1 溫和尾，真實流動性崩更深。</p><p class="note">各策略 SMB 全正 → 真曝險壓在小型股單因子，「分散」是假象。此為全樣本 body beta，尾部曝險更高。</p><p class="note">chip 在 neutral 反而最強（+5.07%/trade）</p></div><div class="diag"><h3>📊 因子歸因（過去 60 交易日）</h3><div class="fgrid"><div class="fcell"><span>MKT</span><b style="color:#10b981">+18.0%</b></div><div class="fcell"><span>SMB</span><b style="color:#ef4444">-2.3%</b></div><div class="fcell"><span>HML</span><b style="color:#ef4444">-7.6%</b></div><div class="fcell"><span>MOM</span><b style="color:#10b981">+2.9%</b></div><div class="fcell"><span>合計</span><b style="color:#10b981">+10.9%</b></div></div><div class="note">模式 structural 等權基準；avg R²=0.13，~87% 變異 4 因子無法解釋。P5：肥尾策略 R² 結構性偏低是 feature，不得當健康度 gate。</div></div><div class="diag"><h3>📊 策略健康度（在用策略 · trailing 12M）</h3><table><thead><tr><th>策略</th><th>資料截止</th><th class="r">筆數</th><th class="r">期望值/筆</th><th class="r">超額 vs 0050 [boot CI]</th></tr></thead><tbody><tr><td class="tk">ML_PA</td><td class="dim"><span style="color:#fbbf24">2025-12-31</span><span class="dim"> ❄226d</span></td><td class="r">124</td><td class="r"><b style="color:#10b981">+0.99%</b><span class="dim"> 全期 +1.80%（Δ-0.81）</span></td><td class="r"><span style="color:#94a3b8" title="CI 跨 0，MDE ±2.07% → 功效不足，不等於證明無 alpha">+0.47% <span class="dim">[-1.51, +2.62]</span></span></td></tr><tr><td class="tk">CHIP_UNIFIED</td><td class="dim">2026-08-07<span class="dim"> 7d</span></td><td class="r">517</td><td class="r"><b style="color:#10b981">+4.71%</b><span class="dim"> 全期 +2.35%（Δ+2.36）</span></td><td class="r"><span style="color:#94a3b8" title="CI 跨 0，MDE ±1.84% → 功效不足，不等於證明無 alpha">+1.45% <span class="dim">[-0.27, +3.41]</span></span></td></tr><tr><td class="tk">DUANTOU</td><td class="dim">2026-07-30<span class="dim"> 15d</span></td><td class="r">26</td><td class="r"><b style="color:#ef4444">-0.38%</b><span class="dim"> 全期 +4.97%（Δ-5.35）</span></td><td class="r"><span style="color:#94a3b8" title="CI 跨 0，MDE ±8.49% → 功效不足，不等於證明無 alpha">-2.82% <span class="dim">[-9.23, +7.76]</span></span></td></tr><tr><td class="tk">TB_Native</td><td class="dim"><span style="color:#fbbf24">2025-12-12</span><span class="dim"> ❄245d</span></td><td class="r">64</td><td class="r"><b style="color:#10b981">+1.16%</b><span class="dim"> 全期 +1.29%（Δ-0.13）</span></td><td class="r"><span style="color:#86efac" title="CI 整段 &gt; 0：同視窗 0050 之外仍有超額">+1.58% <span class="dim">[+0.24, +2.96]</span></span></td></tr><tr><td class="tk">ML_PA_live</td><td class="dim">2026-08-06<span class="dim"> 8d</span></td><td class="r">250</td><td class="r"><b style="color:#ef4444">-0.55%</b><span class="dim"> 全期 +0.21%（Δ-0.76）</span></td><td class="r"><span style="color:#fca5a5" title="CI 整段 &lt; 0：報酬低於同視窗 0050（MDE &lt; |效應|，有功效的負結果）">-5.18% <span class="dim">[-6.09, -4.35]</span></span></td></tr></tbody></table><div class="note">來源 data/kelly_health.json（run_daily 每日更新）。❄ = 回測 CSV 凍結（2 檔）：trailing 視窗相對<b>檔尾</b>滾動，非相對今天，該列讀作歷史快照不是 live 訊號。超額 = β=1 扣同視窗 0050（B1：raw 報酬在牛市會被 beta 灌水）；綠 = CI 整段為正，紅 = 整段為負，灰 = 跨 0（功效不足，非證無 alpha，滑鼠停留看 MDE）。M1 純揭露，不接 gate / 砍倉 / Kelly 動態。</div></div><div class="diag"><h3>🧪 Quant Health（月度 PSR/DSR/PBO）</h3><table><thead><tr><th>策略</th><th class="r">N</th><th class="r">SR</th><th class="r">DSR</th><th class="r">PBO</th></tr></thead><tbody><tr><td class="tk">ML_PA</td><td class="r">1218</td><td class="r">+1.36</td><td class="r" style="color:#86efac">1.00</td><td class="r dim">—</td></tr><tr><td class="tk">CHIP_UNIFIED</td><td class="r">2373</td><td class="r">+2.91</td><td class="r" style="color:#86efac">1.00</td><td class="r dim">—</td></tr><tr><td class="tk">TB_Native</td><td class="r">540</td><td class="r">+3.24</td><td class="r" style="color:#86efac">1.00</td><td class="r dim">—</td></tr><tr><td class="tk">DUANTOU</td><td class="r">98</td><td class="r">+1.80</td><td class="r" style="color:#fbbf24">0.88</td><td class="r dim">—</td></tr></tbody></table><ul class="alerts"><li>⚠️ LIMIT_UP alpha 不顯著 (t=+1.67) 但 SMB beta +2.45 (t=+4.04) 顯著 → return 多來自小型股 beta</li></ul><div class="note">P4：kurt&gt;10 的肥尾策略應以 bootstrap CI 為準，DSR 系常態工具會結構性低估；此處僅列示不當 gate。完整版 results/quant_health.html</div></div></div></details></section>
+<section><details class="fold"><summary>🔍 監控診斷（M1 純揭露 — 不接 gate）</summary><div class="diags"><div class="diag"><h3>📐 SMB 曝險</h3><p>book SMB beta <b>~0.9</b>（equal-weight 結構基準（無持倉）），等於等權結構基準 ~0.9。</p><p class="warn-t">🩸 心理錨：史上最深純 SMB 崩月 2024-10（因子 -5.9%）→ 以 beta ~0.9 估，光 SMB 一項就拖 book <b>-5.2%</b>。N=1 溫和尾，真實流動性崩更深。</p><p class="note">各策略 SMB 全正 → 真曝險壓在小型股單因子，「分散」是假象。此為全樣本 body beta，尾部曝險更高。</p><p class="note">chip 在 neutral 反而最強（+5.07%/trade）</p></div><div class="diag"><h3>📊 因子歸因（過去 60 交易日）</h3><div class="fgrid"><div class="fcell"><span>MKT</span><b style="color:#10b981">+11.7%</b></div><div class="fcell"><span>SMB</span><b style="color:#ef4444">-1.6%</b></div><div class="fcell"><span>HML</span><b style="color:#ef4444">-8.3%</b></div><div class="fcell"><span>MOM</span><b style="color:#10b981">+2.5%</b></div><div class="fcell"><span>合計</span><b style="color:#10b981">+4.3%</b></div></div><div class="note">模式 structural 等權基準；avg R²=0.13，~87% 變異 4 因子無法解釋。P5：肥尾策略 R² 結構性偏低是 feature，不得當健康度 gate。</div></div><div class="diag"><h3>📊 策略健康度（在用策略 · trailing 12M）</h3><table><thead><tr><th>策略</th><th>資料截止</th><th class="r">筆數</th><th class="r">期望值/筆</th><th class="r">超額 vs 0050 [boot CI]</th></tr></thead><tbody><tr><td class="tk">ML_PA</td><td class="dim"><span style="color:#fbbf24">2025-12-31</span><span class="dim"> ❄230d</span></td><td class="r">124</td><td class="r"><b style="color:#10b981">+0.99%</b><span class="dim"> 全期 +1.80%（Δ-0.81）</span></td><td class="r"><span style="color:#94a3b8" title="CI 跨 0，MDE ±2.07% → 功效不足，不等於證明無 alpha">+0.47% <span class="dim">[-1.51, +2.62]</span></span></td></tr><tr><td class="tk">CHIP_UNIFIED</td><td class="dim">2026-08-07<span class="dim"> 11d</span></td><td class="r">517</td><td class="r"><b style="color:#10b981">+4.71%</b><span class="dim"> 全期 +2.35%（Δ+2.36）</span></td><td class="r"><span style="color:#94a3b8" title="CI 跨 0，MDE ±1.84% → 功效不足，不等於證明無 alpha">+1.45% <span class="dim">[-0.27, +3.41]</span></span></td></tr><tr><td class="tk">DUANTOU</td><td class="dim">2026-07-30<span class="dim"> 19d</span></td><td class="r">26</td><td class="r"><b style="color:#ef4444">-0.38%</b><span class="dim"> 全期 +4.97%（Δ-5.35）</span></td><td class="r"><span style="color:#94a3b8" title="CI 跨 0，MDE ±8.49% → 功效不足，不等於證明無 alpha">-2.82% <span class="dim">[-9.23, +7.76]</span></span></td></tr><tr><td class="tk">TB_Native</td><td class="dim"><span style="color:#fbbf24">2025-12-12</span><span class="dim"> ❄249d</span></td><td class="r">64</td><td class="r"><b style="color:#10b981">+1.16%</b><span class="dim"> 全期 +1.29%（Δ-0.13）</span></td><td class="r"><span style="color:#86efac" title="CI 整段 &gt; 0：同視窗 0050 之外仍有超額">+1.58% <span class="dim">[+0.24, +2.96]</span></span></td></tr><tr><td class="tk">ML_PA_live</td><td class="dim">2026-08-06<span class="dim"> 12d</span></td><td class="r">250</td><td class="r"><b style="color:#ef4444">-0.55%</b><span class="dim"> 全期 +0.21%（Δ-0.76）</span></td><td class="r"><span style="color:#fca5a5" title="CI 整段 &lt; 0：報酬低於同視窗 0050（MDE &lt; |效應|，有功效的負結果）">-5.18% <span class="dim">[-6.09, -4.35]</span></span></td></tr></tbody></table><div class="note">來源 data/kelly_health.json（run_daily 每日更新）。❄ = 回測 CSV 凍結（2 檔）：trailing 視窗相對<b>檔尾</b>滾動，非相對今天，該列讀作歷史快照不是 live 訊號。超額 = β=1 扣同視窗 0050（B1：raw 報酬在牛市會被 beta 灌水）；綠 = CI 整段為正，紅 = 整段為負，灰 = 跨 0（功效不足，非證無 alpha，滑鼠停留看 MDE）。M1 純揭露，不接 gate / 砍倉 / Kelly 動態。</div></div><div class="diag"><h3>🧪 Quant Health（月度 PSR/DSR/PBO）</h3><table><thead><tr><th>策略</th><th class="r">N</th><th class="r">SR</th><th class="r">DSR</th><th class="r">PBO</th></tr></thead><tbody><tr><td class="tk">ML_PA</td><td class="r">1218</td><td class="r">+1.36</td><td class="r" style="color:#86efac">1.00</td><td class="r dim">—</td></tr><tr><td class="tk">CHIP_UNIFIED</td><td class="r">2373</td><td class="r">+2.91</td><td class="r" style="color:#86efac">1.00</td><td class="r dim">—</td></tr><tr><td class="tk">TB_Native</td><td class="r">540</td><td class="r">+3.24</td><td class="r" style="color:#86efac">1.00</td><td class="r dim">—</td></tr><tr><td class="tk">DUANTOU</td><td class="r">98</td><td class="r">+1.80</td><td class="r" style="color:#fbbf24">0.88</td><td class="r dim">—</td></tr></tbody></table><ul class="alerts"><li>⚠️ LIMIT_UP alpha 不顯著 (t=+1.66) 但 SMB beta +2.44 (t=+4.02) 顯著 → return 多來自小型股 beta</li></ul><div class="note">P4：kurt&gt;10 的肥尾策略應以 bootstrap CI 為準，DSR 系常態工具會結構性低估；此處僅列示不當 gate。完整版 results/quant_health.html</div></div></div></details></section>
 <section><div class="idle">🟡 Paper Ledger（TB-Native 觀察）：無持倉、無平倉、權益未動 — 候選仍在 pending，待 T+1 open confirm 後自動展開。</div></section>
 <div class="foot">權益 = 本金 + 已實現累積 + 未實現（逐日 MTM）。本頁一切數字為模擬倉揭露，
 不構成進場建議（N1）；不接任何 strategy gate 或自動砍倉（M1 / K1）。</div>
