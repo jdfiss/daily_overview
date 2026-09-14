@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="zh-TW"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Simulator Dashboard 2026-09-12</title><style>
+<title>Simulator Dashboard 2026-09-14</title><style>
 *{box-sizing:border-box;margin:0;padding:0}
 body{background:#080e1a;color:#e2e8f0;font-family:'Segoe UI','Microsoft JhengHei','PingFang TC',system-ui,sans-serif;
      margin:0;padding:24px 32px 60px;line-height:1.6;font-size:14px;max-width:1280px;margin:0 auto}
@@ -99,182 +99,185 @@ tr.tot td{background:#111c32;font-weight:700;border-top:2px solid #334155}
 .foot{margin-top:36px;padding:14px 0;border-top:1px solid #1a2744;color:#475569;font-size:11px;line-height:1.7}
 </style></head><body>
 <h1>Daily Simulator Dashboard</h1>
-<div class="meta">2026-09-12 · 本金 100,000 TWD ·
-  起算 2026-07-01（52 日） · 0050 同期 -1.51% · 00:38 產生</div>
-<div class="regime"><span class="chip"><em>市場 regime</em><b style="color:#cbd5e1">Transition（分數 4）</b></span><span class="chip"><em>部位上限</em><b style="color:#cbd5e1">30-50%</b></span><span class="chip"><em>SMB regime</em><b style="color:#cbd5e1">neutral (-0.98%)</b></span><span class="chip"><em>Hedge</em><b style="color:#cbd5e1">0%</b></span><span class="chip"><em>TWII</em><b style="color:#ef4444">46,940 (-0.51%)</b></span><span class="chip"><em>今日候選</em><b style="color:#cbd5e1">1 收 / 3 拒</b></span></div>
-<div class="kpi-group"><div class="kpi-group-title">核心績效</div><div class="kpis hero"><div class="kpi" title="本金 + 已實現累積 + 未實現，逐日 mark-to-market"><div class="kpi-label">權益 Equity</div><div class="kpi-val" style="color:#ef4444">87,064</div><div class="kpi-sub">本金 100,000</div></div><div class="kpi"><div class="kpi-label">總報酬</div><div class="kpi-val" style="color:#ef4444">-12.94%</div><div class="kpi-sub">-12,936 TWD</div></div><div class="kpi"><div class="kpi-label">Net 報酬（扣成本）</div><div class="kpi-val" style="color:#ef4444">-14.59%</div><div class="kpi-sub">-14,588 TWD</div></div><div class="kpi"><div class="kpi-label">已實現 PnL</div><div class="kpi-val" style="color:#ef4444">-12,267</div><div class="kpi-sub">70 筆已落袋</div></div><div class="kpi"><div class="kpi-label">未實現 PnL</div><div class="kpi-val" style="color:#ef4444">-669</div><div class="kpi-sub">25 檔持倉</div></div></div></div><div class="kpi-group"><div class="kpi-group-title">風險指標</div><div class="kpis"><div class="kpi" title="由日權益報酬年化；短樣本無統計意義"><div class="kpi-label">Sharpe（年化）</div><div class="kpi-val" style="color:#fbbf24">-1.90</div><div class="kpi-sub">n=52 日（<60 僅供參考）</div></div><div class="kpi" title="只懲罰下行波動"><div class="kpi-label">Sortino（年化）</div><div class="kpi-val" style="color:#ef4444">-1.62</div><div class="kpi-sub">n=52 日</div></div><div class="kpi" title="年化報酬 / |MDD|"><div class="kpi-label">Calmar Ratio</div><div class="kpi-val" style="color:#ef4444">-2.01</div><div class="kpi-sub">⚠️ 僅供參考</div></div><div class="kpi"><div class="kpi-label">最大回撤 MDD</div><div class="kpi-val" style="color:#ef4444">-24.37%</div><div class="kpi-sub">年化波動 32.6%</div></div><div class="kpi" title="從高點到恢復的最長天數"><div class="kpi-label">最長回撤</div><div class="kpi-val" style="color:#f59e0b">48 日</div></div><div class="kpi" title="曝險 = 持倉市值 / 權益"><div class="kpi-label">曝險 / 現金</div><div class="kpi-val" style="color:#cbd5e1">52.9%</div><div class="kpi-sub">現金 41,302</div></div></div></div><div class="kpi-group"><div class="kpi-group-title">交易統計</div><div class="kpis"><div class="kpi"><div class="kpi-label">勝率</div><div class="kpi-val" style="color:#ef4444">31.4%</div><div class="kpi-sub">70 筆平倉</div></div><div class="kpi"><div class="kpi-label">勝日率</div><div class="kpi-val" style="color:#ef4444">46.2%</div><div class="kpi-sub">52 個交易日</div></div><div class="kpi" title="總獲利 / 總虧損"><div class="kpi-label">Profit Factor</div><div class="kpi-val" style="color:#ef4444">0.35</div><div class="kpi-sub">贏 6,595 / 虧 18,934</div></div><div class="kpi"><div class="kpi-label">盈虧比</div><div class="kpi-val" style="color:#ef4444">0.78</div><div class="kpi-sub">均贏 300 / 均虧 386</div></div><div class="kpi"><div class="kpi-label">平均持倉</div><div class="kpi-val" style="color:#94a3b8">10.3 日</div><div class="kpi-sub">71 筆</div></div><div class="kpi" title="已平倉 0.585%；持倉 0.4425%"><div class="kpi-label">交易成本（估）</div><div class="kpi-val" style="color:#f59e0b">1,652</div><div class="kpi-sub">round-trip 1,447 + 持倉 205</div></div></div></div><div class="kpi-group"><div class="kpi-group-title">基準比較</div><div class="kpis"><div class="kpi"><div class="kpi-label">vs 0050 超額</div><div class="kpi-val" style="color:#ef4444">-11.43%</div><div class="kpi-sub">本組合 -12.94% vs 0050 -1.51%</div></div></div></div>
+<div class="meta">2026-09-14 · 本金 100,000 TWD ·
+  起算 2026-07-01（53 日） · 0050 同期 -2.24% · 23:39 產生</div>
+<div class="regime"><span class="chip"><em>市場 regime</em><b style="color:#cbd5e1">Risk-Off（分數 2）</b></span><span class="chip"><em>部位上限</em><b style="color:#cbd5e1">0-20%</b></span><span class="chip"><em>SMB regime</em><b style="color:#cbd5e1">neutral (-2.51%)</b></span><span class="chip"><em>Hedge</em><b style="color:#cbd5e1">0%</b></span><span class="chip"><em>TWII</em><b style="color:#ef4444">45,863 (-0.70%)</b></span><span class="chip"><em>今日候選</em><b style="color:#cbd5e1">0 收 / 14 拒</b></span></div>
+<div class="kpi-group"><div class="kpi-group-title">核心績效</div><div class="kpis hero"><div class="kpi" title="本金 + 已實現累積 + 未實現，逐日 mark-to-market"><div class="kpi-label">權益 Equity</div><div class="kpi-val" style="color:#ef4444">86,217</div><div class="kpi-sub">本金 100,000</div></div><div class="kpi"><div class="kpi-label">總報酬</div><div class="kpi-val" style="color:#ef4444">-13.78%</div><div class="kpi-sub">-13,783 TWD</div></div><div class="kpi"><div class="kpi-label">Net 報酬（扣成本）</div><div class="kpi-val" style="color:#ef4444">-15.46%</div><div class="kpi-sub">-15,460 TWD</div></div><div class="kpi"><div class="kpi-label">已實現 PnL</div><div class="kpi-val" style="color:#ef4444">-12,332</div><div class="kpi-sub">71 筆已落袋</div></div><div class="kpi"><div class="kpi-label">未實現 PnL</div><div class="kpi-val" style="color:#ef4444">-1,451</div><div class="kpi-sub">25 檔持倉</div></div></div></div><div class="kpi-group"><div class="kpi-group-title">風險指標</div><div class="kpis"><div class="kpi" title="由日權益報酬年化；短樣本無統計意義"><div class="kpi-label">Sharpe（年化）</div><div class="kpi-val" style="color:#fbbf24">-2.02</div><div class="kpi-sub">n=53 日（<60 僅供參考）</div></div><div class="kpi" title="只懲罰下行波動"><div class="kpi-label">Sortino（年化）</div><div class="kpi-val" style="color:#ef4444">-1.74</div><div class="kpi-sub">n=53 日</div></div><div class="kpi" title="年化報酬 / |MDD|"><div class="kpi-label">Calmar Ratio</div><div class="kpi-val" style="color:#ef4444">-2.08</div><div class="kpi-sub">⚠️ 僅供參考</div></div><div class="kpi"><div class="kpi-label">最大回撤 MDD</div><div class="kpi-val" style="color:#ef4444">-24.37%</div><div class="kpi-sub">年化波動 32.3%</div></div><div class="kpi" title="從高點到恢復的最長天數"><div class="kpi-label">最長回撤</div><div class="kpi-val" style="color:#f59e0b">49 日</div></div><div class="kpi" title="曝險 = 持倉市值 / 權益"><div class="kpi-label">曝險 / 現金</div><div class="kpi-val" style="color:#cbd5e1">56.4%</div><div class="kpi-sub">現金 37,916</div></div></div></div><div class="kpi-group"><div class="kpi-group-title">交易統計</div><div class="kpis"><div class="kpi"><div class="kpi-label">勝率</div><div class="kpi-val" style="color:#ef4444">31.0%</div><div class="kpi-sub">71 筆平倉</div></div><div class="kpi"><div class="kpi-label">勝日率</div><div class="kpi-val" style="color:#ef4444">45.3%</div><div class="kpi-sub">53 個交易日</div></div><div class="kpi" title="總獲利 / 總虧損"><div class="kpi-label">Profit Factor</div><div class="kpi-val" style="color:#ef4444">0.35</div><div class="kpi-sub">贏 6,595 / 虧 18,998</div></div><div class="kpi"><div class="kpi-label">盈虧比</div><div class="kpi-val" style="color:#ef4444">0.79</div><div class="kpi-sub">均贏 300 / 均虧 380</div></div><div class="kpi"><div class="kpi-label">平均持倉</div><div class="kpi-val" style="color:#94a3b8">10.2 日</div><div class="kpi-sub">72 筆</div></div><div class="kpi" title="已平倉 0.585%；持倉 0.4425%"><div class="kpi-label">交易成本（估）</div><div class="kpi-val" style="color:#f59e0b">1,677</div><div class="kpi-sub">round-trip 1,456 + 持倉 220</div></div></div></div><div class="kpi-group"><div class="kpi-group-title">基準比較</div><div class="kpis"><div class="kpi"><div class="kpi-label">vs 0050 超額</div><div class="kpi-val" style="color:#ef4444">-11.54%</div><div class="kpi-sub">本組合 -13.78% vs 0050 -2.24%</div></div></div></div>
 <section><h2>權益曲線</h2><svg viewBox="0 0 960 300" class="chart" role="img">
   <defs><linearGradient id="eqfill" x1="0" y1="0" x2="0" y2="1">
     <stop offset="0%" stop-color="#ef4444" stop-opacity="0.28"/>
     <stop offset="100%" stop-color="#ef4444" stop-opacity="0.02"/></linearGradient></defs>
   <line x1="72" y1="219.2" x2="942" y2="219.2" stroke="#1e293b" stroke-width="1"/><text x="64" y="223.2" fill="#64748b" font-size="11" text-anchor="end">80,000</text><line x1="72" y1="142.9" x2="942" y2="142.9" stroke="#1e293b" stroke-width="1"/><text x="64" y="146.9" fill="#64748b" font-size="11" text-anchor="end">90,000</text><line x1="72" y1="66.6" x2="942" y2="66.6" stroke="#1e293b" stroke-width="1"/><text x="64" y="70.6" fill="#64748b" font-size="11" text-anchor="end">100,000</text>
-  <polygon points="72.0,66.6 88.7,66.6 105.5,62.1 122.2,52.0 138.9,46.6 155.7,65.9 172.4,60.1 189.1,62.1 205.8,62.2 222.6,67.9 239.3,59.4 256.0,68.0 272.8,89.9 289.5,114.9 306.2,100.0 323.0,81.5 339.7,100.8 356.4,125.3 373.2,136.6 389.9,179.0 406.6,216.8 423.3,237.4 440.1,204.7 456.8,184.4 473.5,164.2 490.3,159.0 507.0,153.9 523.7,161.5 540.5,150.4 557.2,153.4 573.9,145.1 590.7,139.8 607.4,157.0 624.1,153.7 640.8,161.0 657.6,165.1 674.3,160.1 691.0,157.6 707.8,154.8 724.5,154.3 741.2,152.7 758.0,154.2 774.7,158.0 791.4,158.3 808.2,159.4 824.9,170.2 841.6,166.1 858.3,166.1 875.1,166.1 891.8,164.6 908.5,159.2 925.3,161.0 942.0,165.3 942.0,66.6 72.0,66.6" fill="url(#eqfill)"/>
+  <polygon points="72.0,66.6 88.4,66.6 104.8,62.1 121.2,52.0 137.7,46.6 154.1,65.9 170.5,60.1 186.9,62.1 203.3,62.2 219.7,67.9 236.2,59.4 252.6,68.0 269.0,89.9 285.4,114.9 301.8,100.0 318.2,81.5 334.6,100.8 351.1,125.3 367.5,136.6 383.9,179.0 400.3,216.8 416.7,237.4 433.1,204.7 449.5,184.4 466.0,164.2 482.4,159.0 498.8,153.9 515.2,161.5 531.6,150.4 548.0,153.4 564.5,145.1 580.9,139.8 597.3,157.0 613.7,153.7 630.1,161.0 646.5,165.1 662.9,160.1 679.4,157.6 695.8,154.8 712.2,154.3 728.6,152.7 745.0,154.2 761.4,158.0 777.8,158.3 794.3,159.4 810.7,170.2 827.1,166.1 843.5,166.1 859.9,166.1 876.3,164.6 892.8,159.2 909.2,161.0 925.6,165.3 942.0,171.7 942.0,66.6 72.0,66.6" fill="url(#eqfill)"/>
   <line x1="72" y1="66.6" x2="942" y2="66.6" stroke="#64748b"
         stroke-dasharray="5,4" stroke-width="1"/>
   <text x="942" y="60.6" fill="#64748b" font-size="10" text-anchor="end">本金 100,000</text>
-  <polyline fill="none" stroke="#38bdf8" stroke-width="1.8" stroke-dasharray="6,4" points="72.0,66.6 88.7,66.6 105.5,70.4 122.2,73.6 138.9,74.3 155.7,88.6 172.4,89.6 189.1,91.4 205.8,90.0 222.6,101.1 239.3,87.9 256.0,87.2 272.8,130.8 289.5,137.4 306.2,114.4 323.0,105.0 339.7,104.6 356.4,120.0 373.2,121.7 389.9,151.7 406.6,175.8 423.3,177.2 440.1,111.9 456.8,117.9 473.5,127.3 490.3,105.3 507.0,108.8 523.7,111.9 540.5,102.2 557.2,99.7 573.9,95.5 590.7,85.1 607.4,87.2 624.1,86.8 640.8,97.6 657.6,110.2 674.3,105.3 691.0,99.4 707.8,105.3 724.5,101.1 741.2,90.7 758.0,89.6 774.7,83.3 791.4,72.9 808.2,84.4 824.9,88.6 841.6,76.7 858.3,76.7 875.1,76.7 891.8,64.5 908.5,64.5 925.3,68.0 942.0,78.1"/>
-  <polyline fill="none" stroke="#fbbf24" stroke-width="1.6" stroke-dasharray="4,3" points="72.0,66.6 88.7,66.6 105.5,66.6 122.2,66.6 138.9,66.6 155.7,66.6 172.4,66.6 189.1,65.1 205.8,65.1 222.6,65.1 239.3,65.1 256.0,65.1 272.8,75.1 289.5,99.2 306.2,97.6 323.0,96.2 339.7,96.2 356.4,96.2 373.2,96.2 389.9,97.9 406.6,129.3 423.3,145.9 440.1,147.2 456.8,147.2 473.5,147.2 490.3,147.2 507.0,145.0 523.7,144.3 540.5,137.7 557.2,132.8 573.9,132.6 590.7,132.6 607.4,132.6 624.1,146.6 640.8,147.5 657.6,148.5 674.3,150.4 691.0,152.9 707.8,154.5 724.5,154.5 741.2,154.5 758.0,155.6 774.7,160.1 791.4,159.6 808.2,158.1 824.9,158.1 841.6,158.7 858.3,158.7 875.1,158.7 891.8,155.3 908.5,160.1 925.3,160.1 942.0,160.2"/>
-  <polyline fill="none" stroke="#ef4444" stroke-width="2.4" points="72.0,66.6 88.7,66.6 105.5,62.1 122.2,52.0 138.9,46.6 155.7,65.9 172.4,60.1 189.1,62.1 205.8,62.2 222.6,67.9 239.3,59.4 256.0,68.0 272.8,89.9 289.5,114.9 306.2,100.0 323.0,81.5 339.7,100.8 356.4,125.3 373.2,136.6 389.9,179.0 406.6,216.8 423.3,237.4 440.1,204.7 456.8,184.4 473.5,164.2 490.3,159.0 507.0,153.9 523.7,161.5 540.5,150.4 557.2,153.4 573.9,145.1 590.7,139.8 607.4,157.0 624.1,153.7 640.8,161.0 657.6,165.1 674.3,160.1 691.0,157.6 707.8,154.8 724.5,154.3 741.2,152.7 758.0,154.2 774.7,158.0 791.4,158.3 808.2,159.4 824.9,170.2 841.6,166.1 858.3,166.1 875.1,166.1 891.8,164.6 908.5,159.2 925.3,161.0 942.0,165.3"/>
+  <polyline fill="none" stroke="#38bdf8" stroke-width="1.8" stroke-dasharray="6,4" points="72.0,66.6 88.4,66.6 104.8,70.4 121.2,73.6 137.7,74.3 154.1,88.6 170.5,89.6 186.9,91.4 203.3,90.0 219.7,101.1 236.2,87.9 252.6,87.2 269.0,130.8 285.4,137.4 301.8,114.4 318.2,105.0 334.6,104.6 351.1,120.0 367.5,121.7 383.9,151.7 400.3,175.8 416.7,177.2 433.1,111.9 449.5,117.9 466.0,127.3 482.4,105.3 498.8,108.8 515.2,111.9 531.6,102.2 548.0,99.7 564.5,95.5 580.9,85.1 597.3,87.2 613.7,86.8 630.1,97.6 646.5,110.2 662.9,105.3 679.4,99.4 695.8,105.3 712.2,101.1 728.6,90.7 745.0,89.6 761.4,83.3 777.8,72.9 794.3,84.4 810.7,88.6 827.1,76.7 843.5,76.7 859.9,76.7 876.3,64.5 892.8,64.5 909.2,68.0 925.6,78.1 942.0,83.7"/>
+  <polyline fill="none" stroke="#fbbf24" stroke-width="1.6" stroke-dasharray="4,3" points="72.0,66.6 88.4,66.6 104.8,66.6 121.2,66.6 137.7,66.6 154.1,66.6 170.5,66.6 186.9,65.1 203.3,65.1 219.7,65.1 236.2,65.1 252.6,65.1 269.0,75.1 285.4,99.2 301.8,97.6 318.2,96.2 334.6,96.2 351.1,96.2 367.5,96.2 383.9,97.9 400.3,129.3 416.7,145.9 433.1,147.2 449.5,147.2 466.0,147.2 482.4,147.2 498.8,145.0 515.2,144.3 531.6,137.7 548.0,132.8 564.5,132.6 580.9,132.6 597.3,132.6 613.7,146.6 630.1,147.5 646.5,148.5 662.9,150.4 679.4,152.9 695.8,154.5 712.2,154.5 728.6,154.5 745.0,155.6 761.4,160.1 777.8,159.6 794.3,158.1 810.7,158.1 827.1,158.7 843.5,158.7 859.9,158.7 876.3,155.3 892.8,160.1 909.2,160.1 925.6,160.2 942.0,160.7"/>
+  <polyline fill="none" stroke="#ef4444" stroke-width="2.4" points="72.0,66.6 88.4,66.6 104.8,62.1 121.2,52.0 137.7,46.6 154.1,65.9 170.5,60.1 186.9,62.1 203.3,62.2 219.7,67.9 236.2,59.4 252.6,68.0 269.0,89.9 285.4,114.9 301.8,100.0 318.2,81.5 334.6,100.8 351.1,125.3 367.5,136.6 383.9,179.0 400.3,216.8 416.7,237.4 433.1,204.7 449.5,184.4 466.0,164.2 482.4,159.0 498.8,153.9 515.2,161.5 531.6,150.4 548.0,153.4 564.5,145.1 580.9,139.8 597.3,157.0 613.7,153.7 630.1,161.0 646.5,165.1 662.9,160.1 679.4,157.6 695.8,154.8 712.2,154.3 728.6,152.7 745.0,154.2 761.4,158.0 777.8,158.3 794.3,159.4 810.7,170.2 827.1,166.1 843.5,166.1 859.9,166.1 876.3,164.6 892.8,159.2 909.2,161.0 925.6,165.3 942.0,171.7"/>
   <circle cx="72.0" cy="66.6" r="9" fill="transparent"><title>起始
 權益 100,000 (+0.00%)
 已實現 +0｜未實現 +0
-當日變動 +0｜持倉 0</title></circle><circle cx="72.0" cy="66.6" r="2.5" fill="#ef4444" opacity="0.85"/><circle cx="88.7" cy="66.6" r="9" fill="transparent"><title>2026-07-01
+當日變動 +0｜持倉 0</title></circle><circle cx="72.0" cy="66.6" r="2.5" fill="#ef4444" opacity="0.85"/><circle cx="88.4" cy="66.6" r="9" fill="transparent"><title>2026-07-01
 權益 100,000 (+0.00%)
 已實現 +0｜未實現 +0
-當日變動 +0｜持倉 0</title></circle><circle cx="88.7" cy="66.6" r="2.5" fill="#ef4444" opacity="0.85"/><circle cx="105.5" cy="62.1" r="9" fill="transparent"><title>2026-07-02
+當日變動 +0｜持倉 0</title></circle><circle cx="88.4" cy="66.6" r="2.5" fill="#ef4444" opacity="0.85"/><circle cx="104.8" cy="62.1" r="9" fill="transparent"><title>2026-07-02
 權益 100,583 (+0.58%)
 已實現 +0｜未實現 +583
-當日變動 +583｜持倉 11</title></circle><circle cx="105.5" cy="62.1" r="2.5" fill="#ef4444" opacity="0.85"/><circle cx="122.2" cy="52.0" r="9" fill="transparent"><title>2026-07-03
+當日變動 +583｜持倉 11</title></circle><circle cx="104.8" cy="62.1" r="2.5" fill="#ef4444" opacity="0.85"/><circle cx="121.2" cy="52.0" r="9" fill="transparent"><title>2026-07-03
 權益 101,913 (+1.91%)
 已實現 +0｜未實現 +1,913
-當日變動 +1,330｜持倉 16</title></circle><circle cx="122.2" cy="52.0" r="2.5" fill="#ef4444" opacity="0.85"/><circle cx="138.9" cy="46.6" r="9" fill="transparent"><title>2026-07-06
+當日變動 +1,330｜持倉 16</title></circle><circle cx="121.2" cy="52.0" r="2.5" fill="#ef4444" opacity="0.85"/><circle cx="137.7" cy="46.6" r="9" fill="transparent"><title>2026-07-06
 權益 102,617 (+2.62%)
 已實現 +0｜未實現 +2,617
-當日變動 +704｜持倉 16</title></circle><circle cx="138.9" cy="46.6" r="2.5" fill="#ef4444" opacity="0.85"/><circle cx="155.7" cy="65.9" r="9" fill="transparent"><title>2026-07-07
+當日變動 +704｜持倉 16</title></circle><circle cx="137.7" cy="46.6" r="2.5" fill="#ef4444" opacity="0.85"/><circle cx="154.1" cy="65.9" r="9" fill="transparent"><title>2026-07-07
 權益 100,094 (+0.09%)
 已實現 +0｜未實現 +94
-當日變動 -2,523｜持倉 16</title></circle><circle cx="155.7" cy="65.9" r="2.5" fill="#ef4444" opacity="0.85"/><circle cx="172.4" cy="60.1" r="9" fill="transparent"><title>2026-07-08
+當日變動 -2,523｜持倉 16</title></circle><circle cx="154.1" cy="65.9" r="2.5" fill="#ef4444" opacity="0.85"/><circle cx="170.5" cy="60.1" r="9" fill="transparent"><title>2026-07-08
 權益 100,850 (+0.85%)
 已實現 +0｜未實現 +850
-當日變動 +756｜持倉 16</title></circle><circle cx="172.4" cy="60.1" r="2.5" fill="#ef4444" opacity="0.85"/><circle cx="189.1" cy="62.1" r="9" fill="transparent"><title>2026-07-09
+當日變動 +756｜持倉 16</title></circle><circle cx="170.5" cy="60.1" r="2.5" fill="#ef4444" opacity="0.85"/><circle cx="186.9" cy="62.1" r="9" fill="transparent"><title>2026-07-09
 權益 100,583 (+0.58%)
 已實現 +197｜未實現 +386
-當日變動 -267｜持倉 15</title></circle><circle cx="189.1" cy="62.1" r="2.5" fill="#ef4444" opacity="0.85"/><circle cx="205.8" cy="62.2" r="9" fill="transparent"><title>2026-07-13
+當日變動 -267｜持倉 15</title></circle><circle cx="186.9" cy="62.1" r="2.5" fill="#ef4444" opacity="0.85"/><circle cx="203.3" cy="62.2" r="9" fill="transparent"><title>2026-07-13
 權益 100,576 (+0.58%)
 已實現 +197｜未實現 +379
-當日變動 -7｜持倉 15</title></circle><circle cx="205.8" cy="62.2" r="2.5" fill="#ef4444" opacity="0.85"/><circle cx="222.6" cy="67.9" r="9" fill="transparent"><title>2026-07-14
+當日變動 -7｜持倉 15</title></circle><circle cx="203.3" cy="62.2" r="2.5" fill="#ef4444" opacity="0.85"/><circle cx="219.7" cy="67.9" r="9" fill="transparent"><title>2026-07-14
 權益 99,831 (-0.17%)
 已實現 +197｜未實現 -366
-當日變動 -745｜持倉 15</title></circle><circle cx="222.6" cy="67.9" r="2.5" fill="#ef4444" opacity="0.85"/><circle cx="239.3" cy="59.4" r="9" fill="transparent"><title>2026-07-15
+當日變動 -745｜持倉 15</title></circle><circle cx="219.7" cy="67.9" r="2.5" fill="#ef4444" opacity="0.85"/><circle cx="236.2" cy="59.4" r="9" fill="transparent"><title>2026-07-15
 權益 100,937 (+0.94%)
 已實現 +197｜未實現 +740
-當日變動 +1,106｜持倉 15</title></circle><circle cx="239.3" cy="59.4" r="2.5" fill="#ef4444" opacity="0.85"/><circle cx="256.0" cy="68.0" r="9" fill="transparent"><title>2026-07-16
+當日變動 +1,106｜持倉 15</title></circle><circle cx="236.2" cy="59.4" r="2.5" fill="#ef4444" opacity="0.85"/><circle cx="252.6" cy="68.0" r="9" fill="transparent"><title>2026-07-16
 權益 99,811 (-0.19%)
 已實現 +197｜未實現 -386
-當日變動 -1,125｜持倉 15</title></circle><circle cx="256.0" cy="68.0" r="2.5" fill="#ef4444" opacity="0.85"/><circle cx="272.8" cy="89.9" r="9" fill="transparent"><title>2026-07-17
+當日變動 -1,125｜持倉 15</title></circle><circle cx="252.6" cy="68.0" r="2.5" fill="#ef4444" opacity="0.85"/><circle cx="269.0" cy="89.9" r="9" fill="transparent"><title>2026-07-17
 權益 96,950 (-3.05%)
 已實現 -1,113｜未實現 -1,938
-當日變動 -2,862｜持倉 13</title></circle><circle cx="272.8" cy="89.9" r="2.5" fill="#ef4444" opacity="0.85"/><circle cx="289.5" cy="114.9" r="9" fill="transparent"><title>2026-07-20
+當日變動 -2,862｜持倉 13</title></circle><circle cx="269.0" cy="89.9" r="2.5" fill="#ef4444" opacity="0.85"/><circle cx="285.4" cy="114.9" r="9" fill="transparent"><title>2026-07-20
 權益 93,662 (-6.34%)
 已實現 -4,278｜未實現 -2,060
-當日變動 -3,288｜持倉 14</title></circle><circle cx="289.5" cy="114.9" r="2.5" fill="#ef4444" opacity="0.85"/><circle cx="306.2" cy="100.0" r="9" fill="transparent"><title>2026-07-21
+當日變動 -3,288｜持倉 14</title></circle><circle cx="285.4" cy="114.9" r="2.5" fill="#ef4444" opacity="0.85"/><circle cx="301.8" cy="100.0" r="9" fill="transparent"><title>2026-07-21
 權益 95,617 (-4.38%)
 已實現 -4,064｜未實現 -319
-當日變動 +1,955｜持倉 13</title></circle><circle cx="306.2" cy="100.0" r="2.5" fill="#ef4444" opacity="0.85"/><circle cx="323.0" cy="81.5" r="9" fill="transparent"><title>2026-07-22
+當日變動 +1,955｜持倉 13</title></circle><circle cx="301.8" cy="100.0" r="2.5" fill="#ef4444" opacity="0.85"/><circle cx="318.2" cy="81.5" r="9" fill="transparent"><title>2026-07-22
 權益 98,045 (-1.96%)
 已實現 -3,879｜未實現 +1,924
-當日變動 +2,428｜持倉 16</title></circle><circle cx="323.0" cy="81.5" r="2.5" fill="#ef4444" opacity="0.85"/><circle cx="339.7" cy="100.8" r="9" fill="transparent"><title>2026-07-23
+當日變動 +2,428｜持倉 16</title></circle><circle cx="318.2" cy="81.5" r="2.5" fill="#ef4444" opacity="0.85"/><circle cx="334.6" cy="100.8" r="9" fill="transparent"><title>2026-07-23
 權益 95,521 (-4.48%)
 已實現 -3,879｜未實現 -600
-當日變動 -2,524｜持倉 19</title></circle><circle cx="339.7" cy="100.8" r="2.5" fill="#ef4444" opacity="0.85"/><circle cx="356.4" cy="125.3" r="9" fill="transparent"><title>2026-07-24
+當日變動 -2,524｜持倉 19</title></circle><circle cx="334.6" cy="100.8" r="2.5" fill="#ef4444" opacity="0.85"/><circle cx="351.1" cy="125.3" r="9" fill="transparent"><title>2026-07-24
 權益 92,308 (-7.69%)
 已實現 -3,879｜未實現 -3,813
-當日變動 -3,213｜持倉 21</title></circle><circle cx="356.4" cy="125.3" r="2.5" fill="#ef4444" opacity="0.85"/><circle cx="373.2" cy="136.6" r="9" fill="transparent"><title>2026-07-27
+當日變動 -3,213｜持倉 21</title></circle><circle cx="351.1" cy="125.3" r="2.5" fill="#ef4444" opacity="0.85"/><circle cx="367.5" cy="136.6" r="9" fill="transparent"><title>2026-07-27
 權益 90,828 (-9.17%)
 已實現 -3,879｜未實現 -5,292
-當日變動 -1,479｜持倉 22</title></circle><circle cx="373.2" cy="136.6" r="2.5" fill="#ef4444" opacity="0.85"/><circle cx="389.9" cy="179.0" r="9" fill="transparent"><title>2026-07-28
+當日變動 -1,479｜持倉 22</title></circle><circle cx="367.5" cy="136.6" r="2.5" fill="#ef4444" opacity="0.85"/><circle cx="383.9" cy="179.0" r="9" fill="transparent"><title>2026-07-28
 權益 85,262 (-14.74%)
 已實現 -4,101｜未實現 -10,636
-當日變動 -5,566｜持倉 21</title></circle><circle cx="389.9" cy="179.0" r="2.5" fill="#ef4444" opacity="0.85"/><circle cx="406.6" cy="216.8" r="9" fill="transparent"><title>2026-07-29
+當日變動 -5,566｜持倉 21</title></circle><circle cx="383.9" cy="179.0" r="2.5" fill="#ef4444" opacity="0.85"/><circle cx="400.3" cy="216.8" r="9" fill="transparent"><title>2026-07-29
 權益 80,305 (-19.69%)
 已實現 -8,217｜未實現 -11,477
-當日變動 -4,957｜持倉 14</title></circle><circle cx="406.6" cy="216.8" r="2.5" fill="#ef4444" opacity="0.85"/><circle cx="423.3" cy="237.4" r="9" fill="transparent"><title>2026-07-30
+當日變動 -4,957｜持倉 14</title></circle><circle cx="400.3" cy="216.8" r="2.5" fill="#ef4444" opacity="0.85"/><circle cx="416.7" cy="237.4" r="9" fill="transparent"><title>2026-07-30
 權益 77,613 (-22.39%)
 已實現 -10,400｜未實現 -11,987
-當日變動 -2,692｜持倉 13</title></circle><circle cx="423.3" cy="237.4" r="2.5" fill="#ef4444" opacity="0.85"/><circle cx="440.1" cy="204.7" r="9" fill="transparent"><title>2026-07-31
+當日變動 -2,692｜持倉 13</title></circle><circle cx="416.7" cy="237.4" r="2.5" fill="#ef4444" opacity="0.85"/><circle cx="433.1" cy="204.7" r="9" fill="transparent"><title>2026-07-31
 權益 81,900 (-18.10%)
 已實現 -10,570｜未實現 -7,529
-當日變動 +4,287｜持倉 13</title></circle><circle cx="440.1" cy="204.7" r="2.5" fill="#ef4444" opacity="0.85"/><circle cx="456.8" cy="184.4" r="9" fill="transparent"><title>2026-08-03
+當日變動 +4,287｜持倉 13</title></circle><circle cx="433.1" cy="204.7" r="2.5" fill="#ef4444" opacity="0.85"/><circle cx="449.5" cy="184.4" r="9" fill="transparent"><title>2026-08-03
 權益 84,557 (-15.44%)
 已實現 -10,570｜未實現 -4,873
-當日變動 +2,656｜持倉 17</title></circle><circle cx="456.8" cy="184.4" r="2.5" fill="#ef4444" opacity="0.85"/><circle cx="473.5" cy="164.2" r="9" fill="transparent"><title>2026-08-04
+當日變動 +2,656｜持倉 17</title></circle><circle cx="449.5" cy="184.4" r="2.5" fill="#ef4444" opacity="0.85"/><circle cx="466.0" cy="164.2" r="9" fill="transparent"><title>2026-08-04
 權益 87,210 (-12.79%)
 已實現 -10,570｜未實現 -2,219
-當日變動 +2,654｜持倉 19</title></circle><circle cx="473.5" cy="164.2" r="2.5" fill="#ef4444" opacity="0.85"/><circle cx="490.3" cy="159.0" r="9" fill="transparent"><title>2026-08-05
+當日變動 +2,654｜持倉 19</title></circle><circle cx="466.0" cy="164.2" r="2.5" fill="#ef4444" opacity="0.85"/><circle cx="482.4" cy="159.0" r="9" fill="transparent"><title>2026-08-05
 權益 87,891 (-12.11%)
 已實現 -10,570｜未實現 -1,539
-當日變動 +680｜持倉 20</title></circle><circle cx="490.3" cy="159.0" r="2.5" fill="#ef4444" opacity="0.85"/><circle cx="507.0" cy="153.9" r="9" fill="transparent"><title>2026-08-06
+當日變動 +680｜持倉 20</title></circle><circle cx="482.4" cy="159.0" r="2.5" fill="#ef4444" opacity="0.85"/><circle cx="498.8" cy="153.9" r="9" fill="transparent"><title>2026-08-06
 權益 88,552 (-11.45%)
 已實現 -10,278｜未實現 -1,170
-當日變動 +661｜持倉 21</title></circle><circle cx="507.0" cy="153.9" r="2.5" fill="#ef4444" opacity="0.85"/><circle cx="523.7" cy="161.5" r="9" fill="transparent"><title>2026-08-07
+當日變動 +661｜持倉 21</title></circle><circle cx="498.8" cy="153.9" r="2.5" fill="#ef4444" opacity="0.85"/><circle cx="515.2" cy="161.5" r="9" fill="transparent"><title>2026-08-07
 權益 87,562 (-12.44%)
 已實現 -10,189｜未實現 -2,249
-當日變動 -990｜持倉 19</title></circle><circle cx="523.7" cy="161.5" r="2.5" fill="#ef4444" opacity="0.85"/><circle cx="540.5" cy="150.4" r="9" fill="transparent"><title>2026-08-10
+當日變動 -990｜持倉 19</title></circle><circle cx="515.2" cy="161.5" r="2.5" fill="#ef4444" opacity="0.85"/><circle cx="531.6" cy="150.4" r="9" fill="transparent"><title>2026-08-10
 權益 89,010 (-10.99%)
 已實現 -9,319｜未實現 -1,671
-當日變動 +1,448｜持倉 16</title></circle><circle cx="540.5" cy="150.4" r="2.5" fill="#ef4444" opacity="0.85"/><circle cx="557.2" cy="153.4" r="9" fill="transparent"><title>2026-08-11
+當日變動 +1,448｜持倉 16</title></circle><circle cx="531.6" cy="150.4" r="2.5" fill="#ef4444" opacity="0.85"/><circle cx="548.0" cy="153.4" r="9" fill="transparent"><title>2026-08-11
 權益 88,625 (-11.38%)
 已實現 -8,681｜未實現 -2,694
-當日變動 -385｜持倉 17</title></circle><circle cx="557.2" cy="153.4" r="2.5" fill="#ef4444" opacity="0.85"/><circle cx="573.9" cy="145.1" r="9" fill="transparent"><title>2026-08-12
+當日變動 -385｜持倉 17</title></circle><circle cx="548.0" cy="153.4" r="2.5" fill="#ef4444" opacity="0.85"/><circle cx="564.5" cy="145.1" r="9" fill="transparent"><title>2026-08-12
 權益 89,703 (-10.30%)
 已實現 -8,657｜未實現 -1,640
-當日變動 +1,078｜持倉 20</title></circle><circle cx="573.9" cy="145.1" r="2.5" fill="#ef4444" opacity="0.85"/><circle cx="590.7" cy="139.8" r="9" fill="transparent"><title>2026-08-13
+當日變動 +1,078｜持倉 20</title></circle><circle cx="564.5" cy="145.1" r="2.5" fill="#ef4444" opacity="0.85"/><circle cx="580.9" cy="139.8" r="9" fill="transparent"><title>2026-08-13
 權益 90,406 (-9.59%)
 已實現 -8,657｜未實現 -937
-當日變動 +703｜持倉 22</title></circle><circle cx="590.7" cy="139.8" r="2.5" fill="#ef4444" opacity="0.85"/><circle cx="607.4" cy="157.0" r="9" fill="transparent"><title>2026-08-14
+當日變動 +703｜持倉 22</title></circle><circle cx="580.9" cy="139.8" r="2.5" fill="#ef4444" opacity="0.85"/><circle cx="597.3" cy="157.0" r="9" fill="transparent"><title>2026-08-14
 權益 88,145 (-11.86%)
 已實現 -8,657｜未實現 -3,199
-當日變動 -2,262｜持倉 23</title></circle><circle cx="607.4" cy="157.0" r="2.5" fill="#ef4444" opacity="0.85"/><circle cx="624.1" cy="153.7" r="9" fill="transparent"><title>2026-08-17
+當日變動 -2,262｜持倉 23</title></circle><circle cx="597.3" cy="157.0" r="2.5" fill="#ef4444" opacity="0.85"/><circle cx="613.7" cy="153.7" r="9" fill="transparent"><title>2026-08-17
 權益 88,584 (-11.42%)
 已實現 -10,487｜未實現 -929
-當日變動 +439｜持倉 16</title></circle><circle cx="624.1" cy="153.7" r="2.5" fill="#ef4444" opacity="0.85"/><circle cx="640.8" cy="161.0" r="9" fill="transparent"><title>2026-08-18
+當日變動 +439｜持倉 16</title></circle><circle cx="613.7" cy="153.7" r="2.5" fill="#ef4444" opacity="0.85"/><circle cx="630.1" cy="161.0" r="9" fill="transparent"><title>2026-08-18
 權益 87,625 (-12.37%)
 已實現 -10,604｜未實現 -1,771
-當日變動 -959｜持倉 14</title></circle><circle cx="640.8" cy="161.0" r="2.5" fill="#ef4444" opacity="0.85"/><circle cx="657.6" cy="165.1" r="9" fill="transparent"><title>2026-08-19
+當日變動 -959｜持倉 14</title></circle><circle cx="630.1" cy="161.0" r="2.5" fill="#ef4444" opacity="0.85"/><circle cx="646.5" cy="165.1" r="9" fill="transparent"><title>2026-08-19
 權益 87,082 (-12.92%)
 已實現 -10,739｜未實現 -2,179
-當日變動 -543｜持倉 14</title></circle><circle cx="657.6" cy="165.1" r="2.5" fill="#ef4444" opacity="0.85"/><circle cx="674.3" cy="160.1" r="9" fill="transparent"><title>2026-08-20
+當日變動 -543｜持倉 14</title></circle><circle cx="646.5" cy="165.1" r="2.5" fill="#ef4444" opacity="0.85"/><circle cx="662.9" cy="160.1" r="9" fill="transparent"><title>2026-08-20
 權益 87,743 (-12.26%)
 已實現 -10,988｜未實現 -1,269
-當日變動 +661｜持倉 13</title></circle><circle cx="674.3" cy="160.1" r="2.5" fill="#ef4444" opacity="0.85"/><circle cx="691.0" cy="157.6" r="9" fill="transparent"><title>2026-08-21
+當日變動 +661｜持倉 13</title></circle><circle cx="662.9" cy="160.1" r="2.5" fill="#ef4444" opacity="0.85"/><circle cx="679.4" cy="157.6" r="9" fill="transparent"><title>2026-08-21
 權益 88,071 (-11.93%)
 已實現 -11,309｜未實現 -620
-當日變動 +328｜持倉 13</title></circle><circle cx="691.0" cy="157.6" r="2.5" fill="#ef4444" opacity="0.85"/><circle cx="707.8" cy="154.8" r="9" fill="transparent"><title>2026-08-24
+當日變動 +328｜持倉 13</title></circle><circle cx="679.4" cy="157.6" r="2.5" fill="#ef4444" opacity="0.85"/><circle cx="695.8" cy="154.8" r="9" fill="transparent"><title>2026-08-24
 權益 88,441 (-11.56%)
 已實現 -11,520｜未實現 -39
-當日變動 +371｜持倉 12</title></circle><circle cx="707.8" cy="154.8" r="2.5" fill="#ef4444" opacity="0.85"/><circle cx="724.5" cy="154.3" r="9" fill="transparent"><title>2026-08-25
+當日變動 +371｜持倉 12</title></circle><circle cx="695.8" cy="154.8" r="2.5" fill="#ef4444" opacity="0.85"/><circle cx="712.2" cy="154.3" r="9" fill="transparent"><title>2026-08-25
 權益 88,499 (-11.50%)
 已實現 -11,520｜未實現 +19
-當日變動 +58｜持倉 13</title></circle><circle cx="724.5" cy="154.3" r="2.5" fill="#ef4444" opacity="0.85"/><circle cx="741.2" cy="152.7" r="9" fill="transparent"><title>2026-08-26
+當日變動 +58｜持倉 13</title></circle><circle cx="712.2" cy="154.3" r="2.5" fill="#ef4444" opacity="0.85"/><circle cx="728.6" cy="152.7" r="9" fill="transparent"><title>2026-08-26
 權益 88,710 (-11.29%)
 已實現 -11,520｜未實現 +230
-當日變動 +211｜持倉 18</title></circle><circle cx="741.2" cy="152.7" r="2.5" fill="#ef4444" opacity="0.85"/><circle cx="758.0" cy="154.2" r="9" fill="transparent"><title>2026-08-27
+當日變動 +211｜持倉 18</title></circle><circle cx="728.6" cy="152.7" r="2.5" fill="#ef4444" opacity="0.85"/><circle cx="745.0" cy="154.2" r="9" fill="transparent"><title>2026-08-27
 權益 88,518 (-11.48%)
 已實現 -11,666｜未實現 +185
-當日變動 -192｜持倉 16</title></circle><circle cx="758.0" cy="154.2" r="2.5" fill="#ef4444" opacity="0.85"/><circle cx="774.7" cy="158.0" r="9" fill="transparent"><title>2026-08-28
+當日變動 -192｜持倉 16</title></circle><circle cx="745.0" cy="154.2" r="2.5" fill="#ef4444" opacity="0.85"/><circle cx="761.4" cy="158.0" r="9" fill="transparent"><title>2026-08-28
 權益 88,012 (-11.99%)
 已實現 -12,259｜未實現 +271
-當日變動 -507｜持倉 12</title></circle><circle cx="774.7" cy="158.0" r="2.5" fill="#ef4444" opacity="0.85"/><circle cx="791.4" cy="158.3" r="9" fill="transparent"><title>2026-09-01
+當日變動 -507｜持倉 12</title></circle><circle cx="761.4" cy="158.0" r="2.5" fill="#ef4444" opacity="0.85"/><circle cx="777.8" cy="158.3" r="9" fill="transparent"><title>2026-09-01
 權益 87,977 (-12.02%)
 已實現 -12,198｜未實現 +175
-當日變動 -35｜持倉 18</title></circle><circle cx="791.4" cy="158.3" r="2.5" fill="#ef4444" opacity="0.85"/><circle cx="808.2" cy="159.4" r="9" fill="transparent"><title>2026-09-02
+當日變動 -35｜持倉 18</title></circle><circle cx="777.8" cy="158.3" r="2.5" fill="#ef4444" opacity="0.85"/><circle cx="794.3" cy="159.4" r="9" fill="transparent"><title>2026-09-02
 權益 87,836 (-12.16%)
 已實現 -11,997｜未實現 -167
-當日變動 -141｜持倉 20</title></circle><circle cx="808.2" cy="159.4" r="2.5" fill="#ef4444" opacity="0.85"/><circle cx="824.9" cy="170.2" r="9" fill="transparent"><title>2026-09-03
+當日變動 -141｜持倉 20</title></circle><circle cx="794.3" cy="159.4" r="2.5" fill="#ef4444" opacity="0.85"/><circle cx="810.7" cy="170.2" r="9" fill="transparent"><title>2026-09-03
 權益 86,415 (-13.59%)
 已實現 -11,997｜未實現 -1,589
-當日變動 -1,421｜持倉 21</title></circle><circle cx="824.9" cy="170.2" r="2.5" fill="#ef4444" opacity="0.85"/><circle cx="841.6" cy="166.1" r="9" fill="transparent"><title>2026-09-04
+當日變動 -1,421｜持倉 21</title></circle><circle cx="810.7" cy="170.2" r="2.5" fill="#ef4444" opacity="0.85"/><circle cx="827.1" cy="166.1" r="9" fill="transparent"><title>2026-09-04
 權益 86,962 (-13.04%)
 已實現 -12,073｜未實現 -965
-當日變動 +547｜持倉 20</title></circle><circle cx="841.6" cy="166.1" r="2.5" fill="#ef4444" opacity="0.85"/><circle cx="858.3" cy="166.1" r="9" fill="transparent"><title>2026-09-05
+當日變動 +547｜持倉 20</title></circle><circle cx="827.1" cy="166.1" r="2.5" fill="#ef4444" opacity="0.85"/><circle cx="843.5" cy="166.1" r="9" fill="transparent"><title>2026-09-05
 權益 86,962 (-13.04%)
 已實現 -12,073｜未實現 -965
-當日變動 +0｜持倉 20</title></circle><circle cx="858.3" cy="166.1" r="2.5" fill="#ef4444" opacity="0.85"/><circle cx="875.1" cy="166.1" r="9" fill="transparent"><title>2026-09-06
+當日變動 +0｜持倉 20</title></circle><circle cx="843.5" cy="166.1" r="2.5" fill="#ef4444" opacity="0.85"/><circle cx="859.9" cy="166.1" r="9" fill="transparent"><title>2026-09-06
 權益 86,962 (-13.04%)
 已實現 -12,073｜未實現 -965
-當日變動 +0｜持倉 20</title></circle><circle cx="875.1" cy="166.1" r="2.5" fill="#ef4444" opacity="0.85"/><circle cx="891.8" cy="164.6" r="9" fill="transparent"><title>2026-09-08
+當日變動 +0｜持倉 20</title></circle><circle cx="859.9" cy="166.1" r="2.5" fill="#ef4444" opacity="0.85"/><circle cx="876.3" cy="164.6" r="9" fill="transparent"><title>2026-09-08
 權益 87,159 (-12.84%)
 已實現 -11,624｜未實現 -1,217
-當日變動 +197｜持倉 18</title></circle><circle cx="891.8" cy="164.6" r="2.5" fill="#ef4444" opacity="0.85"/><circle cx="908.5" cy="159.2" r="9" fill="transparent"><title>2026-09-09
+當日變動 +197｜持倉 18</title></circle><circle cx="876.3" cy="164.6" r="2.5" fill="#ef4444" opacity="0.85"/><circle cx="892.8" cy="159.2" r="9" fill="transparent"><title>2026-09-09
 權益 87,866 (-12.13%)
 已實現 -12,252｜未實現 +118
-當日變動 +707｜持倉 17</title></circle><circle cx="908.5" cy="159.2" r="2.5" fill="#ef4444" opacity="0.85"/><circle cx="925.3" cy="161.0" r="9" fill="transparent"><title>2026-09-10
+當日變動 +707｜持倉 17</title></circle><circle cx="892.8" cy="159.2" r="2.5" fill="#ef4444" opacity="0.85"/><circle cx="909.2" cy="161.0" r="9" fill="transparent"><title>2026-09-10
 權益 87,627 (-12.37%)
 已實現 -12,252｜未實現 -121
-當日變動 -239｜持倉 18</title></circle><circle cx="925.3" cy="161.0" r="2.5" fill="#ef4444" opacity="0.85"/><circle cx="942.0" cy="165.3" r="9" fill="transparent"><title>2026-09-12
+當日變動 -239｜持倉 18</title></circle><circle cx="909.2" cy="161.0" r="2.5" fill="#ef4444" opacity="0.85"/><circle cx="925.6" cy="165.3" r="9" fill="transparent"><title>2026-09-12
 權益 87,064 (-12.94%)
 已實現 -12,267｜未實現 -669
-當日變動 -563｜持倉 25</title></circle><circle cx="942.0" cy="165.3" r="2.5" fill="#ef4444" opacity="0.85"/><text x="72.0" y="288" fill="#64748b" font-size="10" text-anchor="middle">起始</text><text x="205.8" y="288" fill="#64748b" font-size="10" text-anchor="middle">07-13</text><text x="339.7" y="288" fill="#64748b" font-size="10" text-anchor="middle">07-23</text><text x="473.5" y="288" fill="#64748b" font-size="10" text-anchor="middle">08-04</text><text x="607.4" y="288" fill="#64748b" font-size="10" text-anchor="middle">08-14</text><text x="741.2" y="288" fill="#64748b" font-size="10" text-anchor="middle">08-26</text><text x="875.1" y="288" fill="#64748b" font-size="10" text-anchor="middle">09-06</text>
+當日變動 -563｜持倉 25</title></circle><circle cx="925.6" cy="165.3" r="2.5" fill="#ef4444" opacity="0.85"/><circle cx="942.0" cy="171.7" r="9" fill="transparent"><title>2026-09-14
+權益 86,217 (-13.78%)
+已實現 -12,332｜未實現 -1,451
+當日變動 -847｜持倉 25</title></circle><circle cx="942.0" cy="171.7" r="2.5" fill="#ef4444" opacity="0.85"/><text x="72.0" y="288" fill="#64748b" font-size="10" text-anchor="middle">起始</text><text x="203.3" y="288" fill="#64748b" font-size="10" text-anchor="middle">07-13</text><text x="334.6" y="288" fill="#64748b" font-size="10" text-anchor="middle">07-23</text><text x="466.0" y="288" fill="#64748b" font-size="10" text-anchor="middle">08-04</text><text x="597.3" y="288" fill="#64748b" font-size="10" text-anchor="middle">08-14</text><text x="728.6" y="288" fill="#64748b" font-size="10" text-anchor="middle">08-26</text><text x="859.9" y="288" fill="#64748b" font-size="10" text-anchor="middle">09-06</text>
   <line x1="72" y1="18" x2="72" y2="266" stroke="#334155" stroke-width="1"/>
 </svg>
 <div class="legend">
@@ -287,82 +290,83 @@ tr.tot td{background:#111c32;font-weight:700;border-top:2px solid #334155}
   <line x1="72" y1="67.0" x2="942" y2="67.0" stroke="#334155"/>
   <text x="64" y="24" fill="#64748b" font-size="10" text-anchor="end">+5,566</text>
   <text x="64" y="120" fill="#64748b" font-size="10" text-anchor="end">-5,566</text>
-  <rect x="75.3" y="67.0" width="10.0" height="0.8" fill="#94a3b8" opacity="0.8" rx="2"><title>2026-07-01  +0 TWD</title></rect><text x="80.4" y="140" fill="#64748b" font-size="10" text-anchor="middle">07-01</text><rect x="92.1" y="61.9" width="10.0" height="5.1" fill="#10b981" opacity="0.8" rx="2"><title>2026-07-02  +583 TWD</title></rect><text x="97.1" y="140" fill="#64748b" font-size="10" text-anchor="middle">07-02</text><rect x="108.8" y="55.3" width="10.0" height="11.7" fill="#10b981" opacity="0.8" rx="2"><title>2026-07-03  +1,330 TWD</title></rect><text x="113.8" y="140" fill="#64748b" font-size="10" text-anchor="middle">07-03</text><rect x="125.5" y="60.8" width="10.0" height="6.2" fill="#10b981" opacity="0.8" rx="2"><title>2026-07-06  +704 TWD</title></rect><text x="130.6" y="140" fill="#64748b" font-size="10" text-anchor="middle">07-06</text><rect x="142.3" y="67.0" width="10.0" height="22.2" fill="#ef4444" opacity="0.8" rx="2"><title>2026-07-07  -2,523 TWD</title></rect><text x="147.3" y="140" fill="#64748b" font-size="10" text-anchor="middle">07-07</text><rect x="159.0" y="60.3" width="10.0" height="6.7" fill="#10b981" opacity="0.8" rx="2"><title>2026-07-08  +756 TWD</title></rect><text x="164.0" y="140" fill="#64748b" font-size="10" text-anchor="middle">07-08</text><rect x="175.7" y="67.0" width="10.0" height="2.4" fill="#ef4444" opacity="0.8" rx="2"><title>2026-07-09  -267 TWD</title></rect><text x="180.8" y="140" fill="#64748b" font-size="10" text-anchor="middle">07-09</text><rect x="192.5" y="67.0" width="10.0" height="0.8" fill="#ef4444" opacity="0.8" rx="2"><title>2026-07-13  -7 TWD</title></rect><text x="197.5" y="140" fill="#64748b" font-size="10" text-anchor="middle">07-13</text><rect x="209.2" y="67.0" width="10.0" height="6.6" fill="#ef4444" opacity="0.8" rx="2"><title>2026-07-14  -745 TWD</title></rect><text x="214.2" y="140" fill="#64748b" font-size="10" text-anchor="middle">07-14</text><rect x="225.9" y="57.3" width="10.0" height="9.7" fill="#10b981" opacity="0.8" rx="2"><title>2026-07-15  +1,106 TWD</title></rect><text x="230.9" y="140" fill="#64748b" font-size="10" text-anchor="middle">07-15</text><rect x="242.7" y="67.0" width="10.0" height="9.9" fill="#ef4444" opacity="0.8" rx="2"><title>2026-07-16  -1,125 TWD</title></rect><text x="247.7" y="140" fill="#64748b" font-size="10" text-anchor="middle">07-16</text><rect x="259.4" y="67.0" width="10.0" height="25.2" fill="#ef4444" opacity="0.8" rx="2"><title>2026-07-17  -2,862 TWD</title></rect><text x="264.4" y="140" fill="#64748b" font-size="10" text-anchor="middle">07-17</text><rect x="276.1" y="67.0" width="10.0" height="28.9" fill="#ef4444" opacity="0.8" rx="2"><title>2026-07-20  -3,288 TWD</title></rect><text x="281.1" y="140" fill="#64748b" font-size="10" text-anchor="middle">07-20</text><rect x="292.8" y="49.8" width="10.0" height="17.2" fill="#10b981" opacity="0.8" rx="2"><title>2026-07-21  +1,955 TWD</title></rect><text x="297.9" y="140" fill="#64748b" font-size="10" text-anchor="middle">07-21</text><rect x="309.6" y="45.6" width="10.0" height="21.4" fill="#10b981" opacity="0.8" rx="2"><title>2026-07-22  +2,428 TWD</title></rect><text x="314.6" y="140" fill="#64748b" font-size="10" text-anchor="middle">07-22</text><rect x="326.3" y="67.0" width="10.0" height="22.2" fill="#ef4444" opacity="0.8" rx="2"><title>2026-07-23  -2,524 TWD</title></rect><text x="331.3" y="140" fill="#64748b" font-size="10" text-anchor="middle">07-23</text><rect x="343.0" y="67.0" width="10.0" height="28.3" fill="#ef4444" opacity="0.8" rx="2"><title>2026-07-24  -3,213 TWD</title></rect><text x="348.1" y="140" fill="#64748b" font-size="10" text-anchor="middle">07-24</text><rect x="359.8" y="67.0" width="10.0" height="13.0" fill="#ef4444" opacity="0.8" rx="2"><title>2026-07-27  -1,479 TWD</title></rect><text x="364.8" y="140" fill="#64748b" font-size="10" text-anchor="middle">07-27</text><rect x="376.5" y="67.0" width="10.0" height="49.0" fill="#ef4444" opacity="0.8" rx="2"><title>2026-07-28  -5,566 TWD</title></rect><text x="381.5" y="140" fill="#64748b" font-size="10" text-anchor="middle">07-28</text><rect x="393.2" y="67.0" width="10.0" height="43.6" fill="#ef4444" opacity="0.8" rx="2"><title>2026-07-29  -4,957 TWD</title></rect><text x="398.2" y="140" fill="#64748b" font-size="10" text-anchor="middle">07-29</text><rect x="410.0" y="67.0" width="10.0" height="23.7" fill="#ef4444" opacity="0.8" rx="2"><title>2026-07-30  -2,692 TWD</title></rect><text x="415.0" y="140" fill="#64748b" font-size="10" text-anchor="middle">07-30</text><rect x="426.7" y="29.3" width="10.0" height="37.7" fill="#10b981" opacity="0.8" rx="2"><title>2026-07-31  +4,287 TWD</title></rect><text x="431.7" y="140" fill="#64748b" font-size="10" text-anchor="middle">07-31</text><rect x="443.4" y="43.6" width="10.0" height="23.4" fill="#10b981" opacity="0.8" rx="2"><title>2026-08-03  +2,656 TWD</title></rect><text x="448.4" y="140" fill="#64748b" font-size="10" text-anchor="middle">08-03</text><rect x="460.2" y="43.6" width="10.0" height="23.4" fill="#10b981" opacity="0.8" rx="2"><title>2026-08-04  +2,654 TWD</title></rect><text x="465.2" y="140" fill="#64748b" font-size="10" text-anchor="middle">08-04</text><rect x="476.9" y="61.0" width="10.0" height="6.0" fill="#10b981" opacity="0.8" rx="2"><title>2026-08-05  +680 TWD</title></rect><text x="481.9" y="140" fill="#64748b" font-size="10" text-anchor="middle">08-05</text><rect x="493.6" y="61.2" width="10.0" height="5.8" fill="#10b981" opacity="0.8" rx="2"><title>2026-08-06  +661 TWD</title></rect><text x="498.6" y="140" fill="#64748b" font-size="10" text-anchor="middle">08-06</text><rect x="510.3" y="67.0" width="10.0" height="8.7" fill="#ef4444" opacity="0.8" rx="2"><title>2026-08-07  -990 TWD</title></rect><text x="515.4" y="140" fill="#64748b" font-size="10" text-anchor="middle">08-07</text><rect x="527.1" y="54.3" width="10.0" height="12.7" fill="#10b981" opacity="0.8" rx="2"><title>2026-08-10  +1,448 TWD</title></rect><text x="532.1" y="140" fill="#64748b" font-size="10" text-anchor="middle">08-10</text><rect x="543.8" y="67.0" width="10.0" height="3.4" fill="#ef4444" opacity="0.8" rx="2"><title>2026-08-11  -385 TWD</title></rect><text x="548.8" y="140" fill="#64748b" font-size="10" text-anchor="middle">08-11</text><rect x="560.5" y="57.5" width="10.0" height="9.5" fill="#10b981" opacity="0.8" rx="2"><title>2026-08-12  +1,078 TWD</title></rect><text x="565.6" y="140" fill="#64748b" font-size="10" text-anchor="middle">08-12</text><rect x="577.3" y="60.8" width="10.0" height="6.2" fill="#10b981" opacity="0.8" rx="2"><title>2026-08-13  +703 TWD</title></rect><text x="582.3" y="140" fill="#64748b" font-size="10" text-anchor="middle">08-13</text><rect x="594.0" y="67.0" width="10.0" height="19.9" fill="#ef4444" opacity="0.8" rx="2"><title>2026-08-14  -2,262 TWD</title></rect><text x="599.0" y="140" fill="#64748b" font-size="10" text-anchor="middle">08-14</text><rect x="610.7" y="63.1" width="10.0" height="3.9" fill="#10b981" opacity="0.8" rx="2"><title>2026-08-17  +439 TWD</title></rect><text x="615.8" y="140" fill="#64748b" font-size="10" text-anchor="middle">08-17</text><rect x="627.5" y="67.0" width="10.0" height="8.4" fill="#ef4444" opacity="0.8" rx="2"><title>2026-08-18  -959 TWD</title></rect><text x="632.5" y="140" fill="#64748b" font-size="10" text-anchor="middle">08-18</text><rect x="644.2" y="67.0" width="10.0" height="4.8" fill="#ef4444" opacity="0.8" rx="2"><title>2026-08-19  -543 TWD</title></rect><text x="649.2" y="140" fill="#64748b" font-size="10" text-anchor="middle">08-19</text><rect x="660.9" y="61.2" width="10.0" height="5.8" fill="#10b981" opacity="0.8" rx="2"><title>2026-08-20  +661 TWD</title></rect><text x="665.9" y="140" fill="#64748b" font-size="10" text-anchor="middle">08-20</text><rect x="677.7" y="64.1" width="10.0" height="2.9" fill="#10b981" opacity="0.8" rx="2"><title>2026-08-21  +328 TWD</title></rect><text x="682.7" y="140" fill="#64748b" font-size="10" text-anchor="middle">08-21</text><rect x="694.4" y="63.7" width="10.0" height="3.3" fill="#10b981" opacity="0.8" rx="2"><title>2026-08-24  +371 TWD</title></rect><text x="699.4" y="140" fill="#64748b" font-size="10" text-anchor="middle">08-24</text><rect x="711.1" y="66.5" width="10.0" height="0.8" fill="#10b981" opacity="0.8" rx="2"><title>2026-08-25  +58 TWD</title></rect><text x="716.1" y="140" fill="#64748b" font-size="10" text-anchor="middle">08-25</text><rect x="727.8" y="65.1" width="10.0" height="1.9" fill="#10b981" opacity="0.8" rx="2"><title>2026-08-26  +211 TWD</title></rect><text x="732.9" y="140" fill="#64748b" font-size="10" text-anchor="middle">08-26</text><rect x="744.6" y="67.0" width="10.0" height="1.7" fill="#ef4444" opacity="0.8" rx="2"><title>2026-08-27  -192 TWD</title></rect><text x="749.6" y="140" fill="#64748b" font-size="10" text-anchor="middle">08-27</text><rect x="761.3" y="67.0" width="10.0" height="4.5" fill="#ef4444" opacity="0.8" rx="2"><title>2026-08-28  -507 TWD</title></rect><text x="766.3" y="140" fill="#64748b" font-size="10" text-anchor="middle">08-28</text><rect x="778.0" y="67.0" width="10.0" height="0.8" fill="#ef4444" opacity="0.8" rx="2"><title>2026-09-01  -35 TWD</title></rect><text x="783.1" y="140" fill="#64748b" font-size="10" text-anchor="middle">09-01</text><rect x="794.8" y="67.0" width="10.0" height="1.2" fill="#ef4444" opacity="0.8" rx="2"><title>2026-09-02  -141 TWD</title></rect><text x="799.8" y="140" fill="#64748b" font-size="10" text-anchor="middle">09-02</text><rect x="811.5" y="67.0" width="10.0" height="12.5" fill="#ef4444" opacity="0.8" rx="2"><title>2026-09-03  -1,421 TWD</title></rect><text x="816.5" y="140" fill="#64748b" font-size="10" text-anchor="middle">09-03</text><rect x="828.2" y="62.2" width="10.0" height="4.8" fill="#10b981" opacity="0.8" rx="2"><title>2026-09-04  +547 TWD</title></rect><text x="833.2" y="140" fill="#64748b" font-size="10" text-anchor="middle">09-04</text><rect x="845.0" y="67.0" width="10.0" height="0.8" fill="#94a3b8" opacity="0.8" rx="2"><title>2026-09-05  +0 TWD</title></rect><text x="850.0" y="140" fill="#64748b" font-size="10" text-anchor="middle">09-05</text><rect x="861.7" y="67.0" width="10.0" height="0.8" fill="#94a3b8" opacity="0.8" rx="2"><title>2026-09-06  +0 TWD</title></rect><text x="866.7" y="140" fill="#64748b" font-size="10" text-anchor="middle">09-06</text><rect x="878.4" y="65.3" width="10.0" height="1.7" fill="#10b981" opacity="0.8" rx="2"><title>2026-09-08  +197 TWD</title></rect><text x="883.4" y="140" fill="#64748b" font-size="10" text-anchor="middle">09-08</text><rect x="895.2" y="60.8" width="10.0" height="6.2" fill="#10b981" opacity="0.8" rx="2"><title>2026-09-09  +707 TWD</title></rect><text x="900.2" y="140" fill="#64748b" font-size="10" text-anchor="middle">09-09</text><rect x="911.9" y="67.0" width="10.0" height="2.1" fill="#ef4444" opacity="0.8" rx="2"><title>2026-09-10  -239 TWD</title></rect><text x="916.9" y="140" fill="#64748b" font-size="10" text-anchor="middle">09-10</text><rect x="928.6" y="67.0" width="10.0" height="5.0" fill="#ef4444" opacity="0.8" rx="2"><title>2026-09-12  -563 TWD</title></rect><text x="933.6" y="140" fill="#64748b" font-size="10" text-anchor="middle">09-12</text></svg></section>
+  <rect x="75.3" y="67.0" width="9.8" height="0.8" fill="#94a3b8" opacity="0.8" rx="2"><title>2026-07-01  +0 TWD</title></rect><text x="80.2" y="140" fill="#64748b" font-size="10" text-anchor="middle">07-01</text><rect x="91.7" y="61.9" width="9.8" height="5.1" fill="#10b981" opacity="0.8" rx="2"><title>2026-07-02  +583 TWD</title></rect><text x="96.6" y="140" fill="#64748b" font-size="10" text-anchor="middle">07-02</text><rect x="108.1" y="55.3" width="9.8" height="11.7" fill="#10b981" opacity="0.8" rx="2"><title>2026-07-03  +1,330 TWD</title></rect><text x="113.0" y="140" fill="#64748b" font-size="10" text-anchor="middle">07-03</text><rect x="124.5" y="60.8" width="9.8" height="6.2" fill="#10b981" opacity="0.8" rx="2"><title>2026-07-06  +704 TWD</title></rect><text x="129.5" y="140" fill="#64748b" font-size="10" text-anchor="middle">07-06</text><rect x="140.9" y="67.0" width="9.8" height="22.2" fill="#ef4444" opacity="0.8" rx="2"><title>2026-07-07  -2,523 TWD</title></rect><text x="145.9" y="140" fill="#64748b" font-size="10" text-anchor="middle">07-07</text><rect x="157.4" y="60.3" width="9.8" height="6.7" fill="#10b981" opacity="0.8" rx="2"><title>2026-07-08  +756 TWD</title></rect><text x="162.3" y="140" fill="#64748b" font-size="10" text-anchor="middle">07-08</text><rect x="173.8" y="67.0" width="9.8" height="2.4" fill="#ef4444" opacity="0.8" rx="2"><title>2026-07-09  -267 TWD</title></rect><text x="178.7" y="140" fill="#64748b" font-size="10" text-anchor="middle">07-09</text><rect x="190.2" y="67.0" width="9.8" height="0.8" fill="#ef4444" opacity="0.8" rx="2"><title>2026-07-13  -7 TWD</title></rect><text x="195.1" y="140" fill="#64748b" font-size="10" text-anchor="middle">07-13</text><rect x="206.6" y="67.0" width="9.8" height="6.6" fill="#ef4444" opacity="0.8" rx="2"><title>2026-07-14  -745 TWD</title></rect><text x="211.5" y="140" fill="#64748b" font-size="10" text-anchor="middle">07-14</text><rect x="223.0" y="57.3" width="9.8" height="9.7" fill="#10b981" opacity="0.8" rx="2"><title>2026-07-15  +1,106 TWD</title></rect><text x="227.9" y="140" fill="#64748b" font-size="10" text-anchor="middle">07-15</text><rect x="239.4" y="67.0" width="9.8" height="9.9" fill="#ef4444" opacity="0.8" rx="2"><title>2026-07-16  -1,125 TWD</title></rect><text x="244.4" y="140" fill="#64748b" font-size="10" text-anchor="middle">07-16</text><rect x="255.8" y="67.0" width="9.8" height="25.2" fill="#ef4444" opacity="0.8" rx="2"><title>2026-07-17  -2,862 TWD</title></rect><text x="260.8" y="140" fill="#64748b" font-size="10" text-anchor="middle">07-17</text><rect x="272.3" y="67.0" width="9.8" height="28.9" fill="#ef4444" opacity="0.8" rx="2"><title>2026-07-20  -3,288 TWD</title></rect><text x="277.2" y="140" fill="#64748b" font-size="10" text-anchor="middle">07-20</text><rect x="288.7" y="49.8" width="9.8" height="17.2" fill="#10b981" opacity="0.8" rx="2"><title>2026-07-21  +1,955 TWD</title></rect><text x="293.6" y="140" fill="#64748b" font-size="10" text-anchor="middle">07-21</text><rect x="305.1" y="45.6" width="9.8" height="21.4" fill="#10b981" opacity="0.8" rx="2"><title>2026-07-22  +2,428 TWD</title></rect><text x="310.0" y="140" fill="#64748b" font-size="10" text-anchor="middle">07-22</text><rect x="321.5" y="67.0" width="9.8" height="22.2" fill="#ef4444" opacity="0.8" rx="2"><title>2026-07-23  -2,524 TWD</title></rect><text x="326.4" y="140" fill="#64748b" font-size="10" text-anchor="middle">07-23</text><rect x="337.9" y="67.0" width="9.8" height="28.3" fill="#ef4444" opacity="0.8" rx="2"><title>2026-07-24  -3,213 TWD</title></rect><text x="342.8" y="140" fill="#64748b" font-size="10" text-anchor="middle">07-24</text><rect x="354.3" y="67.0" width="9.8" height="13.0" fill="#ef4444" opacity="0.8" rx="2"><title>2026-07-27  -1,479 TWD</title></rect><text x="359.3" y="140" fill="#64748b" font-size="10" text-anchor="middle">07-27</text><rect x="370.8" y="67.0" width="9.8" height="49.0" fill="#ef4444" opacity="0.8" rx="2"><title>2026-07-28  -5,566 TWD</title></rect><text x="375.7" y="140" fill="#64748b" font-size="10" text-anchor="middle">07-28</text><rect x="387.2" y="67.0" width="9.8" height="43.6" fill="#ef4444" opacity="0.8" rx="2"><title>2026-07-29  -4,957 TWD</title></rect><text x="392.1" y="140" fill="#64748b" font-size="10" text-anchor="middle">07-29</text><rect x="403.6" y="67.0" width="9.8" height="23.7" fill="#ef4444" opacity="0.8" rx="2"><title>2026-07-30  -2,692 TWD</title></rect><text x="408.5" y="140" fill="#64748b" font-size="10" text-anchor="middle">07-30</text><rect x="420.0" y="29.3" width="9.8" height="37.7" fill="#10b981" opacity="0.8" rx="2"><title>2026-07-31  +4,287 TWD</title></rect><text x="424.9" y="140" fill="#64748b" font-size="10" text-anchor="middle">07-31</text><rect x="436.4" y="43.6" width="9.8" height="23.4" fill="#10b981" opacity="0.8" rx="2"><title>2026-08-03  +2,656 TWD</title></rect><text x="441.3" y="140" fill="#64748b" font-size="10" text-anchor="middle">08-03</text><rect x="452.8" y="43.6" width="9.8" height="23.4" fill="#10b981" opacity="0.8" rx="2"><title>2026-08-04  +2,654 TWD</title></rect><text x="457.8" y="140" fill="#64748b" font-size="10" text-anchor="middle">08-04</text><rect x="469.2" y="61.0" width="9.8" height="6.0" fill="#10b981" opacity="0.8" rx="2"><title>2026-08-05  +680 TWD</title></rect><text x="474.2" y="140" fill="#64748b" font-size="10" text-anchor="middle">08-05</text><rect x="485.7" y="61.2" width="9.8" height="5.8" fill="#10b981" opacity="0.8" rx="2"><title>2026-08-06  +661 TWD</title></rect><text x="490.6" y="140" fill="#64748b" font-size="10" text-anchor="middle">08-06</text><rect x="502.1" y="67.0" width="9.8" height="8.7" fill="#ef4444" opacity="0.8" rx="2"><title>2026-08-07  -990 TWD</title></rect><text x="507.0" y="140" fill="#64748b" font-size="10" text-anchor="middle">08-07</text><rect x="518.5" y="54.3" width="9.8" height="12.7" fill="#10b981" opacity="0.8" rx="2"><title>2026-08-10  +1,448 TWD</title></rect><text x="523.4" y="140" fill="#64748b" font-size="10" text-anchor="middle">08-10</text><rect x="534.9" y="67.0" width="9.8" height="3.4" fill="#ef4444" opacity="0.8" rx="2"><title>2026-08-11  -385 TWD</title></rect><text x="539.8" y="140" fill="#64748b" font-size="10" text-anchor="middle">08-11</text><rect x="551.3" y="57.5" width="9.8" height="9.5" fill="#10b981" opacity="0.8" rx="2"><title>2026-08-12  +1,078 TWD</title></rect><text x="556.2" y="140" fill="#64748b" font-size="10" text-anchor="middle">08-12</text><rect x="567.7" y="60.8" width="9.8" height="6.2" fill="#10b981" opacity="0.8" rx="2"><title>2026-08-13  +703 TWD</title></rect><text x="572.7" y="140" fill="#64748b" font-size="10" text-anchor="middle">08-13</text><rect x="584.2" y="67.0" width="9.8" height="19.9" fill="#ef4444" opacity="0.8" rx="2"><title>2026-08-14  -2,262 TWD</title></rect><text x="589.1" y="140" fill="#64748b" font-size="10" text-anchor="middle">08-14</text><rect x="600.6" y="63.1" width="9.8" height="3.9" fill="#10b981" opacity="0.8" rx="2"><title>2026-08-17  +439 TWD</title></rect><text x="605.5" y="140" fill="#64748b" font-size="10" text-anchor="middle">08-17</text><rect x="617.0" y="67.0" width="9.8" height="8.4" fill="#ef4444" opacity="0.8" rx="2"><title>2026-08-18  -959 TWD</title></rect><text x="621.9" y="140" fill="#64748b" font-size="10" text-anchor="middle">08-18</text><rect x="633.4" y="67.0" width="9.8" height="4.8" fill="#ef4444" opacity="0.8" rx="2"><title>2026-08-19  -543 TWD</title></rect><text x="638.3" y="140" fill="#64748b" font-size="10" text-anchor="middle">08-19</text><rect x="649.8" y="61.2" width="9.8" height="5.8" fill="#10b981" opacity="0.8" rx="2"><title>2026-08-20  +661 TWD</title></rect><text x="654.7" y="140" fill="#64748b" font-size="10" text-anchor="middle">08-20</text><rect x="666.2" y="64.1" width="9.8" height="2.9" fill="#10b981" opacity="0.8" rx="2"><title>2026-08-21  +328 TWD</title></rect><text x="671.2" y="140" fill="#64748b" font-size="10" text-anchor="middle">08-21</text><rect x="682.6" y="63.7" width="9.8" height="3.3" fill="#10b981" opacity="0.8" rx="2"><title>2026-08-24  +371 TWD</title></rect><text x="687.6" y="140" fill="#64748b" font-size="10" text-anchor="middle">08-24</text><rect x="699.1" y="66.5" width="9.8" height="0.8" fill="#10b981" opacity="0.8" rx="2"><title>2026-08-25  +58 TWD</title></rect><text x="704.0" y="140" fill="#64748b" font-size="10" text-anchor="middle">08-25</text><rect x="715.5" y="65.1" width="9.8" height="1.9" fill="#10b981" opacity="0.8" rx="2"><title>2026-08-26  +211 TWD</title></rect><text x="720.4" y="140" fill="#64748b" font-size="10" text-anchor="middle">08-26</text><rect x="731.9" y="67.0" width="9.8" height="1.7" fill="#ef4444" opacity="0.8" rx="2"><title>2026-08-27  -192 TWD</title></rect><text x="736.8" y="140" fill="#64748b" font-size="10" text-anchor="middle">08-27</text><rect x="748.3" y="67.0" width="9.8" height="4.5" fill="#ef4444" opacity="0.8" rx="2"><title>2026-08-28  -507 TWD</title></rect><text x="753.2" y="140" fill="#64748b" font-size="10" text-anchor="middle">08-28</text><rect x="764.7" y="67.0" width="9.8" height="0.8" fill="#ef4444" opacity="0.8" rx="2"><title>2026-09-01  -35 TWD</title></rect><text x="769.6" y="140" fill="#64748b" font-size="10" text-anchor="middle">09-01</text><rect x="781.1" y="67.0" width="9.8" height="1.2" fill="#ef4444" opacity="0.8" rx="2"><title>2026-09-02  -141 TWD</title></rect><text x="786.1" y="140" fill="#64748b" font-size="10" text-anchor="middle">09-02</text><rect x="797.5" y="67.0" width="9.8" height="12.5" fill="#ef4444" opacity="0.8" rx="2"><title>2026-09-03  -1,421 TWD</title></rect><text x="802.5" y="140" fill="#64748b" font-size="10" text-anchor="middle">09-03</text><rect x="814.0" y="62.2" width="9.8" height="4.8" fill="#10b981" opacity="0.8" rx="2"><title>2026-09-04  +547 TWD</title></rect><text x="818.9" y="140" fill="#64748b" font-size="10" text-anchor="middle">09-04</text><rect x="830.4" y="67.0" width="9.8" height="0.8" fill="#94a3b8" opacity="0.8" rx="2"><title>2026-09-05  +0 TWD</title></rect><text x="835.3" y="140" fill="#64748b" font-size="10" text-anchor="middle">09-05</text><rect x="846.8" y="67.0" width="9.8" height="0.8" fill="#94a3b8" opacity="0.8" rx="2"><title>2026-09-06  +0 TWD</title></rect><text x="851.7" y="140" fill="#64748b" font-size="10" text-anchor="middle">09-06</text><rect x="863.2" y="65.3" width="9.8" height="1.7" fill="#10b981" opacity="0.8" rx="2"><title>2026-09-08  +197 TWD</title></rect><text x="868.1" y="140" fill="#64748b" font-size="10" text-anchor="middle">09-08</text><rect x="879.6" y="60.8" width="9.8" height="6.2" fill="#10b981" opacity="0.8" rx="2"><title>2026-09-09  +707 TWD</title></rect><text x="884.5" y="140" fill="#64748b" font-size="10" text-anchor="middle">09-09</text><rect x="896.0" y="67.0" width="9.8" height="2.1" fill="#ef4444" opacity="0.8" rx="2"><title>2026-09-10  -239 TWD</title></rect><text x="901.0" y="140" fill="#64748b" font-size="10" text-anchor="middle">09-10</text><rect x="912.5" y="67.0" width="9.8" height="5.0" fill="#ef4444" opacity="0.8" rx="2"><title>2026-09-12  -563 TWD</title></rect><text x="917.4" y="140" fill="#64748b" font-size="10" text-anchor="middle">09-12</text><rect x="928.9" y="67.0" width="9.8" height="7.5" fill="#ef4444" opacity="0.8" rx="2"><title>2026-09-14  -847 TWD</title></rect><text x="933.8" y="140" fill="#64748b" font-size="10" text-anchor="middle">09-14</text></svg></section>
 <section><h2>回撤水下圖</h2><svg viewBox="0 0 960 150" class="chart" style="height:150px">
   <defs><linearGradient id="ddfill" x1="0" y1="0" x2="0" y2="1">
     <stop offset="0%" stop-color="#ef4444" stop-opacity="0.35"/>
     <stop offset="100%" stop-color="#ef4444" stop-opacity="0.05"/></linearGradient></defs>
   <line x1="72" y1="14.0" x2="942" y2="14.0" stroke="#1e293b" stroke-width="1"/><text x="64" y="18.0" fill="#64748b" font-size="11" text-anchor="end">0.0%</text><line x1="72" y1="40.5" x2="942" y2="40.5" stroke="#1e293b" stroke-width="1"/><text x="64" y="44.5" fill="#64748b" font-size="11" text-anchor="end">-7.0%</text><line x1="72" y1="67.0" x2="942" y2="67.0" stroke="#1e293b" stroke-width="1"/><text x="64" y="71.0" fill="#64748b" font-size="11" text-anchor="end">-14.0%</text><line x1="72" y1="93.5" x2="942" y2="93.5" stroke="#1e293b" stroke-width="1"/><text x="64" y="97.5" fill="#64748b" font-size="11" text-anchor="end">-21.0%</text><line x1="72" y1="120.0" x2="942" y2="120.0" stroke="#1e293b" stroke-width="1"/><text x="64" y="124.0" fill="#64748b" font-size="11" text-anchor="end">-28.0%</text>
   <line x1="72" y1="14.0" x2="942" y2="14.0" stroke="#475569" stroke-width="1.2"/>
-  <polygon points="72.0,14.0 88.7,14.0 105.5,14.0 122.2,14.0 138.9,14.0 155.7,23.3 172.4,20.5 189.1,21.5 205.8,21.5 222.6,24.3 239.3,20.2 256.0,24.3 272.8,34.9 289.5,47.0 306.2,39.8 323.0,30.9 339.7,40.2 356.4,52.0 373.2,57.5 389.9,78.0 406.6,96.2 423.3,106.2 440.1,90.4 456.8,80.6 473.5,70.8 490.3,68.3 507.0,65.8 523.7,69.5 540.5,64.2 557.2,65.6 573.9,61.6 590.7,59.0 607.4,67.4 624.1,65.7 640.8,69.3 657.6,71.3 674.3,68.8 691.0,67.6 707.8,66.3 724.5,66.0 741.2,65.3 758.0,66.0 774.7,67.8 791.4,68.0 808.2,68.5 824.9,73.7 841.6,71.7 858.3,71.7 875.1,71.7 891.8,71.0 908.5,68.4 925.3,69.3 942.0,71.3 942.0,14.0 72.0,14.0" fill="url(#ddfill)"/>
-  <polyline fill="none" stroke="#ef4444" stroke-width="2" points="72.0,14.0 88.7,14.0 105.5,14.0 122.2,14.0 138.9,14.0 155.7,23.3 172.4,20.5 189.1,21.5 205.8,21.5 222.6,24.3 239.3,20.2 256.0,24.3 272.8,34.9 289.5,47.0 306.2,39.8 323.0,30.9 339.7,40.2 356.4,52.0 373.2,57.5 389.9,78.0 406.6,96.2 423.3,106.2 440.1,90.4 456.8,80.6 473.5,70.8 490.3,68.3 507.0,65.8 523.7,69.5 540.5,64.2 557.2,65.6 573.9,61.6 590.7,59.0 607.4,67.4 624.1,65.7 640.8,69.3 657.6,71.3 674.3,68.8 691.0,67.6 707.8,66.3 724.5,66.0 741.2,65.3 758.0,66.0 774.7,67.8 791.4,68.0 808.2,68.5 824.9,73.7 841.6,71.7 858.3,71.7 875.1,71.7 891.8,71.0 908.5,68.4 925.3,69.3 942.0,71.3"/>
+  <polygon points="72.0,14.0 88.4,14.0 104.8,14.0 121.2,14.0 137.7,14.0 154.1,23.3 170.5,20.5 186.9,21.5 203.3,21.5 219.7,24.3 236.2,20.2 252.6,24.3 269.0,34.9 285.4,47.0 301.8,39.8 318.2,30.9 334.6,40.2 351.1,52.0 367.5,57.5 383.9,78.0 400.3,96.2 416.7,106.2 433.1,90.4 449.5,80.6 466.0,70.8 482.4,68.3 498.8,65.8 515.2,69.5 531.6,64.2 548.0,65.6 564.5,61.6 580.9,59.0 597.3,67.4 613.7,65.7 630.1,69.3 646.5,71.3 662.9,68.8 679.4,67.6 695.8,66.3 712.2,66.0 728.6,65.3 745.0,66.0 761.4,67.8 777.8,68.0 794.3,68.5 810.7,73.7 827.1,71.7 843.5,71.7 859.9,71.7 876.3,71.0 892.8,68.4 909.2,69.3 925.6,71.3 942.0,74.5 942.0,14.0 72.0,14.0" fill="url(#ddfill)"/>
+  <polyline fill="none" stroke="#ef4444" stroke-width="2" points="72.0,14.0 88.4,14.0 104.8,14.0 121.2,14.0 137.7,14.0 154.1,23.3 170.5,20.5 186.9,21.5 203.3,21.5 219.7,24.3 236.2,20.2 252.6,24.3 269.0,34.9 285.4,47.0 301.8,39.8 318.2,30.9 334.6,40.2 351.1,52.0 367.5,57.5 383.9,78.0 400.3,96.2 416.7,106.2 433.1,90.4 449.5,80.6 466.0,70.8 482.4,68.3 498.8,65.8 515.2,69.5 531.6,64.2 548.0,65.6 564.5,61.6 580.9,59.0 597.3,67.4 613.7,65.7 630.1,69.3 646.5,71.3 662.9,68.8 679.4,67.6 695.8,66.3 712.2,66.0 728.6,65.3 745.0,66.0 761.4,67.8 777.8,68.0 794.3,68.5 810.7,73.7 827.1,71.7 843.5,71.7 859.9,71.7 876.3,71.0 892.8,68.4 909.2,69.3 925.6,71.3 942.0,74.5"/>
   <circle cx="72.0" cy="14.0" r="9" fill="transparent"><title>起始
-回撤 0.00%</title></circle><circle cx="88.7" cy="14.0" r="9" fill="transparent"><title>2026-07-01
-回撤 0.00%</title></circle><circle cx="105.5" cy="14.0" r="9" fill="transparent"><title>2026-07-02
-回撤 0.00%</title></circle><circle cx="122.2" cy="14.0" r="9" fill="transparent"><title>2026-07-03
-回撤 0.00%</title></circle><circle cx="138.9" cy="14.0" r="9" fill="transparent"><title>2026-07-06
-回撤 0.00%</title></circle><circle cx="155.7" cy="23.3" r="9" fill="transparent"><title>2026-07-07
-回撤 -2.46%</title></circle><circle cx="172.4" cy="20.5" r="9" fill="transparent"><title>2026-07-08
-回撤 -1.72%</title></circle><circle cx="189.1" cy="21.5" r="9" fill="transparent"><title>2026-07-09
-回撤 -1.98%</title></circle><circle cx="205.8" cy="21.5" r="9" fill="transparent"><title>2026-07-13
-回撤 -1.99%</title></circle><circle cx="222.6" cy="24.3" r="9" fill="transparent"><title>2026-07-14
-回撤 -2.71%</title></circle><circle cx="239.3" cy="20.2" r="9" fill="transparent"><title>2026-07-15
-回撤 -1.64%</title></circle><circle cx="256.0" cy="24.3" r="9" fill="transparent"><title>2026-07-16
-回撤 -2.73%</title></circle><circle cx="272.8" cy="34.9" r="9" fill="transparent"><title>2026-07-17
-回撤 -5.52%</title></circle><circle cx="289.5" cy="47.0" r="9" fill="transparent"><title>2026-07-20
-回撤 -8.73%</title></circle><circle cx="306.2" cy="39.8" r="9" fill="transparent"><title>2026-07-21
-回撤 -6.82%</title></circle><circle cx="323.0" cy="30.9" r="9" fill="transparent"><title>2026-07-22
-回撤 -4.46%</title></circle><circle cx="339.7" cy="40.2" r="9" fill="transparent"><title>2026-07-23
-回撤 -6.92%</title></circle><circle cx="356.4" cy="52.0" r="9" fill="transparent"><title>2026-07-24
-回撤 -10.05%</title></circle><circle cx="373.2" cy="57.5" r="9" fill="transparent"><title>2026-07-27
-回撤 -11.49%</title></circle><circle cx="389.9" cy="78.0" r="9" fill="transparent"><title>2026-07-28
-回撤 -16.91%</title></circle><circle cx="406.6" cy="96.2" r="9" fill="transparent"><title>2026-07-29
-回撤 -21.74%</title></circle><circle cx="423.3" cy="106.2" r="9" fill="transparent"><title>2026-07-30
-回撤 -24.37%</title></circle><circle cx="440.1" cy="90.4" r="9" fill="transparent"><title>2026-07-31
-回撤 -20.19%</title></circle><circle cx="456.8" cy="80.6" r="9" fill="transparent"><title>2026-08-03
-回撤 -17.60%</title></circle><circle cx="473.5" cy="70.8" r="9" fill="transparent"><title>2026-08-04
-回撤 -15.01%</title></circle><circle cx="490.3" cy="68.3" r="9" fill="transparent"><title>2026-08-05
-回撤 -14.35%</title></circle><circle cx="507.0" cy="65.8" r="9" fill="transparent"><title>2026-08-06
-回撤 -13.71%</title></circle><circle cx="523.7" cy="69.5" r="9" fill="transparent"><title>2026-08-07
-回撤 -14.67%</title></circle><circle cx="540.5" cy="64.2" r="9" fill="transparent"><title>2026-08-10
-回撤 -13.26%</title></circle><circle cx="557.2" cy="65.6" r="9" fill="transparent"><title>2026-08-11
-回撤 -13.64%</title></circle><circle cx="573.9" cy="61.6" r="9" fill="transparent"><title>2026-08-12
-回撤 -12.58%</title></circle><circle cx="590.7" cy="59.0" r="9" fill="transparent"><title>2026-08-13
-回撤 -11.90%</title></circle><circle cx="607.4" cy="67.4" r="9" fill="transparent"><title>2026-08-14
-回撤 -14.10%</title></circle><circle cx="624.1" cy="65.7" r="9" fill="transparent"><title>2026-08-17
-回撤 -13.68%</title></circle><circle cx="640.8" cy="69.3" r="9" fill="transparent"><title>2026-08-18
-回撤 -14.61%</title></circle><circle cx="657.6" cy="71.3" r="9" fill="transparent"><title>2026-08-19
-回撤 -15.14%</title></circle><circle cx="674.3" cy="68.8" r="9" fill="transparent"><title>2026-08-20
-回撤 -14.49%</title></circle><circle cx="691.0" cy="67.6" r="9" fill="transparent"><title>2026-08-21
-回撤 -14.18%</title></circle><circle cx="707.8" cy="66.3" r="9" fill="transparent"><title>2026-08-24
-回撤 -13.81%</title></circle><circle cx="724.5" cy="66.0" r="9" fill="transparent"><title>2026-08-25
-回撤 -13.76%</title></circle><circle cx="741.2" cy="65.3" r="9" fill="transparent"><title>2026-08-26
-回撤 -13.55%</title></circle><circle cx="758.0" cy="66.0" r="9" fill="transparent"><title>2026-08-27
-回撤 -13.74%</title></circle><circle cx="774.7" cy="67.8" r="9" fill="transparent"><title>2026-08-28
-回撤 -14.23%</title></circle><circle cx="791.4" cy="68.0" r="9" fill="transparent"><title>2026-09-01
-回撤 -14.27%</title></circle><circle cx="808.2" cy="68.5" r="9" fill="transparent"><title>2026-09-02
-回撤 -14.40%</title></circle><circle cx="824.9" cy="73.7" r="9" fill="transparent"><title>2026-09-03
-回撤 -15.79%</title></circle><circle cx="841.6" cy="71.7" r="9" fill="transparent"><title>2026-09-04
-回撤 -15.26%</title></circle><circle cx="858.3" cy="71.7" r="9" fill="transparent"><title>2026-09-05
-回撤 -15.26%</title></circle><circle cx="875.1" cy="71.7" r="9" fill="transparent"><title>2026-09-06
-回撤 -15.26%</title></circle><circle cx="891.8" cy="71.0" r="9" fill="transparent"><title>2026-09-08
-回撤 -15.06%</title></circle><circle cx="908.5" cy="68.4" r="9" fill="transparent"><title>2026-09-09
-回撤 -14.38%</title></circle><circle cx="925.3" cy="69.3" r="9" fill="transparent"><title>2026-09-10
-回撤 -14.61%</title></circle><circle cx="942.0" cy="71.3" r="9" fill="transparent"><title>2026-09-12
-回撤 -15.16%</title></circle><text x="72.0" y="140" fill="#64748b" font-size="10" text-anchor="middle">起始</text><text x="205.8" y="140" fill="#64748b" font-size="10" text-anchor="middle">07-13</text><text x="339.7" y="140" fill="#64748b" font-size="10" text-anchor="middle">07-23</text><text x="473.5" y="140" fill="#64748b" font-size="10" text-anchor="middle">08-04</text><text x="607.4" y="140" fill="#64748b" font-size="10" text-anchor="middle">08-14</text><text x="741.2" y="140" fill="#64748b" font-size="10" text-anchor="middle">08-26</text><text x="875.1" y="140" fill="#64748b" font-size="10" text-anchor="middle">09-06</text>
+回撤 0.00%</title></circle><circle cx="88.4" cy="14.0" r="9" fill="transparent"><title>2026-07-01
+回撤 0.00%</title></circle><circle cx="104.8" cy="14.0" r="9" fill="transparent"><title>2026-07-02
+回撤 0.00%</title></circle><circle cx="121.2" cy="14.0" r="9" fill="transparent"><title>2026-07-03
+回撤 0.00%</title></circle><circle cx="137.7" cy="14.0" r="9" fill="transparent"><title>2026-07-06
+回撤 0.00%</title></circle><circle cx="154.1" cy="23.3" r="9" fill="transparent"><title>2026-07-07
+回撤 -2.46%</title></circle><circle cx="170.5" cy="20.5" r="9" fill="transparent"><title>2026-07-08
+回撤 -1.72%</title></circle><circle cx="186.9" cy="21.5" r="9" fill="transparent"><title>2026-07-09
+回撤 -1.98%</title></circle><circle cx="203.3" cy="21.5" r="9" fill="transparent"><title>2026-07-13
+回撤 -1.99%</title></circle><circle cx="219.7" cy="24.3" r="9" fill="transparent"><title>2026-07-14
+回撤 -2.71%</title></circle><circle cx="236.2" cy="20.2" r="9" fill="transparent"><title>2026-07-15
+回撤 -1.64%</title></circle><circle cx="252.6" cy="24.3" r="9" fill="transparent"><title>2026-07-16
+回撤 -2.73%</title></circle><circle cx="269.0" cy="34.9" r="9" fill="transparent"><title>2026-07-17
+回撤 -5.52%</title></circle><circle cx="285.4" cy="47.0" r="9" fill="transparent"><title>2026-07-20
+回撤 -8.73%</title></circle><circle cx="301.8" cy="39.8" r="9" fill="transparent"><title>2026-07-21
+回撤 -6.82%</title></circle><circle cx="318.2" cy="30.9" r="9" fill="transparent"><title>2026-07-22
+回撤 -4.46%</title></circle><circle cx="334.6" cy="40.2" r="9" fill="transparent"><title>2026-07-23
+回撤 -6.92%</title></circle><circle cx="351.1" cy="52.0" r="9" fill="transparent"><title>2026-07-24
+回撤 -10.05%</title></circle><circle cx="367.5" cy="57.5" r="9" fill="transparent"><title>2026-07-27
+回撤 -11.49%</title></circle><circle cx="383.9" cy="78.0" r="9" fill="transparent"><title>2026-07-28
+回撤 -16.91%</title></circle><circle cx="400.3" cy="96.2" r="9" fill="transparent"><title>2026-07-29
+回撤 -21.74%</title></circle><circle cx="416.7" cy="106.2" r="9" fill="transparent"><title>2026-07-30
+回撤 -24.37%</title></circle><circle cx="433.1" cy="90.4" r="9" fill="transparent"><title>2026-07-31
+回撤 -20.19%</title></circle><circle cx="449.5" cy="80.6" r="9" fill="transparent"><title>2026-08-03
+回撤 -17.60%</title></circle><circle cx="466.0" cy="70.8" r="9" fill="transparent"><title>2026-08-04
+回撤 -15.01%</title></circle><circle cx="482.4" cy="68.3" r="9" fill="transparent"><title>2026-08-05
+回撤 -14.35%</title></circle><circle cx="498.8" cy="65.8" r="9" fill="transparent"><title>2026-08-06
+回撤 -13.71%</title></circle><circle cx="515.2" cy="69.5" r="9" fill="transparent"><title>2026-08-07
+回撤 -14.67%</title></circle><circle cx="531.6" cy="64.2" r="9" fill="transparent"><title>2026-08-10
+回撤 -13.26%</title></circle><circle cx="548.0" cy="65.6" r="9" fill="transparent"><title>2026-08-11
+回撤 -13.64%</title></circle><circle cx="564.5" cy="61.6" r="9" fill="transparent"><title>2026-08-12
+回撤 -12.58%</title></circle><circle cx="580.9" cy="59.0" r="9" fill="transparent"><title>2026-08-13
+回撤 -11.90%</title></circle><circle cx="597.3" cy="67.4" r="9" fill="transparent"><title>2026-08-14
+回撤 -14.10%</title></circle><circle cx="613.7" cy="65.7" r="9" fill="transparent"><title>2026-08-17
+回撤 -13.68%</title></circle><circle cx="630.1" cy="69.3" r="9" fill="transparent"><title>2026-08-18
+回撤 -14.61%</title></circle><circle cx="646.5" cy="71.3" r="9" fill="transparent"><title>2026-08-19
+回撤 -15.14%</title></circle><circle cx="662.9" cy="68.8" r="9" fill="transparent"><title>2026-08-20
+回撤 -14.49%</title></circle><circle cx="679.4" cy="67.6" r="9" fill="transparent"><title>2026-08-21
+回撤 -14.18%</title></circle><circle cx="695.8" cy="66.3" r="9" fill="transparent"><title>2026-08-24
+回撤 -13.81%</title></circle><circle cx="712.2" cy="66.0" r="9" fill="transparent"><title>2026-08-25
+回撤 -13.76%</title></circle><circle cx="728.6" cy="65.3" r="9" fill="transparent"><title>2026-08-26
+回撤 -13.55%</title></circle><circle cx="745.0" cy="66.0" r="9" fill="transparent"><title>2026-08-27
+回撤 -13.74%</title></circle><circle cx="761.4" cy="67.8" r="9" fill="transparent"><title>2026-08-28
+回撤 -14.23%</title></circle><circle cx="777.8" cy="68.0" r="9" fill="transparent"><title>2026-09-01
+回撤 -14.27%</title></circle><circle cx="794.3" cy="68.5" r="9" fill="transparent"><title>2026-09-02
+回撤 -14.40%</title></circle><circle cx="810.7" cy="73.7" r="9" fill="transparent"><title>2026-09-03
+回撤 -15.79%</title></circle><circle cx="827.1" cy="71.7" r="9" fill="transparent"><title>2026-09-04
+回撤 -15.26%</title></circle><circle cx="843.5" cy="71.7" r="9" fill="transparent"><title>2026-09-05
+回撤 -15.26%</title></circle><circle cx="859.9" cy="71.7" r="9" fill="transparent"><title>2026-09-06
+回撤 -15.26%</title></circle><circle cx="876.3" cy="71.0" r="9" fill="transparent"><title>2026-09-08
+回撤 -15.06%</title></circle><circle cx="892.8" cy="68.4" r="9" fill="transparent"><title>2026-09-09
+回撤 -14.38%</title></circle><circle cx="909.2" cy="69.3" r="9" fill="transparent"><title>2026-09-10
+回撤 -14.61%</title></circle><circle cx="925.6" cy="71.3" r="9" fill="transparent"><title>2026-09-12
+回撤 -15.16%</title></circle><circle cx="942.0" cy="74.5" r="9" fill="transparent"><title>2026-09-14
+回撤 -15.98%</title></circle><text x="72.0" y="140" fill="#64748b" font-size="10" text-anchor="middle">起始</text><text x="203.3" y="140" fill="#64748b" font-size="10" text-anchor="middle">07-13</text><text x="334.6" y="140" fill="#64748b" font-size="10" text-anchor="middle">07-23</text><text x="466.0" y="140" fill="#64748b" font-size="10" text-anchor="middle">08-04</text><text x="597.3" y="140" fill="#64748b" font-size="10" text-anchor="middle">08-14</text><text x="728.6" y="140" fill="#64748b" font-size="10" text-anchor="middle">08-26</text><text x="859.9" y="140" fill="#64748b" font-size="10" text-anchor="middle">09-06</text>
 </svg></section>
-<section><h2>策略貢獻分解</h2><div class="cbars"><div class="cbar"><span class="cbar-l">SQUEEZE_PRE</span><span class="cbar-t"><i style="width:0.4%;background:#ef4444;float:left"></i></span><span class="cbar-v" style="color:#ef4444">-32</span></div><div class="cbar"><span class="cbar-l">TB_Native</span><span class="cbar-t"><i style="width:14.1%;background:#ef4444;float:left"></i></span><span class="cbar-v" style="color:#ef4444">-1,206</span></div><div class="cbar"><span class="cbar-l">EXTREME_MOM</span><span class="cbar-t"><i style="width:16.5%;background:#ef4444;float:left"></i></span><span class="cbar-v" style="color:#ef4444">-1,407</span></div><div class="cbar"><span class="cbar-l">DUANTOU</span><span class="cbar-t"><i style="width:21.5%;background:#ef4444;float:left"></i></span><span class="cbar-v" style="color:#ef4444">-1,831</span></div><div class="cbar"><span class="cbar-l">CHIP_UNIFIED</span><span class="cbar-t"><i style="width:100.0%;background:#ef4444;float:left"></i></span><span class="cbar-v" style="color:#ef4444">-8,532</span></div></div>
+<section><h2>策略貢獻分解</h2><div class="cbars"><div class="cbar"><span class="cbar-l">SQUEEZE_PRE</span><span class="cbar-t"><i style="width:0.4%;background:#ef4444;float:left"></i></span><span class="cbar-v" style="color:#ef4444">-35</span></div><div class="cbar"><span class="cbar-l">TB_Native</span><span class="cbar-t"><i style="width:13.7%;background:#ef4444;float:left"></i></span><span class="cbar-v" style="color:#ef4444">-1,206</span></div><div class="cbar"><span class="cbar-l">DUANTOU</span><span class="cbar-t"><i style="width:20.8%;background:#ef4444;float:left"></i></span><span class="cbar-v" style="color:#ef4444">-1,831</span></div><div class="cbar"><span class="cbar-l">EXTREME_MOM</span><span class="cbar-t"><i style="width:22.6%;background:#ef4444;float:left"></i></span><span class="cbar-v" style="color:#ef4444">-1,991</span></div><div class="cbar"><span class="cbar-l">CHIP_UNIFIED</span><span class="cbar-t"><i style="width:100.0%;background:#ef4444;float:left"></i></span><span class="cbar-v" style="color:#ef4444">-8,792</span></div></div>
         <table><thead><tr><th>策略</th><th class="r">持倉</th><th class="r">投入成本</th>
           <th class="r">未實現</th><th class="r">未實現/成本</th><th class="r">平倉數</th>
           <th class="r">勝率</th><th class="r">已實現</th><th class="r">合計貢獻</th>
           <th class="r">bps</th></tr></thead><tbody><tr>
               <td class="tk">SQUEEZE_PRE</td>
-              <td class="r">1</td><td class="r">2,497</td>
-              <td class="r" style="color:#ef4444">-32</td>
-              <td class="r" style="color:#ef4444">-1.26%</td>
+              <td class="r">2</td><td class="r">7,487</td>
+              <td class="r" style="color:#ef4444">-35</td>
+              <td class="r" style="color:#ef4444">-0.46%</td>
               <td class="r">—</td><td class="r">—</td>
               <td class="r" style="color:#94a3b8">+0</td>
-              <td class="r b" style="color:#ef4444">-32</td>
+              <td class="r b" style="color:#ef4444">-35</td>
               <td class="r" style="color:#ef4444">-3</td>
             </tr><tr>
               <td class="tk">TB_Native</td>
@@ -374,15 +378,6 @@ tr.tot td{background:#111c32;font-weight:700;border-top:2px solid #334155}
               <td class="r b" style="color:#ef4444">-1,206</td>
               <td class="r" style="color:#ef4444">-121</td>
             </tr><tr>
-              <td class="tk">EXTREME_MOM</td>
-              <td class="r">6</td><td class="r">14,180</td>
-              <td class="r" style="color:#ef4444">-428</td>
-              <td class="r" style="color:#ef4444">-3.02%</td>
-              <td class="r">2</td><td class="r">0%</td>
-              <td class="r" style="color:#ef4444">-979</td>
-              <td class="r b" style="color:#ef4444">-1,407</td>
-              <td class="r" style="color:#ef4444">-141</td>
-            </tr><tr>
               <td class="tk">DUANTOU</td>
               <td class="r">0</td><td class="r">0</td>
               <td class="r" style="color:#94a3b8">+0</td>
@@ -392,21 +387,30 @@ tr.tot td{background:#111c32;font-weight:700;border-top:2px solid #334155}
               <td class="r b" style="color:#ef4444">-1,831</td>
               <td class="r" style="color:#ef4444">-183</td>
             </tr><tr>
+              <td class="tk">EXTREME_MOM</td>
+              <td class="r">6</td><td class="r">14,180</td>
+              <td class="r" style="color:#ef4444">-1,012</td>
+              <td class="r" style="color:#ef4444">-7.14%</td>
+              <td class="r">2</td><td class="r">0%</td>
+              <td class="r" style="color:#ef4444">-979</td>
+              <td class="r b" style="color:#ef4444">-1,991</td>
+              <td class="r" style="color:#ef4444">-199</td>
+            </tr><tr>
               <td class="tk">CHIP_UNIFIED</td>
-              <td class="r">18</td><td class="r">29,754</td>
-              <td class="r" style="color:#ef4444">-209</td>
-              <td class="r" style="color:#ef4444">-0.70%</td>
-              <td class="r">48</td><td class="r">29%</td>
-              <td class="r" style="color:#ef4444">-8,323</td>
-              <td class="r b" style="color:#ef4444">-8,532</td>
-              <td class="r" style="color:#ef4444">-853</td>
+              <td class="r">17</td><td class="r">28,086</td>
+              <td class="r" style="color:#ef4444">-404</td>
+              <td class="r" style="color:#ef4444">-1.44%</td>
+              <td class="r">49</td><td class="r">29%</td>
+              <td class="r" style="color:#ef4444">-8,388</td>
+              <td class="r b" style="color:#ef4444">-8,792</td>
+              <td class="r" style="color:#ef4444">-879</td>
             </tr><tr class="tot"><td>合計</td><td class="r">25</td>
-          <td class="r">46,431</td>
-          <td class="r" style="color:#ef4444">-669</td>
-          <td class="r">—</td><td class="r">71</td><td class="r">—</td>
-          <td class="r" style="color:#ef4444">-12,339</td>
-          <td class="r b" style="color:#ef4444">-13,008</td>
-          <td class="r" style="color:#ef4444">-1301</td></tr></tbody></table>
+          <td class="r">49,753</td>
+          <td class="r" style="color:#ef4444">-1,451</td>
+          <td class="r">—</td><td class="r">72</td><td class="r">—</td>
+          <td class="r" style="color:#ef4444">-12,403</td>
+          <td class="r b" style="color:#ef4444">-13,855</td>
+          <td class="r" style="color:#ef4444">-1385</td></tr></tbody></table>
         <div class="note">bps = 對總權益的貢獻（1 bps = 0.01%）。D1 紀律：單策略強度不可單獨解讀，
         分散度看策略間相關性（見 <code>python -m portfolio._diversification_audit</code>）。</div></section>
 <section><h2>持倉 <span class="cnt">25</span></h2>
@@ -417,271 +421,265 @@ tr.tot td{background:#111c32;font-weight:700;border-top:2px solid #334155}
           <td class="tk"><span class="sid">6538</span><span class="nm">倉和</span></td><td>EXTREME_MOM</td>
           <td>2026-09-11</td>
           <td class="r">337.50</td>
-          <td class="r">368.00</td>
-          <td class="r" style="color:#10b981">+8.45%</td>
-          <td class="r" style="color:#10b981">+200</td>
-          <td class="r">2,576<span class="dim"> (3.0%)</span></td>
-          <td class="r">0/10<span class="bar"><i style="width:0%"></i></span></td>
-          <td class="r">270.00</td><td class="r"><span style="color:#94a3b8">+26.6%</span></td>
+          <td class="r">372.50</td>
+          <td class="r" style="color:#10b981">+9.79%</td>
+          <td class="r" style="color:#10b981">+231</td>
+          <td class="r">2,608<span class="dim"> (3.0%)</span></td>
+          <td class="r">1/10<span class="bar"><i style="width:10%"></i></span></td>
+          <td class="r">270.00</td><td class="r"><span style="color:#94a3b8">+27.5%</span></td>
         </tr><tr>
           <td class="tk"><span class="sid">2409</span><span class="nm">友達</span></td><td>CHIP_UNIFIED</td>
           <td>2026-09-04</td>
           <td class="r">27.35</td>
-          <td class="r">30.20</td>
-          <td class="r" style="color:#10b981">+9.84%</td>
-          <td class="r" style="color:#10b981">+159</td>
-          <td class="r">1,782<span class="dim"> (2.0%)</span></td>
-          <td class="r">5/12<span class="bar"><i style="width:42%"></i></span></td>
-          <td class="r">21.88</td><td class="r"><span style="color:#94a3b8">+27.5%</span></td>
-        </tr><tr>
-          <td class="tk"><span class="sid">3406</span><span class="nm">玉晶光</span></td><td>EXTREME_MOM</td>
-          <td>2026-09-01</td>
-          <td class="r">1005.00</td>
-          <td class="r">1060.00</td>
-          <td class="r" style="color:#10b981">+4.89%</td>
-          <td class="r" style="color:#10b981">+98</td>
-          <td class="r">2,120<span class="dim"> (2.4%)</span></td>
-          <td class="r">8/10<span class="bar"><i style="width:80%"></i></span></td>
-          <td class="r">804.00</td><td class="r"><span style="color:#94a3b8">+24.2%</span></td>
-        </tr><tr>
-          <td class="tk"><span class="sid">3374</span><span class="nm">精材</span></td><td>CHIP_UNIFIED</td>
-          <td>2026-09-04</td>
-          <td class="r">420.00</td>
-          <td class="r">463.50</td>
-          <td class="r" style="color:#10b981">+9.77%</td>
-          <td class="r" style="color:#10b981">+82</td>
-          <td class="r">927<span class="dim"> (1.1%)</span></td>
-          <td class="r">5/12<span class="bar"><i style="width:42%"></i></span></td>
-          <td class="r">336.00</td><td class="r"><span style="color:#94a3b8">+27.5%</span></td>
-        </tr><tr>
-          <td class="tk"><span class="sid">1102</span><span class="nm">亞泥</span></td><td>CHIP_UNIFIED</td>
-          <td>2026-09-01</td>
-          <td class="r">34.50</td>
-          <td class="r">35.30</td>
-          <td class="r" style="color:#10b981">+1.73%</td>
-          <td class="r" style="color:#10b981">+51</td>
-          <td class="r">3,036<span class="dim"> (3.5%)</span></td>
-          <td class="r">8/12<span class="bar"><i style="width:67%"></i></span></td>
-          <td class="r">27.60</td><td class="r"><span style="color:#94a3b8">+21.8%</span></td>
+          <td class="r">28.70</td>
+          <td class="r" style="color:#10b981">+4.35%</td>
+          <td class="r" style="color:#10b981">+70</td>
+          <td class="r">1,693<span class="dim"> (2.0%)</span></td>
+          <td class="r">6/12<span class="bar"><i style="width:50%"></i></span></td>
+          <td class="r">21.88</td><td class="r"><span style="color:#94a3b8">+23.8%</span></td>
         </tr><tr>
           <td class="tk"><span class="sid">2603</span><span class="nm">長榮</span></td><td>CHIP_UNIFIED</td>
           <td>2026-09-01</td>
           <td class="r">231.50</td>
-          <td class="r">234.50</td>
-          <td class="r" style="color:#10b981">+0.71%</td>
-          <td class="r" style="color:#10b981">+18</td>
-          <td class="r">2,580<span class="dim"> (3.0%)</span></td>
-          <td class="r">8/12<span class="bar"><i style="width:67%"></i></span></td>
-          <td class="r">185.20</td><td class="r"><span style="color:#94a3b8">+21.0%</span></td>
-        </tr><tr>
-          <td class="tk"><span class="sid">3037</span><span class="nm">欣興</span></td><td>CHIP_UNIFIED</td>
-          <td>2026-09-02</td>
-          <td class="r">955.00</td>
-          <td class="r">977.00</td>
-          <td class="r" style="color:#10b981">+1.72%</td>
-          <td class="r" style="color:#10b981">+16</td>
-          <td class="r">977<span class="dim"> (1.1%)</span></td>
-          <td class="r">7/12<span class="bar"><i style="width:58%"></i></span></td>
-          <td class="r">764.00</td><td class="r"><span style="color:#94a3b8">+21.8%</span></td>
-        </tr><tr>
-          <td class="tk"><span class="sid">5347</span><span class="nm">世界</span></td><td>CHIP_UNIFIED</td>
-          <td>2026-09-11</td>
-          <td class="r">157.00</td>
-          <td class="r">157.50</td>
-          <td class="r" style="color:#ef4444">-0.27%</td>
-          <td class="r" style="color:#ef4444">-4</td>
-          <td class="r">1,418<span class="dim"> (1.6%)</span></td>
-          <td class="r">0/12<span class="bar"><i style="width:0%"></i></span></td>
-          <td class="r">125.60</td><td class="r"><span style="color:#94a3b8">+20.3%</span></td>
+          <td class="r">237.00</td>
+          <td class="r" style="color:#10b981">+1.79%</td>
+          <td class="r" style="color:#10b981">+46</td>
+          <td class="r">2,607<span class="dim"> (3.0%)</span></td>
+          <td class="r">9/12<span class="bar"><i style="width:75%"></i></span></td>
+          <td class="r">185.20</td><td class="r"><span style="color:#94a3b8">+21.9%</span></td>
         </tr><tr>
           <td class="tk"><span class="sid">2455</span><span class="nm">全新</span></td><td>CHIP_UNIFIED</td>
           <td>2026-09-11</td>
           <td class="r">514.00</td>
-          <td class="r">515.00</td>
-          <td class="r" style="color:#ef4444">-0.39%</td>
-          <td class="r" style="color:#ef4444">-4</td>
-          <td class="r">1,030<span class="dim"> (1.2%)</span></td>
-          <td class="r">0/12<span class="bar"><i style="width:0%"></i></span></td>
-          <td class="r">411.20</td><td class="r"><span style="color:#94a3b8">+20.2%</span></td>
+          <td class="r">535.00</td>
+          <td class="r" style="color:#10b981">+3.50%</td>
+          <td class="r" style="color:#10b981">+36</td>
+          <td class="r">1,070<span class="dim"> (1.2%)</span></td>
+          <td class="r">1/12<span class="bar"><i style="width:8%"></i></span></td>
+          <td class="r">411.20</td><td class="r"><span style="color:#94a3b8">+23.1%</span></td>
         </tr><tr>
-          <td class="tk"><span class="sid">3354</span><span class="nm">律勝</span></td><td>EXTREME_MOM</td>
+          <td class="tk"><span class="sid">1102</span><span class="nm">亞泥</span></td><td>CHIP_UNIFIED</td>
+          <td>2026-09-01</td>
+          <td class="r">34.50</td>
+          <td class="r">35.00</td>
+          <td class="r" style="color:#10b981">+0.86%</td>
+          <td class="r" style="color:#10b981">+26</td>
+          <td class="r">3,010<span class="dim"> (3.5%)</span></td>
+          <td class="r">9/12<span class="bar"><i style="width:75%"></i></span></td>
+          <td class="r">27.60</td><td class="r"><span style="color:#94a3b8">+21.1%</span></td>
+        </tr><tr>
+          <td class="tk"><span class="sid">5347</span><span class="nm">世界</span></td><td>CHIP_UNIFIED</td>
           <td>2026-09-11</td>
-          <td class="r">29.80</td>
-          <td class="r">29.85</td>
-          <td class="r" style="color:#ef4444">-0.42%</td>
-          <td class="r" style="color:#ef4444">-10</td>
-          <td class="r">2,478<span class="dim"> (2.8%)</span></td>
-          <td class="r">0/10<span class="bar"><i style="width:0%"></i></span></td>
-          <td class="r">23.84</td><td class="r"><span style="color:#94a3b8">+20.1%</span></td>
+          <td class="r">157.00</td>
+          <td class="r">159.50</td>
+          <td class="r" style="color:#10b981">+1.01%</td>
+          <td class="r" style="color:#10b981">+14</td>
+          <td class="r">1,436<span class="dim"> (1.7%)</span></td>
+          <td class="r">1/12<span class="bar"><i style="width:8%"></i></span></td>
+          <td class="r">125.60</td><td class="r"><span style="color:#94a3b8">+21.3%</span></td>
+        </tr><tr>
+          <td class="tk"><span class="sid">3374</span><span class="nm">精材</span></td><td>CHIP_UNIFIED</td>
+          <td>2026-09-04</td>
+          <td class="r">420.00</td>
+          <td class="r">429.50</td>
+          <td class="r" style="color:#10b981">+1.68%</td>
+          <td class="r" style="color:#10b981">+14</td>
+          <td class="r">859<span class="dim"> (1.0%)</span></td>
+          <td class="r">6/12<span class="bar"><i style="width:50%"></i></span></td>
+          <td class="r">336.00</td><td class="r"><span style="color:#94a3b8">+21.8%</span></td>
+        </tr><tr>
+          <td class="tk"><span class="sid">3037</span><span class="nm">欣興</span></td><td>CHIP_UNIFIED</td>
+          <td>2026-09-02</td>
+          <td class="r">955.00</td>
+          <td class="r">970.00</td>
+          <td class="r" style="color:#10b981">+0.99%</td>
+          <td class="r" style="color:#10b981">+9</td>
+          <td class="r">970<span class="dim"> (1.1%)</span></td>
+          <td class="r">8/12<span class="bar"><i style="width:67%"></i></span></td>
+          <td class="r">764.00</td><td class="r"><span style="color:#94a3b8">+21.2%</span></td>
         </tr><tr>
           <td class="tk"><span class="sid">2303</span><span class="nm">聯電</span></td><td>CHIP_UNIFIED</td>
           <td>2026-09-10</td>
           <td class="r">142.50</td>
-          <td class="r">140.50</td>
-          <td class="r" style="color:#ef4444">-1.99%</td>
-          <td class="r" style="color:#ef4444">-26</td>
-          <td class="r">1,264<span class="dim"> (1.5%)</span></td>
-          <td class="r">1/12<span class="bar"><i style="width:8%"></i></span></td>
-          <td class="r">114.00</td><td class="r"><span style="color:#94a3b8">+18.9%</span></td>
+          <td class="r">142.50</td>
+          <td class="r" style="color:#ef4444">-0.58%</td>
+          <td class="r" style="color:#ef4444">-8</td>
+          <td class="r">1,282<span class="dim"> (1.5%)</span></td>
+          <td class="r">2/12<span class="bar"><i style="width:17%"></i></span></td>
+          <td class="r">114.00</td><td class="r"><span style="color:#94a3b8">+20.0%</span></td>
         </tr><tr>
-          <td class="tk"><span class="sid">6116</span><span class="nm">彩晶</span></td><td>CHIP_UNIFIED</td>
-          <td>2026-09-01</td>
-          <td class="r">14.35</td>
-          <td class="r">14.10</td>
-          <td class="r" style="color:#ef4444">-2.33%</td>
-          <td class="r" style="color:#ef4444">-27</td>
-          <td class="r">1,142<span class="dim"> (1.3%)</span></td>
-          <td class="r">8/12<span class="bar"><i style="width:67%"></i></span></td>
-          <td class="r">11.48</td><td class="r"><span style="color:#94a3b8">+18.6%</span></td>
+          <td class="tk"><span class="sid">5324</span><span class="nm">士開</span></td><td>SQUEEZE_PRE</td>
+          <td>2026-09-14</td>
+          <td class="r">12.20</td>
+          <td class="r">12.25</td>
+          <td class="r" style="color:#ef4444">-0.18%</td>
+          <td class="r" style="color:#ef4444">-9</td>
+          <td class="r">5,010<span class="dim"> (5.8%)</span></td>
+          <td class="r">0/15<span class="bar"><i style="width:0%"></i></span></td>
+          <td class="r">9.76</td><td class="r"><span style="color:#94a3b8">+20.3%</span></td>
         </tr><tr>
           <td class="tk"><span class="sid">2908</span><span class="nm">特力</span></td><td>SQUEEZE_PRE</td>
           <td>2026-09-11</td>
           <td class="r">22.10</td>
-          <td class="r">21.95</td>
-          <td class="r" style="color:#ef4444">-1.26%</td>
-          <td class="r" style="color:#ef4444">-32</td>
-          <td class="r">2,480<span class="dim"> (2.8%)</span></td>
-          <td class="r">0/15<span class="bar"><i style="width:0%"></i></span></td>
-          <td class="r">17.68</td><td class="r"><span style="color:#94a3b8">+19.5%</span></td>
-        </tr><tr>
-          <td class="tk"><span class="sid">4958</span><span class="nm">臻鼎-KY</span></td><td>CHIP_UNIFIED</td>
-          <td>2026-09-09</td>
-          <td class="r">508.00</td>
-          <td class="r">495.00</td>
-          <td class="r" style="color:#ef4444">-3.14%</td>
-          <td class="r" style="color:#ef4444">-32</td>
-          <td class="r">990<span class="dim"> (1.1%)</span></td>
-          <td class="r">2/12<span class="bar"><i style="width:17%"></i></span></td>
-          <td class="r">406.40</td><td class="r"><span style="color:#94a3b8">+17.9%</span></td>
-        </tr><tr>
-          <td class="tk"><span class="sid">2492</span><span class="nm">華新科</span></td><td>CHIP_UNIFIED</td>
-          <td>2026-09-11</td>
-          <td class="r">320.50</td>
-          <td class="r">311.50</td>
-          <td class="r" style="color:#ef4444">-3.39%</td>
-          <td class="r" style="color:#ef4444">-33</td>
-          <td class="r">934<span class="dim"> (1.1%)</span></td>
-          <td class="r">0/12<span class="bar"><i style="width:0%"></i></span></td>
-          <td class="r">256.40</td><td class="r"><span style="color:#94a3b8">+17.7%</span></td>
-        </tr><tr>
-          <td class="tk"><span class="sid">6239</span><span class="nm">力成</span></td><td>CHIP_UNIFIED</td>
-          <td>2026-09-11</td>
-          <td class="r">278.00</td>
-          <td class="r">273.00</td>
-          <td class="r" style="color:#ef4444">-2.38%</td>
-          <td class="r" style="color:#ef4444">-40</td>
-          <td class="r">1,638<span class="dim"> (1.9%)</span></td>
-          <td class="r">0/12<span class="bar"><i style="width:0%"></i></span></td>
-          <td class="r">222.40</td><td class="r"><span style="color:#94a3b8">+18.5%</span></td>
+          <td class="r">22.00</td>
+          <td class="r" style="color:#ef4444">-1.04%</td>
+          <td class="r" style="color:#ef4444">-26</td>
+          <td class="r">2,486<span class="dim"> (2.9%)</span></td>
+          <td class="r">1/15<span class="bar"><i style="width:7%"></i></span></td>
+          <td class="r">17.68</td><td class="r"><span style="color:#94a3b8">+19.6%</span></td>
         </tr><tr>
           <td class="tk"><span class="sid">2317</span><span class="nm">鴻海</span></td><td>CHIP_UNIFIED</td>
           <td>2026-09-09</td>
           <td class="r">250.50</td>
-          <td class="r">248.00</td>
-          <td class="r" style="color:#ef4444">-1.58%</td>
-          <td class="r" style="color:#ef4444">-44</td>
-          <td class="r">2,728<span class="dim"> (3.1%)</span></td>
-          <td class="r">2/12<span class="bar"><i style="width:17%"></i></span></td>
-          <td class="r">200.40</td><td class="r"><span style="color:#94a3b8">+19.2%</span></td>
+          <td class="r">248.50</td>
+          <td class="r" style="color:#ef4444">-1.38%</td>
+          <td class="r" style="color:#ef4444">-38</td>
+          <td class="r">2,734<span class="dim"> (3.2%)</span></td>
+          <td class="r">3/12<span class="bar"><i style="width:25%"></i></span></td>
+          <td class="r">200.40</td><td class="r"><span style="color:#94a3b8">+19.4%</span></td>
         </tr><tr>
-          <td class="tk"><span class="sid">4938</span><span class="nm">和碩</span></td><td>CHIP_UNIFIED</td>
+          <td class="tk"><span class="sid">4958</span><span class="nm">臻鼎-KY</span></td><td>CHIP_UNIFIED</td>
           <td>2026-09-09</td>
-          <td class="r">91.90</td>
-          <td class="r">91.00</td>
-          <td class="r" style="color:#ef4444">-1.56%</td>
-          <td class="r" style="color:#ef4444">-46</td>
-          <td class="r">2,912<span class="dim"> (3.3%)</span></td>
-          <td class="r">2/12<span class="bar"><i style="width:17%"></i></span></td>
-          <td class="r">73.52</td><td class="r"><span style="color:#94a3b8">+19.2%</span></td>
+          <td class="r">508.00</td>
+          <td class="r">489.50</td>
+          <td class="r" style="color:#ef4444">-4.23%</td>
+          <td class="r" style="color:#ef4444">-43</td>
+          <td class="r">979<span class="dim"> (1.1%)</span></td>
+          <td class="r">3/12<span class="bar"><i style="width:25%"></i></span></td>
+          <td class="r">406.40</td><td class="r"><span style="color:#94a3b8">+17.0%</span></td>
         </tr><tr>
-          <td class="tk"><span class="sid">2337</span><span class="nm">旺宏</span></td><td>CHIP_UNIFIED</td>
+          <td class="tk"><span class="sid">6116</span><span class="nm">彩晶</span></td><td>CHIP_UNIFIED</td>
           <td>2026-09-01</td>
-          <td class="r">126.00</td>
-          <td class="r">119.00</td>
-          <td class="r" style="color:#ef4444">-6.14%</td>
-          <td class="r" style="color:#ef4444">-54</td>
-          <td class="r">833<span class="dim"> (1.0%)</span></td>
-          <td class="r">8/12<span class="bar"><i style="width:67%"></i></span></td>
-          <td class="r">100.80</td><td class="r"><span style="color:#94a3b8">+15.3%</span></td>
+          <td class="r">14.35</td>
+          <td class="r">13.85</td>
+          <td class="r" style="color:#ef4444">-4.07%</td>
+          <td class="r" style="color:#ef4444">-47</td>
+          <td class="r">1,122<span class="dim"> (1.3%)</span></td>
+          <td class="r">9/12<span class="bar"><i style="width:75%"></i></span></td>
+          <td class="r">11.48</td><td class="r"><span style="color:#94a3b8">+17.1%</span></td>
+        </tr><tr>
+          <td class="tk"><span class="sid">2492</span><span class="nm">華新科</span></td><td>CHIP_UNIFIED</td>
+          <td>2026-09-11</td>
+          <td class="r">320.50</td>
+          <td class="r">305.50</td>
+          <td class="r" style="color:#ef4444">-5.27%</td>
+          <td class="r" style="color:#ef4444">-51</td>
+          <td class="r">916<span class="dim"> (1.1%)</span></td>
+          <td class="r">1/12<span class="bar"><i style="width:8%"></i></span></td>
+          <td class="r">256.40</td><td class="r"><span style="color:#94a3b8">+16.1%</span></td>
         </tr><tr>
           <td class="tk"><span class="sid">8150</span><span class="nm">南茂</span></td><td>CHIP_UNIFIED</td>
           <td>2026-09-04</td>
           <td class="r">91.00</td>
-          <td class="r">86.70</td>
-          <td class="r" style="color:#ef4444">-5.31%</td>
-          <td class="r" style="color:#ef4444">-63</td>
-          <td class="r">1,127<span class="dim"> (1.3%)</span></td>
-          <td class="r">5/12<span class="bar"><i style="width:42%"></i></span></td>
-          <td class="r">72.80</td><td class="r"><span style="color:#94a3b8">+16.0%</span></td>
+          <td class="r">86.60</td>
+          <td class="r" style="color:#ef4444">-5.42%</td>
+          <td class="r" style="color:#ef4444">-64</td>
+          <td class="r">1,126<span class="dim"> (1.3%)</span></td>
+          <td class="r">6/12<span class="bar"><i style="width:50%"></i></span></td>
+          <td class="r">72.80</td><td class="r"><span style="color:#94a3b8">+15.9%</span></td>
+        </tr><tr>
+          <td class="tk"><span class="sid">4938</span><span class="nm">和碩</span></td><td>CHIP_UNIFIED</td>
+          <td>2026-09-09</td>
+          <td class="r">91.90</td>
+          <td class="r">90.20</td>
+          <td class="r" style="color:#ef4444">-2.43%</td>
+          <td class="r" style="color:#ef4444">-72</td>
+          <td class="r">2,886<span class="dim"> (3.3%)</span></td>
+          <td class="r">3/12<span class="bar"><i style="width:25%"></i></span></td>
+          <td class="r">73.52</td><td class="r"><span style="color:#94a3b8">+18.5%</span></td>
+        </tr><tr>
+          <td class="tk"><span class="sid">2337</span><span class="nm">旺宏</span></td><td>CHIP_UNIFIED</td>
+          <td>2026-09-01</td>
+          <td class="r">126.00</td>
+          <td class="r">116.00</td>
+          <td class="r" style="color:#ef4444">-8.52%</td>
+          <td class="r" style="color:#ef4444">-75</td>
+          <td class="r">812<span class="dim"> (0.9%)</span></td>
+          <td class="r">9/12<span class="bar"><i style="width:75%"></i></span></td>
+          <td class="r">100.80</td><td class="r"><span style="color:#94a3b8">+13.1%</span></td>
         </tr><tr>
           <td class="tk"><span class="sid">3481</span><span class="nm">群創</span></td><td>CHIP_UNIFIED</td>
           <td>2026-09-03</td>
           <td class="r">49.85</td>
-          <td class="r">47.70</td>
-          <td class="r" style="color:#ef4444">-4.90%</td>
-          <td class="r" style="color:#ef4444">-76</td>
-          <td class="r">1,479<span class="dim"> (1.7%)</span></td>
-          <td class="r">6/12<span class="bar"><i style="width:50%"></i></span></td>
-          <td class="r">39.88</td><td class="r"><span style="color:#94a3b8">+16.4%</span></td>
+          <td class="r">47.65</td>
+          <td class="r" style="color:#ef4444">-5.00%</td>
+          <td class="r" style="color:#ef4444">-77</td>
+          <td class="r">1,477<span class="dim"> (1.7%)</span></td>
+          <td class="r">7/12<span class="bar"><i style="width:58%"></i></span></td>
+          <td class="r">39.88</td><td class="r"><span style="color:#94a3b8">+16.3%</span></td>
+        </tr><tr>
+          <td class="tk"><span class="sid">3406</span><span class="nm">玉晶光</span></td><td>EXTREME_MOM</td>
+          <td>2026-09-01</td>
+          <td class="r">1005.00</td>
+          <td class="r">954.00</td>
+          <td class="r" style="color:#ef4444">-5.66%</td>
+          <td class="r" style="color:#ef4444">-114</td>
+          <td class="r">1,908<span class="dim"> (2.2%)</span></td>
+          <td class="r">9/10<span class="bar"><i style="width:90%"></i></span></td>
+          <td class="r">804.00</td><td class="r"><span style="color:#94a3b8">+15.7%</span></td>
         </tr><tr>
           <td class="tk"><span class="sid">1402</span><span class="nm">遠東新</span></td><td>CHIP_UNIFIED</td>
           <td>2026-09-02</td>
           <td class="r">29.35</td>
-          <td class="r">28.65</td>
-          <td class="r" style="color:#ef4444">-2.97%</td>
-          <td class="r" style="color:#ef4444">-89</td>
-          <td class="r">2,922<span class="dim"> (3.4%)</span></td>
-          <td class="r">7/12<span class="bar"><i style="width:58%"></i></span></td>
-          <td class="r">23.48</td><td class="r"><span style="color:#94a3b8">+18.0%</span></td>
+          <td class="r">28.10</td>
+          <td class="r" style="color:#ef4444">-4.84%</td>
+          <td class="r" style="color:#ef4444">-145</td>
+          <td class="r">2,866<span class="dim"> (3.3%)</span></td>
+          <td class="r">8/12<span class="bar"><i style="width:67%"></i></span></td>
+          <td class="r">23.48</td><td class="r"><span style="color:#94a3b8">+16.4%</span></td>
         </tr><tr>
-          <td class="tk"><span class="sid">6872</span><span class="nm">浩宇生醫</span></td><td>EXTREME_MOM</td>
+          <td class="tk"><span class="sid">3354</span><span class="nm">律勝</span></td><td>EXTREME_MOM</td>
           <td>2026-09-11</td>
-          <td class="r">25.70</td>
-          <td class="r">24.85</td>
-          <td class="r" style="color:#ef4444">-3.89%</td>
-          <td class="r" style="color:#ef4444">-97</td>
-          <td class="r">2,410<span class="dim"> (2.8%)</span></td>
-          <td class="r">0/10<span class="bar"><i style="width:0%"></i></span></td>
-          <td class="r">20.56</td><td class="r"><span style="color:#94a3b8">+17.3%</span></td>
+          <td class="r">29.80</td>
+          <td class="r">28.00</td>
+          <td class="r" style="color:#ef4444">-6.63%</td>
+          <td class="r" style="color:#ef4444">-164</td>
+          <td class="r">2,324<span class="dim"> (2.7%)</span></td>
+          <td class="r">1/10<span class="bar"><i style="width:10%"></i></span></td>
+          <td class="r">23.84</td><td class="r"><span style="color:#94a3b8">+14.9%</span></td>
         </tr><tr>
           <td class="tk"><span class="sid">3498</span><span class="nm">陽程</span></td><td>EXTREME_MOM</td>
           <td>2026-09-01</td>
           <td class="r">215.50</td>
-          <td class="r">192.00</td>
-          <td class="r" style="color:#ef4444">-11.49%</td>
-          <td class="r" style="color:#ef4444">-272</td>
-          <td class="r">2,112<span class="dim"> (2.4%)</span></td>
-          <td class="r">8/10<span class="bar"><i style="width:80%"></i></span></td>
-          <td class="r">172.40</td><td class="r"><span style="color:#94a3b8">+10.2%</span></td>
+          <td class="r">190.50</td>
+          <td class="r" style="color:#ef4444">-12.19%</td>
+          <td class="r" style="color:#ef4444">-289</td>
+          <td class="r">2,096<span class="dim"> (2.4%)</span></td>
+          <td class="r">9/10<span class="bar"><i style="width:90%"></i></span></td>
+          <td class="r">172.40</td><td class="r"><span style="color:#94a3b8">+9.5%</span></td>
+        </tr><tr>
+          <td class="tk"><span class="sid">6872</span><span class="nm">浩宇生醫</span></td><td>EXTREME_MOM</td>
+          <td>2026-09-11</td>
+          <td class="r">25.70</td>
+          <td class="r">22.50</td>
+          <td class="r" style="color:#ef4444">-13.04%</td>
+          <td class="r" style="color:#ef4444">-325</td>
+          <td class="r">2,182<span class="dim"> (2.5%)</span></td>
+          <td class="r">1/10<span class="bar"><i style="width:10%"></i></span></td>
+          <td class="r">20.56</td><td class="r"><span style="color:#94a3b8">+8.6%</span></td>
         </tr><tr>
           <td class="tk"><span class="sid">2491</span><span class="nm">吉祥全</span></td><td>EXTREME_MOM</td>
           <td>2026-09-01</td>
           <td class="r">45.75</td>
-          <td class="r">39.60</td>
-          <td class="r" style="color:#ef4444">-14.03%</td>
-          <td class="r" style="color:#ef4444">-347</td>
-          <td class="r">2,138<span class="dim"> (2.5%)</span></td>
-          <td class="r">8/10<span class="bar"><i style="width:80%"></i></span></td>
-          <td class="r">36.60</td><td class="r"><span style="color:#94a3b8">+7.6%</span></td>
+          <td class="r">39.50</td>
+          <td class="r" style="color:#ef4444">-14.25%</td>
+          <td class="r" style="color:#ef4444">-352</td>
+          <td class="r">2,133<span class="dim"> (2.5%)</span></td>
+          <td class="r">9/10<span class="bar"><i style="width:90%"></i></span></td>
+          <td class="r">36.60</td><td class="r"><span style="color:#94a3b8">+7.3%</span></td>
         </tr></tbody></table></section>
-<section><h2>T+1 待進場 <span class="cnt">2</span></h2><table><thead><tr><th>Ticker</th><th>策略</th><th>決策日</th><th class="r">分配資金</th><th class="r">Score</th></tr></thead><tbody><tr><td class="tk"><span class="sid">6274</span><span class="nm">台燿</span></td>
-      <td>CHIP_UNIFIED</td><td>2026-09-10</td>
-      <td class="r">1,273</td>
-      <td class="r">1.00</td></tr><tr><td class="tk"><span class="sid">5324</span><span class="nm">士開</span></td>
-      <td>SQUEEZE_PRE</td><td>2026-09-12</td>
-      <td class="r">5,000</td>
-      <td class="r">0.98</td></tr></tbody></table></section>
-<section><h2>今日出場 <span class="cnt">1</span></h2><table><thead><tr><th>Ticker</th><th>策略</th><th>區間</th><th class="r">進/出</th><th class="r">PnL%</th><th class="r">PnL TWD</th><th>原因</th></tr></thead><tbody><tr><td class="tk"><span class="sid">2344</span><span class="nm">華邦電</span></td><td>CHIP_UNIFIED</td>
-      <td>2026-08-25 → 2026-09-12</td>
-      <td class="r">172.00 → 172.12</td>
-      <td class="r" style="color:#ef4444">-0.51%</td>
-      <td class="r" style="color:#ef4444">-15</td>
-      <td>chip_reverse</td></tr></tbody></table></section>
+
+<section><h2>今日出場 <span class="cnt">1</span></h2><table><thead><tr><th>Ticker</th><th>策略</th><th>區間</th><th class="r">進/出</th><th class="r">PnL%</th><th class="r">PnL TWD</th><th>原因</th></tr></thead><tbody><tr><td class="tk"><span class="sid">6239</span><span class="nm">力成</span></td><td>CHIP_UNIFIED</td>
+      <td>2026-09-11 → 2026-09-14</td>
+      <td class="r">278.00 → 268.88</td>
+      <td class="r" style="color:#ef4444">-3.87%</td>
+      <td class="r" style="color:#ef4444">-65</td>
+      <td>chip_accel_gone</td></tr></tbody></table></section>
 <section><h2>風控</h2><div class="ok">✅ 無紀律警示、無 stop 觸發、無到期部位</div>
-    <div class="shocks"><div class="shock"><span>持倉全跌 5%</span><b style="color:#ef4444">-2,302</b><span class="dim">權益 -2.64%</span></div><div class="shock"><span>持倉全跌 10%</span><b style="color:#ef4444">-4,603</b><span class="dim">權益 -5.29%</span></div><div class="shock"><span>持倉全跌 20%</span><b style="color:#ef4444">-9,207</b><span class="dim">權益 -10.57%</span></div></div>
-    <div class="note">情境為線性衝擊估算（持倉市值 46,034），非 VaR；
+    <div class="shocks"><div class="shock"><span>持倉全跌 5%</span><b style="color:#ef4444">-2,430</b><span class="dim">權益 -2.82%</span></div><div class="shock"><span>持倉全跌 10%</span><b style="color:#ef4444">-4,859</b><span class="dim">權益 -5.64%</span></div><div class="shock"><span>持倉全跌 20%</span><b style="color:#ef4444">-9,718</b><span class="dim">權益 -11.27%</span></div></div>
+    <div class="note">情境為線性衝擊估算（持倉市值 48,592），非 VaR；
     K1：本區純揭露，不接任何自動砍倉 / vol-targeting。</div></section>
-<section><details class="fold"><summary>🔍 監控診斷（M1 純揭露 — 不接 gate）</summary><div class="diags"><div class="diag"><h3>📐 SMB 曝險</h3><div class="empty">無可對應 beta（25 倉）</div><p class="note">chip 在 neutral 反而最強（+5.07%/trade）</p></div><div class="diag"><h3>📊 因子歸因（過去 60 交易日）</h3><div class="fgrid"><div class="fcell"><span>MKT</span><b style="color:#10b981">+5.1%</b></div><div class="fcell"><span>SMB</span><b style="color:#ef4444">-1.3%</b></div><div class="fcell"><span>HML</span><b style="color:#ef4444">-3.3%</b></div><div class="fcell"><span>MOM</span><b style="color:#ef4444">-0.0%</b></div><div class="fcell"><span>合計</span><b style="color:#10b981">+0.5%</b></div></div><div class="note">模式 structural 等權基準；avg R²=0.14，~86% 變異 4 因子無法解釋。P5：肥尾策略 R² 結構性偏低是 feature，不得當健康度 gate。</div></div><div class="diag"><h3>📊 策略健康度（在用策略 · trailing 12M）</h3><table><thead><tr><th>策略</th><th>資料截止</th><th class="r">筆數</th><th class="r">期望值/筆</th><th class="r">超額 vs 0050 [boot CI]</th></tr></thead><tbody><tr><td class="tk">CHIP_UNIFIED</td><td class="dim"><span style="color:#fbbf24">2025-12-31</span><span class="dim"> ❄255d</span></td><td class="r">549</td><td class="r"><b style="color:#10b981">+1.65%</b><span class="dim"> 全期 +0.56%（Δ+1.09）</span></td><td class="r"><span style="color:#94a3b8" title="CI 跨 0，MDE ±1.20% → 功效不足，不等於證明無 alpha">+0.46% <span class="dim">[-0.70, +1.71]</span></span></td></tr><tr><td class="tk">DUANTOU</td><td class="dim"><span style="color:#fbbf24">2025-05-22</span><span class="dim"> ❄478d</span></td><td class="r">121</td><td class="r"><b style="color:#10b981">+10.12%</b><span class="dim"> 全期 +11.05%（Δ-0.92）</span></td><td class="r"><span style="color:#86efac" title="CI 整段 &gt; 0：同視窗 0050 之外仍有超額">+4.20% <span class="dim">[+1.66, +6.93]</span></span></td></tr><tr><td class="tk">TB_Native</td><td class="dim"><span style="color:#fbbf24">2025-12-12</span><span class="dim"> ❄274d</span></td><td class="r">64</td><td class="r"><b style="color:#ef4444">-1.68%</b><span class="dim"> 全期 +0.52%（Δ-2.19）</span></td><td class="r"><span style="color:#94a3b8" title="CI 跨 0，MDE ±1.47% → 功效不足，不等於證明無 alpha">-1.28% <span class="dim">[-2.80, +0.14]</span></span></td></tr><tr><td class="tk">ML_PA_live</td><td class="dim">2026-08-20<span class="dim"> 23d</span></td><td class="r">125</td><td class="r"><b style="color:#10b981">+0.59%</b><span class="dim"> 全期 +0.61%（Δ-0.03）</span></td><td class="r"><span style="color:#fca5a5" title="CI 整段 &lt; 0：報酬低於同視窗 0050（MDE &lt; |效應|，有功效的負結果）">-3.90% <span class="dim">[-5.47, -2.16]</span></span></td></tr></tbody></table><div class="note">來源 data/kelly_health.json（run_daily 每日更新）。❄ = 回測 CSV 凍結（3 檔）：trailing 視窗相對<b>檔尾</b>滾動，非相對今天，該列讀作歷史快照不是 live 訊號。超額 = β=1 扣同視窗 0050（B1：raw 報酬在牛市會被 beta 灌水）；綠 = CI 整段為正，紅 = 整段為負，灰 = 跨 0（功效不足，非證無 alpha，滑鼠停留看 MDE）。M1 純揭露，不接 gate / 砍倉 / Kelly 動態。</div></div><div class="diag"><h3>🧪 Quant Health（月度 PSR/DSR/PBO）</h3><table><thead><tr><th>策略</th><th class="r">N</th><th class="r">SR</th><th class="r">DSR</th><th class="r">PBO</th></tr></thead><tbody><tr><td class="tk">ML_PA</td><td class="r">1218</td><td class="r">+1.36</td><td class="r" style="color:#86efac">1.00</td><td class="r dim">—</td></tr><tr><td class="tk">CHIP_UNIFIED</td><td class="r">5329</td><td class="r">+1.07</td><td class="r" style="color:#fbbf24">0.94</td><td class="r dim">—</td></tr><tr><td class="tk">TB_Native</td><td class="r">540</td><td class="r">+0.62</td><td class="r" style="color:#fca5a5">0.48</td><td class="r dim">—</td></tr><tr><td class="tk">DUANTOU</td><td class="r">422</td><td class="r">+5.15</td><td class="r" style="color:#86efac">1.00</td><td class="r dim">—</td></tr></tbody></table><ul class="alerts"><li>⚠️ LIMIT_UP alpha 不顯著 (t=+1.75) 但 SMB beta +2.41 (t=+3.95) 顯著 → return 多來自小型股 beta</li><li>⚠️ DUANTOU alpha 不顯著 (t=+1.39) 但 SMB beta +1.06 (t=+4.26) 顯著 → return 多來自小型股 beta</li></ul><div class="note">P4：kurt&gt;10 的肥尾策略應以 bootstrap CI 為準，DSR 系常態工具會結構性低估；此處僅列示不當 gate。完整版 results/quant_health.html</div></div></div></details></section>
+<section><details class="fold"><summary>🔍 監控診斷（M1 純揭露 — 不接 gate）</summary><div class="diags"><div class="diag"><h3>📐 SMB 曝險</h3><div class="empty">無可對應 beta（25 倉）</div><p class="note">chip 在 neutral 反而最強（+5.07%/trade）</p></div><div class="diag"><h3>📊 因子歸因（過去 60 交易日）</h3><div class="fgrid"><div class="fcell"><span>MKT</span><b style="color:#ef4444">-1.7%</b></div><div class="fcell"><span>SMB</span><b style="color:#ef4444">-2.8%</b></div><div class="fcell"><span>HML</span><b style="color:#ef4444">-4.0%</b></div><div class="fcell"><span>MOM</span><b style="color:#10b981">+0.0%</b></div><div class="fcell"><span>合計</span><b style="color:#ef4444">-8.5%</b></div></div><div class="note">模式 structural 等權基準；avg R²=0.14，~86% 變異 4 因子無法解釋。P5：肥尾策略 R² 結構性偏低是 feature，不得當健康度 gate。</div></div><div class="diag"><h3>📊 策略健康度（在用策略 · trailing 12M）</h3><table><thead><tr><th>策略</th><th>資料截止</th><th class="r">筆數</th><th class="r">期望值/筆</th><th class="r">超額 vs 0050 [boot CI]</th></tr></thead><tbody><tr><td class="tk">CHIP_UNIFIED</td><td class="dim"><span style="color:#fbbf24">2025-12-31</span><span class="dim"> ❄257d</span></td><td class="r">549</td><td class="r"><b style="color:#10b981">+1.65%</b><span class="dim"> 全期 +0.56%（Δ+1.09）</span></td><td class="r"><span style="color:#94a3b8" title="CI 跨 0，MDE ±1.20% → 功效不足，不等於證明無 alpha">+0.46% <span class="dim">[-0.70, +1.71]</span></span></td></tr><tr><td class="tk">DUANTOU</td><td class="dim"><span style="color:#fbbf24">2025-05-22</span><span class="dim"> ❄480d</span></td><td class="r">121</td><td class="r"><b style="color:#10b981">+10.12%</b><span class="dim"> 全期 +11.05%（Δ-0.92）</span></td><td class="r"><span style="color:#86efac" title="CI 整段 &gt; 0：同視窗 0050 之外仍有超額">+4.20% <span class="dim">[+1.66, +6.93]</span></span></td></tr><tr><td class="tk">TB_Native</td><td class="dim"><span style="color:#fbbf24">2025-12-12</span><span class="dim"> ❄276d</span></td><td class="r">64</td><td class="r"><b style="color:#ef4444">-1.68%</b><span class="dim"> 全期 +0.52%（Δ-2.19）</span></td><td class="r"><span style="color:#94a3b8" title="CI 跨 0，MDE ±1.47% → 功效不足，不等於證明無 alpha">-1.28% <span class="dim">[-2.80, +0.14]</span></span></td></tr><tr><td class="tk">ML_PA_live</td><td class="dim">2026-08-20<span class="dim"> 25d</span></td><td class="r">125</td><td class="r"><b style="color:#10b981">+0.59%</b><span class="dim"> 全期 +0.61%（Δ-0.03）</span></td><td class="r"><span style="color:#fca5a5" title="CI 整段 &lt; 0：報酬低於同視窗 0050（MDE &lt; |效應|，有功效的負結果）">-3.90% <span class="dim">[-5.47, -2.16]</span></span></td></tr></tbody></table><div class="note">來源 data/kelly_health.json（run_daily 每日更新）。❄ = 回測 CSV 凍結（3 檔）：trailing 視窗相對<b>檔尾</b>滾動，非相對今天，該列讀作歷史快照不是 live 訊號。超額 = β=1 扣同視窗 0050（B1：raw 報酬在牛市會被 beta 灌水）；綠 = CI 整段為正，紅 = 整段為負，灰 = 跨 0（功效不足，非證無 alpha，滑鼠停留看 MDE）。M1 純揭露，不接 gate / 砍倉 / Kelly 動態。</div></div><div class="diag"><h3>🧪 Quant Health（月度 PSR/DSR/PBO）</h3><table><thead><tr><th>策略</th><th class="r">N</th><th class="r">SR</th><th class="r">DSR</th><th class="r">PBO</th></tr></thead><tbody><tr><td class="tk">ML_PA</td><td class="r">1218</td><td class="r">+1.36</td><td class="r" style="color:#86efac">1.00</td><td class="r dim">—</td></tr><tr><td class="tk">CHIP_UNIFIED</td><td class="r">5329</td><td class="r">+1.07</td><td class="r" style="color:#fbbf24">0.94</td><td class="r dim">—</td></tr><tr><td class="tk">TB_Native</td><td class="r">540</td><td class="r">+0.62</td><td class="r" style="color:#fca5a5">0.48</td><td class="r dim">—</td></tr><tr><td class="tk">DUANTOU</td><td class="r">422</td><td class="r">+5.15</td><td class="r" style="color:#86efac">1.00</td><td class="r dim">—</td></tr></tbody></table><ul class="alerts"><li>⚠️ LIMIT_UP alpha 不顯著 (t=+1.75) 但 SMB beta +2.41 (t=+3.95) 顯著 → return 多來自小型股 beta</li><li>⚠️ DUANTOU alpha 不顯著 (t=+1.39) 但 SMB beta +1.06 (t=+4.26) 顯著 → return 多來自小型股 beta</li></ul><div class="note">P4：kurt&gt;10 的肥尾策略應以 bootstrap CI 為準，DSR 系常態工具會結構性低估；此處僅列示不當 gate。完整版 results/quant_health.html</div></div></div></details></section>
 <section><div class="idle">🟡 Paper Ledger（TB-Native 觀察）：無持倉、無平倉、權益未動 — 候選仍在 pending，待 T+1 open confirm 後自動展開。</div></section>
 <div class="foot">權益 = 本金 + 已實現累積 + 未實現（逐日 MTM）。本頁一切數字為模擬倉揭露，
 不構成進場建議（N1）；不接任何 strategy gate 或自動砍倉（M1 / K1）。
