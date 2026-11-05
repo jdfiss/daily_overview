@@ -685,37 +685,18 @@ table.cv-grid td.cv-today .cv-n{color:#fff}
     <text x="8" y="131.0" font-size="10" fill="#b6a98f">42,949</text>
   </svg>
 </div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px">
-<div class="market-chip">
-  <div class="market-chip-label">漲/跌家數</div>
-  <div class="market-chip-val" style="font-size:14px">▲438 ▼544</div>
-  <div class="market-chip-chg dn">45%</div>
-</div>
-<div class="market-chip">
-  <div class="market-chip-label">成交量</div>
-  <div class="market-chip-val" style="font-size:14px">10138億</div>
-  <div class="market-chip-chg up">▲ +7%</div>
-</div>
-<div class="market-chip">
-  <div class="market-chip-label">外資期貨 OI</div>
-  <div class="market-chip-val" style="font-size:14px">-91,812口</div>
-  <div class="market-chip-chg dn">偏空</div>
-</div>
-<div class="market-chip">
-  <div class="market-chip-label">外資現貨 5日</div>
-  <div class="market-chip-val" style="font-size:13px">近5日賣超 -5120億 ❌</div>
-  <div class="market-chip-chg dn">賣超</div>
-</div>
-<div class="market-chip">
-  <div class="market-chip-label">散戶多空比</div>
-  <div class="market-chip-val" style="font-size:14px">-8.9%</div>
-  <div class="market-chip-chg ">中性</div>
-</div>
-<div class="market-chip">
-  <div class="market-chip-label">TWII 均線位置</div>
-  <div class="market-chip-val" style="font-size:14px"><span class="dn">MA20下</span> <span class="dn">MA60下</span></div>
-  <div class="market-chip-chg" style="font-size:10px">20MA 47,047 · 60MA 46,538</div>
-</div></div>
+      <style>
+.mchip-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px}
+.mchip{background:var(--surf);border:1px solid var(--bd);border-radius:10px;padding:8px 10px;min-width:0}
+.mchip-label{font-size:10px;color:var(--muted);letter-spacing:.5px;font-weight:600;margin-bottom:2px}
+.mchip-val{font-family:'IBM Plex Mono',monospace;font-size:17px;font-weight:600;color:var(--tx)}
+.mchip-chg{font-family:'IBM Plex Mono',monospace;font-size:10.5px;margin-top:1px;color:var(--muted)}
+.mchip-svg{display:block;width:100%;height:auto;margin-top:4px}
+.mchip-note{font-size:10.5px;color:var(--muted);margin-top:3px;line-height:1.35}
+.mchip-asof{font-size:9px;color:var(--muted2);margin-top:2px}
+.mchip-disc{font-size:10px;color:var(--muted);margin-top:8px;line-height:1.4}
+.mchip .up{color:var(--green)}.mchip .dn{color:var(--red)}
+</style><div class="mchip-grid"><div class="mchip"><div class="mchip-label">外資台指期淨 OI</div><div class="mchip-val">-91,812<span style="font-size:10px"> 口</span></div><div class="mchip-chg dn">較前日 -2,433 口</div><svg class="mchip-svg" viewBox="0 0 160 46" xmlns="http://www.w3.org/2000/svg" role="img"><line x1="4" y1="4.0" x2="156" y2="4.0" stroke="#b6a98f" stroke-width="0.8" stroke-dasharray="3 2"/><polyline points="4.0,35.8 6.6,35.1 9.2,34.5 11.7,34.9 14.3,35.9 16.9,37.4 19.5,37.6 22.0,36.9 24.6,37.5 27.2,40.5 29.8,39.6 32.3,40.3 34.9,40.2 37.5,40.1 40.1,39.1 42.6,39.0 45.2,38.6 47.8,37.9 50.4,37.1 52.9,37.5 55.5,37.5 58.1,38.6 60.7,37.9 63.3,38.4 65.8,37.9 68.4,37.7 71.0,35.9 73.6,38.6 76.1,37.1 78.7,37.4 81.3,36.2 83.9,37.4 86.4,36.9 89.0,38.0 91.6,38.5 94.2,37.5 96.7,35.0 99.3,34.9 101.9,34.1 104.5,34.7 107.1,35.2 109.6,36.1 112.2,35.7 114.8,36.6 117.4,35.2 119.9,36.3 122.5,36.1 125.1,37.7 127.7,37.6 130.2,39.4 132.8,39.2 135.4,42.0 138.0,41.0 140.5,40.4 143.1,39.4 145.7,38.9 148.3,38.4 150.8,41.4 153.4,40.3 156.0,41.2" fill="none" stroke="#8a5a3b" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/><circle cx="156.0" cy="41.2" r="2.6" fill="#8a5a3b"/></svg><div class="mchip-note">外資台指期淨空單 9.2 萬口，近 60 日偏高</div><div class="mchip-asof">資料日 11-03（較總覽日落後）</div></div><div class="mchip"><div class="mchip-label">外資現貨買賣超</div><div class="mchip-val">-1,443<span style="font-size:10px"> 億</span></div><div class="mchip-chg dn">5 日累計 -4,911 億</div><svg class="mchip-svg" viewBox="0 0 160 46" xmlns="http://www.w3.org/2000/svg" role="img"><line x1="4" y1="23.0" x2="156" y2="23.0" stroke="#b6a98f" stroke-width="0.8"/><rect x="4.0" y="22.6" width="1.7" height="0.4" fill="#5f7a4f"/><rect x="6.5" y="23.0" width="1.7" height="2.9" fill="#97442f"/><rect x="9.1" y="20.4" width="1.7" height="2.6" fill="#5f7a4f"/><rect x="11.6" y="21.9" width="1.7" height="1.1" fill="#5f7a4f"/><rect x="14.1" y="22.1" width="1.7" height="0.9" fill="#5f7a4f"/><rect x="16.7" y="19.4" width="1.7" height="3.6" fill="#5f7a4f"/><rect x="19.2" y="21.2" width="1.7" height="1.8" fill="#5f7a4f"/><rect x="21.7" y="20.7" width="1.7" height="2.3" fill="#5f7a4f"/><rect x="24.3" y="23.0" width="1.7" height="1.2" fill="#97442f"/><rect x="26.8" y="23.0" width="1.7" height="3.2" fill="#97442f"/><rect x="29.3" y="22.6" width="1.7" height="0.4" fill="#5f7a4f"/><rect x="31.9" y="21.2" width="1.7" height="1.8" fill="#5f7a4f"/><rect x="34.4" y="23.0" width="1.7" height="0.6" fill="#97442f"/><rect x="36.9" y="23.0" width="1.7" height="0.4" fill="#97442f"/><rect x="39.5" y="21.3" width="1.7" height="1.7" fill="#5f7a4f"/><rect x="42.0" y="19.8" width="1.7" height="3.2" fill="#5f7a4f"/><rect x="44.5" y="20.4" width="1.7" height="2.6" fill="#5f7a4f"/><rect x="47.1" y="23.0" width="1.7" height="0.7" fill="#97442f"/><rect x="49.6" y="22.0" width="1.7" height="1.0" fill="#5f7a4f"/><rect x="52.1" y="23.0" width="1.7" height="5.8" fill="#97442f"/><rect x="54.7" y="23.0" width="1.7" height="2.8" fill="#97442f"/><rect x="57.2" y="19.7" width="1.7" height="3.3" fill="#5f7a4f"/><rect x="59.7" y="17.7" width="1.7" height="5.3" fill="#5f7a4f"/><rect x="62.3" y="22.8" width="1.7" height="0.4" fill="#5f7a4f"/><rect x="64.8" y="21.6" width="1.7" height="1.4" fill="#5f7a4f"/><rect x="67.3" y="23.0" width="1.7" height="3.1" fill="#97442f"/><rect x="69.9" y="23.0" width="1.7" height="5.5" fill="#97442f"/><rect x="72.4" y="23.0" width="1.7" height="1.7" fill="#97442f"/><rect x="74.9" y="23.0" width="1.7" height="3.6" fill="#97442f"/><rect x="77.5" y="23.0" width="1.7" height="1.1" fill="#97442f"/><rect x="80.0" y="22.9" width="1.7" height="0.4" fill="#5f7a4f"/><rect x="82.5" y="16.5" width="1.7" height="6.5" fill="#5f7a4f"/><rect x="85.1" y="22.7" width="1.7" height="0.4" fill="#5f7a4f"/><rect x="87.6" y="20.2" width="1.7" height="2.8" fill="#5f7a4f"/><rect x="90.1" y="22.1" width="1.7" height="0.9" fill="#5f7a4f"/><rect x="92.7" y="23.0" width="1.7" height="2.3" fill="#97442f"/><rect x="95.2" y="23.0" width="1.7" height="4.0" fill="#97442f"/><rect x="97.7" y="20.7" width="1.7" height="2.3" fill="#5f7a4f"/><rect x="100.3" y="22.1" width="1.7" height="0.9" fill="#5f7a4f"/><rect x="102.8" y="22.7" width="1.7" height="0.4" fill="#5f7a4f"/><rect x="105.3" y="19.2" width="1.7" height="3.8" fill="#5f7a4f"/><rect x="107.9" y="23.0" width="1.7" height="0.6" fill="#97442f"/><rect x="110.4" y="23.0" width="1.7" height="0.4" fill="#97442f"/><rect x="112.9" y="23.0" width="1.7" height="5.1" fill="#97442f"/><rect x="115.5" y="23.0" width="1.7" height="3.5" fill="#97442f"/><rect x="118.0" y="23.0" width="1.7" height="10.1" fill="#97442f"/><rect x="120.5" y="23.0" width="1.7" height="1.3" fill="#97442f"/><rect x="123.1" y="23.0" width="1.7" height="19.0" fill="#97442f"/><rect x="125.6" y="23.0" width="1.7" height="3.0" fill="#97442f"/><rect x="128.1" y="23.0" width="1.7" height="4.3" fill="#97442f"/><rect x="130.7" y="23.0" width="1.7" height="5.1" fill="#97442f"/><rect x="133.2" y="23.0" width="1.7" height="0.4" fill="#97442f"/><rect x="135.7" y="23.0" width="1.7" height="4.8" fill="#97442f"/><rect x="138.3" y="22.9" width="1.7" height="0.4" fill="#5f7a4f"/><rect x="140.8" y="22.0" width="1.7" height="1.0" fill="#5f7a4f"/><rect x="143.3" y="23.0" width="1.7" height="4.1" fill="#97442f"/><rect x="145.9" y="23.0" width="1.7" height="7.2" fill="#97442f"/><rect x="148.4" y="23.0" width="1.7" height="4.5" fill="#97442f"/><rect x="150.9" y="23.0" width="1.7" height="6.0" fill="#97442f"/><rect x="153.5" y="23.0" width="1.7" height="9.1" fill="#97442f"/></svg><div class="mchip-note">外資現貨今日賣超 1,443 億；近 5 日合計賣超 4,911 億（本地個股檔加總，近似值）</div><div class="mchip-asof">資料日 11-04</div></div><div class="mchip"><div class="mchip-label">外資累計買賣超</div><div class="mchip-val">-11,700<span style="font-size:10px"> 億</span></div><div class="mchip-chg dn">近 60 日累計</div><svg class="mchip-svg" viewBox="0 0 160 46" xmlns="http://www.w3.org/2000/svg" role="img"><line x1="4" y1="11.1" x2="156" y2="11.1" stroke="#b6a98f" stroke-width="0.8" stroke-dasharray="3 2"/><polyline points="4.0,10.9 6.6,12.1 9.2,11.0 11.7,10.5 14.3,10.1 16.9,8.6 19.5,7.9 22.0,6.9 24.6,7.4 27.2,8.7 29.8,8.5 32.3,7.7 34.9,8.0 37.5,8.0 40.1,7.3 42.6,5.9 45.2,4.9 47.8,5.2 50.4,4.7 52.9,7.2 55.5,8.3 58.1,6.9 60.7,4.7 63.3,4.6 65.8,4.0 68.4,5.3 71.0,7.6 73.6,8.3 76.1,9.8 78.7,10.3 81.3,10.2 83.9,7.5 86.4,7.4 89.0,6.2 91.6,5.8 94.2,6.8 96.7,8.5 99.3,7.5 101.9,7.1 104.5,7.0 107.1,5.4 109.6,5.7 112.2,5.7 114.8,7.8 117.4,9.3 119.9,13.6 122.5,14.1 125.1,22.1 127.7,23.4 130.2,25.2 132.8,27.3 135.4,27.4 138.0,29.5 140.5,29.5 143.1,29.0 145.7,30.8 148.3,33.8 150.8,35.7 153.4,38.2 156.0,42.0" fill="none" stroke="#8a5a3b" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/><circle cx="156.0" cy="42.0" r="2.6" fill="#8a5a3b"/></svg><div class="mchip-note">近 60 日外資現貨累計賣超 11,700 億。外資持股比率本機無歷史，故以累計買賣超代替</div><div class="mchip-asof">資料日 11-04</div></div><div class="mchip"><div class="mchip-label">融資餘額</div><div class="mchip-val">1,176.6<span style="font-size:10px"> 萬張</span></div><div class="mchip-chg dn">較前日 +1.3 萬張</div><svg class="mchip-svg" viewBox="0 0 160 46" xmlns="http://www.w3.org/2000/svg" role="img"><polyline points="4.0,37.4 6.6,36.1 9.2,35.1 11.7,36.1 14.3,36.6 16.9,36.0 19.5,38.0 22.0,39.9 24.6,42.0 27.2,41.5 29.8,41.6 32.3,39.9 34.9,39.5 37.5,38.0 40.1,37.7 42.6,38.0 45.2,37.2 47.8,38.1 50.4,36.4 52.9,34.8 55.5,36.2 58.1,35.1 60.7,28.3 63.3,29.2 65.8,27.9 68.4,26.4 71.0,25.7 73.6,24.8 76.1,24.0 78.7,21.3 81.3,20.5 83.9,19.0 86.4,16.9 89.0,20.2 91.6,18.2 94.2,18.2 96.7,16.6 99.3,16.7 101.9,13.5 104.5,11.2 107.1,10.5 109.6,12.3 112.2,11.9 114.8,10.3 117.4,8.4 119.9,10.8 122.5,8.6 125.1,7.8 127.7,7.2 130.2,5.6 132.8,5.5 135.4,4.0 138.0,5.7 140.5,8.5 143.1,8.0 145.7,6.4 148.3,8.9 150.8,8.2 153.4,13.3 156.0,12.8" fill="none" stroke="#8a5a3b" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/><circle cx="156.0" cy="12.8" r="2.6" fill="#8a5a3b"/></svg><div class="mchip-note">上市+上櫃融資餘額 1,177 萬張，近 5 日減 11.8 萬張，近 60 日處於中段</div><div class="mchip-asof">資料日 11-04</div></div><div class="mchip"><div class="mchip-label">成交金額</div><div class="mchip-val">13,068<span style="font-size:10px"> 億</span></div><div class="mchip-chg up">較前日 +25%</div><svg class="mchip-svg" viewBox="0 0 160 46" xmlns="http://www.w3.org/2000/svg" role="img"><polyline points="4.0,22.9 6.6,30.4 9.2,29.6 11.7,27.8 14.3,28.1 16.9,16.7 19.5,17.9 22.0,26.2 24.6,22.6 27.2,30.0 29.8,31.3 32.3,34.3 34.9,40.0 37.5,36.5 40.1,28.4 42.6,21.1 45.2,16.2 47.8,4.0 50.4,13.5 52.9,24.5 55.5,23.6 58.1,29.7 60.7,24.5 63.3,26.9 65.8,31.0 68.4,35.6 71.0,36.0 73.6,40.3 76.1,42.0 78.7,38.6 81.3,27.5 83.9,13.4 86.4,29.1 89.0,18.2 91.6,26.1 94.2,33.7 96.7,32.3 99.3,25.2 101.9,26.4 104.5,22.8 107.1,9.8 109.6,18.6 112.2,19.6 114.8,24.5 117.4,27.5 119.9,14.5 122.5,22.7 125.1,7.1 127.7,23.6 130.2,29.9 132.8,33.8 135.4,28.7 138.0,27.9 140.5,24.1 143.1,35.8 145.7,31.8 148.3,28.3 150.8,35.1 153.4,27.6 156.0,15.2" fill="none" stroke="#8a5a3b" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/><circle cx="156.0" cy="15.2" r="2.6" fill="#8a5a3b"/></svg><div class="mchip-note">上市+上櫃成交金額（本地個股檔加總）約 13,068 億，近 60 日量能偏大</div><div class="mchip-asof">資料日 11-04</div></div><div class="mchip"><div class="mchip-label">漲跌家數</div><div class="mchip-val"><span style="font-size:13px">▲438 ▼544（上漲 45%）</span></div><div class="mchip-chg dn">漲跌差比 -0.07</div><svg class="mchip-svg" viewBox="0 0 160 46" xmlns="http://www.w3.org/2000/svg" role="img"><line x1="4" y1="18.4" x2="156" y2="18.4" stroke="#b6a98f" stroke-width="0.8" stroke-dasharray="3 2"/><polyline points="4.0,15.6 6.6,20.0 9.2,6.2 11.7,23.1 14.3,12.2 16.9,21.0 19.5,27.9 22.0,17.9 24.6,31.9 27.2,22.9 29.8,7.8 32.3,14.7 34.9,25.6 37.5,20.6 40.1,4.0 42.6,16.4 45.2,23.0 47.8,26.4 50.4,13.2 52.9,23.5 55.5,33.4 58.1,6.6 60.7,22.7 63.3,28.6 65.8,14.8 68.4,29.4 71.0,32.1 73.6,24.4 76.1,31.3 78.7,5.6 81.3,8.4 83.9,6.3 86.4,17.1 89.0,26.1 91.6,21.8 94.2,20.6 96.7,21.5 99.3,5.8 101.9,21.4 104.5,16.9 107.1,25.0 109.6,21.6 112.2,14.6 114.8,20.7 117.4,19.0 119.9,31.1 122.5,6.4 125.1,35.5 127.7,8.5 130.2,34.9 132.8,26.4 135.4,11.5 138.0,33.0 140.5,21.8 143.1,6.6 145.7,31.3 148.3,38.6 150.8,17.4 153.4,42.0 156.0,20.2" fill="none" stroke="#8a5a3b" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/><circle cx="156.0" cy="20.2" r="2.6" fill="#8a5a3b"/></svg><div class="mchip-note">（漲-跌）/（漲+跌）= -0.07，約 47% 的漲跌股在上漲；0 線以上代表漲多於跌</div><div class="mchip-asof">資料日 11-04</div></div><div class="mchip"><div class="mchip-label">散戶多空比</div><div class="mchip-val">-8.9%</div><div class="mchip-chg ">無本機歷史</div><div class="mchip-note">小台散戶部位：中性</div></div><div class="mchip"><div class="mchip-label">TWII 均線位置</div><div class="mchip-val"><span class="dn">MA20下</span> <span class="dn" style="font-size:14px">MA60下</span></div><div class="mchip-chg ">20MA 47,047 · 60MA 46,538</div><div class="mchip-note">指數與均線的相對位置</div></div></div><div class="mchip-disc">以上為本機歷史資料的純揭露，不構成預測或買賣建議。</div>
       <section class="delta-panel"><div class="delta-heading"><span>今日異動</span><span>10 則</span></div><div class="delta-list"><div class="delta-row"><span class="delta-icon">📉</span><span class="delta-text">2597 潤弘 跌破支撐（AI廠務基建，距支撐 -2.1%）</span></div><div class="delta-row"><span class="delta-icon">📉</span><span class="delta-text">2330 台積電 跌破支撐（AI邊緣眼鏡，距支撐 -3.1%）</span></div><div class="delta-row"><span class="delta-icon">📉</span><span class="delta-text">2330 台積電 跌破支撐（AMD台灣合作，距支撐 -3.1%）</span></div><div class="delta-row"><span class="delta-icon">📉</span><span class="delta-text">3211 順達 跌破支撐（BBU，距支撐 +0.0%）</span></div><div class="delta-row"><span class="delta-icon">📉</span><span class="delta-text">4931 新盛力 跌破支撐（BBU，距支撐 -11.6%）</span></div><div class="delta-row"><span class="delta-icon">📉</span><span class="delta-text">3006 晶豪科 跌破支撐（DDR4 產能缺口，距支撐 -2.2%）</span></div><div class="delta-row"><span class="delta-icon">📉</span><span class="delta-text">2356 英業達 跌破支撐（MGX伺服器背板，距支撐 +0.0%）</span></div><div class="delta-row"><span class="delta-icon">📉</span><span class="delta-text">5434 崇越 跌破支撐（再生晶圓，距支撐 -1.4%）</span></div><div class="delta-row"><span class="delta-icon">📉</span><span class="delta-text">5483 中美晶 跌破支撐（太空太陽能，距支撐 -6.2%）</span></div><div class="delta-row"><span class="delta-icon">📉</span><span class="delta-text">6488 環球晶 跌破支撐（成熟製程，距支撐 +0.0%）</span></div></div><div class="delta-note">彙整既有資料，只供人工判讀，不構成買賣建議。</div></section><section class="delta-panel"><div class="delta-heading"><span>法人動向</span><span>個股買超前 8（不含 ETF）</span></div><style>
 .inst2{display:grid;grid-template-columns:1fr;gap:12px;padding:10px 12px}
 .inst2-h{font-size:12px;font-weight:700;color:var(--tx);margin-bottom:6px}
@@ -1007,42 +988,6 @@ table.cv-grid td.cv-today .cv-n{color:#fff}
     <div class="th-stocks-wrap"><table class="th-stocks-tbl"><thead><tr><th>股票</th><th style="text-align:right">20D%</th><th style="text-align:right">落後</th><th style="text-align:right">外資5D</th></tr></thead><tbody><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">8210</span><span class="stk-nm">勤誠</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-24.6%</td><td style="color:#ad6b3f;text-align:right">-23.8%</td><td style="color:#5f7a4f;text-align:right">+2394</td></tr><tr><td style="white-space:nowrap"><span style="color:#5f7a4f;font-size:11px">🟢</span> <div class="stk-wrap"><span class="stk-id">2233</span><span class="stk-nm">宇隆</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-22.6%</td><td style="color:#ad6b3f;text-align:right">-21.8%</td><td style="color:#5f7a4f;text-align:right">+290</td></tr><tr><td style="white-space:nowrap"><span style="color:#b8863f;font-size:11px">🟡</span> <div class="stk-wrap"><span class="stk-id">3324</span><span class="stk-nm">雙鴻</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-13.6%</td><td style="color:#ad6b3f;text-align:right">-12.8%</td><td style="color:#5f7a4f;text-align:right">+124</td></tr><tr><td style="white-space:nowrap"><span style="color:#b8863f;font-size:11px">🟡</span> <div class="stk-wrap"><span class="stk-id">6805</span><span class="stk-nm">富世達</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-10.0%</td><td style="color:#ad6b3f;text-align:right">-9.2%</td><td style="color:#97442f;text-align:right">-149</td></tr><tr><td style="white-space:nowrap"><span style="color:#b8863f;font-size:11px">🟡</span> <div class="stk-wrap"><span class="stk-id">3533</span><span class="stk-nm">嘉澤</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-1.9%</td><td style="color:#8a7a63;text-align:right">-1.1%</td><td style="color:#5f7a4f;text-align:right">+235</td></tr><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">6125</span><span class="stk-nm">廣運</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-17.1%</td><td style="color:#ad6b3f;text-align:right">-16.3%</td><td style="color:#5f7a4f;text-align:right">+246</td></tr><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">6969</span><span class="stk-nm">大井泵浦</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-16.2%</td><td style="color:#ad6b3f;text-align:right">-15.4%</td><td style="color:#5f7a4f;text-align:right">+25</td></tr><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">3017</span><span class="stk-nm">奇鋐</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-18.0%</td><td style="color:#ad6b3f;text-align:right">-17.2%</td><td style="color:#97442f;text-align:right">-2292</td></tr><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">3013</span><span class="stk-nm">晟銘電</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-14.5%</td><td style="color:#ad6b3f;text-align:right">-13.7%</td><td style="color:#97442f;text-align:right">-440</td></tr><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">8996</span><span class="stk-nm">高力</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-5.3%</td><td style="color:#8a7a63;text-align:right">-4.5%</td><td style="color:#97442f;text-align:right">-615</td></tr><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">6117</span><span class="stk-nm">迎廣</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-0.8%</td><td style="color:#8a7a63;text-align:right">+0.0%</td><td style="color:#97442f;text-align:right">-31</td></tr><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">8163</span><span class="stk-nm">達方</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-13.3%</td><td style="color:#ad6b3f;text-align:right">-12.5%</td><td style="color:#97442f;text-align:right">-1248</td></tr></tbody></table></div>
   </div>
 </div>
-<div class="th-card" id="thc-重電_超高壓電網基建與輸配電" onclick="openThemeModal('重電_超高壓電網基建與輸配電')" style="border-left:3px solid #5f7a4f">
-  <div class="th-card-top">
-    <span class="th-strength" style="background:#5f7a4f">10/10</span>
-    <span class="th-name">重電/超高壓電網基建與輸配電</span>
-  </div>
-  <div class="th-card-metrics">
-    <span class="th-metric" style="color:#8a7a63">廣0%</span>
-    <span class="th-metric" style="color:#97442f">-13.4%</span>
-    <span class="th-metric" style="color:#97442f">F-50209</span>
-    <span class="th-metric" style="color:var(--muted)">🟢0🟡0/8</span>
-  </div>
-  <div class="th-card-body" id="thbody-重電_超高壓電網基建與輸配電">
-    <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;padding-bottom:14px;border-bottom:1px solid var(--bd)">
-      <span class="th-strength" style="background:#5f7a4f">10/10</span>
-      <span style="font-size:16px;font-weight:700;color:var(--tx)">重電/超高壓電網基建與輸配電</span>
-    </div>
-    <div style="display:flex;gap:16px;flex-wrap:wrap;margin-bottom:14px">
-      <span class="th-metric" style="color:#8a7a63">廣度 0%</span>
-      <span class="th-metric" style="color:#97442f">20D -13.4%</span>
-      <span class="th-metric" style="color:#97442f">外資 -50209</span>
-      <span class="th-metric">達標 0/8（🟢0🟡0）</span>
-    </div>
-    <div class="th-hyp">北美 AI 資料中心耗電無底洞與台電強韌電網交割高峰共振，推升 500kV 超高壓變壓器與 345kV GIS 剛性缺口；極高技術壁壘與認證時間導致產能極端排擠…</div>
-    <div class="th-signals-row">
-      <div class="th-signals-col">
-        <div class="sig-col-label">關鍵訊號（觸發 = 假說兌現）</div>
-        <ul class="sig-list"><li>美國大型特高壓變壓器進口交期（Lead Time）是否維持在 2 年以上高位</li><li>華城外銷美國之單晶片變壓器毛利率是否站穩 40% 以上</li><li>中興電法說會披露之半導體晶圓廠與 AIDC 客戶 GIS 排單能見度（目前已排至 2031 年）</li><li>光譜電工</li></ul>
-      </div>
-      <div class="th-signals-col">
-        <div class="exit-sigs"><span class="exit-label">出場留意：</span><ul class="sig-list sig-exit"><li>北美大型電力基建訂單出現實質性衰退或砍單訊號</li><li>國內強韌電網預算遭政策性大幅刪減</li></ul></div>
-        
-      </div>
-    </div>
-    <div class="th-stocks-wrap"><table class="th-stocks-tbl"><thead><tr><th>股票</th><th style="text-align:right">20D%</th><th style="text-align:right">落後</th><th style="text-align:right">外資5D</th></tr></thead><tbody><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">5381</span><span class="stk-nm">光譜</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-15.0%</td><td style="color:#ad6b3f;text-align:right">-8.3%</td><td style="color:#5f7a4f;text-align:right">+3</td></tr><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">1503</span><span class="stk-nm">士電</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-11.9%</td><td style="color:#ad6b3f;text-align:right">-5.2%</td><td style="color:#97442f;text-align:right">-782</td></tr><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">1514</span><span class="stk-nm">亞力</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-15.2%</td><td style="color:#ad6b3f;text-align:right">-8.5%</td><td style="color:#97442f;text-align:right">-482</td></tr><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">1605</span><span class="stk-nm">華新</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-11.1%</td><td style="color:#8a7a63;text-align:right">-4.4%</td><td style="color:#97442f;text-align:right">-31320</td></tr><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">2371</span><span class="stk-nm">大同</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-7.9%</td><td style="color:#8a7a63;text-align:right">-1.2%</td><td style="color:#97442f;text-align:right">-12466</td></tr><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">1504</span><span class="stk-nm">東元</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-6.7%</td><td style="color:#8a7a63;text-align:right">+0.0%</td><td style="color:#97442f;text-align:right">-2998</td></tr><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">1519</span><span class="stk-nm">華城</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-27.0%</td><td style="color:#ad6b3f;text-align:right">-20.3%</td><td style="color:#97442f;text-align:right">-406</td></tr><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">1513</span><span class="stk-nm">中興電</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-12.5%</td><td style="color:#ad6b3f;text-align:right">-5.8%</td><td style="color:#97442f;text-align:right">-1758</td></tr></tbody></table></div>
-  </div>
-</div>
 <div class="th-card" id="thc-800V_HVDC電力機櫃" onclick="openThemeModal('800V_HVDC電力機櫃')" style="border-left:3px solid #5f7a4f">
   <div class="th-card-top">
     <span class="th-strength" style="background:#5f7a4f">10/10</span>
@@ -1077,6 +1022,42 @@ table.cv-grid td.cv-today .cv-n{color:#fff}
       </div>
     </div>
     <div class="th-stocks-wrap"><table class="th-stocks-tbl"><thead><tr><th>股票</th><th style="text-align:right">20D%</th><th style="text-align:right">落後</th><th style="text-align:right">外資5D</th></tr></thead><tbody><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">2301</span><span class="stk-nm">光寶科</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-19.7%</td><td style="color:#8a7a63;text-align:right">-2.3%</td><td style="color:#97442f;text-align:right">-20641</td></tr><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">6282</span><span class="stk-nm">康舒</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-17.4%</td><td style="color:#8a7a63;text-align:right">+0.0%</td><td style="color:#97442f;text-align:right">-3121</td></tr><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">2308</span><span class="stk-nm">台達電</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-35.3%</td><td style="color:#ad6b3f;text-align:right">-17.9%</td><td style="color:#97442f;text-align:right">-19911</td></tr></tbody></table></div>
+  </div>
+</div>
+<div class="th-card" id="thc-重電_超高壓電網基建與輸配電" onclick="openThemeModal('重電_超高壓電網基建與輸配電')" style="border-left:3px solid #5f7a4f">
+  <div class="th-card-top">
+    <span class="th-strength" style="background:#5f7a4f">10/10</span>
+    <span class="th-name">重電/超高壓電網基建與輸配電</span>
+  </div>
+  <div class="th-card-metrics">
+    <span class="th-metric" style="color:#8a7a63">廣0%</span>
+    <span class="th-metric" style="color:#97442f">-13.4%</span>
+    <span class="th-metric" style="color:#97442f">F-50209</span>
+    <span class="th-metric" style="color:var(--muted)">🟢0🟡0/8</span>
+  </div>
+  <div class="th-card-body" id="thbody-重電_超高壓電網基建與輸配電">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;padding-bottom:14px;border-bottom:1px solid var(--bd)">
+      <span class="th-strength" style="background:#5f7a4f">10/10</span>
+      <span style="font-size:16px;font-weight:700;color:var(--tx)">重電/超高壓電網基建與輸配電</span>
+    </div>
+    <div style="display:flex;gap:16px;flex-wrap:wrap;margin-bottom:14px">
+      <span class="th-metric" style="color:#8a7a63">廣度 0%</span>
+      <span class="th-metric" style="color:#97442f">20D -13.4%</span>
+      <span class="th-metric" style="color:#97442f">外資 -50209</span>
+      <span class="th-metric">達標 0/8（🟢0🟡0）</span>
+    </div>
+    <div class="th-hyp">北美 AI 資料中心耗電無底洞與台電強韌電網交割高峰共振，推升 500kV 超高壓變壓器與 345kV GIS 剛性缺口；極高技術壁壘與認證時間導致產能極端排擠…</div>
+    <div class="th-signals-row">
+      <div class="th-signals-col">
+        <div class="sig-col-label">關鍵訊號（觸發 = 假說兌現）</div>
+        <ul class="sig-list"><li>美國大型特高壓變壓器進口交期（Lead Time）是否維持在 2 年以上高位</li><li>華城外銷美國之單晶片變壓器毛利率是否站穩 40% 以上</li><li>中興電法說會披露之半導體晶圓廠與 AIDC 客戶 GIS 排單能見度（目前已排至 2031 年）</li><li>光譜電工</li></ul>
+      </div>
+      <div class="th-signals-col">
+        <div class="exit-sigs"><span class="exit-label">出場留意：</span><ul class="sig-list sig-exit"><li>北美大型電力基建訂單出現實質性衰退或砍單訊號</li><li>國內強韌電網預算遭政策性大幅刪減</li></ul></div>
+        
+      </div>
+    </div>
+    <div class="th-stocks-wrap"><table class="th-stocks-tbl"><thead><tr><th>股票</th><th style="text-align:right">20D%</th><th style="text-align:right">落後</th><th style="text-align:right">外資5D</th></tr></thead><tbody><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">5381</span><span class="stk-nm">光譜</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-15.0%</td><td style="color:#ad6b3f;text-align:right">-8.3%</td><td style="color:#5f7a4f;text-align:right">+3</td></tr><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">1503</span><span class="stk-nm">士電</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-11.9%</td><td style="color:#ad6b3f;text-align:right">-5.2%</td><td style="color:#97442f;text-align:right">-782</td></tr><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">1514</span><span class="stk-nm">亞力</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-15.2%</td><td style="color:#ad6b3f;text-align:right">-8.5%</td><td style="color:#97442f;text-align:right">-482</td></tr><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">1605</span><span class="stk-nm">華新</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-11.1%</td><td style="color:#8a7a63;text-align:right">-4.4%</td><td style="color:#97442f;text-align:right">-31320</td></tr><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">2371</span><span class="stk-nm">大同</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-7.9%</td><td style="color:#8a7a63;text-align:right">-1.2%</td><td style="color:#97442f;text-align:right">-12466</td></tr><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">1504</span><span class="stk-nm">東元</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-6.7%</td><td style="color:#8a7a63;text-align:right">+0.0%</td><td style="color:#97442f;text-align:right">-2998</td></tr><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">1519</span><span class="stk-nm">華城</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-27.0%</td><td style="color:#ad6b3f;text-align:right">-20.3%</td><td style="color:#97442f;text-align:right">-406</td></tr><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">1513</span><span class="stk-nm">中興電</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-12.5%</td><td style="color:#ad6b3f;text-align:right">-5.8%</td><td style="color:#97442f;text-align:right">-1758</td></tr></tbody></table></div>
   </div>
 </div>
 <div class="th-card" id="thc-WiFi7檢測認證" onclick="openThemeModal('WiFi7檢測認證')" style="border-left:3px solid #5f7a4f">
@@ -1295,40 +1276,40 @@ table.cv-grid td.cv-today .cv-n{color:#fff}
     <div class="th-stocks-wrap"><table class="th-stocks-tbl"><thead><tr><th>股票</th><th style="text-align:right">20D%</th><th style="text-align:right">落後</th><th style="text-align:right">外資5D</th></tr></thead><tbody><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">4966</span><span class="stk-nm">譜瑞-KY</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-22.4%</td><td style="color:#ad6b3f;text-align:right">-20.5%</td><td style="color:#5f7a4f;text-align:right">+164</td></tr><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">6290</span><span class="stk-nm">良維</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-26.5%</td><td style="color:#ad6b3f;text-align:right">-24.6%</td><td style="color:#5f7a4f;text-align:right">+595</td></tr><tr><td style="white-space:nowrap"><span style="color:#b8863f;font-size:11px">🟡</span> <div class="stk-wrap"><span class="stk-id">3533</span><span class="stk-nm">嘉澤</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-1.9%</td><td style="color:#8a7a63;text-align:right">+0.0%</td><td style="color:#5f7a4f;text-align:right">+235</td></tr><tr><td style="white-space:nowrap"><span style="color:#b8863f;font-size:11px">🟡</span> <div class="stk-wrap"><span class="stk-id">6190</span><span class="stk-nm">萬泰科</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-19.4%</td><td style="color:#ad6b3f;text-align:right">-17.5%</td><td style="color:#5f7a4f;text-align:right">+53</td></tr><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">3605</span><span class="stk-nm">宏致</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-6.2%</td><td style="color:#8a7a63;text-align:right">-4.3%</td><td style="color:#97442f;text-align:right">-2089</td></tr><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">6197</span><span class="stk-nm">佳必琪</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-21.2%</td><td style="color:#ad6b3f;text-align:right">-19.3%</td><td style="color:#97442f;text-align:right">-1025</td></tr><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">5269</span><span class="stk-nm">祥碩</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-9.2%</td><td style="color:#ad6b3f;text-align:right">-7.3%</td><td style="color:#97442f;text-align:right">-33</td></tr><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">3665</span><span class="stk-nm">貿聯-KY</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-38.2%</td><td style="color:#ad6b3f;text-align:right">-36.3%</td><td style="color:#97442f;text-align:right">-326</td></tr><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">3689</span><span class="stk-nm">湧德</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-9.7%</td><td style="color:#ad6b3f;text-align:right">-7.8%</td><td style="color:#97442f;text-align:right">-1101</td></tr></tbody></table></div>
   </div>
 </div>
-<div class="th-card" id="thc-電子紙低碳鏈" onclick="openThemeModal('電子紙低碳鏈')" style="border-left:3px solid #5f7a4f">
+<div class="th-card" id="thc-低介電玻纖布" onclick="openThemeModal('低介電玻纖布')" style="border-left:3px solid #5f7a4f">
   <div class="th-card-top">
     <span class="th-strength" style="background:#5f7a4f">9/10</span>
-    <span class="th-name">電子紙低碳鏈</span>
+    <span class="th-name">低介電玻纖布</span>
   </div>
   <div class="th-card-metrics">
     <span class="th-metric" style="color:#8a7a63">廣20%</span>
-    <span class="th-metric" style="color:#97442f">-12.7%</span>
-    <span class="th-metric" style="color:#97442f">F-77650</span>
+    <span class="th-metric" style="color:#5f7a4f">+8.7%</span>
+    <span class="th-metric" style="color:#97442f">F-86316</span>
     <span class="th-metric" style="color:var(--muted)">🟢0🟡1/5</span>
   </div>
-  <div class="th-card-body" id="thbody-電子紙低碳鏈">
+  <div class="th-card-body" id="thbody-低介電玻纖布">
     <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;padding-bottom:14px;border-bottom:1px solid var(--bd)">
       <span class="th-strength" style="background:#5f7a4f">9/10</span>
-      <span style="font-size:16px;font-weight:700;color:var(--tx)">電子紙低碳鏈</span>
+      <span style="font-size:16px;font-weight:700;color:var(--tx)">低介電玻纖布</span>
     </div>
     <div style="display:flex;gap:16px;flex-wrap:wrap;margin-bottom:14px">
       <span class="th-metric" style="color:#8a7a63">廣度 20%</span>
-      <span class="th-metric" style="color:#97442f">20D -12.7%</span>
-      <span class="th-metric" style="color:#97442f">外資 -77650</span>
+      <span class="th-metric" style="color:#5f7a4f">20D +8.7%</span>
+      <span class="th-metric" style="color:#97442f">外資 -86316</span>
       <span class="th-metric">達標 1/5（🟢0🟡1）</span>
     </div>
-    <div class="th-hyp">全球 ESG 碳稅政策與零售業缺工壓力，迫使通路商大規模將紙本標籤與海報汰換為「超低功耗彩色電子紙」，驅動供應鏈迎來數倍的市場空間。</div>
+    <div class="th-hyp">AI與高效能運算(HPC)推升PCB材料世代交替，引爆全球高階Low DK/Low CTE玻纖布出現史詩級供不應求與報價調漲契機。</div>
     <div class="th-signals-row">
       <div class="th-signals-col">
         <div class="sig-col-label">關鍵訊號（觸發 = 假說兌現）</div>
-        <ul class="sig-list"><li>元太彩色電子紙薄膜產能利用率</li><li>美國與歐洲主要零售商（如 Walmart）ESL 裝機進度</li><li>歐盟 CBAM 碳關稅正式實施進度</li></ul>
+        <ul class="sig-list"><li>日本龍頭日東紡(Nittobo)股價與展望變動</li><li>高階低介電玻纖布現貨報價與交期拉長幅度</li><li>台光電及台耀等高階CCL廠的拉貨動能與毛利率走勢</li></ul>
       </div>
       <div class="th-signals-col">
-        <div class="exit-sigs"><span class="exit-label">出場留意：</span><ul class="sig-list sig-exit"><li>低功耗反射式 LCD 技術取得突破性成本優勢</li><li>全球零售業資本支出因經濟衰退大幅縮減</li></ul></div>
+        <div class="exit-sigs"><span class="exit-label">出場留意：</span><ul class="sig-list sig-exit"><li>日東紡等全球大廠高階新產能超預期提前開出導致供需緩解</li><li>AI伺服器終端出貨量不如預期或四大雲端業者(CSP)大幅下修資本支出</li></ul></div>
         
       </div>
     </div>
-    <div class="th-stocks-wrap"><table class="th-stocks-tbl"><thead><tr><th>股票</th><th style="text-align:right">20D%</th><th style="text-align:right">落後</th><th style="text-align:right">外資5D</th></tr></thead><tbody><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">6143</span><span class="stk-nm">振曜</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-14.0%</td><td style="color:#ad6b3f;text-align:right">-14.7%</td><td style="color:#5f7a4f;text-align:right">+66</td></tr><tr><td style="white-space:nowrap"><span style="color:#b8863f;font-size:11px">🟡</span> <div class="stk-wrap"><span class="stk-id">4961</span><span class="stk-nm">天鈺</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-4.9%</td><td style="color:#ad6b3f;text-align:right">-5.6%</td><td style="color:#5f7a4f;text-align:right">+423</td></tr><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">8069</span><span class="stk-nm">元太</span></div></td><td style="color:#5f7a4f;font-weight:600;text-align:right">+0.7%</td><td style="color:#8a7a63;text-align:right">+0.0%</td><td style="color:#97442f;text-align:right">-1391</td></tr><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">3141</span><span class="stk-nm">晶宏</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-17.0%</td><td style="color:#ad6b3f;text-align:right">-17.7%</td><td style="color:#97442f;text-align:right">-536</td></tr><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">2409</span><span class="stk-nm">友達</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-28.1%</td><td style="color:#ad6b3f;text-align:right">-28.8%</td><td style="color:#97442f;text-align:right">-76212</td></tr></tbody></table></div>
+    <div class="th-stocks-wrap"><table class="th-stocks-tbl"><thead><tr><th>股票</th><th style="text-align:right">20D%</th><th style="text-align:right">落後</th><th style="text-align:right">外資5D</th></tr></thead><tbody><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">1802</span><span class="stk-nm">台玻</span></div></td><td style="color:#5f7a4f;font-weight:600;text-align:right">+12.1%</td><td style="color:#8a7a63;text-align:right">+0.0%</td><td style="color:#5f7a4f;text-align:right">+20982</td></tr><tr><td style="white-space:nowrap"><span style="color:#b8863f;font-size:11px">🟡</span> <div class="stk-wrap"><span class="stk-id">5340</span><span class="stk-nm">建榮</span></div></td><td style="color:#5f7a4f;font-weight:600;text-align:right">+10.9%</td><td style="color:#8a7a63;text-align:right">-1.2%</td><td style="color:#5f7a4f;text-align:right">+435</td></tr><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">1815</span><span class="stk-nm">富喬</span></div></td><td style="color:#5f7a4f;font-weight:600;text-align:right">+11.6%</td><td style="color:#8a7a63;text-align:right">-0.5%</td><td style="color:#97442f;text-align:right">-49906</td></tr><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">1303</span><span class="stk-nm">南亞</span></div></td><td style="color:#5f7a4f;font-weight:600;text-align:right">+6.3%</td><td style="color:#ad6b3f;text-align:right">-5.8%</td><td style="color:#97442f;text-align:right">-57032</td></tr><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">5475</span><span class="stk-nm">德宏</span></div></td><td style="color:#5f7a4f;font-weight:600;text-align:right">+2.5%</td><td style="color:#ad6b3f;text-align:right">-9.6%</td><td style="color:#97442f;text-align:right">-795</td></tr></tbody></table></div>
   </div>
 </div>
 <div class="th-card" id="thc-AI廠務基建" onclick="openThemeModal('AI廠務基建')" style="border-left:3px solid #5f7a4f">
@@ -1367,40 +1348,40 @@ table.cv-grid td.cv-today .cv-n{color:#fff}
     <div class="th-stocks-wrap"><table class="th-stocks-tbl"><thead><tr><th>股票</th><th style="text-align:right">20D%</th><th style="text-align:right">落後</th><th style="text-align:right">外資5D</th></tr></thead><tbody><tr><td style="white-space:nowrap"><span style="color:#5f7a4f;font-size:11px">🟢</span> <div class="stk-wrap"><span class="stk-id">6603</span><span class="stk-nm">洋基工程</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-13.0%</td><td style="color:#ad6b3f;text-align:right">-13.6%</td><td style="color:#5f7a4f;text-align:right">+54</td></tr><tr><td style="white-space:nowrap"><span style="color:#b8863f;font-size:11px">🟡</span> <div class="stk-wrap"><span class="stk-id">6139</span><span class="stk-nm">亞翔</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-21.4%</td><td style="color:#ad6b3f;text-align:right">-22.0%</td><td style="color:#5f7a4f;text-align:right">+39</td></tr><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">2597</span><span class="stk-nm">潤弘</span></div></td><td style="color:#5f7a4f;font-weight:600;text-align:right">+0.6%</td><td style="color:#8a7a63;text-align:right">+0.0%</td><td style="color:#5f7a4f;text-align:right">+132</td></tr><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">2404</span><span class="stk-nm">漢唐</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-22.6%</td><td style="color:#ad6b3f;text-align:right">-23.2%</td><td style="color:#97442f;text-align:right">-458</td></tr><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">6196</span><span class="stk-nm">帆宣</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-22.0%</td><td style="color:#ad6b3f;text-align:right">-22.6%</td><td style="color:#97442f;text-align:right">-493</td></tr><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">3231</span><span class="stk-nm">緯創</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-5.6%</td><td style="color:#ad6b3f;text-align:right">-6.2%</td><td style="color:#97442f;text-align:right">-44438</td></tr><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">5536</span><span class="stk-nm">聖暉*</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-24.5%</td><td style="color:#ad6b3f;text-align:right">-25.1%</td><td style="color:#97442f;text-align:right">-253</td></tr><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">6667</span><span class="stk-nm">信紘科</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-10.0%</td><td style="color:#ad6b3f;text-align:right">-10.6%</td><td style="color:#97442f;text-align:right">-72</td></tr><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">6944</span><span class="stk-nm">兆聯實業</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-11.8%</td><td style="color:#ad6b3f;text-align:right">-12.4%</td><td style="color:#97442f;text-align:right">-279</td></tr><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">8383</span><span class="stk-nm">千附</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-7.3%</td><td style="color:#ad6b3f;text-align:right">-7.9%</td><td style="color:#97442f;text-align:right">-518</td></tr></tbody></table></div>
   </div>
 </div>
-<div class="th-card" id="thc-低介電玻纖布" onclick="openThemeModal('低介電玻纖布')" style="border-left:3px solid #5f7a4f">
+<div class="th-card" id="thc-電子紙低碳鏈" onclick="openThemeModal('電子紙低碳鏈')" style="border-left:3px solid #5f7a4f">
   <div class="th-card-top">
     <span class="th-strength" style="background:#5f7a4f">9/10</span>
-    <span class="th-name">低介電玻纖布</span>
+    <span class="th-name">電子紙低碳鏈</span>
   </div>
   <div class="th-card-metrics">
     <span class="th-metric" style="color:#8a7a63">廣20%</span>
-    <span class="th-metric" style="color:#5f7a4f">+8.7%</span>
-    <span class="th-metric" style="color:#97442f">F-86316</span>
+    <span class="th-metric" style="color:#97442f">-12.7%</span>
+    <span class="th-metric" style="color:#97442f">F-77650</span>
     <span class="th-metric" style="color:var(--muted)">🟢0🟡1/5</span>
   </div>
-  <div class="th-card-body" id="thbody-低介電玻纖布">
+  <div class="th-card-body" id="thbody-電子紙低碳鏈">
     <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;padding-bottom:14px;border-bottom:1px solid var(--bd)">
       <span class="th-strength" style="background:#5f7a4f">9/10</span>
-      <span style="font-size:16px;font-weight:700;color:var(--tx)">低介電玻纖布</span>
+      <span style="font-size:16px;font-weight:700;color:var(--tx)">電子紙低碳鏈</span>
     </div>
     <div style="display:flex;gap:16px;flex-wrap:wrap;margin-bottom:14px">
       <span class="th-metric" style="color:#8a7a63">廣度 20%</span>
-      <span class="th-metric" style="color:#5f7a4f">20D +8.7%</span>
-      <span class="th-metric" style="color:#97442f">外資 -86316</span>
+      <span class="th-metric" style="color:#97442f">20D -12.7%</span>
+      <span class="th-metric" style="color:#97442f">外資 -77650</span>
       <span class="th-metric">達標 1/5（🟢0🟡1）</span>
     </div>
-    <div class="th-hyp">AI與高效能運算(HPC)推升PCB材料世代交替，引爆全球高階Low DK/Low CTE玻纖布出現史詩級供不應求與報價調漲契機。</div>
+    <div class="th-hyp">全球 ESG 碳稅政策與零售業缺工壓力，迫使通路商大規模將紙本標籤與海報汰換為「超低功耗彩色電子紙」，驅動供應鏈迎來數倍的市場空間。</div>
     <div class="th-signals-row">
       <div class="th-signals-col">
         <div class="sig-col-label">關鍵訊號（觸發 = 假說兌現）</div>
-        <ul class="sig-list"><li>日本龍頭日東紡(Nittobo)股價與展望變動</li><li>高階低介電玻纖布現貨報價與交期拉長幅度</li><li>台光電及台耀等高階CCL廠的拉貨動能與毛利率走勢</li></ul>
+        <ul class="sig-list"><li>元太彩色電子紙薄膜產能利用率</li><li>美國與歐洲主要零售商（如 Walmart）ESL 裝機進度</li><li>歐盟 CBAM 碳關稅正式實施進度</li></ul>
       </div>
       <div class="th-signals-col">
-        <div class="exit-sigs"><span class="exit-label">出場留意：</span><ul class="sig-list sig-exit"><li>日東紡等全球大廠高階新產能超預期提前開出導致供需緩解</li><li>AI伺服器終端出貨量不如預期或四大雲端業者(CSP)大幅下修資本支出</li></ul></div>
+        <div class="exit-sigs"><span class="exit-label">出場留意：</span><ul class="sig-list sig-exit"><li>低功耗反射式 LCD 技術取得突破性成本優勢</li><li>全球零售業資本支出因經濟衰退大幅縮減</li></ul></div>
         
       </div>
     </div>
-    <div class="th-stocks-wrap"><table class="th-stocks-tbl"><thead><tr><th>股票</th><th style="text-align:right">20D%</th><th style="text-align:right">落後</th><th style="text-align:right">外資5D</th></tr></thead><tbody><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">1802</span><span class="stk-nm">台玻</span></div></td><td style="color:#5f7a4f;font-weight:600;text-align:right">+12.1%</td><td style="color:#8a7a63;text-align:right">+0.0%</td><td style="color:#5f7a4f;text-align:right">+20982</td></tr><tr><td style="white-space:nowrap"><span style="color:#b8863f;font-size:11px">🟡</span> <div class="stk-wrap"><span class="stk-id">5340</span><span class="stk-nm">建榮</span></div></td><td style="color:#5f7a4f;font-weight:600;text-align:right">+10.9%</td><td style="color:#8a7a63;text-align:right">-1.2%</td><td style="color:#5f7a4f;text-align:right">+435</td></tr><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">1815</span><span class="stk-nm">富喬</span></div></td><td style="color:#5f7a4f;font-weight:600;text-align:right">+11.6%</td><td style="color:#8a7a63;text-align:right">-0.5%</td><td style="color:#97442f;text-align:right">-49906</td></tr><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">1303</span><span class="stk-nm">南亞</span></div></td><td style="color:#5f7a4f;font-weight:600;text-align:right">+6.3%</td><td style="color:#ad6b3f;text-align:right">-5.8%</td><td style="color:#97442f;text-align:right">-57032</td></tr><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">5475</span><span class="stk-nm">德宏</span></div></td><td style="color:#5f7a4f;font-weight:600;text-align:right">+2.5%</td><td style="color:#ad6b3f;text-align:right">-9.6%</td><td style="color:#97442f;text-align:right">-795</td></tr></tbody></table></div>
+    <div class="th-stocks-wrap"><table class="th-stocks-tbl"><thead><tr><th>股票</th><th style="text-align:right">20D%</th><th style="text-align:right">落後</th><th style="text-align:right">外資5D</th></tr></thead><tbody><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">6143</span><span class="stk-nm">振曜</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-14.0%</td><td style="color:#ad6b3f;text-align:right">-14.7%</td><td style="color:#5f7a4f;text-align:right">+66</td></tr><tr><td style="white-space:nowrap"><span style="color:#b8863f;font-size:11px">🟡</span> <div class="stk-wrap"><span class="stk-id">4961</span><span class="stk-nm">天鈺</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-4.9%</td><td style="color:#ad6b3f;text-align:right">-5.6%</td><td style="color:#5f7a4f;text-align:right">+423</td></tr><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">8069</span><span class="stk-nm">元太</span></div></td><td style="color:#5f7a4f;font-weight:600;text-align:right">+0.7%</td><td style="color:#8a7a63;text-align:right">+0.0%</td><td style="color:#97442f;text-align:right">-1391</td></tr><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">3141</span><span class="stk-nm">晶宏</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-17.0%</td><td style="color:#ad6b3f;text-align:right">-17.7%</td><td style="color:#97442f;text-align:right">-536</td></tr><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">2409</span><span class="stk-nm">友達</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-28.1%</td><td style="color:#ad6b3f;text-align:right">-28.8%</td><td style="color:#97442f;text-align:right">-76212</td></tr></tbody></table></div>
   </div>
 </div>
 <div class="th-card" id="thc-AMD台灣合作" onclick="openThemeModal('AMD台灣合作')" style="border-left:3px solid #5f7a4f">
@@ -1547,42 +1528,6 @@ table.cv-grid td.cv-today .cv-n{color:#fff}
     <div class="th-stocks-wrap"><table class="th-stocks-tbl"><thead><tr><th>股票</th><th style="text-align:right">20D%</th><th style="text-align:right">落後</th><th style="text-align:right">外資5D</th></tr></thead><tbody><tr><td style="white-space:nowrap"><span style="color:#5f7a4f;font-size:11px">🟢</span> <div class="stk-wrap"><span class="stk-id">1785</span><span class="stk-nm">光洋科</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-21.0%</td><td style="color:#ad6b3f;text-align:right">-20.0%</td><td style="color:#5f7a4f;text-align:right">+11033</td></tr><tr><td style="white-space:nowrap"><span style="color:#5f7a4f;font-size:11px">🟢</span> <div class="stk-wrap"><span class="stk-id">7610</span><span class="stk-nm">聯友金屬</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-28.1%</td><td style="color:#ad6b3f;text-align:right">-27.1%</td><td style="color:#5f7a4f;text-align:right">+245</td></tr><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">1583</span><span class="stk-nm">程泰</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-1.0%</td><td style="color:#8a7a63;text-align:right">+0.0%</td><td style="color:#5f7a4f;text-align:right">+27</td></tr><tr><td style="white-space:nowrap"><span style="color:#b8863f;font-size:11px">🟡</span> <div class="stk-wrap"><span class="stk-id">4583</span><span class="stk-nm">大詠城</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-14.7%</td><td style="color:#ad6b3f;text-align:right">-13.7%</td><td style="color:#5f7a4f;text-align:right">+18</td></tr></tbody></table></div>
   </div>
 </div>
-<div class="th-card" id="thc-PMIC" onclick="openThemeModal('PMIC')" style="border-left:3px solid #5f7a4f">
-  <div class="th-card-top">
-    <span class="th-strength" style="background:#5f7a4f">8/10</span>
-    <span class="th-name">PMIC</span>
-  </div>
-  <div class="th-card-metrics">
-    <span class="th-metric" style="color:#b8863f">廣50%</span>
-    <span class="th-metric" style="color:#97442f">-4.9%</span>
-    <span class="th-metric" style="color:#5f7a4f">F+214</span>
-    <span class="th-metric" style="color:var(--muted)">🟢0🟡2/4</span>
-  </div>
-  <div class="th-card-body" id="thbody-PMIC">
-    <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;padding-bottom:14px;border-bottom:1px solid var(--bd)">
-      <span class="th-strength" style="background:#5f7a4f">8/10</span>
-      <span style="font-size:16px;font-weight:700;color:var(--tx)">PMIC</span>
-    </div>
-    <div style="display:flex;gap:16px;flex-wrap:wrap;margin-bottom:14px">
-      <span class="th-metric" style="color:#b8863f">廣度 50%</span>
-      <span class="th-metric" style="color:#97442f">20D -4.9%</span>
-      <span class="th-metric" style="color:#5f7a4f">外資 +214</span>
-      <span class="th-metric">達標 2/4（🟢0🟡2）</span>
-    </div>
-    <div class="th-hyp">國際大廠（德儀、英飛凌）與台廠下半年展開報價調漲，疊加 AI 伺服器、DDR5 與車用對高階/多相位電力管理需求爆發，帶動產業脫離谷底進入結構性轉型。</div>
-    <div class="th-signals-row">
-      <div class="th-signals-col">
-        <div class="sig-col-label">關鍵訊號（觸發 = 假說兌現）</div>
-        <ul class="sig-list"><li>德儀(TI)與立錡等龍頭 7 月實際漲價幅度</li><li>茂達與矽力逐月營收年增率連續轉正</li><li>AI 伺服器/DDR5 滲透率</li></ul>
-      </div>
-      <div class="th-signals-col">
-        <div class="exit-sigs"><span class="exit-label">出場留意：</span><ul class="sig-list sig-exit"><li>晶圓代工與封測成本上漲無法順利轉嫁客戶導致毛利率下滑</li><li>消費性電子（NB/手機）需求再度失速倒退</li></ul></div>
-        
-      </div>
-    </div>
-    <div class="th-stocks-wrap"><table class="th-stocks-tbl"><thead><tr><th>股票</th><th style="text-align:right">20D%</th><th style="text-align:right">落後</th><th style="text-align:right">外資5D</th></tr></thead><tbody><tr><td style="white-space:nowrap"><span style="color:#b8863f;font-size:11px">🟡</span> <div class="stk-wrap"><span class="stk-id">6138</span><span class="stk-nm">茂達</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-20.2%</td><td style="color:#ad6b3f;text-align:right">-27.8%</td><td style="color:#5f7a4f;text-align:right">+1074</td></tr><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">6415</span><span class="stk-nm">矽力-KY</span></div></td><td style="color:#5f7a4f;font-weight:600;text-align:right">+7.6%</td><td style="color:#8a7a63;text-align:right">+0.0%</td><td style="color:#5f7a4f;text-align:right">+17</td></tr><tr><td style="white-space:nowrap"><span style="color:#b8863f;font-size:11px">🟡</span> <div class="stk-wrap"><span class="stk-id">8081</span><span class="stk-nm">致新</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-1.9%</td><td style="color:#ad6b3f;text-align:right">-9.5%</td><td style="color:#5f7a4f;text-align:right">+26</td></tr><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">6719</span><span class="stk-nm">力智</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-5.0%</td><td style="color:#ad6b3f;text-align:right">-12.6%</td><td style="color:#97442f;text-align:right">-903</td></tr></tbody></table></div>
-  </div>
-</div>
 <div class="th-card" id="thc-伺服光耦合器" onclick="openThemeModal('伺服光耦合器')" style="border-left:3px solid #5f7a4f">
   <div class="th-card-top">
     <span class="th-strength" style="background:#5f7a4f">8/10</span>
@@ -1653,6 +1598,42 @@ table.cv-grid td.cv-today .cv-n{color:#fff}
       </div>
     </div>
     <div class="th-stocks-wrap"><table class="th-stocks-tbl"><thead><tr><th>股票</th><th style="text-align:right">20D%</th><th style="text-align:right">落後</th><th style="text-align:right">外資5D</th></tr></thead><tbody><tr><td style="white-space:nowrap"><span style="color:#5f7a4f;font-size:11px">🟢</span> <div class="stk-wrap"><span class="stk-id">1785</span><span class="stk-nm">光洋科</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-21.0%</td><td style="color:#ad6b3f;text-align:right">-23.3%</td><td style="color:#5f7a4f;text-align:right">+11033</td></tr><tr><td style="white-space:nowrap"><span style="color:#b8863f;font-size:11px">🟡</span> <div class="stk-wrap"><span class="stk-id">6541</span><span class="stk-nm">朋億*</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-6.4%</td><td style="color:#ad6b3f;text-align:right">-8.7%</td><td style="color:#5f7a4f;text-align:right">+11</td></tr><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">6894</span><span class="stk-nm">衛司特</span></div></td><td style="color:#5f7a4f;font-weight:600;text-align:right">+2.3%</td><td style="color:#8a7a63;text-align:right">+0.0%</td><td style="color:#97442f;text-align:right">-58</td></tr><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">8438</span><span class="stk-nm">昶昕</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-28.3%</td><td style="color:#ad6b3f;text-align:right">-30.6%</td><td style="color:#97442f;text-align:right">-75</td></tr></tbody></table></div>
+  </div>
+</div>
+<div class="th-card" id="thc-PMIC" onclick="openThemeModal('PMIC')" style="border-left:3px solid #5f7a4f">
+  <div class="th-card-top">
+    <span class="th-strength" style="background:#5f7a4f">8/10</span>
+    <span class="th-name">PMIC</span>
+  </div>
+  <div class="th-card-metrics">
+    <span class="th-metric" style="color:#b8863f">廣50%</span>
+    <span class="th-metric" style="color:#97442f">-4.9%</span>
+    <span class="th-metric" style="color:#5f7a4f">F+214</span>
+    <span class="th-metric" style="color:var(--muted)">🟢0🟡2/4</span>
+  </div>
+  <div class="th-card-body" id="thbody-PMIC">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;padding-bottom:14px;border-bottom:1px solid var(--bd)">
+      <span class="th-strength" style="background:#5f7a4f">8/10</span>
+      <span style="font-size:16px;font-weight:700;color:var(--tx)">PMIC</span>
+    </div>
+    <div style="display:flex;gap:16px;flex-wrap:wrap;margin-bottom:14px">
+      <span class="th-metric" style="color:#b8863f">廣度 50%</span>
+      <span class="th-metric" style="color:#97442f">20D -4.9%</span>
+      <span class="th-metric" style="color:#5f7a4f">外資 +214</span>
+      <span class="th-metric">達標 2/4（🟢0🟡2）</span>
+    </div>
+    <div class="th-hyp">國際大廠（德儀、英飛凌）與台廠下半年展開報價調漲，疊加 AI 伺服器、DDR5 與車用對高階/多相位電力管理需求爆發，帶動產業脫離谷底進入結構性轉型。</div>
+    <div class="th-signals-row">
+      <div class="th-signals-col">
+        <div class="sig-col-label">關鍵訊號（觸發 = 假說兌現）</div>
+        <ul class="sig-list"><li>德儀(TI)與立錡等龍頭 7 月實際漲價幅度</li><li>茂達與矽力逐月營收年增率連續轉正</li><li>AI 伺服器/DDR5 滲透率</li></ul>
+      </div>
+      <div class="th-signals-col">
+        <div class="exit-sigs"><span class="exit-label">出場留意：</span><ul class="sig-list sig-exit"><li>晶圓代工與封測成本上漲無法順利轉嫁客戶導致毛利率下滑</li><li>消費性電子（NB/手機）需求再度失速倒退</li></ul></div>
+        
+      </div>
+    </div>
+    <div class="th-stocks-wrap"><table class="th-stocks-tbl"><thead><tr><th>股票</th><th style="text-align:right">20D%</th><th style="text-align:right">落後</th><th style="text-align:right">外資5D</th></tr></thead><tbody><tr><td style="white-space:nowrap"><span style="color:#b8863f;font-size:11px">🟡</span> <div class="stk-wrap"><span class="stk-id">6138</span><span class="stk-nm">茂達</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-20.2%</td><td style="color:#ad6b3f;text-align:right">-27.8%</td><td style="color:#5f7a4f;text-align:right">+1074</td></tr><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">6415</span><span class="stk-nm">矽力-KY</span></div></td><td style="color:#5f7a4f;font-weight:600;text-align:right">+7.6%</td><td style="color:#8a7a63;text-align:right">+0.0%</td><td style="color:#5f7a4f;text-align:right">+17</td></tr><tr><td style="white-space:nowrap"><span style="color:#b8863f;font-size:11px">🟡</span> <div class="stk-wrap"><span class="stk-id">8081</span><span class="stk-nm">致新</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-1.9%</td><td style="color:#ad6b3f;text-align:right">-9.5%</td><td style="color:#5f7a4f;text-align:right">+26</td></tr><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">6719</span><span class="stk-nm">力智</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-5.0%</td><td style="color:#ad6b3f;text-align:right">-12.6%</td><td style="color:#97442f;text-align:right">-903</td></tr></tbody></table></div>
   </div>
 </div>
 <div class="th-card" id="thc-無人機供應鏈" onclick="openThemeModal('無人機供應鏈')" style="border-left:3px solid #5f7a4f">
@@ -1943,78 +1924,6 @@ table.cv-grid td.cv-today .cv-n{color:#fff}
     <div class="th-stocks-wrap"><table class="th-stocks-tbl"><thead><tr><th>股票</th><th style="text-align:right">20D%</th><th style="text-align:right">落後</th><th style="text-align:right">外資5D</th></tr></thead><tbody><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">5457</span><span class="stk-nm">宣德</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-13.3%</td><td style="color:#ad6b3f;text-align:right">-7.0%</td><td style="color:#5f7a4f;text-align:right">+163</td></tr><tr><td style="white-space:nowrap"><span style="color:#b8863f;font-size:11px">🟡</span> <div class="stk-wrap"><span class="stk-id">2395</span><span class="stk-nm">研華</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-12.2%</td><td style="color:#ad6b3f;text-align:right">-5.9%</td><td style="color:#5f7a4f;text-align:right">+203</td></tr><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">6414</span><span class="stk-nm">樺漢</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-13.2%</td><td style="color:#ad6b3f;text-align:right">-6.9%</td><td style="color:#97442f;text-align:right">-76</td></tr><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">6166</span><span class="stk-nm">凌華</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-26.2%</td><td style="color:#ad6b3f;text-align:right">-19.9%</td><td style="color:#97442f;text-align:right">-235</td></tr><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">8050</span><span class="stk-nm">廣積</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-6.9%</td><td style="color:#8a7a63;text-align:right">-0.6%</td><td style="color:#97442f;text-align:right">-716</td></tr><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">2397</span><span class="stk-nm">友通</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-10.4%</td><td style="color:#8a7a63;text-align:right">-4.1%</td><td style="color:#97442f;text-align:right">-418</td></tr><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">6206</span><span class="stk-nm">飛捷</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-11.3%</td><td style="color:#8a7a63;text-align:right">-5.0%</td><td style="color:#97442f;text-align:right">-236</td></tr><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">3088</span><span class="stk-nm">艾訊</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-18.6%</td><td style="color:#ad6b3f;text-align:right">-12.3%</td><td style="color:#97442f;text-align:right">-1330</td></tr><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">3416</span><span class="stk-nm">融程電</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-6.3%</td><td style="color:#8a7a63;text-align:right">+0.0%</td><td style="color:#97442f;text-align:right">-712</td></tr></tbody></table></div>
   </div>
 </div>
-<div class="th-card" id="thc-MGX伺服器背板" onclick="openThemeModal('MGX伺服器背板')" style="border-left:3px solid #5f7a4f">
-  <div class="th-card-top">
-    <span class="th-strength" style="background:#5f7a4f">8/10</span>
-    <span class="th-name">MGX伺服器背板</span>
-  </div>
-  <div class="th-card-metrics">
-    <span class="th-metric" style="color:#8a7a63">廣0%</span>
-    <span class="th-metric" style="color:#97442f">-14.0%</span>
-    <span class="th-metric" style="color:#97442f">F-40133</span>
-    <span class="th-metric" style="color:var(--muted)">🟢0🟡0/6</span>
-  </div>
-  <div class="th-card-body" id="thbody-MGX伺服器背板">
-    <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;padding-bottom:14px;border-bottom:1px solid var(--bd)">
-      <span class="th-strength" style="background:#5f7a4f">8/10</span>
-      <span style="font-size:16px;font-weight:700;color:var(--tx)">MGX伺服器背板</span>
-    </div>
-    <div style="display:flex;gap:16px;flex-wrap:wrap;margin-bottom:14px">
-      <span class="th-metric" style="color:#8a7a63">廣度 0%</span>
-      <span class="th-metric" style="color:#97442f">20D -14.0%</span>
-      <span class="th-metric" style="color:#97442f">外資 -40133</span>
-      <span class="th-metric">達標 0/6（🟢0🟡0）</span>
-    </div>
-    <div class="th-hyp">輝達力推MGX模組化架構並擴大台廠生態系，帶動新入列之PCB高層板與高精密金屬機構件迎來實質訂單放量與轉型獲利。</div>
-    <div class="th-signals-row">
-      <div class="th-signals-col">
-        <div class="sig-col-label">關鍵訊號（觸發 = 假說兌現）</div>
-        <ul class="sig-list"><li>輝達MGX及次世代Vera Rubin平台機櫃出貨量加速</li><li>臻鼎與可成財報中AI伺服器營收佔比顯著拉升</li><li>美系CSP大廠持續上調資本支出</li></ul>
-      </div>
-      <div class="th-signals-col">
-        <div class="exit-sigs"><span class="exit-label">出場留意：</span><ul class="sig-list sig-exit"><li>伺服器模組化架構再度轉變</li><li>新進供應商量產時程延後或市場價格競爭加劇衝擊毛利率</li></ul></div>
-        
-      </div>
-    </div>
-    <div class="th-stocks-wrap"><table class="th-stocks-tbl"><thead><tr><th>股票</th><th style="text-align:right">20D%</th><th style="text-align:right">落後</th><th style="text-align:right">外資5D</th></tr></thead><tbody><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">8210</span><span class="stk-nm">勤誠</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-24.6%</td><td style="color:#ad6b3f;text-align:right">-31.6%</td><td style="color:#5f7a4f;text-align:right">+2394</td></tr><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">2059</span><span class="stk-nm">川湖</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-29.2%</td><td style="color:#ad6b3f;text-align:right">-36.2%</td><td style="color:#5f7a4f;text-align:right">+39</td></tr><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">2474</span><span class="stk-nm">可成</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-9.9%</td><td style="color:#ad6b3f;text-align:right">-16.9%</td><td style="color:#97442f;text-align:right">-2070</td></tr><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">4958</span><span class="stk-nm">臻鼎-KY</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-22.8%</td><td style="color:#ad6b3f;text-align:right">-29.8%</td><td style="color:#97442f;text-align:right">-18319</td></tr><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">2356</span><span class="stk-nm">英業達</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-4.4%</td><td style="color:#ad6b3f;text-align:right">-11.4%</td><td style="color:#97442f;text-align:right">-17380</td></tr><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">6269</span><span class="stk-nm">台郡</span></div></td><td style="color:#5f7a4f;font-weight:600;text-align:right">+7.0%</td><td style="color:#8a7a63;text-align:right">+0.0%</td><td style="color:#97442f;text-align:right">-4797</td></tr></tbody></table></div>
-  </div>
-</div>
-<div class="th-card" id="thc-高階銅箔" onclick="openThemeModal('高階銅箔')" style="border-left:3px solid #5f7a4f">
-  <div class="th-card-top">
-    <span class="th-strength" style="background:#5f7a4f">8/10</span>
-    <span class="th-name">高階銅箔</span>
-  </div>
-  <div class="th-card-metrics">
-    <span class="th-metric" style="color:#8a7a63">廣0%</span>
-    <span class="th-metric" style="color:#97442f">-9.5%</span>
-    <span class="th-metric" style="color:#97442f">F-59021</span>
-    <span class="th-metric" style="color:var(--muted)">🟢0🟡0/3</span>
-  </div>
-  <div class="th-card-body" id="thbody-高階銅箔">
-    <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;padding-bottom:14px;border-bottom:1px solid var(--bd)">
-      <span class="th-strength" style="background:#5f7a4f">8/10</span>
-      <span style="font-size:16px;font-weight:700;color:var(--tx)">高階銅箔</span>
-    </div>
-    <div style="display:flex;gap:16px;flex-wrap:wrap;margin-bottom:14px">
-      <span class="th-metric" style="color:#8a7a63">廣度 0%</span>
-      <span class="th-metric" style="color:#97442f">20D -9.5%</span>
-      <span class="th-metric" style="color:#97442f">外資 -59021</span>
-      <span class="th-metric">達標 0/3（🟢0🟡0）</span>
-    </div>
-    <div class="th-hyp">AI伺服器（GB200/Rubin）與高階網通全面導入HVLP/VLP超低損耗銅箔，高階產能嚴重供不應求，帶動純銅箔廠迎來加工費（ASP）暴漲與結構性獲利大爆發…</div>
-    <div class="th-signals-row">
-      <div class="th-signals-col">
-        <div class="sig-col-label">關鍵訊號（觸發 = 假說兌現）</div>
-        <ul class="sig-list"><li>國際銅價止跌回穩且LME庫存持續下降</li><li>金居與榮科單月營收年增率維持強勢雙位數成長</li><li>市場傳出高階HVLP4/HVLP5加工費再度調漲</li></ul>
-      </div>
-      <div class="th-signals-col">
-        <div class="exit-sigs"><span class="exit-label">出場留意：</span><ul class="sig-list sig-exit"><li>國際銅價大幅暴跌導致材料廠面臨高價庫存跌價損失</li><li>日韓大廠（如三井金屬）超預期擴產導致高階HVLP產能缺口提前撫平</li></ul></div>
-        
-      </div>
-    </div>
-    <div class="th-stocks-wrap"><table class="th-stocks-tbl"><thead><tr><th>股票</th><th style="text-align:right">20D%</th><th style="text-align:right">落後</th><th style="text-align:right">外資5D</th></tr></thead><tbody><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">8358</span><span class="stk-nm">金居</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-29.4%</td><td style="color:#ad6b3f;text-align:right">-35.7%</td><td style="color:#97442f;text-align:right">-1152</td></tr><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">1303</span><span class="stk-nm">南亞</span></div></td><td style="color:#5f7a4f;font-weight:600;text-align:right">+6.3%</td><td style="color:#8a7a63;text-align:right">+0.0%</td><td style="color:#97442f;text-align:right">-57032</td></tr><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">4989</span><span class="stk-nm">榮科</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-5.3%</td><td style="color:#ad6b3f;text-align:right">-11.6%</td><td style="color:#97442f;text-align:right">-837</td></tr></tbody></table></div>
-  </div>
-</div>
 <div class="th-card" id="thc-ABF載板" onclick="openThemeModal('ABF載板')" style="border-left:3px solid #5f7a4f">
   <div class="th-card-top">
     <span class="th-strength" style="background:#5f7a4f">8/10</span>
@@ -2049,78 +1958,6 @@ table.cv-grid td.cv-today .cv-n{color:#fff}
       </div>
     </div>
     <div class="th-stocks-wrap"><table class="th-stocks-tbl"><thead><tr><th>股票</th><th style="text-align:right">20D%</th><th style="text-align:right">落後</th><th style="text-align:right">外資5D</th></tr></thead><tbody><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">7795</span><span class="stk-nm">長廣</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-32.2%</td><td style="color:#ad6b3f;text-align:right">-10.5%</td><td style="color:#5f7a4f;text-align:right">+85</td></tr><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">3037</span><span class="stk-nm">欣興</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-32.0%</td><td style="color:#ad6b3f;text-align:right">-10.3%</td><td style="color:#97442f;text-align:right">-15848</td></tr><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">8046</span><span class="stk-nm">南電</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-26.0%</td><td style="color:#8a7a63;text-align:right">-4.3%</td><td style="color:#97442f;text-align:right">-2179</td></tr><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">3189</span><span class="stk-nm">景碩</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-21.7%</td><td style="color:#8a7a63;text-align:right">+0.0%</td><td style="color:#97442f;text-align:right">-10650</td></tr><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">4958</span><span class="stk-nm">臻鼎-KY</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-22.8%</td><td style="color:#8a7a63;text-align:right">-1.1%</td><td style="color:#97442f;text-align:right">-18319</td></tr></tbody></table></div>
-  </div>
-</div>
-<div class="th-card" id="thc-FOUP清洗設備" onclick="openThemeModal('FOUP清洗設備')" style="border-left:3px solid #5f7a4f">
-  <div class="th-card-top">
-    <span class="th-strength" style="background:#5f7a4f">8/10</span>
-    <span class="th-name">FOUP清洗設備</span>
-  </div>
-  <div class="th-card-metrics">
-    <span class="th-metric" style="color:#8a7a63">廣0%</span>
-    <span class="th-metric" style="color:#97442f">-17.6%</span>
-    <span class="th-metric" style="color:#97442f">F-1523</span>
-    <span class="th-metric" style="color:var(--muted)">🟢0🟡0/4</span>
-  </div>
-  <div class="th-card-body" id="thbody-FOUP清洗設備">
-    <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;padding-bottom:14px;border-bottom:1px solid var(--bd)">
-      <span class="th-strength" style="background:#5f7a4f">8/10</span>
-      <span style="font-size:16px;font-weight:700;color:var(--tx)">FOUP清洗設備</span>
-    </div>
-    <div style="display:flex;gap:16px;flex-wrap:wrap;margin-bottom:14px">
-      <span class="th-metric" style="color:#8a7a63">廣度 0%</span>
-      <span class="th-metric" style="color:#97442f">20D -17.6%</span>
-      <span class="th-metric" style="color:#97442f">外資 -1523</span>
-      <span class="th-metric">達標 0/4（🟢0🟡0）</span>
-    </div>
-    <div class="th-hyp">半導體先進製程與高階封裝對潔淨度要求極度嚴苛，帶動晶圓傳載盒（FOUP）清洗需求大增，且台廠清洗技術成功授權國際巨頭，將迎來高毛利技術變現與設備出海的雙重成長動…</div>
-    <div class="th-signals-row">
-      <div class="th-signals-col">
-        <div class="sig-col-label">關鍵訊號（觸發 = 假說兌現）</div>
-        <ul class="sig-list"><li>科嶠與 Brooks Automation 的 1,600萬美元授權金認列進度與首台設備出海時間</li><li>台積電先進封裝（CoWoS/CoPoS）建廠進度與資本支出規模</li><li>家登（Gudeng）全球 FOUP 出貨量與市占率變化</li></ul>
-      </div>
-      <div class="th-signals-col">
-        <div class="exit-sigs"><span class="exit-label">出場留意：</span><ul class="sig-list sig-exit"><li>國際大廠終止技術授權合作或商業化進度大幅遞延</li><li>先進製程與封裝擴產放緩導致設備資本支出縮減</li></ul></div>
-        
-      </div>
-    </div>
-    <div class="th-stocks-wrap"><table class="th-stocks-tbl"><thead><tr><th>股票</th><th style="text-align:right">20D%</th><th style="text-align:right">落後</th><th style="text-align:right">外資5D</th></tr></thead><tbody><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">3680</span><span class="stk-nm">家登</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-19.8%</td><td style="color:#8a7a63;text-align:right">-4.6%</td><td style="color:#97442f;text-align:right">-1244</td></tr><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">4542</span><span class="stk-nm">科嶠</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-17.2%</td><td style="color:#8a7a63;text-align:right">-2.0%</td><td style="color:#97442f;text-align:right">-41</td></tr><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">6953</span><span class="stk-nm">家碩</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-18.2%</td><td style="color:#8a7a63;text-align:right">-3.0%</td><td style="color:#97442f;text-align:right">-20</td></tr><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">6438</span><span class="stk-nm">迅得</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-15.2%</td><td style="color:#8a7a63;text-align:right">+0.0%</td><td style="color:#97442f;text-align:right">-218</td></tr></tbody></table></div>
-  </div>
-</div>
-<div class="th-card" id="thc-高階散熱銅材" onclick="openThemeModal('高階散熱銅材')" style="border-left:3px solid #5f7a4f">
-  <div class="th-card-top">
-    <span class="th-strength" style="background:#5f7a4f">8/10</span>
-    <span class="th-name">高階散熱銅材</span>
-  </div>
-  <div class="th-card-metrics">
-    <span class="th-metric" style="color:#8a7a63">廣0%</span>
-    <span class="th-metric" style="color:#97442f">-10.4%</span>
-    <span class="th-metric" style="color:#97442f">F-1652</span>
-    <span class="th-metric" style="color:var(--muted)">🟢0🟡0/2</span>
-  </div>
-  <div class="th-card-body" id="thbody-高階散熱銅材">
-    <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;padding-bottom:14px;border-bottom:1px solid var(--bd)">
-      <span class="th-strength" style="background:#5f7a4f">8/10</span>
-      <span style="font-size:16px;font-weight:700;color:var(--tx)">高階散熱銅材</span>
-    </div>
-    <div style="display:flex;gap:16px;flex-wrap:wrap;margin-bottom:14px">
-      <span class="th-metric" style="color:#8a7a63">廣度 0%</span>
-      <span class="th-metric" style="color:#97442f">20D -10.4%</span>
-      <span class="th-metric" style="color:#97442f">外資 -1652</span>
-      <span class="th-metric">達標 0/2（🟢0🟡0）</span>
-    </div>
-    <div class="th-hyp">AI液冷機櫃的微通道散熱與大電力傳輸需求對材料導電與導熱性要求遽增，超越傳統無氧銅的「超性銅（石墨烯銅）」及超低無氧銅等特殊銅材將迎來龐大的商用替換機會。</div>
-    <div class="th-signals-row">
-      <div class="th-signals-col">
-        <div class="sig-col-label">關鍵訊號（觸發 = 假說兌現）</div>
-        <ul class="sig-list"><li>國內電子大廠對石墨烯銅的測試認證進度與採用率</li><li>AI液冷散熱微通道銅材與高導電匯流銅排的實質出貨量與毛利變化</li><li>輝達Vera Rubin平台下半年拉貨節奏與零組件轉換率</li></ul>
-      </div>
-      <div class="th-signals-col">
-        <div class="exit-sigs"><span class="exit-label">出場留意：</span><ul class="sig-list sig-exit"><li>液冷散熱技術轉向無需特殊銅材的替代方案（如全浸沒式液冷氟化液改變材料要求）</li><li>石墨烯銅或超低無氧銅量產良率不佳，導致商業化規模受阻</li></ul></div>
-        
-      </div>
-    </div>
-    <div class="th-stocks-wrap"><table class="th-stocks-tbl"><thead><tr><th>股票</th><th style="text-align:right">20D%</th><th style="text-align:right">落後</th><th style="text-align:right">外資5D</th></tr></thead><tbody><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">2460</span><span class="stk-nm">建通</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-10.1%</td><td style="color:#8a7a63;text-align:right">+0.0%</td><td style="color:#97442f;text-align:right">-55</td></tr><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">2009</span><span class="stk-nm">第一銅</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-10.7%</td><td style="color:#8a7a63;text-align:right">-0.6%</td><td style="color:#97442f;text-align:right">-1597</td></tr></tbody></table></div>
   </div>
 </div>
 <div class="th-card" id="thc-顯卡顯存升級" onclick="openThemeModal('顯卡顯存升級')" style="border-left:3px solid #5f7a4f">
@@ -2195,6 +2032,78 @@ table.cv-grid td.cv-today .cv-n{color:#fff}
     <div class="th-stocks-wrap"><table class="th-stocks-tbl"><thead><tr><th>股票</th><th style="text-align:right">20D%</th><th style="text-align:right">落後</th><th style="text-align:right">外資5D</th></tr></thead><tbody><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">5347</span><span class="stk-nm">世界先進</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-26.7%</td><td style="color:#ad6b3f;text-align:right">-14.0%</td><td style="color:#97442f;text-align:right">-12774</td></tr><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">6770</span><span class="stk-nm">力積電</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-22.4%</td><td style="color:#ad6b3f;text-align:right">-9.7%</td><td style="color:#97442f;text-align:right">-100911</td></tr><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">2303</span><span class="stk-nm">聯電</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-34.7%</td><td style="color:#ad6b3f;text-align:right">-22.0%</td><td style="color:#97442f;text-align:right">-147234</td></tr><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">6488</span><span class="stk-nm">環球晶</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-48.0%</td><td style="color:#ad6b3f;text-align:right">-35.3%</td><td style="color:#97442f;text-align:right">-8047</td></tr><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">3413</span><span class="stk-nm">京鼎</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-12.7%</td><td style="color:#8a7a63;text-align:right">+0.0%</td><td style="color:#97442f;text-align:right">-291</td></tr></tbody></table></div>
   </div>
 </div>
+<div class="th-card" id="thc-高階散熱銅材" onclick="openThemeModal('高階散熱銅材')" style="border-left:3px solid #5f7a4f">
+  <div class="th-card-top">
+    <span class="th-strength" style="background:#5f7a4f">8/10</span>
+    <span class="th-name">高階散熱銅材</span>
+  </div>
+  <div class="th-card-metrics">
+    <span class="th-metric" style="color:#8a7a63">廣0%</span>
+    <span class="th-metric" style="color:#97442f">-10.4%</span>
+    <span class="th-metric" style="color:#97442f">F-1652</span>
+    <span class="th-metric" style="color:var(--muted)">🟢0🟡0/2</span>
+  </div>
+  <div class="th-card-body" id="thbody-高階散熱銅材">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;padding-bottom:14px;border-bottom:1px solid var(--bd)">
+      <span class="th-strength" style="background:#5f7a4f">8/10</span>
+      <span style="font-size:16px;font-weight:700;color:var(--tx)">高階散熱銅材</span>
+    </div>
+    <div style="display:flex;gap:16px;flex-wrap:wrap;margin-bottom:14px">
+      <span class="th-metric" style="color:#8a7a63">廣度 0%</span>
+      <span class="th-metric" style="color:#97442f">20D -10.4%</span>
+      <span class="th-metric" style="color:#97442f">外資 -1652</span>
+      <span class="th-metric">達標 0/2（🟢0🟡0）</span>
+    </div>
+    <div class="th-hyp">AI液冷機櫃的微通道散熱與大電力傳輸需求對材料導電與導熱性要求遽增，超越傳統無氧銅的「超性銅（石墨烯銅）」及超低無氧銅等特殊銅材將迎來龐大的商用替換機會。</div>
+    <div class="th-signals-row">
+      <div class="th-signals-col">
+        <div class="sig-col-label">關鍵訊號（觸發 = 假說兌現）</div>
+        <ul class="sig-list"><li>國內電子大廠對石墨烯銅的測試認證進度與採用率</li><li>AI液冷散熱微通道銅材與高導電匯流銅排的實質出貨量與毛利變化</li><li>輝達Vera Rubin平台下半年拉貨節奏與零組件轉換率</li></ul>
+      </div>
+      <div class="th-signals-col">
+        <div class="exit-sigs"><span class="exit-label">出場留意：</span><ul class="sig-list sig-exit"><li>液冷散熱技術轉向無需特殊銅材的替代方案（如全浸沒式液冷氟化液改變材料要求）</li><li>石墨烯銅或超低無氧銅量產良率不佳，導致商業化規模受阻</li></ul></div>
+        
+      </div>
+    </div>
+    <div class="th-stocks-wrap"><table class="th-stocks-tbl"><thead><tr><th>股票</th><th style="text-align:right">20D%</th><th style="text-align:right">落後</th><th style="text-align:right">外資5D</th></tr></thead><tbody><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">2460</span><span class="stk-nm">建通</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-10.1%</td><td style="color:#8a7a63;text-align:right">+0.0%</td><td style="color:#97442f;text-align:right">-55</td></tr><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">2009</span><span class="stk-nm">第一銅</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-10.7%</td><td style="color:#8a7a63;text-align:right">-0.6%</td><td style="color:#97442f;text-align:right">-1597</td></tr></tbody></table></div>
+  </div>
+</div>
+<div class="th-card" id="thc-高階銅箔" onclick="openThemeModal('高階銅箔')" style="border-left:3px solid #5f7a4f">
+  <div class="th-card-top">
+    <span class="th-strength" style="background:#5f7a4f">8/10</span>
+    <span class="th-name">高階銅箔</span>
+  </div>
+  <div class="th-card-metrics">
+    <span class="th-metric" style="color:#8a7a63">廣0%</span>
+    <span class="th-metric" style="color:#97442f">-9.5%</span>
+    <span class="th-metric" style="color:#97442f">F-59021</span>
+    <span class="th-metric" style="color:var(--muted)">🟢0🟡0/3</span>
+  </div>
+  <div class="th-card-body" id="thbody-高階銅箔">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;padding-bottom:14px;border-bottom:1px solid var(--bd)">
+      <span class="th-strength" style="background:#5f7a4f">8/10</span>
+      <span style="font-size:16px;font-weight:700;color:var(--tx)">高階銅箔</span>
+    </div>
+    <div style="display:flex;gap:16px;flex-wrap:wrap;margin-bottom:14px">
+      <span class="th-metric" style="color:#8a7a63">廣度 0%</span>
+      <span class="th-metric" style="color:#97442f">20D -9.5%</span>
+      <span class="th-metric" style="color:#97442f">外資 -59021</span>
+      <span class="th-metric">達標 0/3（🟢0🟡0）</span>
+    </div>
+    <div class="th-hyp">AI伺服器（GB200/Rubin）與高階網通全面導入HVLP/VLP超低損耗銅箔，高階產能嚴重供不應求，帶動純銅箔廠迎來加工費（ASP）暴漲與結構性獲利大爆發…</div>
+    <div class="th-signals-row">
+      <div class="th-signals-col">
+        <div class="sig-col-label">關鍵訊號（觸發 = 假說兌現）</div>
+        <ul class="sig-list"><li>國際銅價止跌回穩且LME庫存持續下降</li><li>金居與榮科單月營收年增率維持強勢雙位數成長</li><li>市場傳出高階HVLP4/HVLP5加工費再度調漲</li></ul>
+      </div>
+      <div class="th-signals-col">
+        <div class="exit-sigs"><span class="exit-label">出場留意：</span><ul class="sig-list sig-exit"><li>國際銅價大幅暴跌導致材料廠面臨高價庫存跌價損失</li><li>日韓大廠（如三井金屬）超預期擴產導致高階HVLP產能缺口提前撫平</li></ul></div>
+        
+      </div>
+    </div>
+    <div class="th-stocks-wrap"><table class="th-stocks-tbl"><thead><tr><th>股票</th><th style="text-align:right">20D%</th><th style="text-align:right">落後</th><th style="text-align:right">外資5D</th></tr></thead><tbody><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">8358</span><span class="stk-nm">金居</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-29.4%</td><td style="color:#ad6b3f;text-align:right">-35.7%</td><td style="color:#97442f;text-align:right">-1152</td></tr><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">1303</span><span class="stk-nm">南亞</span></div></td><td style="color:#5f7a4f;font-weight:600;text-align:right">+6.3%</td><td style="color:#8a7a63;text-align:right">+0.0%</td><td style="color:#97442f;text-align:right">-57032</td></tr><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">4989</span><span class="stk-nm">榮科</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-5.3%</td><td style="color:#ad6b3f;text-align:right">-11.6%</td><td style="color:#97442f;text-align:right">-837</td></tr></tbody></table></div>
+  </div>
+</div>
 <div class="th-card" id="thc-矽電容" onclick="openThemeModal('矽電容')" style="border-left:3px solid #5f7a4f">
   <div class="th-card-top">
     <span class="th-strength" style="background:#5f7a4f">8/10</span>
@@ -2229,6 +2138,78 @@ table.cv-grid td.cv-today .cv-n{color:#fff}
       </div>
     </div>
     <div class="th-stocks-wrap"><table class="th-stocks-tbl"><thead><tr><th>股票</th><th style="text-align:right">20D%</th><th style="text-align:right">落後</th><th style="text-align:right">外資5D</th></tr></thead><tbody><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">6531</span><span class="stk-nm">愛普*</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-28.1%</td><td style="color:#ad6b3f;text-align:right">-7.2%</td><td style="color:#97442f;text-align:right">-408</td></tr><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">6770</span><span class="stk-nm">力積電</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-22.4%</td><td style="color:#8a7a63;text-align:right">-1.5%</td><td style="color:#97442f;text-align:right">-100911</td></tr><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">2344</span><span class="stk-nm">華邦電</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-20.9%</td><td style="color:#8a7a63;text-align:right">+0.0%</td><td style="color:#97442f;text-align:right">-42734</td></tr></tbody></table></div>
+  </div>
+</div>
+<div class="th-card" id="thc-MGX伺服器背板" onclick="openThemeModal('MGX伺服器背板')" style="border-left:3px solid #5f7a4f">
+  <div class="th-card-top">
+    <span class="th-strength" style="background:#5f7a4f">8/10</span>
+    <span class="th-name">MGX伺服器背板</span>
+  </div>
+  <div class="th-card-metrics">
+    <span class="th-metric" style="color:#8a7a63">廣0%</span>
+    <span class="th-metric" style="color:#97442f">-14.0%</span>
+    <span class="th-metric" style="color:#97442f">F-40133</span>
+    <span class="th-metric" style="color:var(--muted)">🟢0🟡0/6</span>
+  </div>
+  <div class="th-card-body" id="thbody-MGX伺服器背板">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;padding-bottom:14px;border-bottom:1px solid var(--bd)">
+      <span class="th-strength" style="background:#5f7a4f">8/10</span>
+      <span style="font-size:16px;font-weight:700;color:var(--tx)">MGX伺服器背板</span>
+    </div>
+    <div style="display:flex;gap:16px;flex-wrap:wrap;margin-bottom:14px">
+      <span class="th-metric" style="color:#8a7a63">廣度 0%</span>
+      <span class="th-metric" style="color:#97442f">20D -14.0%</span>
+      <span class="th-metric" style="color:#97442f">外資 -40133</span>
+      <span class="th-metric">達標 0/6（🟢0🟡0）</span>
+    </div>
+    <div class="th-hyp">輝達力推MGX模組化架構並擴大台廠生態系，帶動新入列之PCB高層板與高精密金屬機構件迎來實質訂單放量與轉型獲利。</div>
+    <div class="th-signals-row">
+      <div class="th-signals-col">
+        <div class="sig-col-label">關鍵訊號（觸發 = 假說兌現）</div>
+        <ul class="sig-list"><li>輝達MGX及次世代Vera Rubin平台機櫃出貨量加速</li><li>臻鼎與可成財報中AI伺服器營收佔比顯著拉升</li><li>美系CSP大廠持續上調資本支出</li></ul>
+      </div>
+      <div class="th-signals-col">
+        <div class="exit-sigs"><span class="exit-label">出場留意：</span><ul class="sig-list sig-exit"><li>伺服器模組化架構再度轉變</li><li>新進供應商量產時程延後或市場價格競爭加劇衝擊毛利率</li></ul></div>
+        
+      </div>
+    </div>
+    <div class="th-stocks-wrap"><table class="th-stocks-tbl"><thead><tr><th>股票</th><th style="text-align:right">20D%</th><th style="text-align:right">落後</th><th style="text-align:right">外資5D</th></tr></thead><tbody><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">8210</span><span class="stk-nm">勤誠</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-24.6%</td><td style="color:#ad6b3f;text-align:right">-31.6%</td><td style="color:#5f7a4f;text-align:right">+2394</td></tr><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">2059</span><span class="stk-nm">川湖</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-29.2%</td><td style="color:#ad6b3f;text-align:right">-36.2%</td><td style="color:#5f7a4f;text-align:right">+39</td></tr><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">2474</span><span class="stk-nm">可成</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-9.9%</td><td style="color:#ad6b3f;text-align:right">-16.9%</td><td style="color:#97442f;text-align:right">-2070</td></tr><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">4958</span><span class="stk-nm">臻鼎-KY</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-22.8%</td><td style="color:#ad6b3f;text-align:right">-29.8%</td><td style="color:#97442f;text-align:right">-18319</td></tr><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">2356</span><span class="stk-nm">英業達</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-4.4%</td><td style="color:#ad6b3f;text-align:right">-11.4%</td><td style="color:#97442f;text-align:right">-17380</td></tr><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">6269</span><span class="stk-nm">台郡</span></div></td><td style="color:#5f7a4f;font-weight:600;text-align:right">+7.0%</td><td style="color:#8a7a63;text-align:right">+0.0%</td><td style="color:#97442f;text-align:right">-4797</td></tr></tbody></table></div>
+  </div>
+</div>
+<div class="th-card" id="thc-FOUP清洗設備" onclick="openThemeModal('FOUP清洗設備')" style="border-left:3px solid #5f7a4f">
+  <div class="th-card-top">
+    <span class="th-strength" style="background:#5f7a4f">8/10</span>
+    <span class="th-name">FOUP清洗設備</span>
+  </div>
+  <div class="th-card-metrics">
+    <span class="th-metric" style="color:#8a7a63">廣0%</span>
+    <span class="th-metric" style="color:#97442f">-17.6%</span>
+    <span class="th-metric" style="color:#97442f">F-1523</span>
+    <span class="th-metric" style="color:var(--muted)">🟢0🟡0/4</span>
+  </div>
+  <div class="th-card-body" id="thbody-FOUP清洗設備">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;padding-bottom:14px;border-bottom:1px solid var(--bd)">
+      <span class="th-strength" style="background:#5f7a4f">8/10</span>
+      <span style="font-size:16px;font-weight:700;color:var(--tx)">FOUP清洗設備</span>
+    </div>
+    <div style="display:flex;gap:16px;flex-wrap:wrap;margin-bottom:14px">
+      <span class="th-metric" style="color:#8a7a63">廣度 0%</span>
+      <span class="th-metric" style="color:#97442f">20D -17.6%</span>
+      <span class="th-metric" style="color:#97442f">外資 -1523</span>
+      <span class="th-metric">達標 0/4（🟢0🟡0）</span>
+    </div>
+    <div class="th-hyp">半導體先進製程與高階封裝對潔淨度要求極度嚴苛，帶動晶圓傳載盒（FOUP）清洗需求大增，且台廠清洗技術成功授權國際巨頭，將迎來高毛利技術變現與設備出海的雙重成長動…</div>
+    <div class="th-signals-row">
+      <div class="th-signals-col">
+        <div class="sig-col-label">關鍵訊號（觸發 = 假說兌現）</div>
+        <ul class="sig-list"><li>科嶠與 Brooks Automation 的 1,600萬美元授權金認列進度與首台設備出海時間</li><li>台積電先進封裝（CoWoS/CoPoS）建廠進度與資本支出規模</li><li>家登（Gudeng）全球 FOUP 出貨量與市占率變化</li></ul>
+      </div>
+      <div class="th-signals-col">
+        <div class="exit-sigs"><span class="exit-label">出場留意：</span><ul class="sig-list sig-exit"><li>國際大廠終止技術授權合作或商業化進度大幅遞延</li><li>先進製程與封裝擴產放緩導致設備資本支出縮減</li></ul></div>
+        
+      </div>
+    </div>
+    <div class="th-stocks-wrap"><table class="th-stocks-tbl"><thead><tr><th>股票</th><th style="text-align:right">20D%</th><th style="text-align:right">落後</th><th style="text-align:right">外資5D</th></tr></thead><tbody><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">3680</span><span class="stk-nm">家登</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-19.8%</td><td style="color:#8a7a63;text-align:right">-4.6%</td><td style="color:#97442f;text-align:right">-1244</td></tr><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">4542</span><span class="stk-nm">科嶠</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-17.2%</td><td style="color:#8a7a63;text-align:right">-2.0%</td><td style="color:#97442f;text-align:right">-41</td></tr><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">6953</span><span class="stk-nm">家碩</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-18.2%</td><td style="color:#8a7a63;text-align:right">-3.0%</td><td style="color:#97442f;text-align:right">-20</td></tr><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">6438</span><span class="stk-nm">迅得</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-15.2%</td><td style="color:#8a7a63;text-align:right">+0.0%</td><td style="color:#97442f;text-align:right">-218</td></tr></tbody></table></div>
   </div>
 </div>
 <div class="th-card" id="thc-功率元件" onclick="openThemeModal('功率元件')" style="border-left:3px solid #b8863f">
@@ -2447,42 +2428,6 @@ table.cv-grid td.cv-today .cv-n{color:#fff}
     <div class="th-stocks-wrap"><table class="th-stocks-tbl"><thead><tr><th>股票</th><th style="text-align:right">20D%</th><th style="text-align:right">落後</th><th style="text-align:right">外資5D</th></tr></thead><tbody><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">6515</span><span class="stk-nm">穎崴</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-33.8%</td><td style="color:#ad6b3f;text-align:right">-24.0%</td><td style="color:#5f7a4f;text-align:right">+767</td></tr><tr><td style="white-space:nowrap"><span style="color:#b8863f;font-size:11px">🟡</span> <div class="stk-wrap"><span class="stk-id">6223</span><span class="stk-nm">旺矽</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-22.1%</td><td style="color:#ad6b3f;text-align:right">-12.3%</td><td style="color:#5f7a4f;text-align:right">+362</td></tr><tr><td style="white-space:nowrap"><span style="color:#b8863f;font-size:11px">🟡</span> <div class="stk-wrap"><span class="stk-id">6683</span><span class="stk-nm">雍智科技</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-36.8%</td><td style="color:#ad6b3f;text-align:right">-27.0%</td><td style="color:#5f7a4f;text-align:right">+215</td></tr><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">6510</span><span class="stk-nm">精測</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-9.8%</td><td style="color:#8a7a63;text-align:right">+0.0%</td><td style="color:#97442f;text-align:right">-1303</td></tr><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">7828</span><span class="stk-nm">創新服務</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-34.3%</td><td style="color:#ad6b3f;text-align:right">-24.5%</td><td style="color:#97442f;text-align:right">-68</td></tr><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">6217</span><span class="stk-nm">中探針</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-26.2%</td><td style="color:#ad6b3f;text-align:right">-16.4%</td><td style="color:#97442f;text-align:right">-738</td></tr></tbody></table></div>
   </div>
 </div>
-<div class="th-card" id="thc-MicroLED光互連" onclick="openThemeModal('MicroLED光互連')" style="border-left:3px solid #97442f">
-  <div class="th-card-top">
-    <span class="th-strength" style="background:#97442f">0/10</span>
-    <span class="th-name">MicroLED光互連</span>
-  </div>
-  <div class="th-card-metrics">
-    <span class="th-metric" style="color:#8a7a63">廣25%</span>
-    <span class="th-metric" style="color:#97442f">-20.8%</span>
-    <span class="th-metric" style="color:#97442f">F-75292</span>
-    <span class="th-metric" style="color:var(--muted)">🟢0🟡1/4</span>
-  </div>
-  <div class="th-card-body" id="thbody-MicroLED光互連">
-    <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;padding-bottom:14px;border-bottom:1px solid var(--bd)">
-      <span class="th-strength" style="background:#97442f">0/10</span>
-      <span style="font-size:16px;font-weight:700;color:var(--tx)">MicroLED光互連</span>
-    </div>
-    <div style="display:flex;gap:16px;flex-wrap:wrap;margin-bottom:14px">
-      <span class="th-metric" style="color:#8a7a63">廣度 25%</span>
-      <span class="th-metric" style="color:#97442f">20D -20.8%</span>
-      <span class="th-metric" style="color:#97442f">外資 -75292</span>
-      <span class="th-metric">達標 1/4（🟢0🟡1）</span>
-    </div>
-    <div class="th-hyp">AI資料中心因「光進銅退」與高功耗迎來瓶頸，微軟與大廠力拱以Micro LED取代傳統VCSEL/EML雷射，憑藉其1/10的極低功耗與高耐溫特性，成為機櫃內短…</div>
-    <div class="th-signals-row">
-      <div class="th-signals-col">
-        <div class="sig-col-label">關鍵訊號（觸發 = 假說兌現）</div>
-        <ul class="sig-list"><li>友達與富采合作之玻璃RDL中介層CPO模組送樣與驗證進度</li><li>錼創高密度Micro LED光源陣列良率與出貨放量</li><li>微軟、Fabric.AI等美商巨頭在2026年底前Micro LED光互連平台的演示數據</li></ul>
-      </div>
-      <div class="th-signals-col">
-        <div class="exit-sigs"><span class="exit-label">出場留意：</span><ul class="sig-list sig-exit"><li>傳統矽光子EML雷射功耗大幅下降且成本劇減</li><li>台廠Micro LED巨量轉移至光通訊模組的對準（Alignment）良率嚴重遞延</li></ul></div>
-        
-      </div>
-    </div>
-    <div class="th-stocks-wrap"><table class="th-stocks-tbl"><thead><tr><th>股票</th><th style="text-align:right">20D%</th><th style="text-align:right">落後</th><th style="text-align:right">外資5D</th></tr></thead><tbody><tr><td style="white-space:nowrap"><span style="color:#b8863f;font-size:11px">🟡</span> <div class="stk-wrap"><span class="stk-id">3714</span><span class="stk-nm">富采</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-19.9%</td><td style="color:#ad6b3f;text-align:right">-7.3%</td><td style="color:#5f7a4f;text-align:right">+2357</td></tr><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">6854</span><span class="stk-nm">錼創科技-KY</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-12.6%</td><td style="color:#8a7a63;text-align:right">+0.0%</td><td style="color:#97442f;text-align:right">-181</td></tr><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">2426</span><span class="stk-nm">鼎元</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-22.5%</td><td style="color:#ad6b3f;text-align:right">-9.9%</td><td style="color:#97442f;text-align:right">-1256</td></tr><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">2409</span><span class="stk-nm">友達</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-28.1%</td><td style="color:#ad6b3f;text-align:right">-15.5%</td><td style="color:#97442f;text-align:right">-76212</td></tr></tbody></table></div>
-  </div>
-</div>
 <div class="th-card" id="thc-CoPoS___玻璃基板___TGV___FOPLP" onclick="openThemeModal('CoPoS___玻璃基板___TGV___FOPLP')" style="border-left:3px solid #97442f">
   <div class="th-card-top">
     <span class="th-strength" style="background:#97442f">0/10</span>
@@ -2517,6 +2462,42 @@ table.cv-grid td.cv-today .cv-n{color:#fff}
       </div>
     </div>
     <div class="th-stocks-wrap"><table class="th-stocks-tbl"><thead><tr><th>股票</th><th style="text-align:right">20D%</th><th style="text-align:right">落後</th><th style="text-align:right">外資5D</th></tr></thead><tbody><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">2467</span><span class="stk-nm">志聖</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-32.0%</td><td style="color:#ad6b3f;text-align:right">-44.1%</td><td style="color:#5f7a4f;text-align:right">+483</td></tr><tr><td style="white-space:nowrap"><span style="color:#b8863f;font-size:11px">🟡</span> <div class="stk-wrap"><span class="stk-id">3131</span><span class="stk-nm">弘塑</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-30.0%</td><td style="color:#ad6b3f;text-align:right">-42.1%</td><td style="color:#5f7a4f;text-align:right">+102</td></tr><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">6640</span><span class="stk-nm">均華</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-25.6%</td><td style="color:#ad6b3f;text-align:right">-37.7%</td><td style="color:#5f7a4f;text-align:right">+44</td></tr><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">1802</span><span class="stk-nm">台玻</span></div></td><td style="color:#5f7a4f;font-weight:600;text-align:right">+12.1%</td><td style="color:#8a7a63;text-align:right">+0.0%</td><td style="color:#5f7a4f;text-align:right">+20982</td></tr><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">3055</span><span class="stk-nm">蔚華科</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-39.6%</td><td style="color:#ad6b3f;text-align:right">-51.7%</td><td style="color:#5f7a4f;text-align:right">+830</td></tr><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">3535</span><span class="stk-nm">晶彩科</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-18.1%</td><td style="color:#ad6b3f;text-align:right">-30.2%</td><td style="color:#5f7a4f;text-align:right">+109</td></tr><tr><td style="white-space:nowrap"><span style="color:#b8863f;font-size:11px">🟡</span> <div class="stk-wrap"><span class="stk-id">8064</span><span class="stk-nm">東捷</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-28.3%</td><td style="color:#ad6b3f;text-align:right">-40.4%</td><td style="color:#5f7a4f;text-align:right">+932</td></tr><tr><td style="white-space:nowrap"><span style="color:#b8863f;font-size:11px">🟡</span> <div class="stk-wrap"><span class="stk-id">3580</span><span class="stk-nm">友威科</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-11.6%</td><td style="color:#ad6b3f;text-align:right">-23.7%</td><td style="color:#5f7a4f;text-align:right">+338</td></tr><tr><td style="white-space:nowrap"><span style="color:#b8863f;font-size:11px">🟡</span> <div class="stk-wrap"><span class="stk-id">6658</span><span class="stk-nm">聯策</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-10.7%</td><td style="color:#ad6b3f;text-align:right">-22.8%</td><td style="color:#5f7a4f;text-align:right">+68</td></tr><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">3481</span><span class="stk-nm">群創</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-22.5%</td><td style="color:#ad6b3f;text-align:right">-34.6%</td><td style="color:#97442f;text-align:right">-51500</td></tr><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">6664</span><span class="stk-nm">群翊</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-21.8%</td><td style="color:#ad6b3f;text-align:right">-33.9%</td><td style="color:#97442f;text-align:right">-156</td></tr><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">6239</span><span class="stk-nm">力成</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-21.9%</td><td style="color:#ad6b3f;text-align:right">-34.0%</td><td style="color:#97442f;text-align:right">-5079</td></tr><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">3167</span><span class="stk-nm">大量</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-12.0%</td><td style="color:#ad6b3f;text-align:right">-24.1%</td><td style="color:#97442f;text-align:right">-1946</td></tr><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">6613</span><span class="stk-nm">朋億*</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-17.1%</td><td style="color:#ad6b3f;text-align:right">-29.2%</td><td style="color:#97442f;text-align:right">-102</td></tr><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">8027</span><span class="stk-nm">鈦昇</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-29.7%</td><td style="color:#ad6b3f;text-align:right">-41.8%</td><td style="color:#97442f;text-align:right">-105</td></tr><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">5443</span><span class="stk-nm">均豪</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-22.0%</td><td style="color:#ad6b3f;text-align:right">-34.1%</td><td style="color:#97442f;text-align:right">-2</td></tr></tbody></table></div>
+  </div>
+</div>
+<div class="th-card" id="thc-MicroLED光互連" onclick="openThemeModal('MicroLED光互連')" style="border-left:3px solid #97442f">
+  <div class="th-card-top">
+    <span class="th-strength" style="background:#97442f">0/10</span>
+    <span class="th-name">MicroLED光互連</span>
+  </div>
+  <div class="th-card-metrics">
+    <span class="th-metric" style="color:#8a7a63">廣25%</span>
+    <span class="th-metric" style="color:#97442f">-20.8%</span>
+    <span class="th-metric" style="color:#97442f">F-75292</span>
+    <span class="th-metric" style="color:var(--muted)">🟢0🟡1/4</span>
+  </div>
+  <div class="th-card-body" id="thbody-MicroLED光互連">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;padding-bottom:14px;border-bottom:1px solid var(--bd)">
+      <span class="th-strength" style="background:#97442f">0/10</span>
+      <span style="font-size:16px;font-weight:700;color:var(--tx)">MicroLED光互連</span>
+    </div>
+    <div style="display:flex;gap:16px;flex-wrap:wrap;margin-bottom:14px">
+      <span class="th-metric" style="color:#8a7a63">廣度 25%</span>
+      <span class="th-metric" style="color:#97442f">20D -20.8%</span>
+      <span class="th-metric" style="color:#97442f">外資 -75292</span>
+      <span class="th-metric">達標 1/4（🟢0🟡1）</span>
+    </div>
+    <div class="th-hyp">AI資料中心因「光進銅退」與高功耗迎來瓶頸，微軟與大廠力拱以Micro LED取代傳統VCSEL/EML雷射，憑藉其1/10的極低功耗與高耐溫特性，成為機櫃內短…</div>
+    <div class="th-signals-row">
+      <div class="th-signals-col">
+        <div class="sig-col-label">關鍵訊號（觸發 = 假說兌現）</div>
+        <ul class="sig-list"><li>友達與富采合作之玻璃RDL中介層CPO模組送樣與驗證進度</li><li>錼創高密度Micro LED光源陣列良率與出貨放量</li><li>微軟、Fabric.AI等美商巨頭在2026年底前Micro LED光互連平台的演示數據</li></ul>
+      </div>
+      <div class="th-signals-col">
+        <div class="exit-sigs"><span class="exit-label">出場留意：</span><ul class="sig-list sig-exit"><li>傳統矽光子EML雷射功耗大幅下降且成本劇減</li><li>台廠Micro LED巨量轉移至光通訊模組的對準（Alignment）良率嚴重遞延</li></ul></div>
+        
+      </div>
+    </div>
+    <div class="th-stocks-wrap"><table class="th-stocks-tbl"><thead><tr><th>股票</th><th style="text-align:right">20D%</th><th style="text-align:right">落後</th><th style="text-align:right">外資5D</th></tr></thead><tbody><tr><td style="white-space:nowrap"><span style="color:#b8863f;font-size:11px">🟡</span> <div class="stk-wrap"><span class="stk-id">3714</span><span class="stk-nm">富采</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-19.9%</td><td style="color:#ad6b3f;text-align:right">-7.3%</td><td style="color:#5f7a4f;text-align:right">+2357</td></tr><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">6854</span><span class="stk-nm">錼創科技-KY</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-12.6%</td><td style="color:#8a7a63;text-align:right">+0.0%</td><td style="color:#97442f;text-align:right">-181</td></tr><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">2426</span><span class="stk-nm">鼎元</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-22.5%</td><td style="color:#ad6b3f;text-align:right">-9.9%</td><td style="color:#97442f;text-align:right">-1256</td></tr><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">2409</span><span class="stk-nm">友達</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-28.1%</td><td style="color:#ad6b3f;text-align:right">-15.5%</td><td style="color:#97442f;text-align:right">-76212</td></tr></tbody></table></div>
   </div>
 </div>
 <div class="th-card" id="thc-石英元件" onclick="openThemeModal('石英元件')" style="border-left:3px solid #97442f">
@@ -2555,42 +2536,6 @@ table.cv-grid td.cv-today .cv-n{color:#fff}
     <div class="th-stocks-wrap"><table class="th-stocks-tbl"><thead><tr><th>股票</th><th style="text-align:right">20D%</th><th style="text-align:right">落後</th><th style="text-align:right">外資5D</th></tr></thead><tbody><tr><td style="white-space:nowrap"><span style="color:#5f7a4f;font-size:11px">🟢</span> <div class="stk-wrap"><span class="stk-id">8289</span><span class="stk-nm">泰藝</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-28.7%</td><td style="color:#8a7a63;text-align:right">-2.2%</td><td style="color:#5f7a4f;text-align:right">+94</td></tr><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">2484</span><span class="stk-nm">希華</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-27.4%</td><td style="color:#8a7a63;text-align:right">-0.9%</td><td style="color:#5f7a4f;text-align:right">+1856</td></tr><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">3042</span><span class="stk-nm">晶技</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-37.3%</td><td style="color:#ad6b3f;text-align:right">-10.8%</td><td style="color:#5f7a4f;text-align:right">+101</td></tr><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">3221</span><span class="stk-nm">台嘉碩</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-26.5%</td><td style="color:#8a7a63;text-align:right">+0.0%</td><td style="color:#97442f;text-align:right">-462</td></tr><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">8182</span><span class="stk-nm">加高</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-30.5%</td><td style="color:#8a7a63;text-align:right">-4.0%</td><td style="color:#97442f;text-align:right">-241</td></tr></tbody></table></div>
   </div>
 </div>
-<div class="th-card" id="thc-BBU" onclick="openThemeModal('BBU')" style="border-left:3px solid #97442f">
-  <div class="th-card-top">
-    <span class="th-strength" style="background:#97442f">0/10</span>
-    <span class="th-name">BBU</span>
-  </div>
-  <div class="th-card-metrics">
-    <span class="th-metric" style="color:#8a7a63">廣0%</span>
-    <span class="th-metric" style="color:#97442f">-21.3%</span>
-    <span class="th-metric" style="color:#5f7a4f">F+1974</span>
-    <span class="th-metric" style="color:var(--muted)">🟢0🟡0/4</span>
-  </div>
-  <div class="th-card-body" id="thbody-BBU">
-    <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;padding-bottom:14px;border-bottom:1px solid var(--bd)">
-      <span class="th-strength" style="background:#97442f">0/10</span>
-      <span style="font-size:16px;font-weight:700;color:var(--tx)">BBU</span>
-    </div>
-    <div style="display:flex;gap:16px;flex-wrap:wrap;margin-bottom:14px">
-      <span class="th-metric" style="color:#8a7a63">廣度 0%</span>
-      <span class="th-metric" style="color:#97442f">20D -21.3%</span>
-      <span class="th-metric" style="color:#5f7a4f">外資 +1974</span>
-      <span class="th-metric">達標 0/4（🟢0🟡0）</span>
-    </div>
-    <div class="th-hyp">NVIDIA GB200等AI伺服器機櫃功耗大增，為確保瞬間供電穩定與防護資料遺失，機櫃層級的備援電池模組（BBU）正式從「選配」升級為「標配」。</div>
-    <div class="th-signals-row">
-      <div class="th-signals-col">
-        <div class="sig-col-label">關鍵訊號（觸發 = 假說兌現）</div>
-        <ul class="sig-list"><li>美系CSP資本支出與AI伺服器拉貨動能</li><li>NVIDIA GB200機櫃實際出貨量</li><li>日韓電池芯廠(松下/三星)供需狀態與報價變化</li></ul>
-      </div>
-      <div class="th-signals-col">
-        <div class="exit-sigs"><span class="exit-label">出場留意：</span><ul class="sig-list sig-exit"><li>CSP廠意外下修AI資本支出</li><li>次世代伺服器供電架構改變導致不再內建BBU</li></ul></div>
-        
-      </div>
-    </div>
-    <div class="th-stocks-wrap"><table class="th-stocks-tbl"><thead><tr><th>股票</th><th style="text-align:right">20D%</th><th style="text-align:right">落後</th><th style="text-align:right">外資5D</th></tr></thead><tbody><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">6781</span><span class="stk-nm">AES-KY</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-20.4%</td><td style="color:#ad6b3f;text-align:right">-15.7%</td><td style="color:#5f7a4f;text-align:right">+240</td></tr><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">3211</span><span class="stk-nm">順達</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-32.0%</td><td style="color:#ad6b3f;text-align:right">-27.3%</td><td style="color:#5f7a4f;text-align:right">+2027</td></tr><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">6121</span><span class="stk-nm">新普</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-4.7%</td><td style="color:#8a7a63;text-align:right">+0.0%</td><td style="color:#97442f;text-align:right">-46</td></tr><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">4931</span><span class="stk-nm">新盛力</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-28.2%</td><td style="color:#ad6b3f;text-align:right">-23.5%</td><td style="color:#97442f;text-align:right">-247</td></tr></tbody></table></div>
-  </div>
-</div>
 <div class="th-card" id="thc-輝達AI_PC" onclick="openThemeModal('輝達AI_PC')" style="border-left:3px solid #97442f">
   <div class="th-card-top">
     <span class="th-strength" style="background:#97442f">0/10</span>
@@ -2625,6 +2570,42 @@ table.cv-grid td.cv-today .cv-n{color:#fff}
       </div>
     </div>
     <div class="th-stocks-wrap"><table class="th-stocks-tbl"><thead><tr><th>股票</th><th style="text-align:right">20D%</th><th style="text-align:right">落後</th><th style="text-align:right">外資5D</th></tr></thead><tbody><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">4966</span><span class="stk-nm">譜瑞-KY</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-22.4%</td><td style="color:#ad6b3f;text-align:right">-16.2%</td><td style="color:#5f7a4f;text-align:right">+164</td></tr><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">2454</span><span class="stk-nm">聯發科</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-24.9%</td><td style="color:#ad6b3f;text-align:right">-18.7%</td><td style="color:#97442f;text-align:right">-16552</td></tr><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">2357</span><span class="stk-nm">華碩</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-8.8%</td><td style="color:#8a7a63;text-align:right">-2.6%</td><td style="color:#97442f;text-align:right">-2082</td></tr><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">2382</span><span class="stk-nm">廣達</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-8.9%</td><td style="color:#8a7a63;text-align:right">-2.7%</td><td style="color:#97442f;text-align:right">-13317</td></tr><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">2353</span><span class="stk-nm">宏碁</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-6.2%</td><td style="color:#8a7a63;text-align:right">+0.0%</td><td style="color:#97442f;text-align:right">-17987</td></tr><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">2324</span><span class="stk-nm">仁寶</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-8.1%</td><td style="color:#8a7a63;text-align:right">-1.9%</td><td style="color:#97442f;text-align:right">-53163</td></tr></tbody></table></div>
+  </div>
+</div>
+<div class="th-card" id="thc-BBU" onclick="openThemeModal('BBU')" style="border-left:3px solid #97442f">
+  <div class="th-card-top">
+    <span class="th-strength" style="background:#97442f">0/10</span>
+    <span class="th-name">BBU</span>
+  </div>
+  <div class="th-card-metrics">
+    <span class="th-metric" style="color:#8a7a63">廣0%</span>
+    <span class="th-metric" style="color:#97442f">-21.3%</span>
+    <span class="th-metric" style="color:#5f7a4f">F+1974</span>
+    <span class="th-metric" style="color:var(--muted)">🟢0🟡0/4</span>
+  </div>
+  <div class="th-card-body" id="thbody-BBU">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;padding-bottom:14px;border-bottom:1px solid var(--bd)">
+      <span class="th-strength" style="background:#97442f">0/10</span>
+      <span style="font-size:16px;font-weight:700;color:var(--tx)">BBU</span>
+    </div>
+    <div style="display:flex;gap:16px;flex-wrap:wrap;margin-bottom:14px">
+      <span class="th-metric" style="color:#8a7a63">廣度 0%</span>
+      <span class="th-metric" style="color:#97442f">20D -21.3%</span>
+      <span class="th-metric" style="color:#5f7a4f">外資 +1974</span>
+      <span class="th-metric">達標 0/4（🟢0🟡0）</span>
+    </div>
+    <div class="th-hyp">NVIDIA GB200等AI伺服器機櫃功耗大增，為確保瞬間供電穩定與防護資料遺失，機櫃層級的備援電池模組（BBU）正式從「選配」升級為「標配」。</div>
+    <div class="th-signals-row">
+      <div class="th-signals-col">
+        <div class="sig-col-label">關鍵訊號（觸發 = 假說兌現）</div>
+        <ul class="sig-list"><li>美系CSP資本支出與AI伺服器拉貨動能</li><li>NVIDIA GB200機櫃實際出貨量</li><li>日韓電池芯廠(松下/三星)供需狀態與報價變化</li></ul>
+      </div>
+      <div class="th-signals-col">
+        <div class="exit-sigs"><span class="exit-label">出場留意：</span><ul class="sig-list sig-exit"><li>CSP廠意外下修AI資本支出</li><li>次世代伺服器供電架構改變導致不再內建BBU</li></ul></div>
+        
+      </div>
+    </div>
+    <div class="th-stocks-wrap"><table class="th-stocks-tbl"><thead><tr><th>股票</th><th style="text-align:right">20D%</th><th style="text-align:right">落後</th><th style="text-align:right">外資5D</th></tr></thead><tbody><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">6781</span><span class="stk-nm">AES-KY</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-20.4%</td><td style="color:#ad6b3f;text-align:right">-15.7%</td><td style="color:#5f7a4f;text-align:right">+240</td></tr><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">3211</span><span class="stk-nm">順達</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-32.0%</td><td style="color:#ad6b3f;text-align:right">-27.3%</td><td style="color:#5f7a4f;text-align:right">+2027</td></tr><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">6121</span><span class="stk-nm">新普</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-4.7%</td><td style="color:#8a7a63;text-align:right">+0.0%</td><td style="color:#97442f;text-align:right">-46</td></tr><tr><td style="white-space:nowrap"><span style="color:#8a7a63;font-size:11px">⚪</span> <div class="stk-wrap"><span class="stk-id">4931</span><span class="stk-nm">新盛力</span></div></td><td style="color:#97442f;font-weight:600;text-align:right">-28.2%</td><td style="color:#ad6b3f;text-align:right">-23.5%</td><td style="color:#97442f;text-align:right">-247</td></tr></tbody></table></div>
   </div>
 </div></div></div>
     
@@ -2667,36 +2648,36 @@ table.cv-grid td.cv-today .cv-n{color:#fff}
   <div class="section-item-body">
     <div class="sec-table-wrap"><table><thead><tr><th>股票</th><th>催化劑 / 基本面拐點</th></tr></thead>
 <tbody><tr>
-          <td style="white-space:nowrap"><input type="checkbox" class="watch-check" data-id="tr_1409">
-              <label><div class="stk-wrap"><span class="stk-id">1409</span><span class="stk-nm">新纖</span></div></label></td>
-          <td><span class="tag tag-green">月營收YoY轉正</span>  <span class="tag tag-green">EPS負轉正</span></td>
-        </tr><tr>
-          <td style="white-space:nowrap"><input type="checkbox" class="watch-check" data-id="tr_2344">
-              <label><div class="stk-wrap"><span class="stk-id">2344</span><span class="stk-nm">華邦電</span></div></label></td>
-          <td><span class="tag tag-green">EPS負轉正</span>  <span style="font-size:0.75em;color:#8a7a63;margin-right:4px">2026-11-03</span><span class="tag" style="background:#f0e0c0;color:#8f6a30">漲價</span><a href="https://news.google.com/rss/articles/CBMib0FVX3lxTE9OOFJUNkZ5cjdfZWZpN0I5VG9jMHl4dkR2WEVNVzZ5VVFBZlVEVUtUeG5DdDJ6OTl6dWE3Y2EwdHQxWW9USGc4bXR5NEx0NGZwTWR2bjh1c0lhSzFlS2VpQUxoMGNqNW40dFRYM0FpZw?oc=5" target="_blank" rel="noopener" style="font-size:0.82em;color:#6b4129">華邦電法說今日登場！第三季營收衝823億元 記憶體漲價能否推升毛利率？ - 理財周刊</a></td>
-        </tr><tr>
-          <td style="white-space:nowrap"><input type="checkbox" class="watch-check" data-id="tr_1802">
-              <label><div class="stk-wrap"><span class="stk-id">1802</span><span class="stk-nm">台玻</span></div></label></td>
-          <td><span class="tag tag-green">EPS負轉正</span>  <span style="font-size:0.75em;color:#8a7a63;margin-right:4px">2026-11-03</span><span class="tag" style="background:#e8dde8;color:#5c4a66">擴產</span><a href="https://news.google.com/rss/articles/CBMiUEFVX3lxTFB4bG9FNF9xUWRLbEFFNnIzVHB4TmoyYVpodTZyZnVJQTRFZ01CN1Blem9oR2I0V2d1emFwVjZJS3NfQ2hJS2h6em1qU21IUTI40gFWQVVfeXFMTWo3RUQwd2d3V2hfWFp6cGpXYkNDNVduc3l2MVJtd0NnVGpNalB3SHo2VW5TNDBvdkJuejNnNWpGNkNhTmoxUVFtelJjTGxOZG9WQVdHSXc?oc=5" target="_blank" rel="noopener" style="font-size:0.82em;color:#6b4129">AI需求還是旺 台玻啟動第四期大擴產 股價逆勢飆漲 - UDN</a></td>
-        </tr><tr>
-          <td style="white-space:nowrap"><input type="checkbox" class="watch-check" data-id="tr_1303">
-              <label><div class="stk-wrap"><span class="stk-id">1303</span><span class="stk-nm">南亞</span></div></label></td>
-          <td><span class="tag tag-green">EPS負轉正</span>  <span style="font-size:0.75em;color:#8a7a63;margin-right:4px">2026-11-03</span><span class="tag" style="background:#f0e0c0;color:#8f6a30">漲價</span><a href="https://news.google.com/rss/articles/CBMib0FVX3lxTE12LWhqYmlKOHMzUEttT2VyVm5SZXFma2M4TVVwUW5Jd0IxTnNEWV9SMmg2eThtZTdvM19oZGRwcFhJRlpDdS1VTHViRTJmdlprWmN5U25yaGphSmhaQ0Iyc1dpdVhLTWxCMWNwWUowTQ?oc=5" target="_blank" rel="noopener" style="font-size:0.82em;color:#6b4129">華邦電、南亞科盤中跌停！記憶體漲價行情遇上美股殺盤 15時法說揭曉獲利關鍵 - 理財周刊</a></td>
-        </tr><tr>
           <td style="white-space:nowrap"><input type="checkbox" class="watch-check" data-id="tr_3038">
               <label><div class="stk-wrap"><span class="stk-id">3038</span><span class="stk-nm">全台</span></div></label></td>
           <td><span class="tag tag-green">月營收YoY轉正</span>  <span class="tag tag-green">EPS負轉正</span></td>
         </tr><tr>
-          <td style="white-space:nowrap"><input type="checkbox" class="watch-check" data-id="tr_1786">
-              <label><div class="stk-wrap"><span class="stk-id">1786</span><span class="stk-nm">科妍</span></div></label></td>
+          <td style="white-space:nowrap"><input type="checkbox" class="watch-check" data-id="tr_1103">
+              <label><div class="stk-wrap"><span class="stk-id">1103</span><span class="stk-nm">嘉泥</span></div></label></td>
+          <td><span class="tag tag-green">月營收YoY轉正</span>  <span class="tag tag-green">EPS負轉正</span></td>
+        </tr><tr>
+          <td style="white-space:nowrap"><input type="checkbox" class="watch-check" data-id="tr_3540">
+              <label><div class="stk-wrap"><span class="stk-id">3540</span><span class="stk-nm">曜越</span></div></label></td>
+          <td><span class="tag tag-green">月營收YoY轉正</span>  <span class="tag tag-green">EPS負轉正</span></td>
+        </tr><tr>
+          <td style="white-space:nowrap"><input type="checkbox" class="watch-check" data-id="tr_2498">
+              <label><div class="stk-wrap"><span class="stk-id">2498</span><span class="stk-nm">宏達電</span></div></label></td>
           <td><span class="tag tag-green">月營收YoY轉正</span>  <span class="tag tag-green">EPS負轉正</span></td>
         </tr><tr>
           <td style="white-space:nowrap"><input type="checkbox" class="watch-check" data-id="tr_2032">
               <label><div class="stk-wrap"><span class="stk-id">2032</span><span class="stk-nm">新鋼</span></div></label></td>
           <td><span class="tag tag-green">月營收YoY轉正</span>  <span class="tag tag-green">EPS負轉正</span></td>
         </tr><tr>
-          <td style="white-space:nowrap"><input type="checkbox" class="watch-check" data-id="tr_1103">
-              <label><div class="stk-wrap"><span class="stk-id">1103</span><span class="stk-nm">嘉泥</span></div></label></td>
+          <td style="white-space:nowrap"><input type="checkbox" class="watch-check" data-id="tr_3708">
+              <label><div class="stk-wrap"><span class="stk-id">3708</span><span class="stk-nm">上緯投控</span></div></label></td>
+          <td><span class="tag tag-green">月營收YoY轉正</span>  <span class="tag tag-green">EPS負轉正</span></td>
+        </tr><tr>
+          <td style="white-space:nowrap"><input type="checkbox" class="watch-check" data-id="tr_2344">
+              <label><div class="stk-wrap"><span class="stk-id">2344</span><span class="stk-nm">華邦電</span></div></label></td>
+          <td><span class="tag tag-green">EPS負轉正</span>  <span style="font-size:0.75em;color:#8a7a63;margin-right:4px">2026-11-03</span><span class="tag" style="background:#f0e0c0;color:#8f6a30">漲價</span><a href="https://news.google.com/rss/articles/CBMib0FVX3lxTE9OOFJUNkZ5cjdfZWZpN0I5VG9jMHl4dkR2WEVNVzZ5VVFBZlVEVUtUeG5DdDJ6OTl6dWE3Y2EwdHQxWW9USGc4bXR5NEx0NGZwTWR2bjh1c0lhSzFlS2VpQUxoMGNqNW40dFRYM0FpZw?oc=5" target="_blank" rel="noopener" style="font-size:0.82em;color:#6b4129">華邦電法說今日登場！第三季營收衝823億元 記憶體漲價能否推升毛利率？ - 理財周刊</a></td>
+        </tr><tr>
+          <td style="white-space:nowrap"><input type="checkbox" class="watch-check" data-id="tr_2359">
+              <label><div class="stk-wrap"><span class="stk-id">2359</span><span class="stk-nm">所羅門</span></div></label></td>
           <td><span class="tag tag-green">月營收YoY轉正</span>  <span class="tag tag-green">EPS負轉正</span></td>
         </tr></tbody></table></div>
     <div class="my-view"><span class="my-view-label">今日看法：</span>確認催化劑是否持續，決定是否列入追蹤清單</div>
@@ -2711,7 +2692,7 @@ table.cv-grid td.cv-today .cv-n{color:#fff}
     <span class="section-item-arrow">›</span>
   </div>
   <div class="section-item-body">
-    <div class="sec-table-wrap"><table><thead><tr><th>原物料</th><th>1日</th><th>5日</th><th>20日</th><th>異常度</th><th>供應鏈用途</th></tr></thead><tbody><tr style="background:rgba(43,36,27,0.03)"><td colspan="6" style="font-size:0.8em;color:#8a7a63;padding:4px 8px">── 能源 ──</td></tr><tr style="background:rgba(184,134,63,0.08)"><td>Brent 原油</td><td><span style="color:var(--red)">-9.5%</span></td><td><span style="color:var(--red)">-18.7%</span></td><td><span style="color:var(--red)">-6.5%</span></td><td style="color:#8a7a63">—</td><td style="font-size:0.82em;color:#8a7a63"></td></tr><tr style="background:rgba(184,134,63,0.08)"><td>WTI 原油</td><td><span style="color:var(--red)">-9.6%</span></td><td><span style="color:var(--red)">-15.5%</span></td><td><span style="color:var(--red)">-1.6%</span></td><td style="color:#8a7a63">—</td><td style="font-size:0.82em;color:#8a7a63"></td></tr><tr><td>天然氣</td><td><span style="color:var(--green)">+1.6%</span></td><td><span style="color:var(--green)">+4.4%</span></td><td><span style="color:var(--red)">-8.2%</span></td><td style="color:#8a7a63">—</td><td style="font-size:0.82em;color:#8a7a63">特用氣體/隔離膜原料</td></tr><tr style="background:rgba(43,36,27,0.03)"><td colspan="6" style="font-size:0.8em;color:#8a7a63;padding:4px 8px">── 貴金屬 ──</td></tr><tr style="background:rgba(184,134,63,0.08)"><td>白金</td><td><span style="color:var(--green)">+6.9%</span></td><td><span style="color:var(--red)">-1.0%</span></td><td><span style="color:var(--red)">-6.2%</span></td><td style="color:#8a7a63">—</td><td style="font-size:0.82em;color:#8a7a63"></td></tr><tr style="background:rgba(184,134,63,0.08)"><td>白銀</td><td><span style="color:var(--green)">+7.2%</span></td><td><span style="color:var(--red)">-0.5%</span></td><td><span style="color:var(--red)">-11.2%</span></td><td style="color:#8a7a63">—</td><td style="font-size:0.82em;color:#8a7a63"></td></tr><tr style="background:rgba(184,134,63,0.08)"><td>鈀金</td><td><span style="color:var(--green)">+10.5%</span></td><td><span style="color:var(--green)">+1.8%</span></td><td><span style="color:var(--red)">-7.9%</span></td><td style="color:#8a7a63">—</td><td style="font-size:0.82em;color:#8a7a63">MLCC 內電極原料</td></tr><tr style="background:rgba(184,134,63,0.08)"><td>黃金</td><td><span style="color:var(--green)">+5.2%</span></td><td><span style="color:var(--green)">+2.3%</span></td><td><span style="color:var(--green)">+0.1%</span></td><td style="color:#8a7a63">—</td><td style="font-size:0.82em;color:#8a7a63"></td></tr><tr style="background:rgba(43,36,27,0.03)"><td colspan="6" style="font-size:0.8em;color:#8a7a63;padding:4px 8px">── 基本金屬 ──</td></tr><tr><td>銅</td><td><span style="color:var(--green)">+1.0%</span></td><td><span style="color:var(--red)">-3.0%</span></td><td><span style="color:var(--red)">-2.3%</span></td><td style="color:#8a7a63">—</td><td style="font-size:0.82em;color:#8a7a63">CCL / MLCC / 連接器直接原料</td></tr><tr><td>鋁</td><td><span style="color:var(--red)">-0.9%</span></td><td><span style="color:var(--red)">-2.2%</span></td><td><span style="color:var(--red)">-0.3%</span></td><td style="color:#8a7a63">—</td><td style="font-size:0.82em;color:#8a7a63">散熱 / 液冷設備</td></tr><tr><td>鋅 (期貨)</td><td><span style="color:var(--red)">+0.0%</span></td><td><span style="color:var(--green)">+6.3%</span></td><td><span style="color:var(--green)">+6.3%</span></td><td style="color:#8a7a63">—</td><td style="font-size:0.82em;color:#8a7a63">LME 鋅期貨；鍍鋅鋼/黃銅</td></tr><tr style="background:rgba(184,134,63,0.08)"><td>錫 (MLX)</td><td><span style="color:var(--green)">+11.3%</span></td><td><span style="color:var(--green)">+1.2%</span></td><td><span style="color:var(--red)">-19.7%</span></td><td style="color:#8a7a63">—</td><td style="font-size:0.82em;color:#8a7a63">Metals X 澳洲錫礦；半導體焊料</td></tr><tr><td>鎳 (BHP)</td><td><span style="color:var(--green)">+2.6%</span></td><td><span style="color:var(--red)">-2.5%</span></td><td><span style="color:var(--red)">-6.0%</span></td><td style="color:#8a7a63">—</td><td style="font-size:0.82em;color:#8a7a63">BHP Nickel West；電池材料/不鏽鋼</td></tr><tr style="background:rgba(43,36,27,0.03)"><td colspan="6" style="font-size:0.8em;color:#8a7a63;padding:4px 8px">── 稀有金屬 ──</td></tr><tr style="background:rgba(184,134,63,0.08)"><td>稀土 (ETF)</td><td><span style="color:var(--green)">+4.0%</span></td><td><span style="color:var(--red)">-4.8%</span></td><td><span style="color:var(--red)">-16.4%</span></td><td style="color:#8a7a63">—</td><td style="font-size:0.82em;color:#8a7a63">VanEck；永磁 / 顯示器</td></tr><tr style="background:rgba(184,134,63,0.08)"><td>鈾 (ETF)</td><td><span style="color:var(--red)">-1.1%</span></td><td><span style="color:var(--red)">-10.5%</span></td><td><span style="color:var(--red)">-18.1%</span></td><td style="color:#8a7a63">—</td><td style="font-size:0.82em;color:#8a7a63">Global X；核能</td></tr><tr style="background:rgba(184,134,63,0.08)"><td>鋰 (ETF)</td><td><span style="color:var(--green)">+3.0%</span></td><td><span style="color:var(--red)">-1.3%</span></td><td><span style="color:var(--red)">-11.0%</span></td><td style="color:#8a7a63">—</td><td style="font-size:0.82em;color:#8a7a63">Global X；電池</td></tr><tr><td colspan="6" style="font-size:0.82em;color:#8a7a63;padding:4px 8px">銅金比：0.00155　（↑景氣樂觀 / ↓避險升溫）</td></tr></tbody></table></div>
+    <div class="sec-table-wrap"><table><thead><tr><th>原物料</th><th>1日</th><th>5日</th><th>20日</th><th>異常度</th><th>供應鏈用途</th></tr></thead><tbody><tr style="background:rgba(43,36,27,0.03)"><td colspan="6" style="font-size:0.8em;color:#8a7a63;padding:4px 8px">── 能源 ──</td></tr><tr style="background:rgba(184,134,63,0.08)"><td>Brent 原油</td><td><span style="color:var(--red)">-9.5%</span></td><td><span style="color:var(--red)">-18.7%</span></td><td><span style="color:var(--red)">-6.4%</span></td><td style="color:#8a7a63">—</td><td style="font-size:0.82em;color:#8a7a63"></td></tr><tr style="background:rgba(184,134,63,0.08)"><td>WTI 原油</td><td><span style="color:var(--red)">-9.5%</span></td><td><span style="color:var(--red)">-15.4%</span></td><td><span style="color:var(--red)">-1.5%</span></td><td style="color:#8a7a63">—</td><td style="font-size:0.82em;color:#8a7a63"></td></tr><tr><td>天然氣</td><td><span style="color:var(--green)">+1.7%</span></td><td><span style="color:var(--green)">+4.5%</span></td><td><span style="color:var(--red)">-8.1%</span></td><td style="color:#8a7a63">—</td><td style="font-size:0.82em;color:#8a7a63">特用氣體/隔離膜原料</td></tr><tr style="background:rgba(43,36,27,0.03)"><td colspan="6" style="font-size:0.8em;color:#8a7a63;padding:4px 8px">── 貴金屬 ──</td></tr><tr style="background:rgba(184,134,63,0.08)"><td>白金</td><td><span style="color:var(--green)">+6.9%</span></td><td><span style="color:var(--red)">-1.1%</span></td><td><span style="color:var(--red)">-6.3%</span></td><td style="color:#8a7a63">—</td><td style="font-size:0.82em;color:#8a7a63"></td></tr><tr style="background:rgba(184,134,63,0.08)"><td>白銀</td><td><span style="color:var(--green)">+7.2%</span></td><td><span style="color:var(--red)">-0.6%</span></td><td><span style="color:var(--red)">-11.3%</span></td><td style="color:#8a7a63">—</td><td style="font-size:0.82em;color:#8a7a63"></td></tr><tr style="background:rgba(184,134,63,0.08)"><td>鈀金</td><td><span style="color:var(--green)">+10.4%</span></td><td><span style="color:var(--green)">+1.7%</span></td><td><span style="color:var(--red)">-8.0%</span></td><td style="color:#8a7a63">—</td><td style="font-size:0.82em;color:#8a7a63">MLCC 內電極原料</td></tr><tr style="background:rgba(184,134,63,0.08)"><td>黃金</td><td><span style="color:var(--green)">+5.2%</span></td><td><span style="color:var(--green)">+2.3%</span></td><td><span style="color:var(--green)">+0.1%</span></td><td style="color:#8a7a63">—</td><td style="font-size:0.82em;color:#8a7a63"></td></tr><tr style="background:rgba(43,36,27,0.03)"><td colspan="6" style="font-size:0.8em;color:#8a7a63;padding:4px 8px">── 基本金屬 ──</td></tr><tr><td>銅</td><td><span style="color:var(--green)">+1.0%</span></td><td><span style="color:var(--red)">-3.0%</span></td><td><span style="color:var(--red)">-2.4%</span></td><td style="color:#8a7a63">—</td><td style="font-size:0.82em;color:#8a7a63">CCL / MLCC / 連接器直接原料</td></tr><tr><td>鋁</td><td><span style="color:var(--red)">-0.9%</span></td><td><span style="color:var(--red)">-2.2%</span></td><td><span style="color:var(--red)">-0.3%</span></td><td style="color:#8a7a63">—</td><td style="font-size:0.82em;color:#8a7a63">散熱 / 液冷設備</td></tr><tr><td>鋅 (期貨)</td><td><span style="color:var(--red)">+0.0%</span></td><td><span style="color:var(--green)">+6.3%</span></td><td><span style="color:var(--green)">+6.3%</span></td><td style="color:#8a7a63">—</td><td style="font-size:0.82em;color:#8a7a63">LME 鋅期貨；鍍鋅鋼/黃銅</td></tr><tr style="background:rgba(184,134,63,0.08)"><td>錫 (MLX)</td><td><span style="color:var(--green)">+11.0%</span></td><td><span style="color:var(--green)">+0.9%</span></td><td><span style="color:var(--red)">-20.0%</span></td><td style="color:#8a7a63">—</td><td style="font-size:0.82em;color:#8a7a63">Metals X 澳洲錫礦；半導體焊料</td></tr><tr><td>鎳 (BHP)</td><td><span style="color:var(--green)">+2.6%</span></td><td><span style="color:var(--red)">-2.5%</span></td><td><span style="color:var(--red)">-6.0%</span></td><td style="color:#8a7a63">—</td><td style="font-size:0.82em;color:#8a7a63">BHP Nickel West；電池材料/不鏽鋼</td></tr><tr style="background:rgba(43,36,27,0.03)"><td colspan="6" style="font-size:0.8em;color:#8a7a63;padding:4px 8px">── 稀有金屬 ──</td></tr><tr style="background:rgba(184,134,63,0.08)"><td>稀土 (ETF)</td><td><span style="color:var(--green)">+4.0%</span></td><td><span style="color:var(--red)">-4.8%</span></td><td><span style="color:var(--red)">-16.4%</span></td><td style="color:#8a7a63">—</td><td style="font-size:0.82em;color:#8a7a63">VanEck；永磁 / 顯示器</td></tr><tr style="background:rgba(184,134,63,0.08)"><td>鈾 (ETF)</td><td><span style="color:var(--red)">-1.1%</span></td><td><span style="color:var(--red)">-10.5%</span></td><td><span style="color:var(--red)">-18.1%</span></td><td style="color:#8a7a63">—</td><td style="font-size:0.82em;color:#8a7a63">Global X；核能</td></tr><tr style="background:rgba(184,134,63,0.08)"><td>鋰 (ETF)</td><td><span style="color:var(--green)">+3.0%</span></td><td><span style="color:var(--red)">-1.3%</span></td><td><span style="color:var(--red)">-11.0%</span></td><td style="color:#8a7a63">—</td><td style="font-size:0.82em;color:#8a7a63">Global X；電池</td></tr><tr><td colspan="6" style="font-size:0.82em;color:#8a7a63;padding:4px 8px">銅金比：0.00155　（↑景氣樂觀 / ↓避險升溫）</td></tr></tbody></table></div>
     
   </div>
 </div></div>
@@ -3152,7 +3133,7 @@ table.cv-grid td.cv-today .cv-n{color:#fff}
 </div>
 
 <div style="text-align:center;padding:16px;font-size:10px;color:var(--muted)">
-  生成時間：2026-11-05 11:44:12 · build_overview.py
+  生成時間：2026-11-05 11:48:11 · build_overview.py
 </div>
 </div>
 
